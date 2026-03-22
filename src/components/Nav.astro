@@ -1,0 +1,118 @@
+---
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/expertise', label: 'Expertise' },
+  { href: '/demo', label: 'Live Demo' },
+  { href: '/about', label: 'About' },
+];
+const path = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 border-b border-gh-border bg-gh-canvas/90 backdrop-blur-sm">
+  <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+    <a href="/" class="flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 111.197 111.2">
+        <g transform="translate(.025 .025)">
+          <path fill="#f9c513" d="M75.242 94.909a13.912 13.912 0 0 1 0-19.668 27.81 27.81 0 0 1-39.331 0 13.907 13.907 0 0 1-19.668 19.668 55.688 55.688 0 0 0 78.667 0 13.912 13.912 0 0 1-19.668 0Z" />
+          <path fill="#0969da" d="M94.909 16.242a55.626 55.626 0 0 0-78.667 78.667A13.907 13.907 0 0 1 35.91 75.241 27.811 27.811 0 0 1 75.241 35.91a13.907 13.907 0 0 0 19.668-19.668Z" />
+          <circle cx="13.908" cy="13.908" r="13.908" fill="#1f883d" transform="translate(12.166 71.165)" />
+          <path fill="#cf222e" d="M94.909 16.242A13.907 13.907 0 0 1 75.241 35.91a27.81 27.81 0 0 1 0 39.331 13.907 13.907 0 0 0 19.668 19.668 55.7 55.7 0 0 0 0-78.667Z" />
+        </g>
+      </svg>
+    </a>
+    <nav class="hidden items-center gap-8 sm:flex">
+      {links.map(link => (
+        <a
+          href={link.href}
+          class={`text-base font-medium transition-colors ${
+            (link.href === '/' ? path === '/' : path.startsWith(link.href))
+              ? 'text-gh-green'
+              : 'text-gh-fg hover:text-gh-green'
+          }`}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+    <div class="flex items-center gap-3">
+      <a
+        href="https://calendar.app.google/cYM3H3TsHsequR587"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-lg bg-gh-green px-4 py-2 text-base font-semibold text-white transition-colors hover:bg-gh-green-hover"
+      >
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+        Book a Call
+      </a>
+      <button
+        id="mobile-menu-toggle"
+        class="flex items-center justify-center rounded-lg p-2 text-gh-fg transition-colors hover:bg-gh-canvas-subtle sm:hidden"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <svg id="hamburger-icon" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="close-icon" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden border-t border-gh-border bg-gh-canvas sm:hidden">
+    <nav class="mx-auto flex max-w-5xl flex-col gap-1 px-6 py-4">
+      {links.map(link => (
+        <a
+          href={link.href}
+          class={`mobile-menu-link rounded-lg px-4 py-3 text-base font-medium transition-colors ${
+            (link.href === '/' ? path === '/' : path.startsWith(link.href))
+              ? 'bg-gh-canvas-subtle text-gh-green'
+              : 'text-gh-fg hover:bg-gh-canvas-subtle hover:text-gh-green'
+          }`}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('mobile-menu-toggle')!;
+  const menu = document.getElementById('mobile-menu')!;
+  const hamburgerIcon = document.getElementById('hamburger-icon')!;
+  const closeIcon = document.getElementById('close-icon')!;
+
+  function closeMenu() {
+    menu.classList.add('hidden');
+    hamburgerIcon.classList.remove('hidden');
+    closeIcon.classList.add('hidden');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  function openMenu() {
+    menu.classList.remove('hidden');
+    hamburgerIcon.classList.add('hidden');
+    closeIcon.classList.remove('hidden');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+
+  toggle.addEventListener('click', () => {
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  document.querySelectorAll('.mobile-menu-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target as Node) && !toggle.contains(e.target as Node)) {
+      closeMenu();
+    }
+  });
+</script>

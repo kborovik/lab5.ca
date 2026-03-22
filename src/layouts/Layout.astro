@@ -1,0 +1,70 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = 'I modernize business operations with Google Cloud. Systems integration (ERP, CRM, custom software) for growing companies.',
+} = Astro.props;
+
+const pageTitle = title
+  ? `${title} | Konstantin Borovik`
+  : 'Konstantin Borovik — Tech Lead for Business Modernization';
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Konstantin Borovik" />
+    <meta property="og:locale" content="en_CA" />
+
+    <!-- OG Image -->
+    <meta property="og:image" content="https://lab5.ca/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Konstantin Borovik — Tech Lead for Business Modernization" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://lab5.ca/og.png" />
+    <meta name="twitter:image:alt" content="Konstantin Borovik — Tech Lead for Business Modernization" />
+  </head>
+  <body class="font-sans antialiased bg-gh-canvas text-gh-fg">
+    <svg aria-hidden="true" style="display:none;position:absolute;width:0;height:0">
+      <defs>
+        <linearGradient id="logo-m-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#1f883d" />
+          <stop offset="100%" stop-color="#0969da" />
+        </linearGradient>
+      </defs>
+    </svg>
+    <Nav />
+    <slot />
+    <Footer />
+  </body>
+</html>

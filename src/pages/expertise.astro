@@ -1,0 +1,272 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Expertise"
+  description="Systems integration, custom software development, AI-powered automation, and technical leadership — 20+ years of hands-on engineering experience."
+>
+  <!-- Header -->
+  <section class="mx-auto max-w-5xl px-6 py-20">
+    <p class="text-sm font-semibold uppercase tracking-widest text-gh-green">Expertise</p>
+    <h1 class="mt-2 text-4xl font-bold tracking-tight text-gh-fg sm:text-5xl">
+      What I bring to your team
+    </h1>
+    <p class="mt-4 max-w-2xl text-lg text-gh-fg-muted">
+      20+ years of progressive experience — from infrastructure engineering to cloud architecture
+      to AI-powered product development. I work with companies in paper-heavy, operations-driven
+      industries where disconnected systems and manual workflows are the biggest bottleneck.
+    </p>
+    <div class="mt-6 flex flex-wrap gap-3">
+      {[
+        'Logistics / Freight / 3PL',
+        'Distribution / Wholesale',
+        'Construction / Trades',
+        'Insurance (Agencies / Brokers)',
+        'Manufacturing / Industrial',
+        'Accounting / Bookkeeping',
+        'Property Management',
+      ].map(industry => (
+        <span class="rounded-full border border-gh-border bg-white px-4 py-2 text-sm font-medium text-gh-fg">
+          {industry}
+        </span>
+      ))}
+    </div>
+  </section>
+
+  <!-- 01: Systems Integration -->
+  <section id="integration" class="py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="grid gap-12 sm:grid-cols-2 sm:items-start">
+        <div>
+          <div class="text-5xl font-bold text-gh-border">01</div>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-gh-fg">
+            Systems Integration
+          </h2>
+          <p class="mt-2 text-base font-medium text-gh-green">
+            Connect your business systems to Google Cloud.
+          </p>
+          <p class="mt-4 leading-relaxed text-gh-fg-muted">
+            I connect ERP, CRM, email, and document systems into unified workflows on Google Cloud.
+            Event-driven architecture with Cloud Functions and Pub/Sub — not batch jobs or manual
+            data entry. Your systems talk to each other automatically.
+          </p>
+          <ul class="mt-6 space-y-2">
+            {[
+              'ERP, CRM, and email integration via Google Cloud',
+              'Event-driven workflows with Cloud Functions and Pub/Sub',
+              'Google Workspace automation (Gmail, Drive, Sheets, Calendar)',
+              'API design and data pipeline development',
+            ].map(item => (
+              <li class="flex items-start gap-2 text-sm text-gh-fg-muted">
+                <svg class="mt-0.5 h-4 w-4 shrink-0 text-gh-green" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-gh-border border-l-4 border-l-gh-green bg-white p-8">
+          <p class="text-xs font-semibold uppercase tracking-widest text-gh-fg-subtle">Why it matters</p>
+          <ul class="mt-4 space-y-3 text-sm text-gh-fg-muted">
+            <li class="border-b border-gh-border pb-3">
+              <span class="font-medium text-gh-fg">Owner:</span> Your team stops copy-pasting between systems — data flows automatically
+            </li>
+            <li class="border-b border-gh-border pb-3">
+              <span class="font-medium text-gh-fg">CTO:</span> Event-driven architecture on GCP — scalable, maintainable, observable
+            </li>
+            <li class="pb-0">
+              <span class="font-medium text-gh-fg">COO:</span> Orders stop falling through cracks, response times drop, errors disappear
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02: Custom Software Development -->
+  <section id="development" class="border-t border-gh-border bg-gh-canvas-subtle py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="grid gap-12 sm:grid-cols-2 sm:items-start">
+        <div class="order-1 sm:order-2">
+          <div class="text-5xl font-bold text-gh-border">02</div>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-gh-fg">
+            Custom Software Development
+          </h2>
+          <p class="mt-2 text-base font-medium text-gh-green">
+            From architecture to production deployment.
+          </p>
+          <p class="mt-4 leading-relaxed text-gh-fg-muted">
+            End-to-end product development on Google Cloud. Python backend services,
+            modern frontends, CI/CD pipelines, and edge deployment. One person who
+            owns the full stack — architecture, code, infrastructure, and shipping.
+          </p>
+          <ul class="mt-6 space-y-2">
+            {[
+              'Python backend services and API development',
+              'Modern frontend with TypeScript and Tailwind CSS',
+              'Google Cloud infrastructure with Terraform IaC',
+              'CI/CD pipelines and automated deployment',
+            ].map(item => (
+              <li class="flex items-start gap-2 text-sm text-gh-fg-muted">
+                <svg class="mt-0.5 h-4 w-4 shrink-0 text-gh-green" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="order-2 sm:order-1 rounded-2xl border border-gh-border border-l-4 border-l-gh-green bg-white p-8">
+          <p class="text-xs font-semibold uppercase tracking-widest text-gh-fg-subtle">Why it matters</p>
+          <ul class="mt-4 space-y-3 text-sm text-gh-fg-muted">
+            <li class="border-b border-gh-border pb-3">
+              <span class="font-medium text-gh-fg">Owner:</span> One person ships the whole product — backend, frontend, deployment
+            </li>
+            <li class="border-b border-gh-border pb-3">
+              <span class="font-medium text-gh-fg">CTO:</span> Clean architecture, CI/CD, cloud-native — production-ready from day one
+            </li>
+            <li class="pb-0">
+              <span class="font-medium text-gh-fg">COO:</span> Faster releases, fewer handoffs, less coordination overhead
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03: AI & Automation -->
+  <section id="ai" class="py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="grid gap-12 sm:grid-cols-2 sm:items-start">
+        <div>
+          <div class="text-5xl font-bold text-gh-border">03</div>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-gh-fg">
+            AI-Powered Automation
+          </h2>
+          <p class="mt-2 text-base font-medium text-gh-green">
+            Production AI systems, not just prototypes.
+          </p>
+          <p class="mt-4 leading-relaxed text-gh-fg-muted">
+            I build AI-powered automation that runs in production — intelligent document processing,
+            email agents, and knowledge base search. Vertex AI, Gemini, and LLM integration
+            designed for reliability, not demo-day polish.
+          </p>
+          <ul class="mt-6 space-y-2">
+            {[
+              'LLM agent development and orchestration',
+              'Google Vertex AI and Gemini integration',
+              'RAG pipelines and knowledge base construction',
+              'Intelligent document processing with Document AI',
+            ].map(item => (
+              <li class="flex items-start gap-2 text-sm text-gh-fg-muted">
+                <svg class="mt-0.5 h-4 w-4 shrink-0 text-gh-green" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-gh-border border-l-4 border-l-gh-green bg-white p-8">
+          <p class="text-xs font-semibold uppercase tracking-widest text-gh-fg-subtle">Why it matters</p>
+          <ul class="mt-4 space-y-3 text-sm text-gh-fg-muted">
+            <li class="border-b border-gh-border pb-3">
+              <span class="font-medium text-gh-fg">Owner:</span> AI handles routine work — your team focuses on what matters
+            </li>
+            <li class="border-b border-gh-border pb-3">
+              <span class="font-medium text-gh-fg">CTO:</span> Production RAG pipelines and agent workflows — not demos
+            </li>
+            <li class="pb-0">
+              <span class="font-medium text-gh-fg">COO:</span> Customer response times drop, processing errors disappear
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04: Technical Leadership -->
+  <section id="leadership" class="border-t border-gh-border bg-gh-canvas-subtle py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="grid gap-12 sm:grid-cols-2 sm:items-start">
+        <div class="order-1 sm:order-2">
+          <div class="text-5xl font-bold text-gh-border">04</div>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-gh-fg">
+            Technical Leadership
+          </h2>
+          <p class="mt-2 text-base font-medium text-gh-green">
+            Building teams that build great software.
+          </p>
+          <p class="mt-4 leading-relaxed text-gh-fg-muted">
+            I bridge the gap between development and operations. I set technical direction,
+            build engineering teams, and advocate for automation-first practices and a DevOps
+            culture where teams ship confidently.
+          </p>
+          <ul class="mt-6 space-y-2">
+            {[
+              'Team leadership and technical mentorship',
+              'Architecture decision-making and technical strategy',
+              'DevOps culture and automation-first practices',
+              'Cross-functional collaboration with development teams',
+            ].map(item => (
+              <li class="flex items-start gap-2 text-sm text-gh-fg-muted">
+                <svg class="mt-0.5 h-4 w-4 shrink-0 text-gh-green" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="order-2 sm:order-1 rounded-2xl border border-gh-border border-l-4 border-l-gh-green bg-white p-8">
+          <p class="text-xs font-semibold uppercase tracking-widest text-gh-fg-subtle">Why it matters</p>
+          <ul class="mt-4 space-y-3 text-sm text-gh-fg-muted">
+            <li class="border-b border-gh-border pb-3">
+              <span class="font-medium text-gh-fg">Owner:</span> You get a technical leader who writes code every day
+            </li>
+            <li class="border-b border-gh-border pb-3">
+              <span class="font-medium text-gh-fg">CTO:</span> A peer who can own systems integration so you focus on product
+            </li>
+            <li class="pb-0">
+              <span class="font-medium text-gh-fg">COO:</span> Engineering teams ship faster with clear direction and automation
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="border-t border-gh-border py-24">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-gh-fg">
+        Ready to modernize?
+      </h2>
+      <p class="mt-4 text-lg text-gh-fg-muted">
+        I help companies modernize their business operations with Google Cloud.
+      </p>
+      <div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a
+          href="https://www.linkedin.com/in/kborovik"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-lg bg-gh-blue px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-gh-blue-hover"
+        >
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" /></svg>
+          LinkedIn
+        </a>
+        <a
+          href="https://calendar.app.google/cYM3H3TsHsequR587"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-lg bg-gh-green px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-gh-green-hover"
+        >
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+          Book a Call
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

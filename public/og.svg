@@ -1,0 +1,74 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1200 630"
+  width="1200"
+  height="630"
+>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#ffffff" />
+  <!-- Top accent stripe -->
+  <rect x="0" y="0" width="1200" height="4" fill="#1f883d" />
+  <!-- Pinwheel mark: 111×111 scaled ×1.6, centered at x=600 -->
+  <g transform="translate(511, 115) scale(1.6)">
+    <g transform="translate(.025 .025)">
+      <path
+        fill="#f9c513"
+        d="M75.242 94.909a13.912 13.912 0 0 1 0-19.668 27.81 27.81 0 0 1-39.331 0 13.907 13.907 0 0 1-19.668 19.668 55.688 55.688 0 0 0 78.667 0 13.912 13.912 0 0 1-19.668 0Z"
+      />
+      <path
+        fill="#0969da"
+        d="M94.909 16.242a55.626 55.626 0 0 0-78.667 78.667A13.907 13.907 0 0 1 35.91 75.241 27.811 27.811 0 0 1 75.241 35.91a13.907 13.907 0 0 0 19.668-19.668Z"
+      />
+      <circle
+        cx="13.908"
+        cy="13.908"
+        r="13.908"
+        fill="#1f883d"
+        transform="translate(12.166 71.165)"
+      />
+      <path
+        fill="#cf222e"
+        d="M94.909 16.242A13.907 13.907 0 0 1 75.241 35.91a27.81 27.81 0 0 1 0 39.331 13.907 13.907 0 0 0 19.668 19.668 55.7 55.7 0 0 0 0-78.667Z"
+      />
+    </g>
+  </g>
+  <!-- Name -->
+  <text
+    x="600"
+    y="390"
+    text-anchor="middle"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+    font-size="82"
+    font-weight="800"
+    fill="#1f2328"
+    letter-spacing="-1.5"
+  >
+    Konstantin Borovik
+  </text>
+  <!-- Title -->
+  <text
+    x="600"
+    y="450"
+    text-anchor="middle"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+    font-size="34"
+    font-weight="500"
+    fill="#59636e"
+    letter-spacing="0.5"
+  >
+    Tech Lead for Business Modernization
+  </text>
+  <!-- Domain -->
+  <text
+    x="600"
+    y="510"
+    text-anchor="middle"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+    font-size="28"
+    font-weight="600"
+    fill="#1f883d"
+    letter-spacing="0.5"
+  >
+    lab5.ca
+  </text>
+</svg>

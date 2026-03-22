@@ -1,0 +1,245 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Portfolio"
+  description="MailPilot — a production AI email agent designed and built end-to-end on Google Cloud. Business owners: see what I can build. CTOs: review the architecture."
+>
+  <!-- Header -->
+  <section class="mx-auto max-w-3xl px-6 py-24 text-center sm:py-32">
+    <p class="text-sm font-semibold uppercase tracking-widest text-gh-green">Live Demo</p>
+    <h1 class="mt-2 text-4xl font-bold tracking-tight text-gh-fg sm:text-5xl">
+      MailPilot: Live Demo
+    </h1>
+    <p class="mx-auto mt-6 max-w-xl text-lg text-gh-fg-muted">
+      A production AI email platform built end-to-end on Google Cloud.
+      Send it an email and see it work.
+    </p>
+    <!-- Email copy block -->
+    <div class="mt-10 inline-flex items-center gap-3 rounded-xl border border-gh-border bg-white px-5 py-3 font-mono text-base text-gh-fg shadow-sm">
+      <svg class="h-4 w-4 text-gh-fg-subtle flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+      <span class="text-gh-fg">demo@lab5.ca</span>
+      <button
+        id="copy-email-btn"
+        aria-label="Copy email address"
+        class="flex items-center gap-1.5 rounded-md border border-gh-border bg-gh-canvas-subtle px-2.5 py-1 text-xs font-semibold text-gh-fg-muted transition-colors hover:border-gh-border hover:bg-white hover:text-gh-fg cursor-pointer"
+      >
+        <svg id="copy-icon" class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+        <span id="copy-label">Copy</span>
+      </button>
+    </div>
+
+    <div class="mt-4">
+      <a
+        href="mailto:demo@lab5.ca"
+        class="inline-flex items-center gap-2 rounded-lg bg-gh-green px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-gh-green-hover"
+      >
+        Send an email &rarr;
+      </a>
+    </div>
+    <p class="mt-4 text-sm text-gh-fg-subtle">A live AI agent responds to real emails. No signup required.</p>
+  </section>
+
+  <!-- How it works -->
+  <section class="py-20">
+    <div class="mx-auto max-w-3xl px-6">
+      <h2 class="text-2xl font-bold tracking-tight text-gh-fg">How the Demo Works</h2>
+      <ol class="mt-8 space-y-8">
+        <li class="flex gap-4">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gh-green text-sm font-bold text-white">1</span>
+          <div>
+            <p class="font-semibold text-gh-fg">Send a product question</p>
+            <p class="mt-1 text-gh-fg-muted">
+              Email <strong>demo@lab5.ca</strong> with a question about the product specs
+              in the knowledge base. Questions outside the knowledge base will receive
+              a reply explaining how the demo works.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gh-green text-sm font-bold text-white">2</span>
+          <div>
+            <p class="font-semibold text-gh-fg">The agent searches the knowledge base</p>
+            <p class="mt-1 text-gh-fg-muted">
+              An AI agent searches product documentation stored in Google Drive,
+              using a RAG pipeline to find relevant specifications.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gh-green text-sm font-bold text-white">3</span>
+          <div>
+            <p class="font-semibold text-gh-fg">You get an accurate reply</p>
+            <p class="mt-1 text-gh-fg-muted">
+              Within 60 seconds, you receive a professional response grounded in real data.
+              The entire flow — from Gmail notification to reply — is fully automated.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Try it: example questions + source docs -->
+  <section class="border-t border-gh-border bg-gh-canvas-subtle py-20">
+    <div class="mx-auto max-w-3xl px-6">
+      <h2 class="text-2xl font-bold tracking-tight text-gh-fg">Try These Questions</h2>
+      <p class="mt-2 text-gh-fg-muted">Copy a question below and email it to demo@lab5.ca:</p>
+      <ul class="mt-6 space-y-3">
+        {[
+          '"What is the flow rate range for the RO-200 series?"',
+          '"Which water softener model would you recommend for a hospital?"',
+          '"What are the dimensions and weight of the largest RO-200 system?"',
+          '"Does the UV-COM system handle legionella? What certifications does it have?"',
+          '"Compare the SF-100S-48 and SF-100S-54 softener models."',
+          '"What is the maximum operating temperature for the RO systems?"',
+        ].map(prompt => (
+          <li class="flex items-center justify-between gap-3 rounded-lg border border-gh-border bg-white px-4 py-3">
+            <span class="font-mono text-sm text-gh-fg-muted">{prompt}</span>
+            <button
+              data-copy-question
+              data-copy-text={prompt.slice(1, -1)}
+              aria-label="Copy question"
+              class="flex items-center gap-1.5 rounded-md border border-gh-border bg-gh-canvas-subtle px-2.5 py-1 text-xs font-semibold text-gh-fg-muted transition-colors hover:border-gh-border hover:bg-white hover:text-gh-fg cursor-pointer shrink-0"
+            >
+              <svg class="copy-icon h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+              <span class="copy-label">Copy</span>
+            </button>
+          </li>
+        ))}
+      </ul>
+      <p class="mt-6 text-sm text-gh-fg-subtle">
+        These questions are based on real product specification sheets.
+        <a
+          href="https://drive.google.com/drive/folders/1M08EqIT8IwvNHByaBX2sZiG4SWgMalM8"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-medium text-gh-green transition-colors hover:text-gh-green-hover"
+        >Review the source docs</a> to verify the agent's accuracy.
+      </p>
+    </div>
+  </section>
+
+  <!-- Architecture Overview -->
+  <section class="border-t border-gh-border bg-gh-canvas-subtle py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <h2 class="text-2xl font-bold tracking-tight text-gh-fg">Architecture & Technical Decisions</h2>
+      <p class="mt-4 max-w-2xl text-gh-fg-muted">
+        MailPilot is an event-driven email automation platform built on Google Cloud
+        and Google Workspace. Here's how it works and why I made these choices.
+      </p>
+
+      <div class="mt-10 grid gap-6 sm:grid-cols-3">
+        <div class="rounded-2xl border border-gh-border bg-white p-6">
+          <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-gh-blue/10">
+            <svg class="h-5 w-5 text-gh-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-sm font-semibold text-gh-fg">Frontend</h3>
+          <p class="mt-2 text-sm text-gh-fg-muted">
+            Astro SSG, Tailwind CSS, Cloudflare Workers. Static generation for zero cold-start
+            latency, deployed at the edge globally.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-gh-border bg-white p-6">
+          <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-gh-green/10">
+            <svg class="h-5 w-5 text-gh-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+            </svg>
+          </div>
+          <h3 class="text-sm font-semibold text-gh-fg">Backend</h3>
+          <p class="mt-2 text-sm text-gh-fg-muted">
+            Python, Google Cloud Functions, Cloud Pub/Sub. Event-driven architecture triggered by
+            Gmail push notifications. Serverless for scale-to-zero costs.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-gh-border bg-white p-6">
+          <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-gh-blue/10">
+            <svg class="h-5 w-5 text-gh-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-sm font-semibold text-gh-fg">AI Layer</h3>
+          <p class="mt-2 text-sm text-gh-fg-muted">
+            LLM integration, Google Drive knowledge base. RAG pipeline searches product
+            documentation. Structured prompts guide multi-turn email conversations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h2 class="text-2xl font-bold tracking-tight text-gh-fg">
+        Let's build something like this for you
+      </h2>
+      <p class="mt-4 text-gh-fg-muted">
+        Imagine this for your business. MailPilot demonstrates my approach: identify a real
+        business problem, connect systems on Google Cloud, build end-to-end, and deploy to production.
+      </p>
+      <div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a
+          href="https://www.linkedin.com/in/kborovik"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-lg bg-gh-blue px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-gh-blue-hover"
+        >
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" /></svg>
+          LinkedIn
+        </a>
+        <a
+          href="https://calendar.app.google/cYM3H3TsHsequR587"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-lg bg-gh-green px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-gh-green-hover"
+        >
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+          Book a Call
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const btn = document.getElementById('copy-email-btn');
+    const label = document.getElementById('copy-label');
+    const icon = document.getElementById('copy-icon');
+
+    btn?.addEventListener('click', () => {
+      navigator.clipboard.writeText('demo@lab5.ca').then(() => {
+        if (label) label.textContent = '\u2713 Copied';
+        if (icon) icon.style.display = 'none';
+        setTimeout(() => {
+          if (label) label.textContent = 'Copy';
+          if (icon) icon.style.display = '';
+        }, 2000);
+      });
+    });
+
+    document.querySelectorAll('[data-copy-question]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const text = btn.getAttribute('data-copy-text') || '';
+        const labelEl = btn.querySelector('.copy-label');
+        const iconEl = btn.querySelector('.copy-icon');
+        navigator.clipboard.writeText(text).then(() => {
+          if (labelEl) labelEl.textContent = '\u2713 Copied';
+          if (iconEl) (iconEl as HTMLElement).style.display = 'none';
+          setTimeout(() => {
+            if (labelEl) labelEl.textContent = 'Copy';
+            if (iconEl) (iconEl as HTMLElement).style.display = '';
+          }, 2000);
+        });
+      });
+    });
+  </script>
+</Layout>

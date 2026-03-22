@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "lab5-ca",
+  "compatibility_date": "2025-09-27",
+  "routes": [
+    { "pattern": "lab5.ca", "custom_domain": true },
+    { "pattern": "mailpilot.ca", "custom_domain": true }
+  ],
+  "assets": {
+    "directory": "./dist"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
