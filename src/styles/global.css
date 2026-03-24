@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+html {
+  font-size: 18px;
+}
+
 @theme {
   /* Typography: GitHub system font stack */
   --font-sans:
