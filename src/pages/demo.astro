@@ -85,11 +85,37 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Try it: example questions + source docs -->
+  <!-- Product Specifications -->
+  <section class="border-t border-gh-border py-20">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h2 class="text-2xl font-bold tracking-tight text-gh-fg">Product Specifications</h2>
+      <p class="mt-4 text-gh-fg-muted">
+        These questions are based on real product specification sheets. Review the source documents to verify the agent's accuracy.
+      </p>
+      <a
+        href="https://drive.google.com/drive/folders/1cqgBcAh8JABFC86VfDA4-Iub8-juMEP2"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-6 inline-flex items-center gap-2 rounded-lg bg-gh-blue px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-gh-blue-hover"
+      >
+        <svg class="h-5 w-5" viewBox="0 0 87.3 78" fill="currentColor">
+          <path d="M6.6 66.85l3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8H1.2c0 1.55.4 3.1 1.2 4.5l4.2 9.35z" fill="#0066DA"/>
+          <path d="M43.65 25.15L29.9 1.35c-1.35.8-2.5 1.9-3.3 3.3L1.2 52.7c-.8 1.4-1.2 2.95-1.2 4.5h27.5l16.15-32.05z" fill="#00AC47"/>
+          <path d="M73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5H59.85L55 62.1l-1.45 2.55L73.55 76.8z" fill="#EA4335"/>
+          <path d="M43.65 25.15L57.4 1.35C56.05.55 54.5 0 52.9 0H34.4c-1.6 0-3.15.55-4.5 1.35l13.75 23.8z" fill="#00832D"/>
+          <path d="M59.85 53H27.5L13.75 76.8c1.35.8 2.9 1.2 4.5 1.2H69.05c1.6 0 3.15-.45 4.5-1.2L59.85 53z" fill="#2684FC"/>
+          <path d="M73.4 26.5l-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3L43.65 25.15 59.85 53h27.45c0-1.55-.4-3.1-1.2-4.5L73.4 26.5z" fill="#FFBA00"/>
+        </svg>
+        Google Drive
+      </a>
+    </div>
+  </section>
+
+  <!-- Try it: example questions -->
   <section class="border-t border-gh-border bg-gh-canvas-subtle py-20">
     <div class="mx-auto max-w-3xl px-6">
       <h2 class="text-2xl font-bold tracking-tight text-gh-fg">Try These Questions</h2>
-      <p class="mt-2 text-gh-fg-muted">Copy a question below and email it to demo@lab5.ca:</p>
+      <p class="mt-2 text-gh-fg-muted">Copy a question below and email it to <strong>demo@lab5.ca</strong></p>
       <ul class="mt-6 space-y-3">
         {[
           '"What is the flow rate range for the RO-200 series?"',
@@ -115,15 +141,6 @@ import Layout from '../layouts/Layout.astro';
           </li>
         ))}
       </ul>
-      <p class="mt-6 text-sm text-gh-fg-subtle">
-        These questions are based on real product specification sheets.
-        <a
-          href="https://drive.google.com/drive/folders/1M08EqIT8IwvNHByaBX2sZiG4SWgMalM8"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="font-medium text-gh-green transition-colors hover:text-gh-green-hover"
-        >Review the source docs</a> to verify the agent's accuracy.
-      </p>
     </div>
   </section>
 
@@ -203,7 +220,7 @@ import Layout from '../layouts/Layout.astro';
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 rounded-lg bg-gh-green px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-gh-green-hover"
         >
-          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7v-5z"/></svg>
           Book a Call
         </a>
       </div>
