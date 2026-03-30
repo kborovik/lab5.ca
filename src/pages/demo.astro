@@ -4,17 +4,17 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout
   title="Portfolio"
-  description="MailPilot — a production AI email agent designed and built end-to-end on Google Cloud. Business owners: see what gets built. CTOs: review the architecture."
+  description="MailPilot is a live example of inbox automation on Google Cloud: grounded answers, source documents, and production-ready workflow design."
 >
   <!-- Header -->
   <section class="mx-auto max-w-3xl px-6 py-12 text-center sm:py-16">
     <p class="text-sm font-semibold uppercase tracking-widest text-gh-green">Live Demo</p>
     <h1 class="mt-2 text-4xl font-bold tracking-tight text-gh-fg sm:text-5xl">
-      MailPilot: Live Demo
+      MailPilot: inbox automation in production
     </h1>
     <p class="mx-auto mt-6 max-w-xl text-lg text-gh-fg-muted">
-      A production AI email platform built end-to-end on Google Cloud.
-      Send it an email and see it work.
+      This demo shows the kind of workflow I build for clients: an inbox-driven
+      process that reads incoming requests, checks source material, and replies automatically.
     </p>
     <!-- Email copy block -->
     <div class="mt-10 inline-flex items-center gap-3 rounded-xl border border-gh-border bg-white px-5 py-3 font-mono text-base text-gh-fg shadow-sm">
@@ -58,9 +58,9 @@ import Layout from '../layouts/Layout.astro';
           <div>
             <p class="font-semibold text-gh-fg">Send a product question</p>
             <p class="mt-1 text-gh-fg-muted">
-              Email <strong>demo@lab5.ca</strong> with a question about the product specs
-              in the knowledge base. Questions outside the knowledge base will receive
-              a reply explaining how the demo works.
+              Email <strong>demo@lab5.ca</strong> with a question about the products in the
+              knowledge base. This simulates the kind of inbound request a real operations or
+              sales team handles every day.
             </p>
           </div>
         </li>
@@ -69,8 +69,8 @@ import Layout from '../layouts/Layout.astro';
           <div>
             <p class="font-semibold text-gh-fg">The agent searches the knowledge base</p>
             <p class="mt-1 text-gh-fg-muted">
-              An AI agent searches product documentation stored in Google Drive,
-              using a RAG pipeline to find relevant specifications.
+              The system checks source documents in Google Drive and finds the relevant product
+              information before drafting a reply.
             </p>
           </div>
         </li>
@@ -79,8 +79,8 @@ import Layout from '../layouts/Layout.astro';
           <div>
             <p class="font-semibold text-gh-fg">You get an accurate reply</p>
             <p class="mt-1 text-gh-fg-muted">
-              Within 60 seconds, you receive a professional response grounded in real data.
-              The entire flow — from Gmail notification to reply — is fully automated.
+              Within 60 seconds, you receive a response grounded in real source material. If the
+              answer is not in the knowledge base, the system declines instead of bluffing.
             </p>
           </div>
         </li>
@@ -93,7 +93,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="mx-auto max-w-3xl px-6 text-center">
       <h2 class="text-2xl font-bold tracking-tight text-gh-fg">Product Specifications</h2>
       <p class="mt-4 text-gh-fg-muted">
-        These questions are based on real product specification sheets. Review the source documents to verify the agent's accuracy.
+        These questions are based on real product specification sheets. You can review the source documents yourself and verify what the agent should know.
       </p>
       <a
         href="https://drive.google.com/drive/folders/1cqgBcAh8JABFC86VfDA4-Iub8-juMEP2"
@@ -124,7 +124,7 @@ import Layout from '../layouts/Layout.astro';
           <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gh-green text-xs font-bold text-white">&#10003;</span>
           <h3 class="text-lg font-semibold text-gh-fg">Questions the agent can answer</h3>
         </div>
-        <p class="mt-1 ml-8 text-sm text-gh-fg-muted">These questions match products in the knowledge base. The agent will reply with accurate, sourced answers.</p>
+        <p class="mt-1 ml-8 text-sm text-gh-fg-muted">These questions match products in the knowledge base. The agent should respond with answers grounded in the source files.</p>
         <ul class="mt-4 space-y-3">
           {[
             '"What are the dimensions and weight of the TW-18.0K-1240 reverse osmosis system?"',
@@ -157,7 +157,7 @@ import Layout from '../layouts/Layout.astro';
           <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gh-fg-subtle text-xs font-bold text-white">&times;</span>
           <h3 class="text-lg font-semibold text-gh-fg">Questions the agent will decline</h3>
         </div>
-        <p class="mt-1 ml-8 text-sm text-gh-fg-muted">These products are not in the knowledge base. The agent will tell you it doesn't have that information rather than guess.</p>
+        <p class="mt-1 ml-8 text-sm text-gh-fg-muted">These products are not in the knowledge base. The agent should tell you it does not have that information rather than guess.</p>
         <ul class="mt-4 space-y-3">
           {[
             '"What is the price of the Pentair Evoqua chlorine dioxide generator?"',
@@ -188,8 +188,8 @@ import Layout from '../layouts/Layout.astro';
     <div class="mx-auto max-w-5xl px-6">
       <h2 class="text-2xl font-bold tracking-tight text-gh-fg">Architecture & Technical Decisions</h2>
       <p class="mt-4 max-w-2xl text-gh-fg-muted">
-        MailPilot is an event-driven email automation platform built on Google Cloud
-        and Google Workspace. Here's how it works and the reasoning behind these choices.
+        MailPilot is built on Google Cloud and Google Workspace to show a practical pattern:
+        automate inbound work, ground responses in source material, and keep the system simple enough to operate.
       </p>
 
       <div class="mt-10 grid gap-6 sm:grid-cols-3">
@@ -201,8 +201,8 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <h3 class="text-sm font-semibold text-gh-fg">Frontend</h3>
           <p class="mt-2 text-sm text-gh-fg-muted">
-            Astro SSG, Tailwind CSS, Cloudflare Workers. Static generation for zero cold-start
-            latency, deployed at the edge globally.
+            The public demo is lightweight and fast so visitors can test the workflow immediately,
+            without waiting on an app shell or login flow.
           </p>
         </div>
         <div class="rounded-2xl border border-gh-border bg-white p-6">
@@ -213,8 +213,8 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <h3 class="text-sm font-semibold text-gh-fg">Backend</h3>
           <p class="mt-2 text-sm text-gh-fg-muted">
-            Python, Google Cloud Functions, Cloud Pub/Sub. Event-driven architecture triggered by
-            Gmail push notifications. Serverless for scale-to-zero costs.
+            Incoming emails trigger an automated workflow that processes the request and sends a
+            reply without manual intervention.
           </p>
         </div>
         <div class="rounded-2xl border border-gh-border bg-white p-6">
@@ -225,8 +225,8 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <h3 class="text-sm font-semibold text-gh-fg">AI Layer</h3>
           <p class="mt-2 text-sm text-gh-fg-muted">
-            LLM integration, Google Drive knowledge base. RAG pipeline searches product
-            documentation. Structured prompts guide multi-turn email conversations.
+            The model works against a defined knowledge base so responses stay grounded. When the
+            answer is missing, the workflow fails safely instead of improvising.
           </p>
         </div>
       </div>
@@ -240,8 +240,8 @@ import Layout from '../layouts/Layout.astro';
         Let's build something like this for you
       </h2>
       <p class="mt-4 text-gh-fg-muted">
-        Imagine this for your business. MailPilot demonstrates the approach: identify a real
-        business problem, connect systems on Google Cloud, build end-to-end, and deploy to production.
+        MailPilot is one example. The same pattern can automate shared inboxes, quoting workflows,
+        document intake, internal knowledge lookup, and other repetitive operational work.
       </p>
       <div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
         <a
