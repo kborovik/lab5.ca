@@ -58,18 +58,18 @@ linkedin-banner.html          # LinkedIn banner source — render to PNG via hea
 
 **Palette**: GitHub Primer Light (https://primer.style)
 
-| Token              | Hex       | Usage                                                      |
-| ------------------ | --------- | ---------------------------------------------------------- |
-| `gh-canvas`        | `#ffffff` | Page background                                            |
-| `gh-canvas-subtle` | `#f6f8fa` | Alternate sections                                         |
-| `gh-border`        | `#d1d9e0` | Borders                                                    |
-| `gh-fg`            | `#1f2328` | Primary text                                               |
-| `gh-fg-muted`      | `#59636e` | Secondary text                                             |
-| `gh-fg-subtle`     | `#818b98` | Tertiary text                                              |
-| `gh-green`         | `#1f883d` | **Primary accent** — Book a Call, See My Work, nav active  |
-| `gh-green-hover`   | `#1a7f37` | Primary button hover                                       |
-| `gh-blue`          | `#0969da` | **Secondary accent** — LinkedIn buttons                    |
-| `gh-blue-hover`    | `#0550ae` | Secondary button hover                                     |
+| Token              | Hex       | Usage                                                     |
+| ------------------ | --------- | --------------------------------------------------------- |
+| `gh-canvas`        | `#ffffff` | Page background                                           |
+| `gh-canvas-subtle` | `#f6f8fa` | Alternate sections                                        |
+| `gh-border`        | `#d1d9e0` | Borders                                                   |
+| `gh-fg`            | `#1f2328` | Primary text                                              |
+| `gh-fg-muted`      | `#59636e` | Secondary text                                            |
+| `gh-fg-subtle`     | `#818b98` | Tertiary text                                             |
+| `gh-green`         | `#1f883d` | **Primary accent** — Book a Call, See My Work, nav active |
+| `gh-green-hover`   | `#1a7f37` | Primary button hover                                      |
+| `gh-blue`          | `#0969da` | **Secondary accent** — LinkedIn buttons                   |
+| `gh-blue-hover`    | `#0550ae` | Secondary button hover                                    |
 
 **Fonts**: GitHub system font stack (no web fonts) — `--font-sans` and `--font-mono` in `@theme`
 
@@ -83,12 +83,12 @@ linkedin-banner.html          # LinkedIn banner source — render to PNG via hea
 **Tagline**: "I modernize business operations with Google Cloud"
 **Core expertise**: Systems integration (ERP, CRM, custom software) with focus on Google Cloud Technologies. AI is part of the GCP offering, not the lead.
 
-| Page       | Route        | Purpose                                                    |
-| ---------- | ------------ | ---------------------------------------------------------- |
-| Home       | `/`          | Hero, "How I Help" cards, MailPilot featured project, CTA  |
-| Expertise  | `/expertise` | Systems Integration, Custom Software, AI Automation, Leadership — with Owner/CTO/COO value props |
-| Live Demo  | `/demo`      | MailPilot demo, example questions, architecture overview    |
-| About      | `/about`     | Bio, LinkedIn, Book a Call                                 |
+| Page      | Route        | Purpose                                                                                          |
+| --------- | ------------ | ------------------------------------------------------------------------------------------------ |
+| Home      | `/`          | Hero, "How I Help" cards, MailPilot featured project, CTA                                        |
+| Expertise | `/expertise` | Systems Integration, Custom Software, AI Automation, Leadership — with Owner/CTO/COO value props |
+| Live Demo | `/demo`      | MailPilot demo, example questions, architecture overview                                         |
+| About     | `/about`     | Bio, LinkedIn, Book a Call                                                                       |
 
 **Primary CTA**: Book a Call — Google Calendar (`https://calendar.app.google/cYM3H3TsHsequR587`)
 **Secondary CTA**: LinkedIn — `https://www.linkedin.com/in/kborovik`
@@ -146,10 +146,10 @@ GitHub Actions pipelines in `.github/workflows/`:
 
 **Required GitHub secrets** (`Settings → Secrets → Actions`):
 
-| Secret | Description |
-|--------|-------------|
-| `CLOUDFLARE_API_TOKEN` | Cloudflare API token with "Edit Cloudflare Workers" permissions |
-| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare account ID |
+| Secret                  | Description                                                     |
+| ----------------------- | --------------------------------------------------------------- |
+| `CLOUDFLARE_API_TOKEN`  | Cloudflare API token with "Edit Cloudflare Workers" permissions |
+| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare account ID                                           |
 
 ## Gotchas
 
@@ -161,7 +161,7 @@ GitHub Actions pipelines in `.github/workflows/`:
 
 ## TODO
 
-- [ ] Wire up `demo@lab5.ca` to MailPilot agent (lives in `/Users/kb/github/pilot`)
+- [ ] Wire up `demo@lab5.ca` to MailPilot agent (lives in `~/github/mailpilot`)
 - [ ] Define post-demo CTA in the auto-reply
 - [ ] Configure Cloudflare redirect from `/services` → `/expertise`
 
