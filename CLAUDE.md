@@ -1,6 +1,6 @@
 # lab5.ca
 
-Personal portfolio and career site for Konstantin Borovik — Tech Lead for Business Modernization. Positioning: systems integration (ERP, CRM, custom software) with focus on Google Cloud Technologies. MailPilot (the AI email platform in `/Users/kb/github/pilot`) is featured as a proof-of-capability demo, not a product being sold.
+Personal portfolio and career site for Konstantin Borovik — AI Productivity Engineer. Positioning: AI-powered automation for repetitive business processes (email, documents, workflows, data entry). Cloud platforms (GCP, Azure, AWS) are implementation details, not the pitch. MailPilot (the AI email platform in `/Users/kb/github/pilot`) is featured as a proof-of-capability demo showing how AI handles real business communication.
 
 ## Commands
 
@@ -36,8 +36,8 @@ src/
 │   ├── Footer.astro          # Footer links, copyright
 │   └── Logo.astro            # Typographic logo — unused after pivot
 ├── pages/
-│   ├── index.astro           # / — hero, "How I Help" cards, MailPilot featured project, CTA
-│   ├── expertise.astro       # /expertise — Systems Integration, Custom Software, AI Automation, Leadership
+│   ├── index.astro           # / — hero, AI productivity pitch, MailPilot featured project, CTA
+│   ├── expertise.astro       # /expertise — AI Email, Document Processing, Workflow Automation, Data & Reporting
 │   ├── demo.astro            # /demo (Live Demo) — MailPilot demo, example questions, architecture
 │   └── about.astro           # /about — bio, LinkedIn, Book a Call
 └── styles/
@@ -79,20 +79,20 @@ linkedin-banner.html          # LinkedIn banner source — render to PNG via hea
 
 ## Site positioning
 
-**Title**: Tech Lead for Business Modernization
-**Tagline**: "I modernize business operations with Google Cloud"
-**Core expertise**: Systems integration (ERP, CRM, custom software) with focus on Google Cloud Technologies. AI is part of the GCP offering, not the lead.
+**Title**: AI Productivity Engineer
+**Tagline**: "I modernize business operations with AI to make companies move faster"
+**Core expertise**: AI-powered automation for repetitive business processes (email, documents, workflows, data entry). Cloud platforms (GCP, Azure, AWS) are implementation details.
 
-| Page      | Route        | Purpose                                                                                          |
-| --------- | ------------ | ------------------------------------------------------------------------------------------------ |
-| Home      | `/`          | Hero, "How I Help" cards, MailPilot featured project, CTA                                        |
-| Expertise | `/expertise` | Systems Integration, Custom Software, AI Automation, Leadership — with Owner/CTO/COO value props |
-| Live Demo | `/demo`      | MailPilot demo, example questions, architecture overview                                         |
-| About     | `/about`     | Bio, LinkedIn, Book a Call                                                                       |
+| Page       | Route        | Purpose                                                    |
+| ---------- | ------------ | ---------------------------------------------------------- |
+| Home       | `/`          | Hero, AI productivity pitch, MailPilot (reframed), CTA     |
+| Expertise  | `/expertise` | AI Email & Communication, Document Processing, Workflow Automation, Data & Reporting |
+| Live Demo  | `/demo`      | MailPilot demo — "see how AI handles real business email"  |
+| About      | `/about`     | Bio, LinkedIn, Book a Call                                 |
 
 **Primary CTA**: Book a Call — Google Calendar (`https://calendar.app.google/cYM3H3TsHsequR587`)
 **Secondary CTA**: LinkedIn — `https://www.linkedin.com/in/kborovik`
-**Demo CTA**: Try the demo — send an email to `demo@lab5.ca` (proof of capability, not a product)
+**Demo CTA**: Try the demo — send an email to `demo@lab5.ca` (see how AI handles real business email)
 
 ## Playwright MCP (Browser Review)
 
