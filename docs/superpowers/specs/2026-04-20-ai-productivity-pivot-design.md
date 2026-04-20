@@ -14,14 +14,14 @@ Pivot lab5.ca from "Tech Lead for Business Modernization — Google Cloud" to "A
 
 ## 2. Core Messaging Framework
 
-| Element | Current | New |
-|---------|---------|-----|
-| **Title** | Tech Lead for Business Modernization | AI Productivity Engineer |
-| **Tagline** | "I modernize business operations with Google Cloud" | "I modernize business operations with AI to make companies move faster" |
-| **Core expertise** | Systems integration (ERP, CRM, custom software) with focus on Google Cloud Technologies | AI-powered automation for repetitive business processes — email, documents, workflows, data entry |
-| **Cloud positioning** | GCP is the lead | Cloud is implementation detail (GCP, Azure, AWS — whatever the company has) |
-| **Target audience** | Business owners and CTOs at 20-100 person companies using Google Workspace | Business owners, COOs, and ops leaders at companies where manual processes slow them down |
-| **MailPilot framing** | "See what I can build on GCP" | "See how AI handles real business communication" |
+| Element               | Current                                                                                 | New                                                                                               |
+| --------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| **Title**             | Tech Lead for Business Modernization                                                    | AI Productivity Engineer                                                                          |
+| **Tagline**           | "I modernize business operations with Google Cloud"                                     | "I modernize business operations with AI to make companies move faster"                           |
+| **Core expertise**    | Systems integration (ERP, CRM, custom software) with focus on Google Cloud Technologies | AI-powered automation for repetitive business processes — email, documents, workflows, data entry |
+| **Cloud positioning** | GCP is the lead                                                                         | Cloud is implementation detail (GCP, Azure, AWS — whatever the company has)                       |
+| **Target audience**   | Business owners and CTOs at 20-100 person companies using Google Workspace              | Business owners, COOs, and ops leaders at companies where manual processes slow them down         |
+| **MailPilot framing** | "See what I can build on GCP"                                                           | "See how AI handles real business communication"                                                  |
 
 ### Key rules
 
@@ -44,21 +44,21 @@ Pivot lab5.ca from "Tech Lead for Business Modernization — Google Cloud" to "A
 
 #### "What Changes" card (desktop sidebar)
 
-| # | Current | New |
-|---|---------|-----|
-| 1 | Manual workflows become automated — "AI handles repetitive tasks 24/7" | Manual work becomes automated — "AI handles repetitive tasks 24/7" |
-| 2 | Systems move to Google Cloud — "Scalable, secure, cost-effective" | Email and documents process themselves — "Responses, summaries, filing — done" |
-| 3 | Disconnected tools get integrated — "ERP, email, documents — connected" | Disconnected tools get integrated — "ERP, email, documents — connected" |
-| 4 | Your team gets technical leadership — "20+ years of hands-on experience" | Your company gets faster — "Same team, twice the output" |
+| #   | Current                                                                  | New                                                                            |
+| --- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| 1   | Manual workflows become automated — "AI handles repetitive tasks 24/7"   | Manual work becomes automated — "AI handles repetitive tasks 24/7"             |
+| 2   | Systems move to Google Cloud — "Scalable, secure, cost-effective"        | Email and documents process themselves — "Responses, summaries, filing — done" |
+| 3   | Disconnected tools get integrated — "ERP, email, documents — connected"  | Disconnected tools get integrated — "ERP, email, documents — connected"        |
+| 4   | Your team gets technical leadership — "20+ years of hands-on experience" | Your company gets faster — "Same team, twice the output"                       |
 
 #### "How I Help" cards
 
-| # | Current | New |
-|---|---------|-----|
-| 01 | **Systems Integration** — Connect ERP, CRM, email, and documents into unified workflows on Google Cloud | **AI Email & Communication** — Automate email responses, triage, and customer communication — AI handles routine messages so your team focuses on what matters |
-| 02 | **Custom Software Development** — End-to-end product development on Google Cloud | **Document Processing** — Extract data from invoices, contracts, and forms automatically — stop manual data entry and reduce errors |
-| 03 | **AI-Powered Automation** — Production AI systems that handle routine work | **Workflow Automation** — Connect your business systems and automate repetitive processes — orders, approvals, reporting flow without human bottlenecks |
-| 04 | **Technical Leadership** — Set technical direction, build engineering teams | **Data & Reporting** — Turn scattered data into actionable reports — AI aggregates, summarizes, and surfaces what matters |
+| #   | Current                                                                                                 | New                                                                                                                                                            |
+| --- | ------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 01  | **Systems Integration** — Connect ERP, CRM, email, and documents into unified workflows on Google Cloud | **AI Email & Communication** — Automate email responses, triage, and customer communication — AI handles routine messages so your team focuses on what matters |
+| 02  | **Custom Software Development** — End-to-end product development on Google Cloud                        | **Document Processing** — Extract data from invoices, contracts, and forms automatically — stop manual data entry and reduce errors                            |
+| 03  | **AI-Powered Automation** — Production AI systems that handle routine work                              | **Workflow Automation** — Connect your business systems and automate repetitive processes — orders, approvals, reporting flow without human bottlenecks        |
+| 04  | **Technical Leadership** — Set technical direction, build engineering teams                             | **Data & Reporting** — Turn scattered data into actionable reports — AI aggregates, summarizes, and surfaces what matters                                      |
 
 #### MailPilot featured section
 
@@ -147,7 +147,6 @@ Pivot lab5.ca from "Tech Lead for Business Modernization — Google Cloud" to "A
 
 - **Subtitle**: Change "Tech Lead for Business Modernization" to "AI Productivity Engineer"
 - **Bio paragraphs** (rewritten):
-
   1. "20+ years progressing from systems engineering to cloud architecture to building production AI. From enterprise data centers to global payment infrastructure to commercial real estate platforms — I've built and led at every scale."
 
   2. "What I do now: I automate repetitive business processes with AI. Email, documents, workflows, data entry — if your team does it manually and it follows a pattern, AI can handle it."
