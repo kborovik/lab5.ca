@@ -2,7 +2,7 @@
 
 ## Headline
 
-Tech Lead | I modernize business operations with Google Cloud | lab5.ca
+AI Productivity Engineer | I modernize business operations with AI | lab5.ca
 
 ## Location
 
@@ -20,22 +20,22 @@ linkedin.com/in/kborovik
 
 ## About
 
-I modernize business operations with Google Cloud.
+I modernize business operations with AI to make companies move faster.
 
-20+ years progressing from systems engineering to cloud architecture to building production platforms on GCP. I started building infrastructure at TD Bank, led teams at CDW, built cloud platforms at PayPal and Colliers International, and now build independently.
+20+ years progressing from systems engineering to cloud architecture to building production AI. I started building infrastructure at TD Bank, led teams at CDW, built cloud platforms at PayPal and Colliers International, and now build AI productivity tools independently.
 
-What I do: systems integration (ERP, CRM, custom software) with Google Cloud Technologies. I connect disconnected business systems, automate manual workflows, and bring technical leadership to companies that have outgrown their current setup.
+What I do: I automate repetitive business processes with AI — email, documents, workflows, data entry. If your team does it manually and it follows a pattern, AI can handle it.
 
-My latest project is MailPilot (lab5.ca) — a live demo of what I build for businesses:
+My latest project is MailPilot (lab5.ca) — a live demo of AI handling real business email:
 
-- **Google Workspace Integration:** Gmail, Google Drive, Sheets, Calendar — connected into automated workflows
-- **Document Management:** Google Drive API + Document AI for intelligent document processing and retrieval
-- **Cloud Infrastructure:** Cloud Functions, Cloud Pub/Sub, Terraform IaC — event-driven architecture on GCP
-- **AI via Vertex AI:** Production RAG pipelines, agent workflows, document understanding
+- **AI Email Processing:** Reads incoming email, searches a knowledge base, drafts accurate responses — fully automated
+- **Document Intelligence:** AI-powered document processing, data extraction, and knowledge base search
+- **Production Architecture:** Event-driven backend, serverless infrastructure, CI/CD — built to run reliably, not just demo well
+- **Full-Stack Delivery:** Python backend, TypeScript frontend, edge deployment — shipped end-to-end by one person
 
-Try it yourself: send any email to demo@lab5.ca and see what I can build.
+Try it yourself: send any email to demo@lab5.ca and see AI respond in 60 seconds.
 
-I'm looking for a role at a 20–100 person company in North America where I can modernize business operations with Google Cloud. Ideal fit: a company using (or open to) Google Workspace and GCP that needs someone who writes code every day, makes architecture decisions, and builds engineering teams.
+I'm looking for a company where I can make business operations faster with AI. Ideal fit: a company where manual processes are the bottleneck and leadership is ready to invest in automation. I work with whatever cloud platform the company has — GCP, Azure, AWS.
 
 lab5.ca | github.com/kborovik | hello@lab5.ca
 
@@ -43,19 +43,19 @@ lab5.ca | github.com/kborovik | hello@lab5.ca
 
 ## Experience
 
-**Tech Lead — Business Modernization**
+**AI Productivity Engineer**
 lab5.ca
 _January 2026 — Present_
 
-Leading end-to-end systems integration on Google Cloud — connecting business systems (ERP, CRM, email, documents) to GCP infrastructure, with MailPilot as a live proof of capability.
+Building production AI systems that automate repetitive business processes — email, documents, workflows, data entry. MailPilot is a live proof of capability.
 
-Technologies: Google Cloud Platform · Google Workspace (Gmail, Drive, Sheets, Calendar) · Vertex AI · Document AI · Cloud Functions · Cloud Pub/Sub · Terraform · Python · TypeScript
+Technologies: Python · TypeScript · LLM Agents · RAG Pipelines · Cloud Functions · Pub/Sub · Terraform · Google Cloud Platform · Vertex AI · Document AI
 
-- Integrating Google Workspace (Gmail, Drive, Sheets, Calendar) with GCP backend services for automated business workflows
-- Building document management pipelines with Google Drive API and Document AI for intelligent processing
-- Connecting business systems (ERP, CRM, email) through event-driven architecture on Cloud Functions and Cloud Pub/Sub
-- Deploying Vertex AI and LLM integrations for production automation — RAG pipelines, agent workflows, document understanding
-- Managing cloud infrastructure as code with Terraform across GCP projects
+- Building AI agents that read, triage, and respond to business email automatically
+- Developing document processing pipelines — data extraction from invoices, contracts, and forms
+- Connecting business systems (ERP, CRM, email) through event-driven architecture
+- Deploying LLM integrations for production automation — RAG pipelines, agent workflows, document understanding
+- Managing cloud infrastructure as code with Terraform
 
 ---
 
@@ -142,27 +142,28 @@ _2000 — 2002_
 
 ## Skills
 
-**Google Cloud Platform**
+**AI & Machine Learning**
 
-- Cloud Functions
-- Cloud Run
-- Cloud Pub/Sub
-- Cloud Composer (Airflow)
-- Cloud SQL (PostgreSQL)
-- Google Kubernetes Engine (GKE)
-- Vertex AI / Gemini API
-- Document AI
-- IAM & Security Command Center
-- Google Workspace API
-- Google Drive API
-
-**AI & Machine Learning (via GCP + partners)**
-
+- LLM Agent Development
+- RAG Pipelines
+- Prompt Engineering
 - Vertex AI / Gemini API
 - Claude API (Anthropic)
-- RAG Pipelines
-- LLM Agent Development
-- Prompt Engineering
+- Document AI
+
+**Languages & Frameworks**
+
+- Python
+- TypeScript
+- Bash
+- Astro
+- Tailwind CSS
+
+**Cloud Platforms**
+
+- Google Cloud Platform (Cloud Functions, Cloud Run, Pub/Sub, Cloud SQL, GKE, IAM)
+- Amazon Web Services
+- Microsoft Azure
 
 **Infrastructure & DevOps**
 
@@ -176,14 +177,6 @@ _2000 — 2002_
 - Elastic Observability
 - HashiCorp Vault
 - Cloudflare Workers
-
-**Languages & Frameworks**
-
-- Python
-- TypeScript
-- Bash
-- Astro
-- Tailwind CSS
 
 **Security & Compliance**
 
@@ -203,8 +196,8 @@ _2000 — 2002_
 ## LinkedIn Tips
 
 - **Creator mode**: Turn on for "Follow" button and featured section prominence
-- **Headline keywords**: "Tech Lead", "Google Cloud", "GCP", "systems integration", "business modernization" are high-search terms
-- **Activity**: Post 1-2 times per week about GCP architecture, systems integration, or modernizing business operations with Google Cloud
-- **CTA in every post**: End with "See it in action at lab5.ca" or "Try the demo — send any email to demo@lab5.ca"
+- **Headline keywords**: "AI Productivity", "AI Automation", "AI Engineer", "business operations" are high-search terms
+- **Activity**: Post 1-2 times per week about AI productivity, automating repetitive business processes, real examples of AI handling manual work
+- **CTA in every post**: End with "See AI handle real email at lab5.ca" or "Try the demo — send any email to demo@lab5.ca"
 - **Custom URL**: linkedin.com/in/kborovik
-- **Open to work**: Enable the "Open to Work" badge for Tech Lead, CTO, VP Engineering, Lead Developer roles in North America
+- **Open to work**: Enable the "Open to Work" badge for AI Engineer, AI Productivity Engineer, Automation Lead, Tech Lead roles in North America
