@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <!--
-  Konstantin Borovik — LinkedIn Banner
-  Dimensions: 1584 × 396 px
+  Konstantin Borovik — OG Social Preview Image
+  Dimensions: 1200 × 630 px
 
   To capture:
-    1. Open in Chrome
-    2. DevTools → Toggle device toolbar (Cmd+Shift+M) → set 1584 × 396
-    3. In Elements panel, right-click <body> → "Capture node screenshot"
-
-  LinkedIn profile photo placement:
-    - Circular photo (~128px) overlaps the bottom-left of the banner
-    - Content is shifted right to keep bottom-left clear
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+      - -headless - -screenshot=public/og.png - -window-size=1200,630 og.html
 -->
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Konstantin Borovik — LinkedIn Banner (1584 × 396)</title>
+  <title>Konstantin Borovik — OG Image (1200 × 630)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -23,8 +18,8 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      width: 1584px;
-      height: 396px;
+      width: 1200px;
+      height: 630px;
       overflow: hidden;
       font-family: 'Bricolage Grotesque', sans-serif;
       background: #ffffff;
@@ -54,7 +49,7 @@
       content: '';
       position: absolute;
       top: -50%;
-      left: 30%;
+      left: 25%;
       width: 1px;
       height: 200%;
       background: rgba(31, 136, 61, 0.1);
@@ -65,7 +60,7 @@
       content: '';
       position: absolute;
       top: -50%;
-      left: 38%;
+      left: 32%;
       width: 1px;
       height: 200%;
       background: rgba(31, 136, 61, 0.06);
@@ -77,9 +72,9 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 700px 350px at 75% 50%, rgba(31, 136, 61, 0.04) 0%, transparent 70%),
-        radial-gradient(ellipse 500px 250px at 95% 70%, rgba(9, 105, 218, 0.03) 0%, transparent 70%),
-        radial-gradient(ellipse 300px 200px at 98% 20%, rgba(249, 197, 19, 0.03) 0%, transparent 70%);
+        radial-gradient(ellipse 600px 400px at 70% 50%, rgba(31, 136, 61, 0.04) 0%, transparent 70%),
+        radial-gradient(ellipse 400px 300px at 90% 75%, rgba(9, 105, 218, 0.03) 0%, transparent 70%),
+        radial-gradient(ellipse 250px 200px at 95% 20%, rgba(249, 197, 19, 0.03) 0%, transparent 70%);
     }
 
     /* Noise grain overlay */
@@ -95,18 +90,18 @@
 
     .geo-bracket {
       position: absolute;
-      top: 50px;
-      left: 420px;
-      width: 90px;
-      height: 90px;
+      top: 60px;
+      left: 350px;
+      width: 80px;
+      height: 80px;
       border-left: 2px solid rgba(31, 136, 61, 0.2);
       border-top: 2px solid rgba(31, 136, 61, 0.2);
     }
 
     .geo-bracket-2 {
       position: absolute;
-      bottom: 50px;
-      right: 80px;
+      bottom: 60px;
+      right: 60px;
       width: 70px;
       height: 70px;
       border-right: 2px solid rgba(31, 136, 61, 0.15);
@@ -120,18 +115,18 @@
       border-radius: 50%;
     }
 
-    .geo-dot-1 { top: 47px; left: 417px; background: #1f883d; }
-    .geo-dot-2 { bottom: 47px; right: 77px; background: #1f883d; }
-    .geo-dot-3 { top: 50%; left: 390px; transform: translateY(-50%); background: #0969da; opacity: 0.4; }
-    .geo-dot-4 { top: 35%; left: 400px; background: #f9c513; opacity: 0.4; width: 4px; height: 4px; }
-    .geo-dot-5 { top: 65%; left: 395px; background: #cf222e; opacity: 0.3; width: 4px; height: 4px; }
+    .geo-dot-1 { top: 57px; left: 347px; background: #1f883d; }
+    .geo-dot-2 { bottom: 57px; right: 57px; background: #1f883d; }
+    .geo-dot-3 { top: 50%; left: 320px; transform: translateY(-50%); background: #0969da; opacity: 0.4; }
+    .geo-dot-4 { top: 35%; left: 330px; background: #f9c513; opacity: 0.4; width: 4px; height: 4px; }
+    .geo-dot-5 { top: 65%; left: 325px; background: #cf222e; opacity: 0.3; width: 4px; height: 4px; }
 
     /* Vertical status line */
     .status-line {
       position: absolute;
-      left: 380px;
-      top: 40px;
-      bottom: 40px;
+      left: 310px;
+      top: 50px;
+      bottom: 50px;
       width: 1px;
       background: linear-gradient(
         to bottom,
@@ -142,15 +137,14 @@
       );
     }
 
-    /* ─── Pinwheel mark (brand) ──────────────────────── */
+    /* ─── Pinwheel mark ──────────────────────────────── */
     .pinwheel {
       position: absolute;
-      right: 140px;
+      left: 80px;
       top: 50%;
       transform: translateY(-50%);
       width: 180px;
       height: 180px;
-      opacity: 0.05;
     }
 
     .pinwheel svg {
@@ -187,9 +181,9 @@
       flex-direction: column;
       justify-content: center;
       height: 100%;
-      padding-left: 480px;
-      padding-right: 120px;
-      gap: 18px;
+      padding-left: 400px;
+      padding-right: 140px;
+      gap: 16px;
     }
 
     /* ─── Badge ──────────────────────────────────────── */
@@ -214,8 +208,8 @@
       transform: rotate(45deg);
     }
 
-    /* ─── Headline ───────────────────────────────────── */
-    .headline {
+    /* ─── Name ────────────────────────────────────────── */
+    .name {
       font-size: 64px;
       font-weight: 800;
       line-height: 1.05;
@@ -223,34 +217,36 @@
       color: #1f2328;
     }
 
-    .headline .accent {
-      color: #1f883d;
-    }
-
-    .headline .dim {
-      color: #59636e;
-    }
-
-    /* ─── Subline ────────────────────────────────────── */
-    .subline {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 15px;
+    /* ─── Tagline ─────────────────────────────────────── */
+    .tagline {
+      font-size: 22px;
       font-weight: 400;
+      line-height: 1.5;
       color: #59636e;
-      letter-spacing: 0.02em;
+      letter-spacing: -0.01em;
+    }
+
+    /* ─── Domain ──────────────────────────────────────── */
+    .domain {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
+      margin-top: 8px;
     }
 
-    .subline .separator {
-      width: 32px;
-      height: 1px;
-      background: rgba(89, 99, 110, 0.3);
+    .domain-line {
+      width: 40px;
+      height: 2px;
+      background: rgba(31, 136, 61, 0.4);
+      border-radius: 1px;
     }
 
-    .subline .tag {
-      color: #0969da;
+    .domain-text {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 16px;
+      font-weight: 500;
+      color: #1f883d;
+      letter-spacing: 0.04em;
     }
 
   </style>
@@ -272,13 +268,15 @@
   <div class="geo-dot geo-dot-5"></div>
   <div class="status-line"></div>
 
-  <!-- Brand pinwheel mark -->
+  <!-- Pinwheel mark (actual brand SVG) -->
   <div class="pinwheel">
-    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M50 10 C50 10, 50 50, 50 50 C50 50, 30 10, 50 10Z" fill="#0969da"/>
-      <path d="M90 50 C90 50, 50 50, 50 50 C50 50, 90 30, 90 50Z" fill="#1f883d"/>
-      <path d="M50 90 C50 90, 50 50, 50 50 C50 50, 70 90, 50 90Z" fill="#f9c513"/>
-      <path d="M10 50 C10 50, 50 50, 50 50 C50 50, 10 70, 10 50Z" fill="#cf222e"/>
+    <svg viewBox="0 0 111 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(.025 .025)">
+        <path fill="#f9c513" d="M75.242 94.909a13.912 13.912 0 0 1 0-19.668 27.81 27.81 0 0 1-39.331 0 13.907 13.907 0 0 1-19.668 19.668 55.688 55.688 0 0 0 78.667 0 13.912 13.912 0 0 1-19.668 0Z"/>
+        <path fill="#0969da" d="M94.909 16.242a55.626 55.626 0 0 0-78.667 78.667A13.907 13.907 0 0 1 35.91 75.241 27.811 27.811 0 0 1 75.241 35.91a13.907 13.907 0 0 0 19.668-19.668Z"/>
+        <circle cx="13.908" cy="13.908" r="13.908" fill="#1f883d" transform="translate(12.166 71.165)"/>
+        <path fill="#cf222e" d="M94.909 16.242A13.907 13.907 0 0 1 75.241 35.91a27.81 27.81 0 0 1 0 39.331 13.907 13.907 0 0 0 19.668 19.668 55.7 55.7 0 0 0 0-78.667Z"/>
+      </g>
     </svg>
   </div>
 
@@ -294,21 +292,16 @@
 
     <div class="badge">AI Productivity Engineer</div>
 
-    <div class="headline">
-      I make businesses <span class="accent">move faster</span><br>
-      <span class="dim">with AI automation</span>
+    <div class="name">Konstantin Borovik</div>
+
+    <div class="tagline">
+      I modernize business operations with AI<br>
+      to make companies move faster
     </div>
 
-    <div class="subline">
-      <span>Email</span>
-      <span class="separator"></span>
-      <span>Documents</span>
-      <span class="separator"></span>
-      <span>Workflows</span>
-      <span class="separator"></span>
-      <span>Data Entry</span>
-      <span class="separator"></span>
-      <span class="tag">→ automated</span>
+    <div class="domain">
+      <div class="domain-line"></div>
+      <span class="domain-text">lab5.ca</span>
     </div>
 
   </div>

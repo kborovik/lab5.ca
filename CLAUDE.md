@@ -45,12 +45,12 @@ src/
 public/
 ├── _headers                  # Cloudflare security headers + cache policy
 ├── robots.txt                # Sitemap reference
-├── og.svg                    # OG image source (edit this, render to og.png)
-├── og.png                    # 1200×630 social preview image (generated from og.svg)
+├── og.png                    # 1200×630 social preview image (rendered from og.html)
 ├── favicon.ico / favicon.svg # Pinwheel mark in company colors
 ├── logo-linkedin.svg/png     # LinkedIn profile photo (400×400, pinwheel mark)
 ├── banner-linkedin.png       # LinkedIn banner (1584×396, rendered from linkedin-banner.html)
 makefile                      # All dev/build/deploy targets
+og.html                       # OG image source — render to PNG via headless Chrome
 linkedin-banner.html          # LinkedIn banner source — render to PNG via headless Chrome
 ```
 
@@ -154,7 +154,7 @@ GitHub Actions pipelines in `.github/workflows/`:
 ## Gotchas
 
 - `README.md` is a **symlink** to `CLAUDE.md`
-- **OG image workflow**: Edit `public/og.svg`, then render to PNG via headless Chrome: `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --screenshot=public/og.png --window-size=1200,630 public/og.svg`
+- **OG image workflow**: Edit `og.html`, then render to PNG via headless Chrome: `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --screenshot=public/og.png --window-size=1200,630 og.html`
 - **LinkedIn banner workflow**: Edit `linkedin-banner.html`, then render: `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --screenshot=public/banner-linkedin.png --window-size=1584,396 linkedin-banner.html`
 - Do not use Playwright MCP to screenshot SVGs — it times out on `file://` SVG URLs
 - **Favicon regeneration**: `magick -background none public/favicon.svg -define icon:auto-resize=48,32,16 public/favicon.ico`
