@@ -71,7 +71,7 @@ linkedin-banner.html          # LinkedIn banner source — render to PNG via hea
 | `gh-blue`          | `#0969da` | **Secondary accent** — LinkedIn buttons                   |
 | `gh-blue-hover`    | `#0550ae` | Secondary button hover                                    |
 
-**Fonts**: GitHub system font stack (no web fonts) — `--font-sans` and `--font-mono` in `@theme`
+**Fonts**: IBM Plex family via Google Fonts (`display=swap`) — `--font-sans` (IBM Plex Sans), `--font-serif` (IBM Plex Serif), `--font-mono` (IBM Plex Mono) in `@theme`. Base font size 18px. Headings use `font-serif`, body/UI use `font-sans`, technical elements use `font-mono`. OG image and LinkedIn banner use Bricolage Grotesque for display headlines.
 
 **Logo**: 4-color pinwheel mark (blue `#0969da`, green `#1f883d`, yellow `#f9c513`, red `#cf222e`) — derived from lab5.ca favicon
 
