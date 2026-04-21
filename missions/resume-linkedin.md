@@ -2,7 +2,7 @@
 
 ## Headline
 
-AI Productivity Engineer | I modernize business operations with AI | lab5.ca
+AI Automation Engineer | I modernize business operations with AI | lab5.ca
 
 ## Location
 
@@ -22,7 +22,7 @@ linkedin.com/in/kborovik
 
 I modernize business operations with AI to make companies move faster.
 
-20+ years progressing from systems engineering to cloud architecture to building production AI. I started building infrastructure at TD Bank, led teams at CDW, built cloud platforms at PayPal and Colliers International, and now build AI productivity tools independently.
+20+ years progressing from systems engineering to cloud architecture to building production AI. I started building infrastructure at TD Bank, led teams at CDW, built cloud platforms at PayPal and Colliers International, and now build AI automation tools independently.
 
 What I do: I automate repetitive business processes with AI — email, documents, workflows, data entry. If your team does it manually and it follows a pattern, AI can handle it.
 
@@ -43,7 +43,7 @@ lab5.ca | github.com/kborovik | hello@lab5.ca
 
 ## Experience
 
-**AI Productivity Engineer**
+**AI Automation Engineer**
 lab5.ca
 _January 2026 — Present_
 
@@ -196,8 +196,8 @@ _2000 — 2002_
 ## LinkedIn Tips
 
 - **Creator mode**: Turn on for "Follow" button and featured section prominence
-- **Headline keywords**: "AI Productivity", "AI Automation", "AI Engineer", "business operations" are high-search terms
-- **Activity**: Post 1-2 times per week about AI productivity, automating repetitive business processes, real examples of AI handling manual work
+- **Headline keywords**: "AI Automation", "AI Engineer", "AI Engineer", "business operations" are high-search terms
+- **Activity**: Post 1-2 times per week about AI automation, automating repetitive business processes, real examples of AI handling manual work
 - **CTA in every post**: End with "See AI handle real email at lab5.ca" or "Try the demo — send any email to demo@lab5.ca"
 - **Custom URL**: linkedin.com/in/kborovik
-- **Open to work**: Enable the "Open to Work" badge for AI Engineer, AI Productivity Engineer, Automation Lead, Tech Lead roles in North America
+- **Open to work**: Enable the "Open to Work" badge for AI Engineer, AI Automation Engineer, Automation Lead, Tech Lead roles in North America

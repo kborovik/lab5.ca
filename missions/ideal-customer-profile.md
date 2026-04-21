@@ -1,4 +1,4 @@
-# Ideal Customer Profile: AI Productivity Engineer
+# Ideal Customer Profile: AI Automation Engineer
 
 **Target: Business owners, COOs, and ops leaders at companies where manual processes slow them down**
 Version 5.0 | April 2026 | CONFIDENTIAL
@@ -9,7 +9,7 @@ Version 5.0 | April 2026 | CONFIDENTIAL
 
 | Dimension           | Definition                                                                                       |
 | ------------------- | ------------------------------------------------------------------------------------------------ |
-| **Who I am**        | Konstantin Borovik — AI Productivity Engineer with 20+ years in systems integration and cloud architecture |
+| **Who I am**        | Konstantin Borovik — AI Automation Engineer with 20+ years in systems integration and cloud architecture |
 | **What I do**       | I modernize business operations with AI to make companies move faster                            |
 | **Core expertise**  | AI-powered automation for repetitive business processes — email, documents, workflows, data entry |
 | **Target audience** | Business owners, COOs, and ops leaders at companies where manual processes slow them down         |
@@ -42,7 +42,7 @@ Companies of every size share the same problems:
 
 | Attribute                                      | Why it matters                                                                     |
 | ---------------------------------------------- | ---------------------------------------------------------------------------------- |
-| **Heavy email/document volume**                | Direct AI productivity wins — email triage, document processing, data extraction   |
+| **Heavy email/document volume**                | Direct AI automation wins — email triage, document processing, data extraction   |
 | **Has ERP/CRM they want to integrate**         | Systems integration expertise — connect tools, automate data flow                  |
 | **Manual processes they know need automation** | Clear, measurable problem AI can solve                                             |
 | **No CTO or technical co-founder**             | They need the role I fill — not competing with existing technical leadership       |
@@ -54,11 +54,11 @@ Companies of every size share the same problems:
 - **Pre-revenue startup** — needs a company with real operations to automate
 - **Already has a strong CTO + engineering team** — they don't need me
 - **Looking for staff augmentation only** — I'm a leader, not a contractor filling a seat
-- **No identifiable repetitive processes** — if the bottleneck isn't manual work, AI productivity isn't the answer
+- **No identifiable repetitive processes** — if the bottleneck isn't manual work, AI automation isn't the answer
 
 ## 4. Industries with strong fit
 
-These paper-heavy, operations-driven industries have massive repetitive work — every one is a strong fit for AI productivity improvements.
+These paper-heavy, operations-driven industries have massive repetitive work — every one is a strong fit for AI automation improvements.
 
 | Industry                         | Why it's a fit                                                                                                                       | Systems to integrate                                            |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------- |
@@ -102,7 +102,7 @@ These paper-heavy, operations-driven industries have massive repetitive work —
 | **Who**                  | CTO, VP Engineering, Technical Director — the existing technical decision-maker                                                                                 |
 | **What they care about** | Architecture quality, production reliability, whether the AI actually works                                                                                     |
 | **Pain they feel**       | "I'm the only technical person and I can't scale." "We need AI automation but I don't have time to build it."                                                   |
-| **Messaging angle**      | "20+ years from infrastructure to cloud to production AI. I can own your AI productivity automation — so you can focus on product."                              |
+| **Messaging angle**      | "20+ years from infrastructure to cloud to production AI. I can own your AI automation — so you can focus on product."                              |
 | **What converts them**   | The architecture page on lab5.ca — they see production-quality decisions and recognize a peer                                                                   |
 
 ## 6. Value proposition
@@ -141,7 +141,7 @@ This eliminates the "can they actually build?" question before the first convers
 | #   | Channel               | Approach                                                                                                             |
 | --- | --------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | 1   | **Email (MailPilot)** | Primary channel. Use MailPilot to send outreach emails. Leads from [Apollo](https://app.apollo.io/#/saved/companies) |
-| 2   | **LinkedIn posts**    | Post about AI productivity, business process automation, and real examples of AI handling manual work                 |
+| 2   | **LinkedIn posts**    | Post about AI automation, business process automation, and real examples of AI handling manual work                 |
 | 3   | **Job boards**        | LinkedIn Jobs, AngelList/Wellfound — search for AI/Automation Lead roles, or companies posting about AI needs        |
 
 ### Email outreach (via MailPilot)
@@ -158,17 +158,17 @@ Body: "Hi [Name], I help companies automate repetitive work with AI — email, d
 
 Subject: "AI automation for [Company Name]'s operations"
 
-Body: "Hi [Name], I'm an AI productivity engineer — I automate the repetitive processes that slow companies down. Email triage, document processing, data entry, reporting. If your team is spending hours on manual work that follows a pattern, AI can handle it. Live demo: send anything to demo@lab5.ca. — Konstantin | lab5.ca"
+Body: "Hi [Name], I'm an AI automation engineer — I automate the repetitive processes that slow companies down. Email triage, document processing, data entry, reporting. If your team is spending hours on manual work that follows a pattern, AI can handle it. Live demo: send anything to demo@lab5.ca. — Konstantin | lab5.ca"
 
 **To CTOs:**
 
 Subject: "Production AI automation for [Company Name]"
 
-Body: "Hi [Name], I'm an engineer with 20+ years building production systems — most recently AI automation for business processes (lab5.ca). If [company] needs someone who can build real AI productivity tools (not demos), I'd love to connect. The demo is live — send anything to demo@lab5.ca. — Konstantin"
+Body: "Hi [Name], I'm an engineer with 20+ years building production systems — most recently AI automation for business processes (lab5.ca). If [company] needs someone who can build real AI automation tools (not demos), I'd love to connect. The demo is live — send anything to demo@lab5.ca. — Konstantin"
 
 ### LinkedIn posts
 
-Post 1-2 times per week about: AI productivity wins, automating repetitive business processes, real examples of AI handling email/documents/workflows. End every post with CTA to lab5.ca or demo@lab5.ca.
+Post 1-2 times per week about: AI automation wins, automating repetitive business processes, real examples of AI handling email/documents/workflows. End every post with CTA to lab5.ca or demo@lab5.ca.
 
 ## 8. Signals to watch
 
@@ -199,7 +199,7 @@ Post 1-2 times per week about: AI productivity wins, automating repetitive busin
 Track from the first 50 outreach attempts:
 
 - **Business owner vs. COO vs. CTO response rate** — Who responds more? Which leads to faster conversations?
-- **AI productivity vs. systems integration messaging** — Does "automate repetitive work with AI" outperform "connect your systems"?
+- **AI automation vs. systems integration messaging** — Does "automate repetitive work with AI" outperform "connect your systems"?
 - **Industry response rates** — Distribution vs. professional services vs. manufacturing vs. insurance
 - **Demo conversion** — Do people who try demo@lab5.ca respond at higher rates?
 - **Company size sweet spot** — Is 20-50, 50-200, or 200+ more responsive?

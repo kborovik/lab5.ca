@@ -1,6 +1,6 @@
 # lab5.ca
 
-Personal portfolio and career site for Konstantin Borovik — AI Productivity Engineer. Positioning: AI-powered automation for repetitive business processes (email, documents, workflows, data entry). Cloud platforms (GCP, Azure, AWS) are implementation details, not the pitch. MailPilot (the AI email platform in `/Users/kb/github/pilot`) is featured as a proof-of-capability demo showing how AI handles real business communication.
+Personal portfolio and career site for Konstantin Borovik — AI Automation Engineer. Positioning: AI-powered automation for repetitive business processes (email, documents, workflows, data entry). Cloud platforms (GCP, Azure, AWS) are implementation details, not the pitch. MailPilot (the AI email platform in `/Users/kb/github/pilot`) is featured as a proof-of-capability demo showing how AI handles real business communication.
 
 ## Commands
 
@@ -36,7 +36,7 @@ src/
 │   ├── Footer.astro          # Footer links, copyright
 │   └── Logo.astro            # Typographic logo — unused after pivot
 ├── pages/
-│   ├── index.astro           # / — hero, AI productivity pitch, MailPilot featured project, CTA
+│   ├── index.astro           # / — hero, AI automation pitch, MailPilot featured project, CTA
 │   ├── expertise.astro       # /expertise — AI Email, Document Processing, Workflow Automation, Data & Reporting
 │   ├── demo.astro            # /demo (Live Demo) — MailPilot demo, example questions, architecture
 │   └── about.astro           # /about — bio, LinkedIn, Book a Call
@@ -79,13 +79,13 @@ linkedin-banner.html          # LinkedIn banner source — render to PNG via hea
 
 ## Site positioning
 
-**Title**: AI Productivity Engineer
+**Title**: AI Automation Engineer
 **Tagline**: "I modernize business operations with AI to make companies move faster"
 **Core expertise**: AI-powered automation for repetitive business processes (email, documents, workflows, data entry). Cloud platforms (GCP, Azure, AWS) are implementation details.
 
 | Page       | Route        | Purpose                                                    |
 | ---------- | ------------ | ---------------------------------------------------------- |
-| Home       | `/`          | Hero, AI productivity pitch, MailPilot (reframed), CTA     |
+| Home       | `/`          | Hero, AI automation pitch, MailPilot (reframed), CTA     |
 | Expertise  | `/expertise` | AI Email & Communication, Document Processing, Workflow Automation, Data & Reporting |
 | Live Demo  | `/demo`      | MailPilot demo — "see how AI handles real business email"  |
 | About      | `/about`     | Bio, LinkedIn, Book a Call                                 |
