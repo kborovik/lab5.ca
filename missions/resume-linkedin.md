@@ -2,7 +2,7 @@
 
 ## Headline
 
-AI Automation Engineer | I modernize business operations with AI | lab5.ca
+AI Automation Engineer | Software Developer
 
 ## Location
 
@@ -43,7 +43,7 @@ lab5.ca | github.com/kborovik | hello@lab5.ca
 
 ## Experience
 
-**AI Automation Engineer**
+**Lead Software Engineer**
 lab5.ca
 _January 2026 — Present_
 
