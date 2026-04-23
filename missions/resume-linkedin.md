@@ -2,7 +2,7 @@
 
 ## Headline
 
-AI Automation Engineer | Software Developer
+Backend Software Engineer (Python, SQL) | Data & API Platforms | Cloud-Native Systems
 
 ## Location
 
@@ -10,32 +10,29 @@ Canada
 
 ## Website
 
-lab5.ca
+https://lab5.ca
 
 ## LinkedIn URL
 
-linkedin.com/in/kborovik
+https://linkedin.com/in/kborovik
 
 ---
 
 ## About
 
-I modernize business operations with AI to make companies move faster.
+I build reliable backend systems in **Python** and **SQL** APIs, data pipelines, and automation services that turn messy business processes into measurable outcomes.
 
-20+ years progressing from systems engineering to cloud architecture to building production AI. I started building infrastructure at TD Bank, led teams at CDW, built cloud platforms at PayPal and Colliers International, and now build AI automation tools independently.
+I bring 20+ years across systems engineering, platform engineering, and software development. In recent roles I’ve delivered cloud-native backend services, event-driven data workflows, and production integrations on GCP, AWS, Azure. My focus is pragmatic backend engineering: clean interfaces, strong data modeling, observability, and secure-by-default operations.
 
-What I do: I automate repetitive business processes with AI — email, documents, workflows, data entry. If your team does it manually and it follows a pattern, AI can handle it.
+What I work on:
 
-My latest project is MailPilot (lab5.ca) — a live demo of AI handling real business email:
+- **Python backend services:** REST/async workers, integrations, automation services
+- **SQL & data systems:** PostgreSQL design, migrations, query performance, ETL/ELT
+- **Event-driven architecture:** queues/pub-sub patterns, idempotent processing, retries, DLQs
+- **Production delivery:** CI/CD, infrastructure as code, monitoring, and compliance guardrails
 
-- **AI Email Processing:** Reads incoming email, searches a knowledge base, drafts accurate responses — fully automated
-- **Document Intelligence:** AI-powered document processing, data extraction, and knowledge base search
-- **Production Architecture:** Event-driven backend, serverless infrastructure, CI/CD — built to run reliably, not just demo well
-- **Full-Stack Delivery:** Python backend, TypeScript frontend, edge deployment — shipped end-to-end by one person
-
-Try it yourself: send any email to demo@lab5.ca and see AI respond in 60 seconds.
-
-I'm looking for a company where I can make business operations faster with AI. Ideal fit: a company where manual processes are the bottleneck and leadership is ready to invest in automation. I work with whatever cloud platform the company has — GCP, Azure, AWS.
+Recent project: **MailPilot** (lab5.ca) — a production-style backend that automates real business email end-to-end.
+Try it: email **demo@lab5.ca** and receive an automated response.
 
 lab5.ca | github.com/kborovik | hello@lab5.ca
 
@@ -47,71 +44,76 @@ lab5.ca | github.com/kborovik | hello@lab5.ca
 lab5.ca
 _January 2026 — Present_
 
-Building production AI systems that automate repetitive business processes — email, documents, workflows, data entry. MailPilot is a live proof of capability.
+Building backend-first automation systems in Python with strong data and integration foundations. MailPilot is a live proof-of-capability.
 
-Technologies: Python · TypeScript · LLM Agents · RAG Pipelines · Cloud Functions · Pub/Sub · Terraform · Google Cloud Platform · Vertex AI · Document AI
+Technologies: Python · SQL · PostgreSQL · Event-driven architecture · Cloud Functions/Run · Pub/Sub · Terraform · GCP
 
-- Building AI agents that read, triage, and respond to business email automatically
-- Developing document processing pipelines — data extraction from invoices, contracts, and forms
-- Connecting business systems (ERP, CRM, email) through event-driven architecture
-- Deploying LLM integrations for production automation — RAG pipelines, agent workflows, document understanding
-- Managing cloud infrastructure as code with Terraform
+- Built Python services that ingest and classify inbound messages, orchestrate workflows, and produce deterministic outputs with auditability
+- Designed data models and persistence patterns for workflow state, idempotency keys, retries, and traceability
+- Implemented event-driven processing with queue/pub-sub semantics (retries, dead-letter handling, backpressure-aware design)
+- Developed document ingestion and extraction pipelines, structuring results for downstream search and reporting
+- Shipped production-grade operations: structured logging, metrics, alerting, and IaC-managed environments
+
+---
+
+**Software Developer (Backend / Data)**
+Colliers International
+_July 2024 — December 2025_
+
+Systems integration and cloud modernization focused on Python services and PostgreSQL-backed workflows on Google Cloud.
+
+Technologies: Python · SQL · Cloud SQL (PostgreSQL) · Cloud Run · Cloud Functions · Pub/Sub · Cloud Composer (Airflow) · Terraform · Azure DevOps
+
+- Developed serverless Python services for data processing and integration workflows (Cloud Functions/Run)
+- Worked with **PostgreSQL (Cloud SQL)** for application data storage, job state, and operational reporting
+- Authored and maintained Airflow DAGs for ETL orchestration, emphasizing reliability, recoverability, and clear dependencies
+- Built CI/CD pipelines for automated validation and deployment of Terraform and application releases
+- Implemented secure access patterns and IAM controls; supported compliance requirements (NIST-800-53, PCI-DSS)
 
 ---
 
 **Software Developer**
-Colliers International
-_November 2023 — December 2025_
+Charli.Ai
+_Sep 2023 — Jun 2024_
 
-Systems integration and cloud infrastructure modernization on Google Cloud Platform for a global commercial real estate company.
-
-Technologies: Google Cloud Platform · Vertex AI · Gemini API · Cloud Functions · Cloud Run · Cloud SQL (PostgreSQL) · Cloud Composer (Airflow) · Terraform · Python · Azure DevOps
-
-- Architected GCP infrastructure foundation using Terraform — reusable modules for Projects, Folders, and IAM policies
-- Integrated Google Gemini AI APIs into Python applications for intelligent document processing
-- Developed serverless Python applications on Cloud Functions and Cloud Run for data processing workflows
-- Administered Cloud Composer (Apache Airflow) environments and authored DAGs for ETL orchestration
-- Built Azure DevOps CI/CD pipelines for automated Terraform validation and deployment
-- Maintained NIST-800-53 and PCI-DSS compliance using Google Security Command Center
+- Built an LLM-driven automation workflow for **financial loan applications**, turning unstructured applicant inputs/documents into structured data for downstream processing and review
+- Developed and maintained Python backend services and integrations, with an emphasis on reliability, iteration speed, and production operations
+- Contributed to API and data workflow development across cloud environments
 
 ---
 
-**DevOps Engineer**
+**Software Developer (Platform / Backend Enablement)**
 PayPal
 _October 2018 — September 2023_
 
-Cloud infrastructure and platform engineering on GCP for one of the world's largest payment companies.
+Cloud platform engineering enabling backend delivery at scale on GCP, with a focus on secure infrastructure, Kubernetes operations, and developer productivity.
 
-Technologies: Google Cloud Platform · Vertex AI · Kubernetes (GKE, AKS) · Cloud Composer (Airflow) · HashiCorp Vault · Terraform · Docker · Helm · Python · GitLab CI/CD · GitHub Actions · Elastic Observability · CloudFlare WAF
+Technologies: Python · SQL · GCP · Kubernetes (GKE) · Terraform · Docker · Helm · GitHub Actions/GitLab CI · Vault · Observability
 
-- Managed GCP Vertex AI infrastructure for Generative AI model training and deployment
-- Built deployment pipelines for microservices in Kubernetes clusters supporting 20+ developers
-- Deployed HashiCorp Vault in GKE clusters for enterprise secrets management
-- Migrated VM-based applications to Kubernetes (GKE)
-- Implemented GCP security controls and IAM Custom Roles using Terraform
-- Implemented Elastic Observability for full-stack monitoring
-- Ensured NIST-800-53 and PCI-DSS compliance
+- Enabled 20+ developers with deployment pipelines and platform capabilities for microservices and backend workloads
+- Supported data workflow orchestration environments (Airflow/Composer) and production runtime operations
+- Implemented secrets management and security controls for regulated environments (NIST-800-53, PCI-DSS)
+- Improved operational reliability via standardized monitoring/alerting and incident-ready observability patterns
 
 ---
 
-**DevOps Engineer**
+**Software Developer**
 CDW
 _April 2016 — August 2018_
 
-Technologies: AWS · Docker · Kubernetes · Terraform · Ansible · Python
+Technologies: Python · AWS · Terraform · Ansible · Docker · Kubernetes
 
-- Built immutable infrastructure using IaC principles for AWS cloud migrations
-- Implemented containerization strategies with Docker and Kubernetes
-- Developed automation solutions with Terraform and Ansible
+- Built automation tooling and repeatable infrastructure patterns supporting cloud migrations and backend deployments
+- Developed Python-based automation and operational utilities used by delivery teams
 
 ---
 
-**Platform Engineer (Team Lead)**
+**Platform Engineer**
 CDW
 _August 2014 — April 2016_
 
-- Led team deploying enterprise data center infrastructure
-- Provided technical leadership and mentorship to team members
+- Led a team delivering enterprise infrastructure and platform services
+- Provided technical leadership, mentoring, and operational ownership
 
 ---
 
@@ -119,7 +121,7 @@ _August 2014 — April 2016_
 Tech Data
 _January 2010 — July 2014_
 
-- Delivered enterprise data center solutions for S&P 500 companies
+- Delivered enterprise infrastructure solutions for large organizations; partnered with stakeholders to design and implement resilient systems
 
 ---
 
@@ -127,8 +129,8 @@ _January 2010 — July 2014_
 TD Bank Financial Group
 _2003 — 2009_
 
-- Executed data center migration deploying VMware infrastructure across multiple facilities
-- Migrated 200+ virtual machines with minimal downtime
+- Executed data center migration work, including large-scale virtualization rollouts
+- Migrated 200+ virtual machines with minimal downtime through careful planning and validation
 
 ---
 
@@ -142,62 +144,33 @@ _2000 — 2002_
 
 ## Skills
 
-**AI & Machine Learning**
+**Backend Engineering**
 
-- LLM Agent Development
-- RAG Pipelines
-- Prompt Engineering
-- Vertex AI / Gemini API
-- Claude API (Anthropic)
-- Document AI
+- Python (services, automation, integrations)
+- API design (REST), async/background processing
+- Event-driven architecture (pub/sub, queues), idempotency, retries, DLQs
+- Observability (logging, metrics, tracing), incident-ready operations
 
-**Languages & Frameworks**
+**Databases & Data**
 
-- Python
-- TypeScript
-- Bash
-- Astro
-- Tailwind CSS
+- SQL (data modeling, migrations, performance-minded querying)
+- PostgreSQL (Cloud SQL)
+- ETL/ELT orchestration (Airflow)
 
-**Cloud Platforms**
+**Cloud & Delivery**
 
-- Google Cloud Platform (Cloud Functions, Cloud Run, Pub/Sub, Cloud SQL, GKE, IAM)
-- Amazon Web Services
-- Microsoft Azure
+- GCP (Cloud Run, Cloud Functions, Pub/Sub, Cloud SQL, IAM)
+- Terraform, CI/CD (Azure DevOps, GitHub Actions, GitLab CI)
+- Docker, Kubernetes (GKE)
 
-**Infrastructure & DevOps**
+**Security**
 
-- Terraform
-- Kubernetes (GKE, AKS)
-- Docker
-- Helm
-- GitHub Actions
-- GitLab CI/CD
-- Azure DevOps
-- Elastic Observability
-- HashiCorp Vault
-- Cloudflare Workers
-
-**Security & Compliance**
-
-- NIST-800-53
-- PCI-DSS
-- Cloud Security Architecture
+- IAM and secure-by-default infrastructure patterns
+- Compliance exposure: NIST-800-53, PCI-DSS
 
 ---
 
 ## Featured
 
-- **Portfolio & Live Demo** — lab5.ca — send an email to demo@lab5.ca and see a production AI agent respond in 60 seconds
+- **MailPilot (Live Demo)** — lab5.ca — email demo@lab5.ca to see a backend automation workflow respond end-to-end
 - **GitHub** — github.com/kborovik
-
----
-
-## LinkedIn Tips
-
-- **Creator mode**: Turn on for "Follow" button and featured section prominence
-- **Headline keywords**: "AI Automation", "AI Engineer", "AI Engineer", "business operations" are high-search terms
-- **Activity**: Post 1-2 times per week about AI automation, automating repetitive business processes, real examples of AI handling manual work
-- **CTA in every post**: End with "See AI handle real email at lab5.ca" or "Try the demo — send any email to demo@lab5.ca"
-- **Custom URL**: linkedin.com/in/kborovik
-- **Open to work**: Enable the "Open to Work" badge for AI Engineer, AI Automation Engineer, Automation Lead, Tech Lead roles in North America
