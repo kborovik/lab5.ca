@@ -95,7 +95,7 @@ import Layout from '../layouts/Layout.astro';
         These questions are based on real product specification sheets. Review the source documents to verify the agent's accuracy.
       </p>
       <a
-        href="https://drive.google.com/drive/folders/1cqgBcAh8JABFC86VfDA4-Iub8-juMEP2"
+        href="https://drive.google.com/drive/folders/1IUuPinOopUv_YWOZyFpt2ZX8Hd8bpZat"
         target="_blank"
         rel="noopener noreferrer"
         class="mt-6 inline-flex items-center gap-2 rounded-lg border border-gh-blue bg-white px-6 py-3 text-base font-semibold text-gh-blue transition-colors hover:bg-gh-blue hover:text-white"
@@ -126,12 +126,12 @@ import Layout from '../layouts/Layout.astro';
         <p class="mt-1 ml-8 text-sm text-gh-fg-muted">These questions match products in the knowledge base. The agent will reply with accurate, sourced answers.</p>
         <ul class="mt-4 space-y-3">
           {[
-            '"What are the dimensions and weight of the TW-18.0K-1240 reverse osmosis system?"',
-            '"Which SF-100S softener would you recommend for a hospital needing at least 200 GPM continuous flow?"',
-            '"Which UV-COM model supports the highest flow rate, and what certifications does it have?"',
-            '"What happens if feed water TDS exceeds 5,000 ppm on the RO-200 series?"',
-            '"Compare the WS48-1200 and WS54-1500 softener models in capacity and flow rate."',
-            '"I need to treat hard water at 40 GPG for a commercial building. Do I need a softener before the RO system, or can the UV-COM handle it?"',
+            '"What is the permeate flow rate in GPD for the TW-12.0K-840 model, and what is the motor horsepower required at 60Hz?"',
+            '"What is the continuous flow rate in GPM and peak flow rate in GPM for the WS36-600-2 softener?"',
+            '"What is the maximum flow rate of the C403 UV-COM model, and what is its UV dose range?"',
+            '"What is the permeate flow rate and active area of the FilmTec ECO-440i RO membrane?"',
+            '"What percentage of free chlorine can KDF 55 medium remove, and what is the heavy metal removal efficiency of KDF 55, KDF 85, and KDF-C media?"',
+            '"What is the capacity in GPD of the RO-500 Series model TW-270K-8580 installed in Nicaragua, and how many 8\" TFC spiral wound membranes does this system contain?"',
           ].map(prompt => (
             <li class="flex items-center justify-between gap-3 rounded-lg border border-gh-border bg-white px-4 py-3">
               <span class="font-mono text-sm text-gh-fg-muted">{prompt}</span>
@@ -159,8 +159,9 @@ import Layout from '../layouts/Layout.astro';
         <p class="mt-1 ml-8 text-sm text-gh-fg-muted">These products are not in the knowledge base. The agent will tell you it doesn't have that information rather than guess.</p>
         <ul class="mt-4 space-y-3">
           {[
-            '"What is the price of the Pentair Evoqua chlorine dioxide generator?"',
-            '"Can you recommend a Grundfos booster pump for a 20-story building?"',
+            '"Which Pentair commercial reverse osmosis system would you recommend for a 300 GPM brewery feedwater application?"',
+            '"Can you spec a Grundfos CRN dosing pump for chlorine injection at 25 GPH?"',
+            '"Which Veolia OPUS II system handles produced water with 50,000 ppm TDS for oil and gas?"',
           ].map(prompt => (
             <li class="flex items-center justify-between gap-3 rounded-lg border border-gh-border bg-white px-4 py-3">
               <span class="font-mono text-sm text-gh-fg-muted">{prompt}</span>
