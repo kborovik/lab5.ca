@@ -3,29 +3,29 @@ import Layout from '../layouts/Layout.astro';
 
 const sections = [
   {
-    id: 'email',
+    id: 'erp',
     num: '01',
-    title: 'AI Email & Communication',
+    title: 'ERP Integration',
     description:
-      'Automate email triage, draft responses, handle customer inquiries, and route messages to the right person. AI handles routine communication; the team handles what AI can’t.',
+      'Connect ERP, accounting, CRM, and document stores so orders, approvals, and reporting run end-to-end. Each step triggered by the upstream event, idempotent, observable.',
     capabilities: [
-      'email triage and auto-response',
-      'customer inquiry handling',
-      'internal communication routing',
-      'follow-up and reminder automation',
+      'ERP / accounting / CRM integration (NetSuite, QuickBooks, Xero, Salesforce, HubSpot)',
+      'approval and routing automation',
+      'order processing and fulfillment tracking',
+      'onboarding and compliance workflows',
     ],
     stack: [
-      ['trigger', 'gmail push api'],
-      ['extract', 'llm w/ structured prompts'],
-      ['retrieve', 'vector store over kb'],
-      ['runtime', 'serverless functions'],
-      ['output', 'gmail api drafts'],
+      ['trigger', 'webhook / event / cron'],
+      ['orchestrate', 'idempotent state machine'],
+      ['integrate', 'erp / accounting / crm'],
+      ['infra', 'terraform, github actions'],
+      ['observe', 'structured logs, traces'],
     ],
   },
   {
     id: 'documents',
     num: '02',
-    title: 'Document Processing',
+    title: 'Document Workflow',
     description:
       'Extract data from invoices, contracts, purchase orders, and forms automatically. AI reads documents, pulls the data, and writes it to the system of record — no manual data entry.',
     capabilities: [
@@ -43,23 +43,23 @@ const sections = [
     ],
   },
   {
-    id: 'workflows',
+    id: 'email',
     num: '03',
-    title: 'Workflow Integration',
+    title: 'AI Email & Communication',
     description:
-      'Connect disconnected systems and automate repetitive multi-step processes. Orders, approvals, onboarding, reporting — each step triggered by the upstream event, idempotent, observable.',
+      'Automate email triage, draft responses, handle customer inquiries, and route messages to the right person. AI handles routine communication; the team handles what AI can’t.',
     capabilities: [
-      'multi-system integration (ERP, CRM, email)',
-      'approval and routing automation',
-      'order processing and fulfillment tracking',
-      'onboarding and compliance workflows',
+      'email triage and auto-response',
+      'customer inquiry handling',
+      'internal communication routing',
+      'follow-up and reminder automation',
     ],
     stack: [
-      ['trigger', 'webhook / event / cron'],
-      ['orchestrate', 'idempotent state machine'],
-      ['integrate', 'erp / crm / email / drive'],
-      ['infra', 'terraform, github actions'],
-      ['observe', 'structured logs, traces'],
+      ['trigger', 'gmail push api'],
+      ['extract', 'llm w/ structured prompts'],
+      ['retrieve', 'vector store over kb'],
+      ['runtime', 'serverless functions'],
+      ['output', 'gmail api drafts'],
     ],
   },
   {

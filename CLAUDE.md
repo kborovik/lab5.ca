@@ -1,6 +1,6 @@
 # lab5.ca
 
-Personal portfolio and career site for Konstantin Borovik — AI Automation Engineer. Positioning: AI-powered automation for repetitive business processes (email, documents, workflows, data entry). Cloud platforms (GCP, Azure, AWS) are implementation details, not the pitch. MailPilot (the AI email platform in `/Users/kb/github/pilot`) is featured as a proof-of-capability demo showing how AI handles real business communication.
+Personal portfolio and career site for Konstantin Borovik — AI Automation Engineer. Positioning: AI-powered automation for repetitive business processes (ERP integration, document workflows, email, reporting). Cloud platforms (GCP, Azure, AWS) are implementation details, not the pitch. MailPilot (the AI email platform in `/Users/kb/github/pilot`) is featured as a proof-of-capability demo showing how AI handles real business communication.
 
 ## Commands
 
@@ -36,8 +36,8 @@ src/
 │   ├── Footer.astro          # Footer links, copyright
 │   └── Logo.astro            # Typographic logo — unused after pivot
 ├── pages/
-│   ├── index.astro           # / — hero · 01-03 capabilities grid · 04-07 why-hire-me grid
-│   ├── expertise.astro       # /expertise — 4 deep-dive sections (Email, Documents, Workflows, Data) with capability list + implementation key/value card
+│   ├── index.astro           # / — hero · 01-04 capabilities grid · 05-08 why-hire-me grid
+│   ├── expertise.astro       # /expertise — 4 deep-dive sections (ERP Integration, Documents, Email, Data) with capability list + implementation key/value card
 │   ├── demo.astro            # /demo (Live Demo) — MailPilot — code-chip CTA, how-it-works, KB link, sample Q's, architecture
 │   └── about.astro           # /about — bio, headshot, LinkedIn / GitHub / Book a Call
 └── styles/
@@ -80,7 +80,7 @@ linkedin-banner.html          # LinkedIn banner source — render to PNG via hea
 **Conventions**:
 
 - **Section kicker**: `// section name` in mono — `text-sm font-bold uppercase tracking-[0.2em] text-gh-blue`. Top label of each section.
-- **Numbered hairlines**: `01 ─────` headers above each tile or section item, mono, `text-xs text-gh-fg-subtle`. Numbering continues across grids when content flows as one docs narrative (homepage: 01-03 capabilities → 04-07 why-hire-me).
+- **Numbered hairlines**: `01 ─────` headers above each tile or section item, mono, `text-xs text-gh-fg-subtle`. Numbering continues across grids when content flows as one docs narrative (homepage: 01-04 capabilities → 05-08 why-hire-me).
 - **Section dividers**: `border-t border-gh-border` between sections — no alternating background colors at the section level. `bg-gh-canvas-subtle` is reserved for contained surfaces (implementation cards, code chips, footer).
 - **Code-style CTA chip**: bordered mono box, `$ mail demo@lab5.ca [copy]`, modeled on openspec.dev's `npm install` block. Acts as the single primary CTA on the homepage and `/demo`.
 - **Implementation cards** (`/expertise`): mono key/value list in a `bg-gh-canvas-subtle` card with `IMPLEMENTATION` kicker. Example rows: `trigger: gmail push api`, `runtime: serverless functions`.
@@ -92,13 +92,15 @@ linkedin-banner.html          # LinkedIn banner source — render to PNG via hea
 
 **Title**: AI Automation Engineer
 **Tagline**: "AI automation for business operations" (homepage h1)
-**Core expertise**: AI-powered automation for repetitive business processes (email, documents, workflows, data entry). Cloud platforms (GCP, Azure, AWS) are implementation details.
+**Core expertise**: AI-powered automation for repetitive business processes (ERP integration, document workflows, email, reporting). Cloud platforms (GCP, Azure, AWS) are implementation details.
+
+**Capability order** (canonical across all site sections): 01 ERP Integration · 02 Document Workflow · 03 AI Email & Communication · 04 Data & Reporting. Keep this order anywhere capabilities are listed (homepage tiles, /expertise sections, /about bio, meta descriptions).
 
 | Page       | Route        | Purpose                                                    |
 | ---------- | ------------ | ---------------------------------------------------------- |
-| Home       | `/`          | Hero · capabilities grid (01-03) · why-hire-me grid (04-07) |
-| Expertise  | `/expertise` | 01-04 deep-dive: AI Email, Documents, Workflows, Data — each with description, capability list, implementation key/value card |
-| Live Demo  | `/demo`      | MailPilot — code-chip CTA, how-it-works, KB link, sample Q's, architecture |
+| Home       | `/`          | Hero · capabilities grid (01-04) · why-hire-me grid (05-08) |
+| Expertise  | `/expertise` | 01-04 deep-dive: ERP Integration, Document Workflow, Email, Data — each with description, capability list, implementation key/value card |
+| Demo       | `/demo`      | MailPilot — code-chip CTA, how-it-works, KB link, sample Q's, architecture |
 | About      | `/about`     | Bio, headshot, LinkedIn / GitHub / Book a Call            |
 
 **Primary CTA**: Book a Call — Google Calendar (`https://calendar.app.google/cYM3H3TsHsequR587`)
