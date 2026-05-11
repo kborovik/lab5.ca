@@ -1,5 +1,98 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const sections = [
+  {
+    id: 'email',
+    num: '01',
+    title: 'AI Email & Communication',
+    description:
+      'Automate email triage, draft responses, handle customer inquiries, and route messages to the right person. AI handles routine communication; the team handles what AI can’t.',
+    capabilities: [
+      'email triage and auto-response',
+      'customer inquiry handling',
+      'internal communication routing',
+      'follow-up and reminder automation',
+    ],
+    stack: [
+      ['trigger', 'gmail push api'],
+      ['extract', 'llm w/ structured prompts'],
+      ['retrieve', 'vector store over kb'],
+      ['runtime', 'serverless functions'],
+      ['output', 'gmail api drafts'],
+    ],
+  },
+  {
+    id: 'documents',
+    num: '02',
+    title: 'Document Processing',
+    description:
+      'Extract data from invoices, contracts, purchase orders, and forms automatically. AI reads documents, pulls the data, and writes it to the system of record — no manual data entry.',
+    capabilities: [
+      'invoice and PO data extraction',
+      'contract and form processing',
+      'automated filing and categorization',
+      'data validation and error detection',
+    ],
+    stack: [
+      ['intake', 'file watchers, attachments'],
+      ['extract', 'ocr + llm structured output'],
+      ['validate', 'schema + confidence score'],
+      ['route', 'erp / crm / accounting'],
+      ['audit', 'immutable log per doc'],
+    ],
+  },
+  {
+    id: 'workflows',
+    num: '03',
+    title: 'Workflow Integration',
+    description:
+      'Connect disconnected systems and automate repetitive multi-step processes. Orders, approvals, onboarding, reporting — each step triggered by the upstream event, idempotent, observable.',
+    capabilities: [
+      'multi-system integration (ERP, CRM, email)',
+      'approval and routing automation',
+      'order processing and fulfillment tracking',
+      'onboarding and compliance workflows',
+    ],
+    stack: [
+      ['trigger', 'webhook / event / cron'],
+      ['orchestrate', 'idempotent state machine'],
+      ['integrate', 'erp / crm / email / drive'],
+      ['infra', 'terraform, github actions'],
+      ['observe', 'structured logs, traces'],
+    ],
+  },
+  {
+    id: 'data',
+    num: '04',
+    title: 'Data & Reporting',
+    description:
+      'Aggregate data from scattered systems, generate summaries with citations, and surface what changed. The reports your team used to build by hand, generated on a schedule.',
+    capabilities: [
+      'cross-system data aggregation',
+      'automated report generation',
+      'trend detection and anomaly alerts',
+      'dashboard and summary creation',
+    ],
+    stack: [
+      ['sources', 'db, sheets, exports, apis'],
+      ['aggregate', 'scheduled jobs, queries'],
+      ['narrate', 'llm summary w/ citations'],
+      ['deliver', 'email digest, slack, drive'],
+      ['schedule', 'cron / on-demand'],
+    ],
+  },
+];
+
+const industries = [
+  'logistics',
+  'distribution',
+  'construction',
+  'insurance',
+  'manufacturing',
+  'accounting',
+  'property management',
+];
 ---
 
 <Layout
@@ -7,264 +100,63 @@ import Layout from '../layouts/Layout.astro';
   description="AI-powered automation for email, documents, workflows, and reporting — 20+ years of hands-on engineering experience."
 >
   <!-- Header -->
-  <section class="mx-auto max-w-5xl px-6 py-20">
-    <p class="text-sm font-semibold uppercase tracking-widest text-gh-green">Expertise</p>
-    <h1 class="mt-2 text-2xl font-bold tracking-tight text-gh-fg sm:text-4xl">
-      What I bring to your team
-    </h1>
-    <p class="mt-4 max-w-2xl text-lg text-gh-fg-muted">
-      20+ years of hands-on engineering — from infrastructure to cloud to AI. I work with companies
-      where manual processes and disconnected systems are the biggest bottleneck. AI changes that.
+  <section class="mx-auto max-w-5xl px-6 pt-20 pb-12 sm:pt-24 sm:pb-16">
+    <p class="text-sm font-bold uppercase tracking-[0.2em] text-gh-blue">
+      // expertise
     </p>
-    <div class="mt-6 flex flex-wrap gap-3">
-      {[
-        'Logistics / Freight / 3PL',
-        'Distribution / Wholesale',
-        'Construction / Trades',
-        'Insurance (Agencies / Brokers)',
-        'Manufacturing / Industrial',
-        'Accounting / Bookkeeping',
-        'Property Management',
-      ].map(industry => (
-        <span class="rounded-full border border-gh-border bg-white px-4 py-2 text-sm font-medium text-gh-fg">
-          {industry}
-        </span>
-      ))}
-    </div>
+    <h1 class="mt-4 text-3xl font-bold tracking-tight text-gh-fg sm:text-4xl">
+      What I build
+    </h1>
+    <p class="mt-4 max-w-2xl text-sm leading-relaxed text-gh-fg-muted sm:text-base">
+      Twenty years of hands-on engineering &mdash; infrastructure, cloud, AI. I work with companies where manual processes and disconnected systems are the bottleneck.
+    </p>
+    <p class="mt-6 text-xs text-gh-fg-subtle">
+      industries: {industries.join(' · ')}
+    </p>
   </section>
 
-  <!-- 01: AI Email & Communication -->
-  <section id="email" class="py-20">
-    <div class="mx-auto max-w-5xl px-6">
-      <div class="animate-on-scroll grid gap-12 sm:grid-cols-2 sm:items-start">
-        <div>
-          <div class="text-5xl font-light text-gh-border">01</div>
-          <h2 class="mt-4 text-2xl font-bold tracking-tight text-gh-fg">
-            AI Email &amp; Communication
-          </h2>
-          <p class="mt-2 text-base font-medium text-gh-green">
-            AI reads, responds, and routes your email.
-          </p>
-          <p class="mt-4 leading-relaxed text-gh-fg-muted">
-            Automate email triage, draft responses, handle customer inquiries, and route messages
-            to the right person. AI handles routine communication so your team focuses on
-            conversations that matter.
-          </p>
-          <ul class="mt-6 space-y-2">
-            {[
-              'Email triage and auto-response',
-              'Customer inquiry handling',
-              'Internal communication routing',
-              'Follow-up and reminder automation',
-            ].map(item => (
-              <li class="flex items-start gap-2 text-sm text-gh-fg-muted">
-                <svg class="mt-0.5 h-4 w-4 shrink-0 text-gh-green" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                </svg>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div class="rounded-2xl border border-gh-border border-l-4 border-l-gh-green bg-white p-8">
-          <p class="text-xs font-semibold uppercase tracking-widest text-gh-fg-subtle">Why it matters</p>
-          <ul class="mt-4 space-y-3 text-sm text-gh-fg-muted">
-            <li class="border-b border-gh-border pb-3">
-              <span class="font-medium text-gh-fg">Owner:</span> Customers get faster responses without hiring more staff
-            </li>
-            <li class="border-b border-gh-border pb-3">
-              <span class="font-medium text-gh-fg">CTO:</span> Production AI agents, not chatbot demos
-            </li>
-            <li class="pb-0">
-              <span class="font-medium text-gh-fg">COO:</span> Email response times drop from hours to minutes
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  {sections.map(section => (
+    <section id={section.id} class="border-t border-gh-border py-16 sm:py-20">
+      <div class="mx-auto max-w-5xl px-6">
+        <div class="animate-on-scroll grid gap-10 sm:grid-cols-3 sm:gap-12">
 
-  <!-- 02: Document Processing -->
-  <section id="documents" class="border-t border-gh-border bg-gh-canvas-subtle py-20">
-    <div class="mx-auto max-w-5xl px-6">
-      <div class="animate-on-scroll grid gap-12 sm:grid-cols-2 sm:items-start">
-        <div class="order-1 sm:order-2">
-          <div class="text-5xl font-light text-gh-border">02</div>
-          <h2 class="mt-4 text-2xl font-bold tracking-tight text-gh-fg">
-            Document Processing
-          </h2>
-          <p class="mt-2 text-base font-medium text-gh-green">
-            Stop typing what&rsquo;s already on paper.
-          </p>
-          <p class="mt-4 leading-relaxed text-gh-fg-muted">
-            Extract data from invoices, contracts, purchase orders, and forms automatically.
-            AI reads documents, pulls the data, and puts it where it belongs &mdash; no manual
-            data entry.
-          </p>
-          <ul class="mt-6 space-y-2">
-            {[
-              'Invoice and PO data extraction',
-              'Contract and form processing',
-              'Automated filing and categorization',
-              'Data validation and error detection',
-            ].map(item => (
-              <li class="flex items-start gap-2 text-sm text-gh-fg-muted">
-                <svg class="mt-0.5 h-4 w-4 shrink-0 text-gh-green" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                </svg>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div class="order-2 sm:order-1 rounded-2xl border border-gh-border border-l-4 border-l-gh-green bg-white p-8">
-          <p class="text-xs font-semibold uppercase tracking-widest text-gh-fg-subtle">Why it matters</p>
-          <ul class="mt-4 space-y-3 text-sm text-gh-fg-muted">
-            <li class="border-b border-gh-border pb-3">
-              <span class="font-medium text-gh-fg">Owner:</span> Your team stops re-typing data from documents
-            </li>
-            <li class="border-b border-gh-border pb-3">
-              <span class="font-medium text-gh-fg">CTO:</span> Production document pipelines with accuracy validation
-            </li>
-            <li class="pb-0">
-              <span class="font-medium text-gh-fg">COO:</span> Processing errors disappear, throughput doubles
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+          <div class="sm:col-span-2">
+            <div class="flex items-baseline gap-2 text-xs text-gh-fg-subtle">
+              <span>{section.num}</span>
+              <span class="h-px flex-1 bg-gh-border"></span>
+            </div>
+            <h2 class="mt-3 text-xl font-bold tracking-tight text-gh-fg sm:text-2xl">
+              {section.title}
+            </h2>
+            <p class="mt-4 text-sm leading-relaxed text-gh-fg-muted">
+              {section.description}
+            </p>
+            <ul class="mt-6 space-y-1.5 text-sm text-gh-fg-muted">
+              {section.capabilities.map(item => (
+                <li class="flex gap-3">
+                  <span class="text-gh-fg-subtle">&minus;</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-  <!-- 03: Workflow Automation -->
-  <section id="workflows" class="py-20">
-    <div class="mx-auto max-w-5xl px-6">
-      <div class="animate-on-scroll grid gap-12 sm:grid-cols-2 sm:items-start">
-        <div>
-          <div class="text-5xl font-light text-gh-border">03</div>
-          <h2 class="mt-4 text-2xl font-bold tracking-tight text-gh-fg">
-            Workflow Automation
-          </h2>
-          <p class="mt-2 text-base font-medium text-gh-green">
-            Your business processes run themselves.
-          </p>
-          <p class="mt-4 leading-relaxed text-gh-fg-muted">
-            Connect disconnected systems and automate repetitive multi-step processes. Orders,
-            approvals, onboarding, reporting &mdash; AI orchestrates the workflow so nothing
-            falls through cracks.
-          </p>
-          <ul class="mt-6 space-y-2">
-            {[
-              'Multi-system integration (ERP, CRM, email)',
-              'Approval and routing automation',
-              'Order processing and fulfillment tracking',
-              'Onboarding and compliance workflows',
-            ].map(item => (
-              <li class="flex items-start gap-2 text-sm text-gh-fg-muted">
-                <svg class="mt-0.5 h-4 w-4 shrink-0 text-gh-green" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                </svg>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div class="rounded-2xl border border-gh-border border-l-4 border-l-gh-green bg-white p-8">
-          <p class="text-xs font-semibold uppercase tracking-widest text-gh-fg-subtle">Why it matters</p>
-          <ul class="mt-4 space-y-3 text-sm text-gh-fg-muted">
-            <li class="border-b border-gh-border pb-3">
-              <span class="font-medium text-gh-fg">Owner:</span> Processes that needed 3 people now need 1
-            </li>
-            <li class="border-b border-gh-border pb-3">
-              <span class="font-medium text-gh-fg">CTO:</span> Event-driven architecture, not batch jobs
-            </li>
-            <li class="pb-0">
-              <span class="font-medium text-gh-fg">COO:</span> Orders stop falling through cracks, cycle times shrink
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+          <aside class="rounded-lg border border-gh-border bg-gh-canvas-subtle p-5">
+            <p class="text-xs font-bold uppercase tracking-[0.15em] text-gh-fg-subtle">
+              implementation
+            </p>
+            <dl class="mt-4 space-y-2 text-xs">
+              {section.stack.map(([key, value]) => (
+                <div class="grid grid-cols-[6rem_1fr] gap-2">
+                  <dt class="text-gh-fg-subtle">{key}</dt>
+                  <dd class="text-gh-fg">{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </aside>
 
-  <!-- 04: Data & Reporting -->
-  <section id="data" class="border-t border-gh-border bg-gh-canvas-subtle py-20">
-    <div class="mx-auto max-w-5xl px-6">
-      <div class="animate-on-scroll grid gap-12 sm:grid-cols-2 sm:items-start">
-        <div class="order-1 sm:order-2">
-          <div class="text-5xl font-light text-gh-border">04</div>
-          <h2 class="mt-4 text-2xl font-bold tracking-tight text-gh-fg">
-            Data &amp; Reporting
-          </h2>
-          <p class="mt-2 text-base font-medium text-gh-green">
-            AI turns your data into decisions.
-          </p>
-          <p class="mt-4 leading-relaxed text-gh-fg-muted">
-            Aggregate data from scattered systems, generate summaries, and surface what matters.
-            AI builds the reports your team used to spend hours creating manually.
-          </p>
-          <ul class="mt-6 space-y-2">
-            {[
-              'Cross-system data aggregation',
-              'Automated report generation',
-              'Trend detection and anomaly alerts',
-              'Dashboard and summary creation',
-            ].map(item => (
-              <li class="flex items-start gap-2 text-sm text-gh-fg-muted">
-                <svg class="mt-0.5 h-4 w-4 shrink-0 text-gh-green" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                </svg>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div class="order-2 sm:order-1 rounded-2xl border border-gh-border border-l-4 border-l-gh-green bg-white p-8">
-          <p class="text-xs font-semibold uppercase tracking-widest text-gh-fg-subtle">Why it matters</p>
-          <ul class="mt-4 space-y-3 text-sm text-gh-fg-muted">
-            <li class="border-b border-gh-border pb-3">
-              <span class="font-medium text-gh-fg">Owner:</span> You see the full picture without waiting for someone to build a spreadsheet
-            </li>
-            <li class="border-b border-gh-border pb-3">
-              <span class="font-medium text-gh-fg">CTO:</span> Clean data pipelines, not manual exports
-            </li>
-            <li class="pb-0">
-              <span class="font-medium text-gh-fg">COO:</span> Weekly reports that took a day now take a minute
-            </li>
-          </ul>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="border-t border-gh-border py-24">
-    <div class="mx-auto max-w-3xl px-6 text-center">
-      <h2 class="text-2xl font-bold tracking-tight text-gh-fg">
-        Ready to move faster?
-      </h2>
-      <p class="mt-4 text-lg text-gh-fg-muted">
-        I help companies automate repetitive work with AI.
-      </p>
-      <div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-        <a
-          href="https://www.linkedin.com/in/kborovik"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 rounded-lg bg-gh-blue px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-gh-blue-hover"
-        >
-          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" /></svg>
-          LinkedIn
-        </a>
-        <a
-          href="https://calendar.app.google/cYM3H3TsHsequR587"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 rounded-lg bg-gh-green px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-gh-green-hover"
-        >
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7v-5z"/></svg>
-          Book a Call
-        </a>
-      </div>
-    </div>
-  </section>
+    </section>
+  ))}
 </Layout>

@@ -36,10 +36,10 @@ src/
 │   ├── Footer.astro          # Footer links, copyright
 │   └── Logo.astro            # Typographic logo — unused after pivot
 ├── pages/
-│   ├── index.astro           # / — hero, AI automation pitch, MailPilot featured project, CTA
-│   ├── expertise.astro       # /expertise — AI Email, Document Processing, Workflow Automation, Data & Reporting
-│   ├── demo.astro            # /demo (Live Demo) — MailPilot demo, example questions, architecture
-│   └── about.astro           # /about — bio, LinkedIn, Book a Call
+│   ├── index.astro           # / — hero · 01-03 capabilities grid · 04-07 why-hire-me grid
+│   ├── expertise.astro       # /expertise — 4 deep-dive sections (Email, Documents, Workflows, Data) with capability list + implementation key/value card
+│   ├── demo.astro            # /demo (Live Demo) — MailPilot — code-chip CTA, how-it-works, KB link, sample Q's, architecture
+│   └── about.astro           # /about — bio, headshot, LinkedIn / GitHub / Book a Call
 └── styles/
     └── global.css            # Tailwind v4 @theme: colors, fonts
 public/
@@ -66,29 +66,40 @@ linkedin-banner.html          # LinkedIn banner source — render to PNG via hea
 | `gh-fg`            | `#1f2328` | Primary text                                              |
 | `gh-fg-muted`      | `#59636e` | Secondary text                                            |
 | `gh-fg-subtle`     | `#818b98` | Tertiary text                                             |
-| `gh-green`         | `#1f883d` | **Primary accent** — Book a Call, See My Work, nav active |
+| `gh-green`         | `#1f883d` | **Primary accent** — Book a Call (nav), nav active link, `[ok]` markers |
 | `gh-green-hover`   | `#1a7f37` | Primary button hover                                      |
-| `gh-blue`          | `#0969da` | **Secondary accent** — LinkedIn buttons                   |
+| `gh-blue`          | `#0969da` | **Secondary accent** — `// section kickers`, LinkedIn button, deep links (Drive) |
 | `gh-blue-hover`    | `#0550ae` | Secondary button hover                                    |
 
-**Fonts**: IBM Plex family via Google Fonts (`display=swap`) — `--font-sans` (IBM Plex Sans), `--font-serif` (IBM Plex Serif), `--font-mono` (IBM Plex Mono) in `@theme`. Base font size 18px. Headings use `font-serif`, body/UI use `font-sans`, technical elements use `font-mono`. OG image and LinkedIn banner use Bricolage Grotesque for display headlines.
+**Fonts**: **IBM Plex Mono is the site-wide default** — set on `<body>` in `Layout.astro` and used for all on-site typography (headings, body, nav, footer, UI). Loaded weights: 400/500/600/700 via Google Fonts (`display=swap`). IBM Plex Sans and Serif are still imported in `@theme` but unused on-site — **do not reintroduce `font-sans` or `font-serif` classes on page content**. Hierarchy comes from weight + size + color, not font-family switching. Base font size 18px. OG image and LinkedIn banner use Bricolage Grotesque for display headlines.
 
 **Logo**: 4-color pinwheel mark (blue `#0969da`, green `#1f883d`, yellow `#f9c513`, red `#cf222e`) — derived from lab5.ca favicon
 
-**Layout**: Clean, minimal, high whitespace. Pinwheel logo in nav. No periods on headings.
+**Aesthetic**: framework-docs / terminal style (openspec.dev, Stripe docs as reference points) — **NOT** SaaS-marketing-landing. The audience hiring is technical; marketing flourishes (pill badges with leading dots, aspirational verbs, multiple stacked hero CTAs, "Why it matters" persona sidebars, colored icon boxes, "Learn more →" links) hurt credibility and have been removed. Clean, minimal, high whitespace. Pinwheel logo in nav. No periods on headings. Lowercase for tile titles and step titles (e.g. `email & communication`, `send a product question`).
+
+**Conventions**:
+
+- **Section kicker**: `// section name` in mono — `text-sm font-bold uppercase tracking-[0.2em] text-gh-blue`. Top label of each section.
+- **Numbered hairlines**: `01 ─────` headers above each tile or section item, mono, `text-xs text-gh-fg-subtle`. Numbering continues across grids when content flows as one docs narrative (homepage: 01-03 capabilities → 04-07 why-hire-me).
+- **Section dividers**: `border-t border-gh-border` between sections — no alternating background colors at the section level. `bg-gh-canvas-subtle` is reserved for contained surfaces (implementation cards, code chips, footer).
+- **Code-style CTA chip**: bordered mono box, `$ mail demo@lab5.ca [copy]`, modeled on openspec.dev's `npm install` block. Acts as the single primary CTA on the homepage and `/demo`.
+- **Implementation cards** (`/expertise`): mono key/value list in a `bg-gh-canvas-subtle` card with `IMPLEMENTATION` kicker. Example rows: `trigger: gmail push api`, `runtime: serverless functions`.
+- **Bullet lists**: dash-prefix in a subtle color (`-`), not check/x SVG icons.
+- **Copy**: factual, descriptive. Avoid aspirational verbs ("move faster", "transform"), business-benefit framing ("ship more with the same headcount"), and Owner/CTO/COO persona breakouts. Prefer tech vocabulary (LLM, retrieval, structured extraction, system of record, idempotent state machine).
+- **Hero CTAs**: at most one prominent CTA per page; on pages with a code-chip, the chip *is* the CTA. Book-a-Call lives in the nav and doesn't need repeating in page footers.
 
 ## Site positioning
 
 **Title**: AI Automation Engineer
-**Tagline**: "I modernize business operations with AI to make companies move faster"
+**Tagline**: "AI automation for business operations" (homepage h1)
 **Core expertise**: AI-powered automation for repetitive business processes (email, documents, workflows, data entry). Cloud platforms (GCP, Azure, AWS) are implementation details.
 
 | Page       | Route        | Purpose                                                    |
 | ---------- | ------------ | ---------------------------------------------------------- |
-| Home       | `/`          | Hero, AI automation pitch, MailPilot (reframed), CTA     |
-| Expertise  | `/expertise` | AI Email & Communication, Document Processing, Workflow Automation, Data & Reporting |
-| Live Demo  | `/demo`      | MailPilot demo — "see how AI handles real business email"  |
-| About      | `/about`     | Bio, LinkedIn, Book a Call                                 |
+| Home       | `/`          | Hero · capabilities grid (01-03) · why-hire-me grid (04-07) |
+| Expertise  | `/expertise` | 01-04 deep-dive: AI Email, Documents, Workflows, Data — each with description, capability list, implementation key/value card |
+| Live Demo  | `/demo`      | MailPilot — code-chip CTA, how-it-works, KB link, sample Q's, architecture |
+| About      | `/about`     | Bio, headshot, LinkedIn / GitHub / Book a Call            |
 
 **Primary CTA**: Book a Call — Google Calendar (`https://calendar.app.google/cYM3H3TsHsequR587`)
 **Secondary CTA**: LinkedIn — `https://www.linkedin.com/in/kborovik`

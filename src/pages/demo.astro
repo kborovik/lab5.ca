@@ -1,180 +1,184 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const steps = [
+  {
+    num: '01',
+    title: 'send a product question',
+    body: 'Email demo@lab5.ca with a question about the product specs in the knowledge base. Out-of-kb questions get a reply explaining how the demo works.',
+  },
+  {
+    num: '02',
+    title: 'agent searches the knowledge base',
+    body: 'The agent searches product documentation stored in Google Drive, running retrieval over indexed specs to find relevant passages.',
+  },
+  {
+    num: '03',
+    title: 'you get a sourced reply',
+    body: 'Within sixty seconds the agent replies with an answer grounded in the source documents. End-to-end automated: Gmail push → retrieval → llm → reply.',
+  },
+];
+
+const stack = [
+  {
+    num: '01',
+    title: 'frontend',
+    body: 'Astro SSG, Tailwind CSS, Cloudflare Workers. Static generation, zero cold-start, globally distributed.',
+  },
+  {
+    num: '02',
+    title: 'backend',
+    body: 'Python, serverless functions, event-driven. Triggered by Gmail push notifications via Pub/Sub. Scale-to-zero costs.',
+  },
+  {
+    num: '03',
+    title: 'ai layer',
+    body: 'LLM with retrieval over Google Drive. Structured prompts guide answer format. Out-of-kb detection prevents hallucination.',
+  },
+];
+
+const canAnswer = [
+  'What is the permeate flow rate in GPD for the TW-12.0K-840 model, and what is the motor horsepower required at 60Hz?',
+  'What is the continuous flow rate in GPM and peak flow rate in GPM for the WS36-600-2 softener?',
+  'What is the maximum flow rate of the C403 UV-COM model, and what is its UV dose range?',
+  'What is the permeate flow rate and active area of the FilmTec ECO-440i RO membrane?',
+  'What percentage of free chlorine can KDF 55 medium remove, and what is the heavy metal removal efficiency of KDF 55, KDF 85, and KDF-C media?',
+  'What is the capacity in GPD of the RO-500 Series model TW-270K-8580 installed in Nicaragua, and how many 8" TFC spiral wound membranes does this system contain?',
+];
+
+const willDecline = [
+  'Which Pentair commercial reverse osmosis system would you recommend for a 300 GPM brewery feedwater application?',
+  'Can you spec a Grundfos CRN dosing pump for chlorine injection at 25 GPH?',
+  'Which Veolia OPUS II system handles produced water with 50,000 ppm TDS for oil and gas?',
+];
 ---
 
 <Layout
-  title="Portfolio"
-  description="MailPilot — a live AI agent that handles real business email. See how AI automates communication, then review the architecture."
+  title="Live Demo"
+  description="MailPilot — a live AI agent that handles real business email. Send it a question, review the architecture."
 >
   <!-- Header -->
-  <section class="mx-auto max-w-3xl px-6 py-12 text-center sm:py-16">
-    <p class="text-sm font-semibold uppercase tracking-widest text-gh-green">Live Demo</p>
-    <h1 class="mt-2 text-3xl font-bold tracking-tight text-gh-fg sm:text-4xl">
-      MailPilot: Live Demo
-    </h1>
-    <p class="mx-auto mt-6 max-w-xl text-lg text-gh-fg-muted">
-      A live AI agent that reads email, searches a knowledge base, and responds — fully automated.
+  <section class="mx-auto max-w-3xl px-6 pt-20 pb-12 sm:pt-24 sm:pb-16 text-center">
+    <p class="text-sm font-bold uppercase tracking-[0.2em] text-gh-blue">
+      // live demo
     </p>
-    <!-- Email copy block -->
-    <div class="mt-10 inline-flex items-center gap-3 rounded-xl border border-gh-border bg-white px-5 py-3 font-mono text-base text-gh-fg shadow-sm">
-      <svg class="h-4 w-4 text-gh-fg-subtle flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-      <span class="text-gh-fg">demo@lab5.ca</span>
+    <h1 class="mt-4 text-3xl font-bold tracking-tight text-gh-fg sm:text-4xl">
+      MailPilot
+    </h1>
+    <p class="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-gh-fg-muted sm:text-base">
+      A live AI agent that reads email, retrieves from a knowledge base, and replies. End-to-end automated &mdash; not a sandbox.
+    </p>
+
+    <div class="mt-10 inline-flex items-center gap-3 rounded-lg border border-gh-border bg-gh-canvas-subtle px-5 py-3 text-sm text-gh-fg">
+      <span class="text-gh-fg-subtle">$</span>
+      <span>mail demo@lab5.ca</span>
       <button
         id="copy-email-btn"
         aria-label="Copy email address"
-        class="flex items-center gap-1.5 rounded-md border border-gh-border bg-gh-canvas-subtle px-2.5 py-1 text-xs font-semibold text-gh-fg-muted transition-colors hover:border-gh-border hover:bg-white hover:text-gh-fg cursor-pointer"
+        class="flex items-center gap-1.5 rounded-md border border-gh-border bg-white px-2.5 py-1 text-xs font-semibold text-gh-fg-muted transition-colors hover:text-gh-fg cursor-pointer"
       >
         <svg id="copy-icon" class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
         </svg>
-        <span id="copy-label">Copy</span>
+        <span id="copy-label">copy</span>
       </button>
     </div>
 
-    <div class="mt-4">
-      <a
-        href="mailto:demo@lab5.ca"
-        class="inline-flex items-center gap-2 rounded-lg border border-gh-border bg-white px-6 py-3 text-base font-semibold text-gh-fg transition-colors hover:border-gh-fg hover:bg-gh-canvas-subtle"
-      >
-        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none">
-          <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" fill="#EA4335"/>
-        </svg>
-        Send an email &rarr;
-      </a>
-    </div>
-    <p class="mt-4 text-sm text-gh-fg-subtle">A live AI agent responds to real emails. No signup required.</p>
+    <p class="mt-4 text-xs text-gh-fg-subtle">
+      replies in &lt;60s · no signup · real production agent
+    </p>
   </section>
 
   <!-- How it works -->
-  <section class="py-12">
-    <div class="animate-on-scroll mx-auto max-w-3xl px-6">
-      <h2 class="text-2xl font-bold tracking-tight text-gh-fg">How the Demo Works</h2>
-      <ol class="mt-8 space-y-8">
-        <li class="flex gap-4">
-          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gh-green text-sm font-bold text-white">1</span>
-          <div>
-            <p class="font-semibold text-gh-fg">Send a product question</p>
-            <p class="mt-1 text-gh-fg-muted">
-              Email <strong>demo@lab5.ca</strong> with a question about the product specs
-              in the knowledge base. Questions outside the knowledge base will receive
-              a reply explaining how the demo works.
-            </p>
+  <section class="border-t border-gh-border py-16 sm:py-20">
+    <div class="mx-auto max-w-3xl px-6">
+      <p class="text-sm font-bold uppercase tracking-[0.2em] text-gh-blue">
+        // how it works
+      </p>
+      <div class="mt-10 grid gap-10 sm:grid-cols-3 sm:gap-8">
+        {steps.map(step => (
+          <div class="animate-on-scroll">
+            <div class="flex items-baseline gap-2 text-xs text-gh-fg-subtle">
+              <span>{step.num}</span>
+              <span class="h-px flex-1 bg-gh-border"></span>
+            </div>
+            <h3 class="mt-3 text-sm font-bold text-gh-fg">{step.title}</h3>
+            <p class="mt-2 text-xs leading-relaxed text-gh-fg-muted">{step.body}</p>
           </div>
-        </li>
-        <li class="flex gap-4">
-          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gh-green text-sm font-bold text-white">2</span>
-          <div>
-            <p class="font-semibold text-gh-fg">The agent searches the knowledge base</p>
-            <p class="mt-1 text-gh-fg-muted">
-              An AI agent searches product documentation stored in Google Drive,
-              using a RAG pipeline to find relevant specifications.
-            </p>
-          </div>
-        </li>
-        <li class="flex gap-4">
-          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gh-green text-sm font-bold text-white">3</span>
-          <div>
-            <p class="font-semibold text-gh-fg">You get an accurate reply</p>
-            <p class="mt-1 text-gh-fg-muted">
-              Within 60 seconds, you receive a professional response grounded in real data.
-              The entire flow — from Gmail notification to reply — is fully automated.
-            </p>
-          </div>
-        </li>
-      </ol>
+        ))}
+      </div>
     </div>
   </section>
 
-  <!-- Product Specifications -->
-  <section class="border-t border-gh-border py-20">
-    <div class="mx-auto max-w-3xl px-6 text-center">
-      <h2 class="text-2xl font-bold tracking-tight text-gh-fg">Product Specifications</h2>
-      <p class="mt-4 text-gh-fg-muted">
-        These questions are based on real product specification sheets. Review the source documents to verify the agent's accuracy.
+  <!-- Knowledge base -->
+  <section class="border-t border-gh-border py-16 sm:py-20">
+    <div class="mx-auto max-w-3xl px-6">
+      <p class="text-sm font-bold uppercase tracking-[0.2em] text-gh-blue">
+        // knowledge base
+      </p>
+      <p class="mt-6 max-w-2xl text-sm leading-relaxed text-gh-fg-muted">
+        Sample questions are based on real product specification sheets. Cross-check the agent&rsquo;s answers against the source documents.
       </p>
       <a
         href="https://drive.google.com/drive/folders/1IUuPinOopUv_YWOZyFpt2ZX8Hd8bpZat"
         target="_blank"
         rel="noopener noreferrer"
-        class="mt-6 inline-flex items-center gap-2 rounded-lg border border-gh-blue bg-white px-6 py-3 text-base font-semibold text-gh-blue transition-colors hover:bg-gh-blue hover:text-white"
+        class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-gh-blue link-animated"
       >
-        <svg class="h-5 w-5" viewBox="0 0 87.3 78" fill="currentColor">
-          <path d="M6.6 66.85l3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8H1.2c0 1.55.4 3.1 1.2 4.5l4.2 9.35z" fill="#0066DA"/>
-          <path d="M43.65 25.15L29.9 1.35c-1.35.8-2.5 1.9-3.3 3.3L1.2 52.7c-.8 1.4-1.2 2.95-1.2 4.5h27.5l16.15-32.05z" fill="#00AC47"/>
-          <path d="M73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5H59.85L55 62.1l-1.45 2.55L73.55 76.8z" fill="#EA4335"/>
-          <path d="M43.65 25.15L57.4 1.35C56.05.55 54.5 0 52.9 0H34.4c-1.6 0-3.15.55-4.5 1.35l13.75 23.8z" fill="#00832D"/>
-          <path d="M59.85 53H27.5L13.75 76.8c1.35.8 2.9 1.2 4.5 1.2H69.05c1.6 0 3.15-.45 4.5-1.2L59.85 53z" fill="#2684FC"/>
-          <path d="M73.4 26.5l-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3L43.65 25.15 59.85 53h27.45c0-1.55-.4-3.1-1.2-4.5L73.4 26.5z" fill="#FFBA00"/>
-        </svg>
-        Google Drive
+        open source documents in Google Drive <span>&rarr;</span>
       </a>
     </div>
   </section>
 
-  <!-- Try it: example questions -->
-  <section class="border-t border-gh-border bg-gh-canvas-subtle py-20">
+  <!-- Try it -->
+  <section class="border-t border-gh-border py-16 sm:py-20">
     <div class="mx-auto max-w-3xl px-6">
-      <h2 class="text-2xl font-bold tracking-tight text-gh-fg">Try These Questions</h2>
-
-      <div class="mt-8">
-        <div class="flex items-center gap-2">
-          <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gh-green text-xs font-bold text-white">&#10003;</span>
-          <h3 class="text-lg font-semibold text-gh-fg">Questions the agent can answer</h3>
-        </div>
-        <p class="mt-1 ml-8 text-sm text-gh-fg-muted">These questions match products in the knowledge base. The agent will reply with accurate, sourced answers.</p>
-        <ul class="mt-4 space-y-3">
-          {[
-            '"What is the permeate flow rate in GPD for the TW-12.0K-840 model, and what is the motor horsepower required at 60Hz?"',
-            '"What is the continuous flow rate in GPM and peak flow rate in GPM for the WS36-600-2 softener?"',
-            '"What is the maximum flow rate of the C403 UV-COM model, and what is its UV dose range?"',
-            '"What is the permeate flow rate and active area of the FilmTec ECO-440i RO membrane?"',
-            '"What percentage of free chlorine can KDF 55 medium remove, and what is the heavy metal removal efficiency of KDF 55, KDF 85, and KDF-C media?"',
-            '"What is the capacity in GPD of the RO-500 Series model TW-270K-8580 installed in Nicaragua, and how many 8\" TFC spiral wound membranes does this system contain?"',
-          ].map(prompt => (
-            <li class="flex items-center justify-between gap-3 rounded-lg border border-gh-border bg-white px-4 py-3">
-              <span class="font-mono text-sm text-gh-fg-muted">{prompt}</span>
-              <button
-                data-copy-question
-                data-copy-text={prompt.slice(1, -1)}
-                aria-label="Copy question"
-                class="flex items-center gap-1.5 rounded-md border border-gh-border bg-gh-canvas-subtle px-2.5 py-1 text-xs font-semibold text-gh-fg-muted transition-colors hover:border-gh-border hover:bg-white hover:text-gh-fg cursor-pointer shrink-0"
-              >
-                <svg class="copy-icon h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-                <span class="copy-label">Copy</span>
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <p class="text-sm font-bold uppercase tracking-[0.2em] text-gh-blue">
+        // try these questions
+      </p>
 
       <div class="mt-10">
-        <div class="flex items-center gap-2">
-          <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gh-fg-subtle text-xs font-bold text-white">&times;</span>
-          <h3 class="text-lg font-semibold text-gh-fg">Questions the agent will decline</h3>
-        </div>
-        <p class="mt-1 ml-8 text-sm text-gh-fg-muted">These products are not in the knowledge base. The agent will tell you it doesn't have that information rather than guess.</p>
-        <ul class="mt-4 space-y-3">
-          {[
-            '"Which Pentair commercial reverse osmosis system would you recommend for a 300 GPM brewery feedwater application?"',
-            '"Can you spec a Grundfos CRN dosing pump for chlorine injection at 25 GPH?"',
-            '"Which Veolia OPUS II system handles produced water with 50,000 ppm TDS for oil and gas?"',
-          ].map(prompt => (
-            <li class="flex items-center justify-between gap-3 rounded-lg border border-gh-border bg-white px-4 py-3">
-              <span class="font-mono text-sm text-gh-fg-muted">{prompt}</span>
+        <p class="text-sm font-bold text-gh-fg">
+          <span class="text-gh-green">[ok]</span> the agent will answer
+        </p>
+        <p class="mt-1 text-xs text-gh-fg-muted">
+          questions matching products in the knowledge base &mdash; expect a sourced reply.
+        </p>
+        <ul class="mt-4 space-y-2">
+          {canAnswer.map(q => (
+            <li class="flex items-start justify-between gap-3 border-b border-gh-border py-2 last:border-b-0">
+              <span class="text-xs leading-relaxed text-gh-fg-muted">{q}</span>
               <button
                 data-copy-question
-                data-copy-text={prompt.slice(1, -1)}
+                data-copy-text={q}
                 aria-label="Copy question"
-                class="flex items-center gap-1.5 rounded-md border border-gh-border bg-gh-canvas-subtle px-2.5 py-1 text-xs font-semibold text-gh-fg-muted transition-colors hover:border-gh-border hover:bg-white hover:text-gh-fg cursor-pointer shrink-0"
+                class="shrink-0 rounded-md border border-gh-border bg-gh-canvas-subtle px-2 py-0.5 text-[10px] font-semibold uppercase text-gh-fg-muted transition-colors hover:bg-white hover:text-gh-fg cursor-pointer"
               >
-                <svg class="copy-icon h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-                <span class="copy-label">Copy</span>
+                <span class="copy-label">copy</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="mt-12">
+        <p class="text-sm font-bold text-gh-fg">
+          <span class="text-gh-fg-subtle">[skip]</span> the agent will decline
+        </p>
+        <p class="mt-1 text-xs text-gh-fg-muted">
+          products not in the knowledge base &mdash; expect a polite refusal, not a guess.
+        </p>
+        <ul class="mt-4 space-y-2">
+          {willDecline.map(q => (
+            <li class="flex items-start justify-between gap-3 border-b border-gh-border py-2 last:border-b-0">
+              <span class="text-xs leading-relaxed text-gh-fg-muted">{q}</span>
+              <button
+                data-copy-question
+                data-copy-text={q}
+                aria-label="Copy question"
+                class="shrink-0 rounded-md border border-gh-border bg-gh-canvas-subtle px-2 py-0.5 text-[10px] font-semibold uppercase text-gh-fg-muted transition-colors hover:bg-white hover:text-gh-fg cursor-pointer"
+              >
+                <span class="copy-label">copy</span>
               </button>
             </li>
           ))}
@@ -183,83 +187,27 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Architecture Overview -->
-  <section class="border-t border-gh-border bg-gh-canvas-subtle py-20">
-    <div class="animate-on-scroll mx-auto max-w-5xl px-6">
-      <h2 class="text-2xl font-bold tracking-tight text-gh-fg">Under the Hood</h2>
-      <p class="mt-4 max-w-2xl text-gh-fg-muted">
-        For technical reviewers — here's how MailPilot is built and why I made these choices.
+  <!-- Under the hood -->
+  <section class="border-t border-gh-border py-16 sm:py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <p class="text-sm font-bold uppercase tracking-[0.2em] text-gh-blue">
+        // under the hood
+      </p>
+      <p class="mt-6 max-w-2xl text-sm leading-relaxed text-gh-fg-muted">
+        For technical reviewers &mdash; the stack and the reasoning.
       </p>
 
-      <div class="mt-10 grid gap-6 sm:grid-cols-3">
-        <div class="rounded-2xl border border-gh-border bg-white p-6">
-          <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-gh-blue/10">
-            <svg class="h-5 w-5 text-gh-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
+      <div class="mt-10 grid gap-10 sm:grid-cols-3 sm:gap-8">
+        {stack.map(layer => (
+          <div class="animate-on-scroll">
+            <div class="flex items-baseline gap-2 text-xs text-gh-fg-subtle">
+              <span>{layer.num}</span>
+              <span class="h-px flex-1 bg-gh-border"></span>
+            </div>
+            <h3 class="mt-3 text-sm font-bold text-gh-fg">{layer.title}</h3>
+            <p class="mt-2 text-xs leading-relaxed text-gh-fg-muted">{layer.body}</p>
           </div>
-          <h3 class="text-sm font-semibold text-gh-fg">Frontend</h3>
-          <p class="mt-2 text-sm text-gh-fg-muted">
-            Astro SSG, Tailwind CSS, edge deployment. Static generation for zero cold-start
-            latency, deployed globally.
-          </p>
-        </div>
-        <div class="rounded-2xl border border-gh-border bg-white p-6">
-          <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-gh-green/10">
-            <svg class="h-5 w-5 text-gh-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
-            </svg>
-          </div>
-          <h3 class="text-sm font-semibold text-gh-fg">Backend</h3>
-          <p class="mt-2 text-sm text-gh-fg-muted">
-            Python, serverless functions, event-driven messaging. Architecture triggered by
-            email push notifications. Serverless for scale-to-zero costs.
-          </p>
-        </div>
-        <div class="rounded-2xl border border-gh-border bg-white p-6">
-          <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-gh-blue/10">
-            <svg class="h-5 w-5 text-gh-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          </div>
-          <h3 class="text-sm font-semibold text-gh-fg">AI Layer</h3>
-          <p class="mt-2 text-sm text-gh-fg-muted">
-            LLM integration, knowledge base search. RAG pipeline finds relevant
-            documentation. Structured prompts guide multi-turn email conversations.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="py-20">
-    <div class="mx-auto max-w-3xl px-6 text-center">
-      <h2 class="text-2xl font-bold tracking-tight text-gh-fg">
-        Imagine this for your business
-      </h2>
-      <p class="mt-4 text-gh-fg-muted">
-        MailPilot shows my approach: find a real business problem, automate it with AI, and deploy to production. What repetitive process is slowing your company down?
-      </p>
-      <div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-        <a
-          href="https://www.linkedin.com/in/kborovik"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 rounded-lg bg-gh-blue px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-gh-blue-hover"
-        >
-          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" /></svg>
-          LinkedIn
-        </a>
-        <a
-          href="https://calendar.app.google/cYM3H3TsHsequR587"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 rounded-lg bg-gh-green px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-gh-green-hover"
-        >
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7v-5z"/></svg>
-          Book a Call
-        </a>
+        ))}
       </div>
     </div>
   </section>
@@ -271,11 +219,11 @@ import Layout from '../layouts/Layout.astro';
 
     btn?.addEventListener('click', () => {
       navigator.clipboard.writeText('demo@lab5.ca').then(() => {
-        if (label) label.textContent = '\u2713 Copied';
-        if (icon) icon.style.display = 'none';
+        if (label) label.textContent = '✓ copied';
+        if (icon) (icon as HTMLElement).style.display = 'none';
         setTimeout(() => {
-          if (label) label.textContent = 'Copy';
-          if (icon) icon.style.display = '';
+          if (label) label.textContent = 'copy';
+          if (icon) (icon as HTMLElement).style.display = '';
         }, 2000);
       });
     });
@@ -284,14 +232,11 @@ import Layout from '../layouts/Layout.astro';
       btn.addEventListener('click', () => {
         const text = btn.getAttribute('data-copy-text') || '';
         const labelEl = btn.querySelector('.copy-label');
-        const iconEl = btn.querySelector('.copy-icon');
         navigator.clipboard.writeText(text).then(() => {
-          if (labelEl) labelEl.textContent = '\u2713 Copied';
-          if (iconEl) (iconEl as HTMLElement).style.display = 'none';
+          if (labelEl) labelEl.textContent = '✓';
           setTimeout(() => {
-            if (labelEl) labelEl.textContent = 'Copy';
-            if (iconEl) (iconEl as HTMLElement).style.display = '';
-          }, 2000);
+            if (labelEl) labelEl.textContent = 'copy';
+          }, 1500);
         });
       });
     });
