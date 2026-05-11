@@ -7,11 +7,22 @@ SHELL := /bin/bash
 MAKEFLAGS += --no-builtin-rules --no-builtin-variables
 root_dir := $(shell git rev-parse --show-toplevel)
 
+.DEFAULT_GOAL := help
+.PHONY: help install dev preview build clean clean-all check playwright wrangler status deploy
+
+###############################################################################
+# Help (default target)
+###############################################################################
+
+help: ## Show this help — list all targets with descriptions
+	printf "$(blue)Usage:$(reset) $(green)make [target]$(reset)\n$(blue)Targets:$(reset)\n"
+	awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z0-9_-]+:.*?## / { printf "  $(yellow)%-12s$(reset) %s\n", $$1, $$2 | "sort" }' $(MAKEFILE_LIST)
+
 ###############################################################################
 # Dependencies
 ###############################################################################
 
-install: ## Install dependencies (installs pnpm via Homebrew if missing)
+install: ## Install pnpm (via Homebrew if missing), then pnpm install
 	$(call header,Installing dependencies)
 	cd $(root_dir)
 	command -v pnpm >/dev/null 2>&1 || brew install pnpm
@@ -21,12 +32,12 @@ install: ## Install dependencies (installs pnpm via Homebrew if missing)
 # Development
 ###############################################################################
 
-dev: clean ## Start the local dev server
+dev: clean ## Start the local dev server (astro dev, http://localhost:4321)
 	$(call header,Starting dev server)
 	cd $(root_dir)
 	pnpm astro dev
 
-preview: build ## Preview the production build locally
+preview: build ## Build and preview the production output locally
 	$(call header,Previewing production build)
 	cd $(root_dir)
 	pnpm astro preview
@@ -35,17 +46,17 @@ preview: build ## Preview the production build locally
 # Build
 ###############################################################################
 
-build: clean check ## Build the site for production
+build: clean check ## Clean, type-check, and build the site to dist/
 	$(call header,Building site)
 	cd $(root_dir)
 	pnpm astro build
 
-clean: ## Remove build artifacts and caches
+clean: ## Remove build artifacts (dist/, .astro/)
 	$(call header,Cleaning build artifacts)
 	cd $(root_dir)
 	rm -rf dist/ .astro/
 
-clean-all: clean ## Remove build artifacts, caches, and node_modules
+clean-all: clean ## Remove build artifacts and node_modules
 	$(call header,Removing node_modules)
 	cd $(root_dir)
 	rm -rf node_modules/
@@ -63,7 +74,7 @@ check: ## Run Astro type checking
 # Playwright
 ###############################################################################
 
-playwright: ## Install Playwright Chrome browser binary
+playwright: ## Install Playwright Chrome browser binary (pnpm dlx)
 	$(call header,Installing Playwright Chrome)
 	pnpm dlx playwright install
 
@@ -71,50 +82,37 @@ playwright: ## Install Playwright Chrome browser binary
 # Deploy
 ###############################################################################
 
-wrangler: ## Install Wrangler CLI
+wrangler: ## Install Wrangler CLI globally
 	$(call header,Installing Wrangler)
 	pnpm add -g wrangler
 
-status: ## Check Cloudflare Workers deployment status
+status: ## Check Cloudflare Workers deployment status (JSON)
 	$(call header,Checking deployment status)
 	wrangler deployments status --name=lab5-ca --json
 
-deploy: build ## Deploy to Cloudflare Workers
+deploy: build ## Build and deploy to Cloudflare Workers
 	$(call header,Deploying to Cloudflare Workers)
 	cd $(root_dir)
 	wrangler deploy
 
 ###############################################################################
-# Colors and Headers
+# Internal — tty-aware colors and the header helper
+#   Colors are emitted only when stdout is an interactive terminal, so escape
+#   codes never leak into piped output (CI logs, LLM-agent transcripts, etc.).
 ###############################################################################
 
-TERM := xterm-256color
-
-black := $$(tput setaf 0)
-red := $$(tput setaf 1)
-green := $$(tput setaf 2)
-yellow := $$(tput setaf 3)
-blue := $$(tput setaf 4)
-magenta := $$(tput setaf 5)
-cyan := $$(tput setaf 6)
-white := $$(tput setaf 7)
-reset := $$(tput sgr0)
+ifeq ($(shell test -t 1 && echo tty),tty)
+  blue   := $(shell tput setaf 4)
+  green  := $(shell tput setaf 2)
+  yellow := $(shell tput setaf 3)
+  reset  := $(shell tput sgr0)
+else
+  blue   :=
+  green  :=
+  yellow :=
+  reset  :=
+endif
 
 define header
 echo "$(blue)==> $(1) <==$(reset)"
 endef
-
-define var
-echo "$(magenta)$(1)$(white): $(yellow)$(2)$(reset)"
-endef
-
-help:
-	echo "$(blue)Usage: $(green)make [recipe]$(reset)"
-	echo "$(blue)Recipes:$(reset)"
-	awk 'BEGIN {FS = ":.*?## "; sort_cmd = "sort"} /^[a-zA-Z0-9_-]+:.*?## / \
-	{ printf "  \033[33m%-10s\033[0m %s\n", $$1, $$2 | sort_cmd; } \
-	END {close(sort_cmd)}' $(MAKEFILE_LIST)
-
-prompt:
-	printf "$(magenta)Continue $(white)? $(cyan)(yes/no)$(reset)"
-	read -p ": " answer && [ "$$answer" = "yes" ] || exit 127

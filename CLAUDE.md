@@ -1,6 +1,6 @@
 # lab5.ca
 
-Personal portfolio and career site for Konstantin Borovik — AI Automation Engineer. Positioning: AI-powered automation for repetitive business processes (ERP integration, document workflows, email, reporting). Cloud platforms (GCP, Azure, AWS) are implementation details, not the pitch. MailPilot (the AI email platform in `/Users/kb/github/pilot`) is featured as a proof-of-capability demo showing how AI handles real business communication.
+Personal portfolio and career site for Konstantin Borovik — AI Automation Engineer. Positioning: AI-powered automation for repetitive business processes (ERP integration, document workflows, email, reporting). Cloud platforms (GCP, Azure, AWS) are implementation details, not the pitch. MailPilot (the AI email platform in `/Users/kb/github/mailpilot`) is featured as a proof-of-capability demo showing how AI handles real business communication.
 
 ## Commands
 
@@ -13,7 +13,9 @@ make check       # astro type checking
 make clean       # remove dist/ and .astro/
 make clean-all   # remove dist/, .astro/, node_modules/
 make deploy      # build + wrangler deploy to Cloudflare Workers
-make playwright  # install Playwright
+make status      # check Cloudflare Workers deployment status
+make wrangler    # install Wrangler CLI globally
+make playwright  # install Playwright Chrome browser binary (pnpm dlx)
 ```
 
 ## Stack
@@ -21,7 +23,7 @@ make playwright  # install Playwright
 - **SSG**: Astro v5 — static output, no SSR adapter
 - **Styling**: Tailwind CSS v4 — configured via `@theme` in `src/styles/global.css`
 - **Package manager**: `pnpm`
-- **Node**: `>=20` (pinned in `.nvmrc` and `package.json` engines)
+- **Node**: `>=22` (pinned in `package.json` engines)
 - **Hosting**: Cloudflare Workers (static assets) — merge to `main` triggers GitHub Actions deploy
 - **Domain**: `lab5.ca` via Cloudflare DNS, SSL automatic
 - **Browser testing**: Playwright MCP (Chrome) — visual review via Claude Code
@@ -30,18 +32,20 @@ make playwright  # install Playwright
 
 ```
 src/
-├── layouts/Layout.astro      # Main template — SEO props: title, description
+├── layouts/Layout.astro      # Main template — SEO props: title, description; scroll-reveal IntersectionObserver
 ├── components/
-│   ├── Nav.astro             # Sticky header, pinwheel logo, nav links, Book a Call CTA
-│   ├── Footer.astro          # Footer links, copyright
-│   └── Logo.astro            # Typographic logo — unused after pivot
+│   ├── Nav.astro             # Sticky header, pinwheel logo SVG (inline), nav links, Book a Call CTA, mobile menu
+│   ├── Footer.astro          # Footer links (Expertise · Demo · About), copyright
+│   └── Logo.astro            # Typographic logo — unused (kept for reference)
 ├── pages/
-│   ├── index.astro           # / — hero · 01-04 capabilities grid · 05-08 why-hire-me grid
+│   ├── index.astro           # / — hero · 01-04 capabilities · 05-08 why-hire-me · proof-of-capability (MailPilot Demo + github buttons)
 │   ├── expertise.astro       # /expertise — 4 deep-dive sections (ERP Integration, Documents, Email, Data) with capability list + implementation key/value card
-│   ├── demo.astro            # /demo (Live Demo) — MailPilot — code-chip CTA, how-it-works, KB link, sample Q's, architecture
-│   └── about.astro           # /about — bio, headshot, LinkedIn / GitHub / Book a Call
+│   ├── demo.astro            # /demo (Live Demo) — MailPilot — code-chip CTA, how-it-works, KB link, sample Q's (can-answer / will-decline w/ copy buttons), architecture
+│   └── about.astro           # /about — bio, headshot, LinkedIn / GitHub buttons (Book a Call lives in nav)
+├── assets/
+│   └── konstantin-borovik-headshot.jpg  # imported via astro:assets on /about
 └── styles/
-    └── global.css            # Tailwind v4 @theme: colors, fonts
+    └── global.css            # Tailwind v4 @theme: colors, fonts; keyframes (fadeUp, slideInRight, pulseGlow); .animate-hero, .animate-on-scroll, .cta-pulse, .card-accent, .link-animated
 public/
 ├── _headers                  # Cloudflare security headers + cache policy
 ├── robots.txt                # Sitemap reference
@@ -71,7 +75,7 @@ linkedin-banner.html          # LinkedIn banner source — render to PNG via hea
 | `gh-blue`          | `#0969da` | **Secondary accent** — `// section kickers`, LinkedIn button, deep links (Drive) |
 | `gh-blue-hover`    | `#0550ae` | Secondary button hover                                    |
 
-**Fonts**: **IBM Plex Mono is the site-wide default** — set on `<body>` in `Layout.astro` and used for all on-site typography (headings, body, nav, footer, UI). Loaded weights: 400/500/600/700 via Google Fonts (`display=swap`). IBM Plex Sans and Serif are still imported in `@theme` but unused on-site — **do not reintroduce `font-sans` or `font-serif` classes on page content**. Hierarchy comes from weight + size + color, not font-family switching. Base font size 18px. OG image and LinkedIn banner use Bricolage Grotesque for display headlines.
+**Fonts**: **IBM Plex Mono is the only on-site typeface** — set on `<body>` in `Layout.astro` (via `font-mono` class) and used for all typography (headings, body, nav, footer, UI). Loaded via Google Fonts (`display=swap`): IBM Plex Mono 400/500/600/700. `@theme` declares only `--font-mono`; Sans/Serif have been removed — **do not reintroduce `font-sans` or `font-serif`**. Hierarchy comes from weight + size + color, not font-family switching. Base font size 18px (set on `html` in `global.css`). OG image and LinkedIn banner use Bricolage Grotesque for display headlines.
 
 **Logo**: 4-color pinwheel mark (blue `#0969da`, green `#1f883d`, yellow `#f9c513`, red `#cf222e`) — derived from lab5.ca favicon
 
@@ -82,11 +86,11 @@ linkedin-banner.html          # LinkedIn banner source — render to PNG via hea
 - **Section kicker**: `// section name` in mono — `text-sm font-bold uppercase tracking-[0.2em] text-gh-blue`. Top label of each section.
 - **Numbered hairlines**: `01 ─────` headers above each tile or section item, mono, `text-xs text-gh-fg-subtle`. Numbering continues across grids when content flows as one docs narrative (homepage: 01-04 capabilities → 05-08 why-hire-me).
 - **Section dividers**: `border-t border-gh-border` between sections — no alternating background colors at the section level. `bg-gh-canvas-subtle` is reserved for contained surfaces (implementation cards, code chips, footer).
-- **Code-style CTA chip**: bordered mono box, `$ mail demo@lab5.ca [copy]`, modeled on openspec.dev's `npm install` block. Acts as the single primary CTA on the homepage and `/demo`.
+- **Code-style CTA chip**: bordered mono box, `$ mail demo@lab5.ca [copy]`, modeled on openspec.dev's `npm install` block. Used on `/demo` as the primary CTA; copy-to-clipboard via vanilla JS. The homepage's "proof of capability" section uses a pair of bordered buttons instead (MailPilot Demo · github).
 - **Implementation cards** (`/expertise`): mono key/value list in a `bg-gh-canvas-subtle` card with `IMPLEMENTATION` kicker. Example rows: `trigger: gmail push api`, `runtime: serverless functions`.
 - **Bullet lists**: dash-prefix in a subtle color (`-`), not check/x SVG icons.
 - **Copy**: factual, descriptive. Avoid aspirational verbs ("move faster", "transform"), business-benefit framing ("ship more with the same headcount"), and Owner/CTO/COO persona breakouts. Prefer tech vocabulary (LLM, retrieval, structured extraction, system of record, idempotent state machine).
-- **Hero CTAs**: at most one prominent CTA per page; on pages with a code-chip, the chip *is* the CTA. Book-a-Call lives in the nav and doesn't need repeating in page footers.
+- **Hero CTAs**: at most one prominent CTA per page; on `/demo`, the code-chip *is* the CTA. Book-a-Call lives in the nav (with `cta-pulse` animation) and doesn't need repeating in page footers.
 
 ## Site positioning
 
@@ -98,10 +102,10 @@ linkedin-banner.html          # LinkedIn banner source — render to PNG via hea
 
 | Page       | Route        | Purpose                                                    |
 | ---------- | ------------ | ---------------------------------------------------------- |
-| Home       | `/`          | Hero · capabilities grid (01-04) · why-hire-me grid (05-08) |
+| Home       | `/`          | Hero · capabilities grid (01-04) · why-hire-me grid (05-08) · proof-of-capability (MailPilot) |
 | Expertise  | `/expertise` | 01-04 deep-dive: ERP Integration, Document Workflow, Email, Data — each with description, capability list, implementation key/value card |
-| Demo       | `/demo`      | MailPilot — code-chip CTA, how-it-works, KB link, sample Q's, architecture |
-| About      | `/about`     | Bio, headshot, LinkedIn / GitHub / Book a Call            |
+| Demo       | `/demo`      | MailPilot — code-chip CTA, how-it-works, KB link, sample Q's (copy buttons), architecture |
+| About      | `/about`     | Bio, headshot, LinkedIn / GitHub buttons                  |
 
 **Primary CTA**: Book a Call — Google Calendar (`https://calendar.app.google/cYM3H3TsHsequR587`)
 **Secondary CTA**: LinkedIn — `https://www.linkedin.com/in/kborovik`

@@ -5,9 +5,7 @@ html {
 }
 
 @theme {
-  /* Typography — IBM Plex family */
-  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: 'IBM Plex Serif', Georgia, serif;
+  /* Typography — IBM Plex Mono (site-wide default) */
   --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
 
   /* Canvas / Backgrounds */
