@@ -1,0 +1,71 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+type Props = { post: CollectionEntry<'blog'> };
+const { post } = Astro.props as Props;
+const { Content } = await render(post);
+
+const dateFmt = new Intl.DateTimeFormat('en-CA', {
+  year: 'numeric',
+  month: 'short',
+  day: '2-digit',
+  timeZone: 'UTC',
+});
+---
+
+<Layout title={post.data.title} description={post.data.description}>
+  <article>
+    <!-- Header -->
+    <section class="mx-auto max-w-5xl px-6 pt-16 pb-8 sm:pt-20 sm:pb-10">
+      <p class="text-sm font-bold uppercase tracking-[0.2em] text-gh-blue">
+        // blog
+      </p>
+      <h1 class="mt-4 text-3xl font-bold tracking-tight text-gh-fg sm:text-4xl">
+        {post.data.title}
+      </h1>
+      <p class="mt-3 text-xs text-gh-fg-subtle">
+        <time datetime={post.data.pubDate.toISOString()}>
+          {dateFmt.format(post.data.pubDate)}
+        </time>
+        {post.data.updatedDate && (
+          <>
+            {' '}&middot; updated{' '}
+            <time datetime={post.data.updatedDate.toISOString()}>
+              {dateFmt.format(post.data.updatedDate)}
+            </time>
+          </>
+        )}
+        {post.data.tags.length > 0 && (
+          <>{' '}&middot; {post.data.tags.join(' · ')}</>
+        )}
+      </p>
+    </section>
+
+    <!-- Body -->
+    <section class="border-t border-gh-border py-12 sm:py-14">
+      <div class="mx-auto max-w-3xl px-6">
+        <div class="prose">
+          <Content />
+        </div>
+
+        <div class="mt-16 border-t border-gh-border pt-8">
+          <a
+            href="/blog"
+            class="text-xs font-bold uppercase tracking-[0.15em] text-gh-blue hover:text-gh-blue-hover"
+          >
+            &larr; all posts
+          </a>
+        </div>
+      </div>
+    </section>
+  </article>
+</Layout>

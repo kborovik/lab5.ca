@@ -155,3 +155,130 @@ html {
 .link-animated:hover::after {
   transform: scaleX(1);
 }
+
+/* ===== Markdown prose (blog body) ===== */
+
+.prose {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--color-gh-fg);
+}
+
+.prose > * + * {
+  margin-top: 1.25em;
+}
+
+.prose h2 {
+  margin-top: 2.5em;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-gh-fg);
+}
+
+.prose h3 {
+  margin-top: 2em;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-gh-fg);
+}
+
+.prose p {
+  color: var(--color-gh-fg-muted);
+}
+
+.prose strong {
+  color: var(--color-gh-fg);
+  font-weight: 700;
+}
+
+.prose a {
+  color: var(--color-gh-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.prose a:hover {
+  color: var(--color-gh-blue-hover);
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 0;
+  list-style: none;
+  color: var(--color-gh-fg-muted);
+}
+
+.prose ul > li,
+.prose ol > li {
+  position: relative;
+  padding-left: 1.5em;
+}
+
+.prose ul > li + li,
+.prose ol > li + li {
+  margin-top: 0.4em;
+}
+
+.prose ul > li::before {
+  content: '\2013';
+  position: absolute;
+  left: 0;
+  color: var(--color-gh-fg-subtle);
+}
+
+.prose ol {
+  counter-reset: prose-ol;
+}
+
+.prose ol > li {
+  counter-increment: prose-ol;
+}
+
+.prose ol > li::before {
+  content: counter(prose-ol, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  color: var(--color-gh-fg-subtle);
+  font-size: 0.85em;
+}
+
+.prose code {
+  background-color: var(--color-gh-canvas-subtle);
+  border: 1px solid var(--color-gh-border);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+  font-size: 0.9em;
+  color: var(--color-gh-fg);
+}
+
+.prose pre {
+  background-color: var(--color-gh-canvas-subtle);
+  border: 1px solid var(--color-gh-border);
+  border-radius: 8px;
+  padding: 1em 1.25em;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.prose pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font-size: inherit;
+}
+
+.prose blockquote {
+  border-left: 3px solid var(--color-gh-border);
+  padding-left: 1em;
+  color: var(--color-gh-fg-subtle);
+  font-style: normal;
+}
+
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--color-gh-border);
+  margin: 2.5em 0;
+}

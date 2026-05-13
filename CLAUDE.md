@@ -35,17 +35,23 @@ src/
 ├── layouts/Layout.astro      # Main template — SEO props: title, description; scroll-reveal IntersectionObserver
 ├── components/
 │   ├── Nav.astro             # Sticky header, pinwheel logo SVG (inline), nav links, Book a Call CTA, mobile menu
-│   ├── Footer.astro          # Footer links (Expertise · Demo · About), copyright
+│   ├── Footer.astro          # Footer links (Expertise · Demo · Blog · About), copyright
 │   └── Logo.astro            # Typographic logo — unused (kept for reference)
+├── content.config.ts         # Astro content collections — defines `blog` collection (glob-loads src/content/blog/**/*.md)
+├── content/
+│   └── blog/                 # Blog posts in markdown — frontmatter: title, description, pubDate, updatedDate?, draft?, tags[]
 ├── pages/
 │   ├── index.astro           # / — hero · 01-04 capabilities · 05-08 why-hire-me · proof-of-capability (MailPilot Demo + github buttons)
 │   ├── expertise.astro       # /expertise — 4 deep-dive sections (ERP Integration, Documents, Email, Data) with capability list + implementation key/value card
 │   ├── demo.astro            # /demo (Live Demo) — MailPilot — code-chip CTA, how-it-works, KB link, sample Q's (can-answer / will-decline w/ copy buttons), architecture
-│   └── about.astro           # /about — bio, headshot, LinkedIn / GitHub buttons (Book a Call lives in nav)
+│   ├── about.astro           # /about — bio, headshot, LinkedIn / GitHub buttons (Book a Call lives in nav)
+│   └── blog/
+│       ├── index.astro       # /blog — list of posts (sorted pubDate desc), hairline cards w/ title + description + tags
+│       └── [...slug].astro   # /blog/<slug> — renders markdown body via astro:content render(), prose styles in global.css
 ├── assets/
 │   └── konstantin-borovik-headshot.jpg  # imported via astro:assets on /about
 └── styles/
-    └── global.css            # Tailwind v4 @theme: colors, fonts; keyframes (fadeUp, slideInRight, pulseGlow); .animate-hero, .animate-on-scroll, .cta-pulse, .card-accent, .link-animated
+    └── global.css            # Tailwind v4 @theme: colors, fonts; keyframes (fadeUp, slideInRight, pulseGlow); .animate-hero, .animate-on-scroll, .cta-pulse, .card-accent, .link-animated, .prose (markdown body)
 public/
 ├── _headers                  # Cloudflare security headers + cache policy
 ├── robots.txt                # Sitemap reference
@@ -100,12 +106,15 @@ linkedin-banner.html          # LinkedIn banner source — render to PNG via hea
 
 **Capability order** (canonical across all site sections): 01 ERP Integration · 02 Document Workflow · 03 AI Email & Communication · 04 Data & Reporting. Keep this order anywhere capabilities are listed (homepage tiles, /expertise sections, /about bio, meta descriptions).
 
-| Page       | Route        | Purpose                                                    |
-| ---------- | ------------ | ---------------------------------------------------------- |
-| Home       | `/`          | Hero · capabilities grid (01-04) · why-hire-me grid (05-08) · proof-of-capability (MailPilot) |
-| Expertise  | `/expertise` | 01-04 deep-dive: ERP Integration, Document Workflow, Email, Data — each with description, capability list, implementation key/value card |
-| Demo       | `/demo`      | MailPilot — code-chip CTA, how-it-works, KB link, sample Q's (copy buttons), architecture |
-| About      | `/about`     | Bio, headshot, LinkedIn / GitHub buttons                  |
+| Page       | Route             | Purpose                                                    |
+| ---------- | ----------------- | ---------------------------------------------------------- |
+| Home       | `/`               | Hero · capabilities grid (01-04) · why-hire-me grid (05-08) · proof-of-capability (MailPilot) |
+| Expertise  | `/expertise`      | 01-04 deep-dive: ERP Integration, Document Workflow, Email, Data — each with description, capability list, implementation key/value card |
+| Demo       | `/demo`           | MailPilot — code-chip CTA, how-it-works, KB link, sample Q's (copy buttons), architecture |
+| Blog       | `/blog`           | List of posts from `src/content/blog/*.md`. Detail at `/blog/<slug>` (slug = filename without `.md`). |
+| About      | `/about`          | Bio, headshot, LinkedIn / GitHub buttons                  |
+
+**Adding a blog post**: drop a `.md` file in `src/content/blog/`. Frontmatter required: `title`, `description`, `pubDate` (ISO date); optional: `updatedDate`, `tags: []`, `draft: true` (drafts are excluded from both the listing and the static path generator). Slug = filename. Schema is enforced by `src/content.config.ts`.
 
 **Primary CTA**: Book a Call — Google Calendar (`https://calendar.app.google/cYM3H3TsHsequR587`)
 **Secondary CTA**: LinkedIn — `https://www.linkedin.com/in/kborovik`
