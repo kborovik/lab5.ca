@@ -75,7 +75,7 @@ linkedin-banner.html          # LinkedIn banner source — render to PNG via hea
 | `gh-blue`          | `#0969da` | **Secondary accent** — `// section kickers`, LinkedIn button, deep links (Drive) |
 | `gh-blue-hover`    | `#0550ae` | Secondary button hover                                    |
 
-**Fonts**: **IBM Plex Mono is the only on-site typeface** — set on `<body>` in `Layout.astro` (via `font-mono` class) and used for all typography (headings, body, nav, footer, UI). Loaded via Google Fonts (`display=swap`): IBM Plex Mono 400/500/600/700. `@theme` declares only `--font-mono`; Sans/Serif have been removed — **do not reintroduce `font-sans` or `font-serif`**. Hierarchy comes from weight + size + color, not font-family switching. Base font size 18px (set on `html` in `global.css`). OG image and LinkedIn banner use Bricolage Grotesque for display headlines.
+**Fonts**: **IBM Plex Mono is the only typeface** — used across the site and the OG / LinkedIn banner. Set on `<body>` in `Layout.astro` (via `font-mono` class) and on the social-asset HTML sources. Loaded via Google Fonts (`display=swap`): IBM Plex Mono 400/500/600/700. `@theme` declares only `--font-mono`; Sans/Serif have been removed — **do not reintroduce `font-sans` or `font-serif`**. Hierarchy comes from weight + size + color, not font-family switching. Base font size 18px (set on `html` in `global.css`).
 
 **Logo**: 4-color pinwheel mark (blue `#0969da`, green `#1f883d`, yellow `#f9c513`, red `#cf222e`) — derived from lab5.ca favicon
 

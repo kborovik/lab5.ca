@@ -13,7 +13,7 @@
   <title>Konstantin Borovik — OG Image (1200 × 630)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -21,7 +21,7 @@
       width: 1200px;
       height: 630px;
       overflow: hidden;
-      font-family: 'Bricolage Grotesque', sans-serif;
+      font-family: 'IBM Plex Mono', monospace;
       background: #ffffff;
       position: relative;
     }
@@ -208,22 +208,28 @@
       transform: rotate(45deg);
     }
 
-    /* ─── Name ────────────────────────────────────────── */
-    .name {
-      font-size: 64px;
-      font-weight: 800;
-      line-height: 1.05;
-      letter-spacing: -0.035em;
+    /* ─── Headline ────────────────────────────────────── */
+    .headline {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 52px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
       color: #1f2328;
     }
 
-    /* ─── Tagline ─────────────────────────────────────── */
-    .tagline {
+    .headline .accent {
+      color: #1f883d;
+    }
+
+    /* ─── Name ────────────────────────────────────────── */
+    .name {
+      font-family: 'IBM Plex Mono', monospace;
       font-size: 22px;
-      font-weight: 400;
-      line-height: 1.5;
+      font-weight: 500;
+      line-height: 1.4;
       color: #59636e;
-      letter-spacing: -0.01em;
+      letter-spacing: 0;
     }
 
     /* ─── Domain ──────────────────────────────────────── */
@@ -292,12 +298,12 @@
 
     <div class="badge">AI Automation Engineer</div>
 
-    <div class="name">Konstantin Borovik</div>
-
-    <div class="tagline">
-      I modernize business operations with AI<br>
-      to make companies move faster
+    <div class="headline">
+      AI automation for<br>
+      <span class="accent">business operations</span>
     </div>
+
+    <div class="name">Konstantin Borovik</div>
 
     <div class="domain">
       <div class="domain-line"></div>
