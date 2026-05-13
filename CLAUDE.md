@@ -1,6 +1,6 @@
 # lab5.ca
 
-Personal portfolio and career site for Konstantin Borovik — AI Automation Engineer. Positioning: AI-powered automation for repetitive business processes (ERP integration, document workflows, email, reporting). Cloud platforms (GCP, Azure, AWS) are implementation details, not the pitch. MailPilot (the AI email platform in `/Users/kb/github/mailpilot`) is featured as a proof-of-capability demo showing how AI handles real business communication.
+Personal portfolio and career site for Konstantin Borovik — AI Automation Engineer. Positioning: AI-powered automation for repetitive business processes (ERP integration, document workflows, email, reporting). Cloud platforms (GCP, Azure, AWS) are implementation details, not the pitch. MailPilot (`~/github/mailpilot`) is featured as a proof-of-capability demo.
 
 ## Commands
 
@@ -20,10 +20,9 @@ make playwright  # install Playwright Chrome browser binary (pnpm dlx)
 
 ## Stack
 
-- **SSG**: Astro v5 — static output, no SSR adapter
+- **SSG**: Astro v5 (static output, no SSR adapter)
 - **Styling**: Tailwind CSS v4 — configured via `@theme` in `src/styles/global.css`
-- **Package manager**: `pnpm`
-- **Node**: `>=22` (pinned in `package.json` engines)
+- **Package manager**: `pnpm`; **Node**: `>=22` (pinned in `package.json` engines)
 - **Hosting**: Cloudflare Workers (static assets) — merge to `main` triggers GitHub Actions deploy
 - **Domain**: `lab5.ca` via Cloudflare DNS, SSL automatic
 - **Browser testing**: Playwright MCP (Chrome) — visual review via Claude Code
@@ -32,162 +31,147 @@ make playwright  # install Playwright Chrome browser binary (pnpm dlx)
 
 ```
 src/
-├── layouts/Layout.astro      # Main template — SEO props: title, description; scroll-reveal IntersectionObserver
+├── layouts/Layout.astro      # Main template — SEO props; scroll-reveal IntersectionObserver
 ├── components/
-│   ├── Nav.astro             # Sticky header, pinwheel logo SVG (inline), nav links, Book a Call CTA, mobile menu
+│   ├── Nav.astro             # Sticky header, pinwheel logo SVG, nav links, Book a Call CTA, mobile menu
 │   ├── Footer.astro          # Footer links (Expertise · Demo · Blog · About), copyright
 │   └── Logo.astro            # Typographic logo — unused (kept for reference)
-├── content.config.ts         # Astro content collections — defines `blog` collection (glob-loads src/content/blog/**/*.md)
-├── content/
-│   └── blog/                 # Blog posts in markdown — frontmatter: title, description, pubDate, updatedDate?, draft?, tags[]
+├── content.config.ts         # Astro content collections — defines `blog` (globs src/content/blog/**/*.md)
+├── content/blog/             # Blog post markdown files (see "Blog posts" below)
 ├── pages/
-│   ├── index.astro           # / — hero · 01-04 capabilities · 05-08 why-hire-me · proof-of-capability (MailPilot Demo + github buttons)
-│   ├── expertise.astro       # /expertise — 4 deep-dive sections (ERP Integration, Documents, Email, Data) with capability list + implementation key/value card
-│   ├── demo.astro            # /demo (Live Demo) — MailPilot — code-chip CTA, how-it-works, KB link, sample Q's (can-answer / will-decline w/ copy buttons), architecture
-│   ├── about.astro           # /about — bio, headshot, LinkedIn / GitHub buttons (Book a Call lives in nav)
+│   ├── index.astro           # / — hero · 01-04 capabilities · 05-08 why-hire-me · proof-of-capability
+│   ├── expertise.astro       # /expertise — 4 deep-dive sections w/ capability list + implementation card
+│   ├── demo.astro            # /demo — MailPilot: code-chip CTA, how-it-works, KB link, sample Q's, architecture
+│   ├── about.astro           # /about — bio, headshot, LinkedIn / GitHub buttons
 │   └── blog/
-│       ├── index.astro       # /blog — list of posts (sorted pubDate desc), hairline cards w/ title + description + tags
-│       └── [...slug].astro   # /blog/<slug> — renders markdown body via astro:content render(), prose styles in global.css
-├── assets/
-│   └── konstantin-borovik-headshot.jpg  # imported via astro:assets on /about
-└── styles/
-    └── global.css            # Tailwind v4 @theme: colors, fonts; keyframes (fadeUp, slideInRight, pulseGlow); .animate-hero, .animate-on-scroll, .cta-pulse, .card-accent, .link-animated, .prose (markdown body)
+│       ├── index.astro       # /blog — list of posts (sorted pubDate desc)
+│       └── [...slug].astro   # /blog/<slug> — renders markdown body, prose styles in global.css
+├── assets/konstantin-borovik-headshot.jpg  # imported via astro:assets on /about
+└── styles/global.css         # Tailwind v4 @theme: colors, fonts; keyframes; .prose (markdown body)
 public/
 ├── _headers                  # Cloudflare security headers + cache policy
-├── robots.txt                # Sitemap reference
-├── og.png                    # 1200×630 social preview image (rendered from og.html)
-├── favicon.ico / favicon.svg # Pinwheel mark in company colors
-├── logo-linkedin.svg/png     # LinkedIn profile photo (400×400, pinwheel mark)
-├── banner-linkedin.png       # LinkedIn banner (1584×396, rendered from linkedin-banner.html)
-makefile                      # All dev/build/deploy targets
-og.html                       # OG image source — render to PNG via headless Chrome
-linkedin-banner.html          # LinkedIn banner source — render to PNG via headless Chrome
+├── og.png                    # 1200×630 social preview (rendered from og.html)
+├── banner-linkedin.png       # 1584×396 LinkedIn banner (rendered from linkedin-banner.html)
+├── favicon.{ico,svg}, logo-linkedin.{svg,png}, robots.txt
+makefile, og.html, linkedin-banner.html
 ```
 
 ## Design System
 
 **Palette**: GitHub Primer Light (https://primer.style)
 
-| Token              | Hex       | Usage                                                     |
-| ------------------ | --------- | --------------------------------------------------------- |
-| `gh-canvas`        | `#ffffff` | Page background                                           |
-| `gh-canvas-subtle` | `#f6f8fa` | Alternate sections                                        |
-| `gh-border`        | `#d1d9e0` | Borders                                                   |
-| `gh-fg`            | `#1f2328` | Primary text                                              |
-| `gh-fg-muted`      | `#59636e` | Secondary text                                            |
-| `gh-fg-subtle`     | `#818b98` | Tertiary text                                             |
-| `gh-green`         | `#1f883d` | **Primary accent** — Book a Call (nav), nav active link, `[ok]` markers |
-| `gh-green-hover`   | `#1a7f37` | Primary button hover                                      |
-| `gh-blue`          | `#0969da` | **Secondary accent** — `// section kickers`, LinkedIn button, deep links (Drive) |
-| `gh-blue-hover`    | `#0550ae` | Secondary button hover                                    |
+| Token              | Hex       | Usage                                                                          |
+| ------------------ | --------- | ------------------------------------------------------------------------------ |
+| `gh-canvas`        | `#ffffff` | Page background                                                                |
+| `gh-canvas-subtle` | `#f6f8fa` | Contained surfaces only (cards, footer) — not section-level alternation        |
+| `gh-border`        | `#d1d9e0` | Borders                                                                        |
+| `gh-fg`            | `#1f2328` | Primary text                                                                   |
+| `gh-fg-muted`      | `#59636e` | Secondary text                                                                 |
+| `gh-fg-subtle`     | `#818b98` | Tertiary text                                                                  |
+| `gh-green`         | `#1f883d` | **Primary accent** — Book a Call, nav active, `[ok]` markers                   |
+| `gh-green-hover`   | `#1a7f37` | Primary button hover                                                           |
+| `gh-blue`          | `#0969da` | **Secondary accent** — `// section kickers`, LinkedIn button, links            |
+| `gh-blue-hover`    | `#0550ae` | Secondary button hover                                                         |
 
-**Fonts**: **IBM Plex Mono is the only typeface** — used across the site and the OG / LinkedIn banner. Set on `<body>` in `Layout.astro` (via `font-mono` class) and on the social-asset HTML sources. Loaded via Google Fonts (`display=swap`): IBM Plex Mono 400/500/600/700. `@theme` declares only `--font-mono`; Sans/Serif have been removed — **do not reintroduce `font-sans` or `font-serif`**. Hierarchy comes from weight + size + color, not font-family switching. Base font size 18px (set on `html` in `global.css`).
+**Fonts**: **IBM Plex Mono is the only typeface** — across the site and the OG / LinkedIn banner. Set on `<body>` in `Layout.astro` (`font-mono`) and on social-asset HTML sources. Loaded via Google Fonts (`display=swap`) at weights 400/500/600/700. `@theme` declares only `--font-mono`; **do not reintroduce `font-sans` or `font-serif`**. Hierarchy comes from weight + size + color, not font-family. Base size 18px (set on `html`).
 
-**Logo**: 4-color pinwheel mark (blue `#0969da`, green `#1f883d`, yellow `#f9c513`, red `#cf222e`) — derived from lab5.ca favicon
+**Logo**: 4-color pinwheel mark — blue `#0969da`, green `#1f883d`, yellow `#f9c513`, red `#cf222e` (derived from favicon).
 
-**Aesthetic**: framework-docs / terminal style (openspec.dev, Stripe docs as reference points) — **NOT** SaaS-marketing-landing. The audience hiring is technical; marketing flourishes (pill badges with leading dots, aspirational verbs, multiple stacked hero CTAs, "Why it matters" persona sidebars, colored icon boxes, "Learn more →" links) hurt credibility and have been removed. Clean, minimal, high whitespace. Pinwheel logo in nav. No periods on headings. Lowercase for tile titles and step titles (e.g. `email & communication`, `send a product question`).
+**Aesthetic**: framework-docs / terminal style (openspec.dev, Stripe docs as reference) — **NOT** SaaS-marketing-landing. Audience is technical; marketing flourishes (pill badges with leading dots, aspirational verbs, stacked hero CTAs, persona sidebars, colored icon boxes, "Learn more →" links) have been removed. Clean, minimal, high whitespace. No periods on headings.
+
+**Title casing**:
+
+- **Page H1s and blog post titles**: sentence case — first word + proper nouns only (e.g. `What I build`, `Compressed spec-driven development`).
+- **Tile titles and step titles**: lowercase (e.g. `email & communication`, `send a product question`).
+- **Section H2s on `/expertise`** (capability names): Title Case (e.g. `ERP Integration`, `Document Workflow`).
 
 **Conventions**:
 
-- **Section kicker**: `// section name` in mono — `text-sm font-bold uppercase tracking-[0.2em] text-gh-blue`. Top label of each section.
-- **Numbered hairlines**: `01 ─────` headers above each tile or section item, mono, `text-xs text-gh-fg-subtle`. Numbering continues across grids when content flows as one docs narrative (homepage: 01-04 capabilities → 05-08 why-hire-me).
-- **Section dividers**: `border-t border-gh-border` between sections — no alternating background colors at the section level. `bg-gh-canvas-subtle` is reserved for contained surfaces (implementation cards, code chips, footer).
-- **Code-style CTA chip**: bordered mono box, `$ mail demo@lab5.ca [copy]`, modeled on openspec.dev's `npm install` block. Used on `/demo` as the primary CTA; copy-to-clipboard via vanilla JS. The homepage's "proof of capability" section uses a pair of bordered buttons instead (MailPilot Demo · github).
-- **Implementation cards** (`/expertise`): mono key/value list in a `bg-gh-canvas-subtle` card with `IMPLEMENTATION` kicker. Example rows: `trigger: gmail push api`, `runtime: serverless functions`.
+- **Section kicker**: `// section name` — `text-sm font-bold uppercase tracking-[0.2em] text-gh-blue`.
+- **Numbered hairlines**: `01 ─────` above tiles, mono `text-xs text-gh-fg-subtle`. Numbering continues across grids when content flows as one narrative (homepage: 01-04 → 05-08).
+- **Section dividers**: `border-t border-gh-border` — no alternating background colors at section level. `bg-gh-canvas-subtle` is reserved for contained surfaces (implementation cards, code chips, footer).
+- **Code-style CTA chip**: bordered mono box, `$ mail demo@lab5.ca [copy]`, modeled on openspec.dev's `npm install` block. Used on `/demo`; copy-to-clipboard via vanilla JS.
+- **Implementation cards** (`/expertise`): mono key/value list in `bg-gh-canvas-subtle` card with `IMPLEMENTATION` kicker. Example: `trigger: gmail push api`.
 - **Bullet lists**: dash-prefix in a subtle color (`-`), not check/x SVG icons.
 - **Copy**: factual, descriptive. Avoid aspirational verbs ("move faster", "transform"), business-benefit framing ("ship more with the same headcount"), and Owner/CTO/COO persona breakouts. Prefer tech vocabulary (LLM, retrieval, structured extraction, system of record, idempotent state machine).
-- **Hero CTAs**: at most one prominent CTA per page; on `/demo`, the code-chip *is* the CTA. Book-a-Call lives in the nav (with `cta-pulse` animation) and doesn't need repeating in page footers.
+- **Hero CTAs**: at most one prominent CTA per page; Book-a-Call lives in the nav with `cta-pulse` animation — don't repeat in page footers.
 
 ## Site positioning
 
 **Title**: AI Automation Engineer
 **Tagline**: "AI automation for business operations" (homepage h1)
-**Core expertise**: AI-powered automation for repetitive business processes (ERP integration, document workflows, email, reporting). Cloud platforms (GCP, Azure, AWS) are implementation details.
 
-**Capability order** (canonical across all site sections): 01 ERP Integration · 02 Document Workflow · 03 AI Email & Communication · 04 Data & Reporting. Keep this order anywhere capabilities are listed (homepage tiles, /expertise sections, /about bio, meta descriptions).
+**Capability order** (canonical across all sections): 01 ERP Integration · 02 Document Workflow · 03 AI Email & Communication · 04 Data & Reporting. Keep this order anywhere capabilities are listed (homepage tiles, `/expertise` sections, `/about` bio, meta descriptions).
 
-| Page       | Route             | Purpose                                                    |
-| ---------- | ----------------- | ---------------------------------------------------------- |
-| Home       | `/`               | Hero · capabilities grid (01-04) · why-hire-me grid (05-08) · proof-of-capability (MailPilot) |
-| Expertise  | `/expertise`      | 01-04 deep-dive: ERP Integration, Document Workflow, Email, Data — each with description, capability list, implementation key/value card |
-| Demo       | `/demo`           | MailPilot — code-chip CTA, how-it-works, KB link, sample Q's (copy buttons), architecture |
-| Blog       | `/blog`           | List of posts from `src/content/blog/*.md`. Detail at `/blog/<slug>` (slug = filename without `.md`). |
-| About      | `/about`          | Bio, headshot, LinkedIn / GitHub buttons                  |
+| Page       | Route          | Purpose                                                                       |
+| ---------- | -------------- | ----------------------------------------------------------------------------- |
+| Home       | `/`            | Hero · capabilities (01-04) · why-hire-me (05-08) · proof-of-capability       |
+| Expertise  | `/expertise`   | 01-04 deep-dive — description, capability list, implementation card           |
+| Demo       | `/demo`        | MailPilot — code-chip CTA, how-it-works, KB link, sample Q's, architecture    |
+| Blog       | `/blog`        | Post list from `src/content/blog/*.md`; detail at `/blog/<slug>`              |
+| About      | `/about`       | Bio, headshot, LinkedIn / GitHub buttons                                      |
 
-**Adding a blog post**: drop a `.md` file in `src/content/blog/`. Frontmatter required: `title`, `description`, `pubDate` (ISO date); optional: `updatedDate`, `tags: []`, `draft: true` (drafts are excluded from both the listing and the static path generator). Slug = filename. Schema is enforced by `src/content.config.ts`.
+**CTAs**:
+- **Primary**: Book a Call — `https://calendar.app.google/cYM3H3TsHsequR587`
+- **Secondary**: LinkedIn — `https://www.linkedin.com/in/kborovik`
+- **Demo**: send email to `demo@lab5.ca`
 
-**Primary CTA**: Book a Call — Google Calendar (`https://calendar.app.google/cYM3H3TsHsequR587`)
-**Secondary CTA**: LinkedIn — `https://www.linkedin.com/in/kborovik`
-**Demo CTA**: Try the demo — send an email to `demo@lab5.ca` (see how AI handles real business email)
+## Blog posts
 
-## Playwright MCP (Browser Review)
+Posts live at `src/content/blog/<slug>.md` (flat, no subfolders). Filename minus `.md` **is** the URL slug — renaming a published file breaks the URL. UTF-8, LF, no BOM. Hard-wrap body prose at ~78 cols. **Do not place any non-post `.md` in this folder** — the glob in `src/content.config.ts` loads everything and schema validation will fail the build.
 
-Playwright is configured as an MCP server for Claude Code, enabling visual page review during development. It is **not** a project dependency — it runs via `npx` on demand.
+**Frontmatter** (schema in `src/content.config.ts` — keep in sync):
 
-**Configuration** (`.mcp.json`):
-
-```json
-{
-  "mcpServers": {
-    "playwright": {
-      "type": "stdio",
-      "command": "npx",
-      "args": [
-        "@playwright/mcp@latest",
-        "--browser",
-        "chrome",
-        "--user-data-dir",
-        ".playwright-mcp/chrome-profile"
-      ]
-    }
-  }
-}
+```yaml
+---
+title: Sentence case, no trailing period      # required — renders as H1
+description: One sentence, ≤ ~180 chars.      # required — also <meta description>
+pubDate: 2026-05-13                            # required — ISO date, drives sort
+updatedDate: 2026-06-01                        # optional — only on meaningful revisions
+draft: false                                   # optional — true excludes from build + 404s URL
+tags: [kebab-case, lowercase]                  # optional — ≤ 5, reuse existing before inventing
+---
 ```
 
-- **Browser**: Chrome (uses locally installed Chrome with persistent profile)
-- **Persistent sessions**: `--user-data-dir` stores cookies/sessions in `.playwright-mcp/chrome-profile/` — log in to external sites once and stay logged in across restarts
-- **Enabled by**: `.claude/settings.json` → `"enableAllProjectMcpServers": true`
-- **Output directory**: `.playwright-mcp/` (console logs, screenshots, chrome profile) — in `.gitignore`
+Do **not** add fields the schema does not declare (`author`, `image`, `canonical`) — `astro check` fails.
 
-**Usage in development workflow**:
+**Body**: the `[...slug].astro` template renders H1, date/tags line, and `← all posts` back-link. So:
 
-1. Start the dev server: `make dev`
-2. In Claude Code, use Playwright tools to review pages:
-   - `browser_navigate` → load `http://localhost:4321/` (or any route)
-   - `browser_snapshot` → get an accessibility tree of the page (preferred for review)
-   - `browser_take_screenshot` → capture a visual screenshot
-   - `browser_click` / `browser_type` → interact with elements
-   - `browser_console_messages` → check for JS errors/warnings
-   - `browser_network_requests` → inspect failed requests
-3. Use snapshots to verify layout, content, links, and accessibility after changes
+- Don't write a `# Title` line; start with a prose lede.
+- Don't add bylines, footers, or back-links.
+- `##` for top-level sections, `###` for subsections — sentence case, no trailing period.
+- First-person singular ("I"). Factual, descriptive — same voice rules as the rest of the site.
 
-**When to use**: After modifying pages or components, ask Claude Code to navigate to the page and take a snapshot to verify the rendered output matches expectations.
+**Markdown supported by `.prose`** (`src/styles/global.css`): bold, italic, inline code, fenced code blocks, unordered lists (en-dash bullets), ordered lists (decimal-leading-zero counters), blockquotes (hairline left border, no italic), `---` horizontal rule, inline links (`gh-blue` w/ 3px-offset underline). Use `&mdash;` / `&middot;` entities; literal `—` only when surrounded by spaces.
+
+**Not supported**: raw HTML (beyond entities and `<br>`), images (no pipeline yet — would require updates to `content.config.ts` and the template), tables, footnotes.
+
+**Before committing**: `make check` (type-checks frontmatter), `make build` (full prod build). Optional: `make dev` + Playwright MCP at `http://localhost:4321/blog/<slug>` to verify rendering.
+
+## Playwright MCP (browser review)
+
+Configured in `.mcp.json` via `npx @playwright/mcp@latest --browser chrome --user-data-dir .playwright-mcp/chrome-profile`. Not a project dependency — runs on demand. Persistent profile keeps external logins across restarts. Enabled by `.claude/settings.json` → `enableAllProjectMcpServers: true`. Output (logs, screenshots, profile) lives in `.playwright-mcp/` (gitignored).
+
+Workflow: start `make dev`, then in Claude Code use `browser_navigate` → `browser_snapshot` (a11y tree, preferred for review) or `browser_take_screenshot`. Also: `browser_click`, `browser_type`, `browser_console_messages`, `browser_network_requests`. Do **not** screenshot SVGs via Playwright — it times out on `file://` SVG URLs.
 
 ## CI/CD
 
-GitHub Actions pipelines in `.github/workflows/`:
+`.github/workflows/`:
+- **`ci.yml`** — PRs to `main`: `astro check` + build validation
+- **`deploy.yml`** — push to `main`: check, build, `wrangler deploy`
 
-- **`ci.yml`** — runs on PRs to `main`: type check (`astro check`) + build validation
-- **`deploy.yml`** — runs on push to `main`: type check, build, deploy via `wrangler deploy`
-
-**Required GitHub secrets** (`Settings → Secrets → Actions`):
-
-| Secret                  | Description                                                     |
-| ----------------------- | --------------------------------------------------------------- |
-| `CLOUDFLARE_API_TOKEN`  | Cloudflare API token with "Edit Cloudflare Workers" permissions |
-| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare account ID                                           |
+**Required GitHub secrets**: `CLOUDFLARE_API_TOKEN` (Edit Cloudflare Workers permission), `CLOUDFLARE_ACCOUNT_ID`.
 
 ## Gotchas
 
-- `README.md` is a **symlink** to `CLAUDE.md`
-- **OG image workflow**: Edit `og.html`, then render to PNG via headless Chrome: `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --screenshot=public/og.png --window-size=1200,630 og.html`
-- **LinkedIn banner workflow**: Edit `linkedin-banner.html`, then render: `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --screenshot=public/banner-linkedin.png --window-size=1584,396 linkedin-banner.html`
-- Do not use Playwright MCP to screenshot SVGs — it times out on `file://` SVG URLs
-- **Favicon regeneration**: `magick -background none public/favicon.svg -define icon:auto-resize=48,32,16 public/favicon.ico`
+- `README.md` is a **symlink** to `CLAUDE.md`.
+- **OG image**: edit `og.html`, render with `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --screenshot=public/og.png --window-size=1200,630 og.html`.
+- **LinkedIn banner**: edit `linkedin-banner.html`, render with `--screenshot=public/banner-linkedin.png --window-size=1584,396 linkedin-banner.html`.
+- **Favicon regen**: `magick -background none public/favicon.svg -define icon:auto-resize=48,32,16 public/favicon.ico`.
 
 ## TODO
 
-- [ ] Wire up `demo@lab5.ca` to MailPilot agent (lives in `~/github/mailpilot`)
+- [ ] Wire `demo@lab5.ca` to MailPilot agent (`~/github/mailpilot`)
 - [ ] Define post-demo CTA in the auto-reply
 - [ ] Configure Cloudflare redirect from `/services` → `/expertise`
 
