@@ -4,6 +4,10 @@ html {
   font-size: 18px;
 }
 
+body {
+  font-weight: 500;
+}
+
 @theme {
   /* Typography — IBM Plex Mono (site-wide default) */
   --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
@@ -14,7 +18,7 @@ html {
 
   /* Foreground / Text */
   --color-gh-fg: #1f2328;
-  --color-gh-fg-muted: #59636e;
+  --color-gh-fg-muted: #424a53;
   --color-gh-fg-subtle: #818b98;
 
   /* Borders */

@@ -66,14 +66,14 @@ makefile, og.html, linkedin-banner.html
 | `gh-canvas-subtle` | `#f6f8fa` | Contained surfaces only (cards, footer) — not section-level alternation        |
 | `gh-border`        | `#d1d9e0` | Borders                                                                        |
 | `gh-fg`            | `#1f2328` | Primary text                                                                   |
-| `gh-fg-muted`      | `#59636e` | Secondary text                                                                 |
+| `gh-fg-muted`      | `#424a53` | Secondary text                                                                 |
 | `gh-fg-subtle`     | `#818b98` | Tertiary text                                                                  |
 | `gh-green`         | `#1f883d` | **Primary accent** — Book a Call, nav active, `[ok]` markers                   |
 | `gh-green-hover`   | `#1a7f37` | Primary button hover                                                           |
 | `gh-blue`          | `#0969da` | **Secondary accent** — `// section kickers`, LinkedIn button, links            |
 | `gh-blue-hover`    | `#0550ae` | Secondary button hover                                                         |
 
-**Fonts**: **IBM Plex Mono is the only typeface** — across the site and the OG / LinkedIn banner. Set on `<body>` in `Layout.astro` (`font-mono`) and on social-asset HTML sources. Loaded via Google Fonts (`display=swap`) at weights 400/500/600/700. `@theme` declares only `--font-mono`; **do not reintroduce `font-sans` or `font-serif`**. Hierarchy comes from weight + size + color, not font-family. Base size 18px (set on `html`).
+**Fonts**: **IBM Plex Mono is the only typeface** — across the site and the OG / LinkedIn banner. Set on `<body>` in `Layout.astro` (`font-mono`) and on social-asset HTML sources. Loaded via Google Fonts (`display=swap`) at weights 400/500/600/700. `@theme` declares only `--font-mono`; **do not reintroduce `font-sans` or `font-serif`**. Hierarchy comes from weight + size + color, not font-family. Base size 18px (set on `html`); body default weight 500 (set in `global.css`) — monospace at 400 reads too thin against `gh-canvas`.
 
 **Logo**: 4-color pinwheel mark — blue `#0969da`, green `#1f883d`, yellow `#f9c513`, red `#cf222e` (derived from favicon).
 
