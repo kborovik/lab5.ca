@@ -6,6 +6,11 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://lab5.ca',
   integrations: [sitemap()],
+  markdown: {
+    shikiConfig: {
+      theme: 'github-light',
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },
