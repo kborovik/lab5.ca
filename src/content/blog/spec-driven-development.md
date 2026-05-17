@@ -19,7 +19,7 @@ The pitch for multi-agent setups is throughput. Spin up subagents in parallel gi
 
 > **One file. One thread. No subagents.**
 
-It is, deliberately, slower than fanning out work to parallel agents. The trade is determinism, control, and a single artifact I can read end-to-end before approving a diff.
+**Deliberately slower.** That's the point. Fanning out work to parallel agents is faster, but what I get in return for the slowdown is **determinism and control** — a single artifact I can read end-to-end before approving a diff.
 
 ## The problem with parallel agents
 
@@ -55,11 +55,11 @@ The plugin exposes five slash commands. They map cleanly onto the loop I want:
 
 - `/sdd:design` — propose-then-critique a structural change. Writes a steno-encoded draft to `designs/<slug>.md`. I fold accepted designs into `SPEC.md` with `/sdd:spec`.
 - `/sdd:spec` — the only command that mutates `SPEC.md`. Behind it is a Socratic gate that classifies my input as NEW, DISTILL, AMEND, or BACKPROP, then writes the rows.
-- `/sdd:build` — plan, then execute, against `SPEC.md`. Single thread, no subagents. If a test or build fails, it auto-invokes the backprop protocol before retrying.
+- `/sdd:build` — plan, then execute, against `SPEC.md`. Single thread, no sub-agents. If a test or build fails, it auto-invokes the **backprop** protocol before retrying.
 - `/sdd:check` — read-only drift detector. Compares `SPEC.md` against the current code and reports violations, grouped by severity. Never writes.
 - `/sdd:explain` — math-glyph to prose. The escape hatch when a reviewer (usually me) needs the English version of `§V.7` during code review.
 
-The piece I rely on most is backprop. On a test or build failure, `/sdd:build` doesn't just retry. It traces the cause, decides whether the failure class needs a new `§V` invariant, appends a `§B` row, and ships a failing test alongside the fix in one commit. Every incident becomes a permanent guard rail. **The same bug can't bite twice**, because the invariant catches it on the next plan.
+The piece I rely on most is **backprop**. On a test or build failure, `/sdd:build` doesn't just retry. It traces the cause, decides whether the failure class needs a new `§V` invariant, appends a `§B` row, and ships a failing test alongside the fix in one commit. Every incident becomes a permanent guard rail. **The same bug can't bite twice**, because the invariant catches it on the next plan.
 
 ## What I gave up
 
