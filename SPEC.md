@@ -42,7 +42,7 @@ V8: `/expertise` H2 capability name casing ≡ Title Case
 V9: typeface ≡ IBM Plex Mono only; `@theme` declares `--font-mono` only, ⊥ `font-sans`, ⊥ `font-serif`
 V10: hierarchy ∈ {weight, size, color}; ⊥ family swap
 V11: html base size ≡ 18px; body weight ≡ 500
-V12: palette ≡ GH Primer Light `gh-*` tokens only (per §I)
+V12: palette ≡ GH Primer Light `gh-*` tokens only (per §I); ∀ `--color-gh-*` decl ∈ `src/styles/global.css` @theme ≡ §I palette set ∧ ! ≥ 1 ref ∈ `src/`
 V13: ⊥ alternating section bg; `bg-gh-canvas-subtle` ≡ contained surfaces only (cards, footer, code chips)
 V14: section kicker ≡ `// section name`; class ≡ `text-sm font-bold uppercase tracking-[0.2em] text-gh-blue`
 V15: numbered hairline ≡ `<NN> ─────` above tiles, mono `text-xs text-gh-fg-subtle`; numbering continues across grids when narrative ≡ one
@@ -73,7 +73,9 @@ T2|.|define post-demo CTA ∈ auto-reply|
 T3|.|set CF redirect `/services` → `/expertise`|I.routes
 T4|.|? decide analytics: CF Web Analytics ∨ Plausible ∨ Fathom ∨ ⊥|
 T5|.|? decide staging: CF Workers preview deployment ∨ ⊥|
+T6|.|prune palette token drift — scope: `{gh-green-muted, gh-blue-muted, gh-red, gh-red-hover, gh-yellow}` decl ∈ `src/styles/global.css` + `src/components/Logo.astro`; remediation ≡ drop unused tokens + Logo.astro ∨ amend §I to admit|V12,B1
 
 ## §B — bugs
 
 id|date|cause|fix
+B1|2026-05-18|`global.css` decl 5 `--color-gh-*` tokens (`gh-green-muted`, `gh-blue-muted`, `gh-red`, `gh-red-hover`, `gh-yellow`) ⊥ ∈ §I palette list; `gh-red*`/`gh-yellow` ref only ∈ unused `Logo.astro` (CLAUDE.md notes `Logo ⊥ used`); `*-muted` pair zero refs; V17 pinwheel uses raw hex ∈ `Nav.astro:17–20` + `favicon.svg`, ⊥ tokens; surfaced by `/sdd:check` set-diff|V12
