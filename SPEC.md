@@ -69,8 +69,7 @@ V34: Playwright ⊥ screenshot SVG @ `file://` URL → timeout
 ## §T — tasks
 
 id|status|task|cites
-T1|.|wire `demo@lab5.ca` → MailPilot agent (`~/github/mailpilot`)|I.demo-email
-T2|.|define post-demo CTA ∈ auto-reply|T1
+T2|.|define post-demo CTA ∈ auto-reply|
 T3|.|set CF redirect `/services` → `/expertise`|I.routes
 T4|.|? decide analytics: CF Web Analytics ∨ Plausible ∨ Fathom ∨ ⊥|
 T5|.|? decide staging: CF Workers preview deployment ∨ ⊥|
