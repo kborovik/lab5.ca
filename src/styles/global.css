@@ -27,19 +27,10 @@ body {
   /* Green — primary accent */
   --color-gh-green: #1f883d;
   --color-gh-green-hover: #1a7f37;
-  --color-gh-green-muted: #dafbe1;
 
   /* Blue — secondary accent */
   --color-gh-blue: #0969da;
   --color-gh-blue-hover: #0550ae;
-  --color-gh-blue-muted: #ddf4ff;
-
-  /* Red — brand accent */
-  --color-gh-red: #cf222e;
-  --color-gh-red-hover: #a40e26;
-
-  /* Yellow — brand accent */
-  --color-gh-yellow: #f9c513;
 }
 
 /* ===== Animations ===== */

@@ -23,7 +23,7 @@ Pre-commit ! `make check` ∧ `make build` (§V.30). Stack/host/PM/Node → §C.
 ```
 src/
 ├── layouts/Layout.astro            # SEO props, scroll-reveal IO
-├── components/{Nav,Footer,Logo}.astro    # Logo ⊥ used
+├── components/{Nav,Footer}.astro
 ├── content.config.ts               # blog collection: src/content/blog/**/*.md
 ├── content/blog/<slug>.md          # flat; filename ≡ URL slug (§V.23,25)
 ├── pages/{index,expertise,demo,about}.astro
