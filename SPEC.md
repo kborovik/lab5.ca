@@ -21,7 +21,7 @@ personal portfolio + career site @ `lab5.ca` ∀ Konstantin Borovik (AI Automati
 - domain: `lab5.ca` ≡ primary; `mailpilot.ca` ≡ alias → serves same site (`wrangler.jsonc` routes)
 - cta: book-call `https://calendar.app.google/cYM3H3TsHsequR587`
 - cta: linkedin `https://www.linkedin.com/in/kborovik`
-- cta: demo-email `mailto:demo@lab5.ca`
+- cta: demo-email ≡ code-chip clipboard-copy widget @ `/demo` — copies `demo@lab5.ca`; ⊥ `<a href="mailto:...">`
 - schema: blog frontmatter ≡ {title:str, description:str, pubDate:date, updatedDate?:date, draft?:bool=false, tags?:str[]=[]} per `src/content.config.ts`
 - cmd: `make {help,install,dev,preview,build,check,clean,clean-all,deploy,status,wrangler,playwright}`
 - env: GH Actions ! set `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`
