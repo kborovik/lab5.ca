@@ -275,10 +275,16 @@ body {
 }
 
 .prose blockquote {
-  border-left: 3px solid var(--color-gh-border);
-  padding-left: 1em;
-  color: var(--color-gh-fg-subtle);
+  background-color: var(--color-gh-canvas-subtle);
+  border-left: 4px solid var(--color-gh-blue);
+  border-radius: 0 6px 6px 0;
+  padding: 0.85em 1.1em;
+  color: var(--color-gh-fg-muted);
   font-style: normal;
+}
+
+.prose blockquote > * + * {
+  margin-top: 0.85em;
 }
 
 .prose hr {
