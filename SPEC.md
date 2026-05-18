@@ -23,7 +23,7 @@ personal portfolio + career site @ `lab5.ca` ∀ Konstantin Borovik (AI Automati
 - cta: linkedin `https://www.linkedin.com/in/kborovik`
 - cta: demo-email `mailto:demo@lab5.ca`
 - schema: blog frontmatter ≡ {title:str, description:str, pubDate:date, updatedDate?:date, draft?:bool=false, tags?:str[]=[]} per `src/content.config.ts`
-- cmd: `make {install,dev,preview,build,check,clean,clean-all,deploy,status,wrangler,playwright}`
+- cmd: `make {help,install,dev,preview,build,check,clean,clean-all,deploy,status,wrangler,playwright}`
 - env: GH Actions ! set `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`
 - asset: `public/{og.png,banner-linkedin.png,favicon.{ico,svg},_headers,robots.txt,logo-linkedin.{svg,png}}`
 - token: palette ≡ GH Primer Light — `gh-canvas`, `gh-canvas-subtle`, `gh-border`, `gh-fg`, `gh-fg-muted`, `gh-fg-subtle`, `gh-green`, `gh-green-hover`, `gh-blue`, `gh-blue-hover`
