@@ -65,6 +65,7 @@ V31: CI on PR → `main` ≡ `astro check` + `astro build`
 V32: deploy on push → `main` ≡ check + build + `wrangler deploy`
 V33: GH secrets ! set: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`
 V34: Playwright ⊥ screenshot SVG @ `file://` URL → timeout
+V35: link href ≡ — internal: absolute path `/...`, ⊥ trailing `/`, ⊥ relative; cross-page anchor: `/path#frag`; intra-page anchor: `#frag`; external: full `https://...`; mailto: `mailto:<addr>`. ∈ `.astro`: external `<a>` ! `target="_blank"` ∧ `rel="noopener noreferrer"`; mailto ⊥ `target="_blank"`. ∈ blog `.md`: plain markdown `[text](url)` only — `rehype-external-links` (`astro.config.mjs`) auto-inserts attrs @ build ∴ ⊥ author raw `<a>`.
 
 ## §T — tasks
 
