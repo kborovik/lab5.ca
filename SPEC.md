@@ -18,7 +18,7 @@ personal portfolio + career site @ `lab5.ca` ∀ Konstantin Borovik (AI Automati
 - route: `/about` → bio + headshot
 - route: `/blog` → post list (sort pubDate desc)
 - route: `/blog/<slug>` → post detail
-- domain: `lab5.ca` ≡ primary; `mailpilot.ca` ≡ same Worker (`wrangler.jsonc` routes) — purpose `?`
+- domain: `lab5.ca` ≡ primary; `mailpilot.ca` ≡ alias → serves same site (`wrangler.jsonc` routes)
 - cta: book-call `https://calendar.app.google/cYM3H3TsHsequR587`
 - cta: linkedin `https://www.linkedin.com/in/kborovik`
 - cta: demo-email `mailto:demo@lab5.ca`
