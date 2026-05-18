@@ -78,7 +78,9 @@ multiplying file size and creating its own drift problem when an
 invariant amends. Math-glyph keeps references as references and pays
 the inlining cost only at decode time, only for the row being read.
 
-## Worked example
+## Worked examples
+
+### §V.6 &mdash; stand-alone row
 
 Take `§V.6` from the pilot-skills `SPEC.md`:
 
@@ -97,11 +99,80 @@ eightfold isn't the encoder. It's `/sdd:explain` walking the cited
 `§T.37` and pulling in the surrounding invariants so a reviewer who
 didn't write the spec can still act on it.
 
-For a context-heavy row like `§B.7` &mdash; a bug whose meaning is
-held almost entirely in its references &mdash; the canonical decoder
-produces 1117 tokens against a 139-token row, same 88% reduction. The
-ratio is roughly constant in canonical mode because canonical output
-is dominated by sibling expansion, not row body.
+### §B.7 &mdash; context-heavy row
+
+`§V.6` was clean: short body, short expansion, the numeric story tells
+itself. `§B.7` is the opposite case &mdash; a row whose meaning is
+held almost entirely in its references, where minimal-decoder output
+reads fluent but leaves a reader unable to act.
+
+Glyph form in `SPEC.md`, **139 tokens**:
+
+> 2026-05-10|T8 V3-sweep ran ∀ literal `§V.N` form only; bare
+> `V.N`-form pinned numerics ∈ pedagogical examples @
+> pilot-spec/skills/{spec,backprop}/SKILL.md persisted (8 sites) ∴
+> V27 violation; /sdd:check audit surfaced 2026-05-10|V32
+
+Four refs, none inlined: `§T.8` (the prior sweep task), `§V.27` (the
+invariant violated), `§V.32` (the fix invariant in the trailing pipe),
+and implicitly `§V.3` (what `V3-sweep` enforced).
+
+Minimal decoder &mdash; **207 tokens**, faithful but isolated:
+
+> On May 10, 2026, during the T8 V3-sweep, the process ran only
+> against literals matching the form `§V.N` (that is, version
+> references prefixed with the section symbol). As a result, bare
+> `V.N`-form pinned numeric references that appear within pedagogical
+> examples in the files at `pilot-spec/skills/spec/SKILL.md` and
+> `pilot-spec/skills/backprop/SKILL.md` persisted unchanged. There are
+> eight such sites in total. This constitutes a violation of V27. The
+> `/sdd:check` audit surfaced this issue on May 10, 2026, under V32.
+
+A 33% reduction &mdash; same notation-cost story as `§V.6`. But a
+reader who doesn't already know what `§T.8` was supposed to do, what
+`§V.27` forbids, or what `§V.32` prescribes still cannot tell what
+went wrong, why it matters, or whether the class is closed. Fluent,
+content-free.
+
+Canonical decoder &mdash; **1117 tokens** that walk the cited chain.
+Excerpt:
+
+> **§B.7 &mdash; derivative leak in V3 sweep (pre-fix)**
+>
+> In plain English: an earlier task (`§T.8`) was supposed to clean up
+> "pinned" spec-citation numerics from published skill bodies &mdash;
+> these are forbidden because shared artifacts travel between repos
+> and a number like `V3` only makes sense relative to *this* repo's
+> `SPEC.md`. The sweep was written to find only the dotted long form
+> (literally `§V.N`) and missed the bare short form (literally `V.N`,
+> `V3`, `T1`, `B5` etc.). Eight such bare-form citations survived
+> inside pedagogical examples in the spec and backprop skill files.
+> [...]
+>
+> Cited invariants:
+>
+> - `§V.32` &mdash; a `§T` row whose purpose is to remediate a `§V`
+>   violation must declare its scope as a literal grep pattern (or a
+>   vocab table) covering all forms of the violation [...]
+>
+> Related (not directly cited but mechanically linked):
+>
+> - `§V.27` &mdash; the invariant that was actually violated:
+>   published-body examples must use placeholder citation form
+>   (`§V.<n>`, etc.) [...]
+> - `§T.8` &mdash; the original sweep task that closed prematurely
+>   because its scope was too narrow.
+> - `§B.6`, `§B.8` &mdash; sibling bugs in the same recurrence class
+>   (sweep marked done while subforms remained). Together with `§B.7`
+>   these motivated `§V.32`.
+
+An 88% reduction over a 139-token row. The eightfold growth isn't the
+encoder doing more work &mdash; it's the decoder pulling in `§T.8`,
+`§V.27`, `§V.32`, and the sibling bugs in the same recurrence class
+so the reviewer can act on the row. A traditional human-readable spec
+would have to inline that same context on every related row,
+multiplying file size and creating its own drift problem when any
+cited invariant amends.
 
 ## What surprised me
 
