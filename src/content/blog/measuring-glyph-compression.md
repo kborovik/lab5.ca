@@ -211,7 +211,7 @@ Per row, the pipeline is five steps:
 30 rows × (1 token-count + 2 decodes + 2 token-counts) = 150 API
 calls per run. The script self-bootstraps `uv` from PEP 723 inline
 metadata so the host needs no Python deps. Results append to
-[`glyph-bench-results.json`](https://github.com/kborovik/pilot-skills/blob/main/benchmarks/glyph/glyph-bench-results.json),
+[glyph-bench-results.json](https://github.com/kborovik/pilot-skills/blob/main/benchmarks/glyph/glyph-bench-results.json),
 tracked in git so the trend is visible across commits.
 
 I run it after any structural change to the `glyph` skill or the
