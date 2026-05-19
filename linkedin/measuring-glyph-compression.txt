@@ -1,6 +1,8 @@
-I claimed math-glyph notation makes my SPEC fit in Claude's context. "Compressed" without a number is a marketing word, so I built a benchmark.
+Math-glyph notation can cut Claude Code SPEC by 89%. Here's the receipt.
 
-Across 30 rows of SPEC, two numbers came out:
+I called my SPEC "compressed" because the notation makes it fit in Claude's context. Without a benchmark, that's a marketing word — so I built one and ran 30 rows through the Claude tokenizer.
+
+Two numbers came out:
 
 - Minimal decoder: -29% tokens. Pure encoding savings vs the same content in fluent English.
 - Canonical decoder: -89% tokens. Symbols plus what /sdd:explain pulls in via deferred sibling-context expansion.
