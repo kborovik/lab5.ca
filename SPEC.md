@@ -70,7 +70,7 @@ V35: link href ≡ — internal: absolute path `/...`, ⊥ trailing `/`, ⊥ rel
 ## §T — tasks
 
 id|status|task|cites
-T2|.|define post-proof CTA ∈ auto-reply|
+T2|.|define post-proof CTA ≡ Book-a-Call ∈ auto-reply; impl ∈ mail handler repo (~/github/mailpilot)|I.cta.book-call
 T3|x|set CF redirect `/services` → `/expertise`|I.routes
 T4|.|? decide analytics: CF Web Analytics ∨ Plausible ∨ Fathom ∨ ⊥|
 T5|.|? decide staging: CF Workers preview deployment ∨ ⊥|
