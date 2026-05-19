@@ -74,7 +74,7 @@ id|status|task|cites
 T2|x|? define post-proof auto-reply CTA → resolved ⊥ — auto-reply ≡ AI answer only; ⊥ funnel back to /proof (MailPilot ≡ evidence, ⊥ product pitch ∴ ⊥ self-promo ∈ agent reply)|
 T3|x|set CF redirect `/services` → `/expertise`|I.routes
 T4|x|? decide analytics → resolved CF Web Analytics (server-side, automatic ∈ CF dashboard, ⊥ in-repo script)|I.analytics
-T5|.|? decide staging: CF Workers preview deployment ∨ ⊥|
+T5|x|? decide staging → resolved ⊥ — local dev only (`make dev`); push → main ≡ prod per V22 ∧ V32, ⊥ preview/staging layer|V22,V32
 T6|x|prune palette token drift — scope: `{gh-green-muted, gh-blue-muted, gh-red, gh-red-hover, gh-yellow}` decl ∈ `src/styles/global.css` + `src/components/Logo.astro`; remediation ≡ drop unused tokens + Logo.astro ∨ amend §I to admit|V12,B1
 T7|x|sweep blog external-link anchor wraps — scope: `\[\*\*[^]]+\*\*\]\(` ∨ `` \[`[^`]+`\]\( `` ∈ `src/content/blog/**/*.md`; remediation ≡ unwrap anchor text → plain prose|V35,B2
 T8|x|rename /demo route → /proof: rename `src/pages/demo.astro` → `src/pages/proof.astro`, update internal link refs ∈ `Nav.astro` + home tile + any anchors; reframe page H1 + copy — product ≡ KB skills, MailPilot ≡ evidence (⊥ "try the demo" SaaS framing)|I.routes,V3
