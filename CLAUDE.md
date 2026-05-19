@@ -26,7 +26,7 @@ src/
 ├── components/{Nav,Footer}.astro
 ├── content.config.ts               # blog collection: src/content/blog/**/*.md
 ├── content/blog/<slug>.md          # flat; filename ≡ URL slug (§V.23,25)
-├── pages/{index,expertise,demo,about}.astro
+├── pages/{index,expertise,proof,about}.astro
 ├── pages/blog/{index,[...slug]}.astro
 ├── assets/konstantin-borovik-headshot.jpg   # astro:assets on /about
 └── styles/global.css               # Tailwind v4 @theme (§V.19): tokens, keyframes, .prose
