@@ -1,4 +1,4 @@
-I claimed math-glyph notation compresses my project spec enough to fit a full SPEC inside Claude's context window. "Compressed" without a number is a marketing word, so I built a benchmark.
+I claimed math-glyph notation makes my SPEC fit in Claude's context. "Compressed" without a number is a marketing word, so I built a benchmark.
 
 Across 30 rows of SPEC, two numbers came out:
 
