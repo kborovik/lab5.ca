@@ -83,7 +83,7 @@ T7|x|sweep blog external-link anchor wraps — scope: `\[\*\*[^]]+\*\*\]\(` ∨ 
 T8|x|rename /demo route → /proof: rename `src/pages/demo.astro` → `src/pages/proof.astro`, update internal link refs ∈ `Nav.astro` + home tile + any anchors; reframe page H1 + copy — product ≡ KB skills, MailPilot ≡ evidence (⊥ "try the demo" SaaS framing)|I.routes,V3
 T9|x|set CF redirect `/demo` → `/proof` (301) ∈ `public/_redirects`|I.routes
 T10|x|add MailPilot source-code link button ∈ `/proof` "under the hood" section — mirror home-page proof-of-capability pattern (bordered button, not pulse); href ≡ §I.cta.mailpilot-source|I.cta.mailpilot-source
-T11|.|create `.claude/check-extras.md` w/ `§-cite drift recipe extension` section excluding `src/content/blog/**/*.md` from §-cite drift scope per V37; verify post-create `/sdd:check` ⊥ flag blog cross-repo cites|V37,B5
+T11|x|create `.claude/check-extras.md` w/ `§-cite drift recipe extension` section excluding `src/content/blog/**/*.md` from §-cite drift scope per V37; verify post-create `/sdd:check` ⊥ flag blog cross-repo cites|V37,B5
 
 ## §B — bugs
 
