@@ -19,6 +19,7 @@ personal portfolio + career site @ `lab5.ca` ∀ Konstantin Borovik (AI Automati
 - route: `/blog` → post list (sort pubDate desc)
 - route: `/blog/<slug>` → post detail
 - domain: `lab5.ca` ≡ primary; `mailpilot.ca` ≡ alias → serves same site (`wrangler.jsonc` routes)
+- analytics: Cloudflare Web Analytics — server-side, automatic via CF dashboard; ⊥ in-repo script tag, ⊥ cookies
 - cta: book-call `https://calendar.app.google/cYM3H3TsHsequR587`
 - cta: linkedin `https://www.linkedin.com/in/kborovik`
 - cta: demo-email ≡ code-chip clipboard-copy widget @ `/proof` — copies `demo@lab5.ca`; ⊥ `<a href="mailto:...">`
@@ -72,7 +73,7 @@ V35: link href ≡ — internal: absolute path `/...`, ⊥ trailing `/`, ⊥ rel
 id|status|task|cites
 T2|x|? define post-proof auto-reply CTA → resolved ⊥ — auto-reply ≡ AI answer only; ⊥ funnel back to /proof (MailPilot ≡ evidence, ⊥ product pitch ∴ ⊥ self-promo ∈ agent reply)|
 T3|x|set CF redirect `/services` → `/expertise`|I.routes
-T4|.|? decide analytics: CF Web Analytics ∨ Plausible ∨ Fathom ∨ ⊥|
+T4|x|? decide analytics → resolved CF Web Analytics (server-side, automatic ∈ CF dashboard, ⊥ in-repo script)|I.analytics
 T5|.|? decide staging: CF Workers preview deployment ∨ ⊥|
 T6|x|prune palette token drift — scope: `{gh-green-muted, gh-blue-muted, gh-red, gh-red-hover, gh-yellow}` decl ∈ `src/styles/global.css` + `src/components/Logo.astro`; remediation ≡ drop unused tokens + Logo.astro ∨ amend §I to admit|V12,B1
 T7|x|sweep blog external-link anchor wraps — scope: `\[\*\*[^]]+\*\*\]\(` ∨ `` \[`[^`]+`\]\( `` ∈ `src/content/blog/**/*.md`; remediation ≡ unwrap anchor text → plain prose|V35,B2
