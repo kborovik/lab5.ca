@@ -1,11 +1,11 @@
-I claimed math-glyph notation compresses my project spec enough to fit a full SPEC.md inside Claude's context window. "Compressed" without a number is a marketing word, so I built a benchmark.
+I claimed math-glyph notation compresses my project spec enough to fit a full 'SPEC.md' inside Claude's context window. "Compressed" without a number is a marketing word, so I built a benchmark.
 
-Across 30 rows of SPEC.md, two numbers came out:
+Across 30 rows of 'SPEC.md', two numbers came out:
 
 - Minimal decoder: -29% tokens. Pure encoding savings vs the same content in fluent English.
 - Canonical decoder: -89% tokens. Symbols plus what /sdd:explain pulls in via deferred sibling-context expansion.
 
-The 60-point gap is the part most people miss. It is not the encoder doing more work in the canonical case. It is the decoder pulling in cited rows from elsewhere in SPEC.md so a reviewer can act on what they are reading.
+The 60-point gap is the part most people miss. It is not the encoder doing more work in the canonical case. It is the decoder pulling in cited rows from elsewhere in 'SPEC.md' so a reviewer can act on what they are reading.
 
 A traditional human-readable spec would have to inline that context on every related row -- multiplying file size and creating a drift problem the moment any cited invariant changes. Math-glyph keeps references as references and pays the inlining cost only at decode time, only for the row being read.
 
