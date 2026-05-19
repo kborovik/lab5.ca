@@ -84,7 +84,7 @@ T8|x|rename /demo route → /proof: rename `src/pages/demo.astro` → `src/pages
 T9|x|set CF redirect `/demo` → `/proof` (301) ∈ `public/_redirects`|I.routes
 T10|x|add MailPilot source-code link button ∈ `/proof` "under the hood" section — mirror home-page proof-of-capability pattern (bordered button, not pulse); href ≡ §I.cta.mailpilot-source|I.cta.mailpilot-source
 T11|x|create `.claude/check-extras.md` w/ `§-cite drift recipe extension` section excluding `src/content/blog/**/*.md` from §-cite drift scope per V37; verify post-create `/sdd:check` ⊥ flag blog cross-repo cites|V37,B5
-T12|.|sweep linkedin headline anti-example class — scope: line 1 grep `^(I |Across [0-9])` ∈ `linkedin/*.txt − linkedin/resume.txt`; remediation ≡ rewrite sentence 1 per V36 (≤ ~80 chars, ∋ bold/specific claim ∨ stance ∨ provocation)|V36,B6
+T12|x|sweep linkedin headline anti-example class — scope: line 1 grep `^(I |Across [0-9])` ∈ `linkedin/*.txt − linkedin/resume.txt`; remediation ≡ rewrite sentence 1 per V36 (≤ ~80 chars, ∋ bold/specific claim ∨ stance ∨ provocation)|V36,B6
 
 ## §B — bugs
 
