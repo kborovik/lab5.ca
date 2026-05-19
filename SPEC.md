@@ -22,6 +22,7 @@ personal portfolio + career site @ `lab5.ca` ∀ Konstantin Borovik (AI Automati
 - analytics: Cloudflare Web Analytics — server-side, automatic via CF dashboard; ⊥ in-repo script tag, ⊥ cookies
 - cta: book-call `https://calendar.app.google/cYM3H3TsHsequR587`
 - cta: linkedin `https://www.linkedin.com/in/kborovik`
+- cta: mailpilot-source `https://github.com/kborovik/mailpilot` — link to MailPilot source; surfaced ∈ `/proof` (under-the-hood) ∧ home (proof-of-capability)
 - cta: demo-email ≡ code-chip clipboard-copy widget @ `/proof` — copies `demo@lab5.ca`; ⊥ `<a href="mailto:...">`
 - schema: blog frontmatter ≡ {title:str, description:str, pubDate:date, updatedDate?:date, draft?:bool=false, tags?:str[]=[]} per `src/content.config.ts`
 - cmd: `make {help,install,dev,preview,build,check,clean,clean-all,deploy,status,wrangler,playwright}`
@@ -79,6 +80,7 @@ T6|x|prune palette token drift — scope: `{gh-green-muted, gh-blue-muted, gh-re
 T7|x|sweep blog external-link anchor wraps — scope: `\[\*\*[^]]+\*\*\]\(` ∨ `` \[`[^`]+`\]\( `` ∈ `src/content/blog/**/*.md`; remediation ≡ unwrap anchor text → plain prose|V35,B2
 T8|x|rename /demo route → /proof: rename `src/pages/demo.astro` → `src/pages/proof.astro`, update internal link refs ∈ `Nav.astro` + home tile + any anchors; reframe page H1 + copy — product ≡ KB skills, MailPilot ≡ evidence (⊥ "try the demo" SaaS framing)|I.routes,V3
 T9|x|set CF redirect `/demo` → `/proof` (301) ∈ `public/_redirects`|I.routes
+T10|.|add MailPilot source-code link button ∈ `/proof` "under the hood" section — mirror home-page proof-of-capability pattern (bordered button, not pulse); href ≡ §I.cta.mailpilot-source|I.cta.mailpilot-source
 
 ## §B — bugs
 
