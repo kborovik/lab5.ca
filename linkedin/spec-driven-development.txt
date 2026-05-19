@@ -1,14 +1,14 @@
 I kept losing track of what Claude was doing.
 
-The pitch for multi-agent setups is throughput. Spin up subagents in parallel git worktrees, dispatch tasks, merge the wins. In practice I could not hold the whole picture in my head -- which task was done, how it was tested, what regressed, which bugs were still open. The agents moved faster than I could review, and review was the part that had to be right.
+The pitch for multi-agent setups is throughput. Spin up subagents in parallel git worktrees, dispatch tasks, merge the wins. In practice I could not hold the whole picture in my head — which task was done, how it was tested, what regressed, which bugs were still open. The agents moved faster than I could review, and review was the part that had to be right.
 
-So I built pilot-spec. A Claude Code plugin that collapses everything I need to know about a project -- goals, constraints, interfaces, invariants, tasks, bugs -- into one root 'SPEC.md'.
+So I built pilot-spec. A Claude Code plugin that collapses everything I need to know about a project — goals, constraints, interfaces, invariants, tasks, bugs — into one root SPEC.
 
 One file. One thread. No subagents.
 
-Deliberately slower. That is the point. What I get in return for the slowdown is determinism and control -- a single artifact I can read end-to-end before approving a diff.
+Deliberately slower. That is the point. What I get in return for the slowdown is determinism and control — a single artifact I can read end-to-end before approving a diff.
 
-The encoding is math-glyph notation: forall, exists, therefore, bottom, and, or, implies, plus pipe tables and sentence fragments. 'SPEC.md' for my AI email automation project sits at roughly 23K tokens -- about 10% of a 200K Claude context window. The whole project lives in context for every prompt. No retrieval layer, no embedding store, no MCP server, no vector index. There is nothing else to break.
+The encoding is math-glyph notation: forall, exists, therefore, bottom, and, or, implies, plus pipe tables and sentence fragments. SPEC for my AI email automation project sits at roughly 23K tokens — about 10% of a 200K Claude context window. The whole project lives in context for every prompt. No retrieval layer, no embedding store, no MCP server, no vector index. There is nothing else to break.
 
 The piece I rely on most is backprop. On a test or build failure, /sdd:build does not just retry. It traces the cause, decides whether the failure class needs a new invariant, appends a bug row, and ships a failing test alongside the fix in one commit. Every incident becomes a permanent guard rail. The same bug cannot bite twice.
 
