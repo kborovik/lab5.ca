@@ -61,7 +61,7 @@ V26: blog body ⊥ `# Title`, ⊥ byline, ⊥ footer, ⊥ back-link → `[...slu
 V27: blog headings ≡ `##`/`###` sentence case, ⊥ trailing `.`
 V28: blog voice ≡ first-person singular, factual + descriptive
 V29: blog markdown ⊥ raw HTML (beyond entities ∧ `<br>`), ⊥ images, ⊥ tables, ⊥ footnotes — `.prose` ⊥ support
-V30: pre-commit ! `make check` ∧ `make build` pass
+V30: pre-commit (local discipline) ! `make check` ∧ `make build` pass; enforcement ∈ V31
 V31: CI on PR → `main` ≡ `astro check` + `astro build`
 V32: deploy on push → `main` ≡ check + build + `wrangler deploy`
 V33: GH secrets ! set: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`
