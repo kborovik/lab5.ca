@@ -14,14 +14,14 @@ personal portfolio + career site @ `lab5.ca` ∀ Konstantin Borovik (AI Automati
 
 - route: `/` → home (hero, 01-04 capabilities, 05-08 why-hire-me, proof-of-capability)
 - route: `/expertise` → 01-04 deep-dive
-- route: `/demo` → MailPilot (code-chip CTA, how-it-works, sample Q's, architecture)
+- route: `/proof` → MailPilot evidence (code-chip CTA, how-it-works, sample Q's, architecture); `/demo` ≡ legacy → CF redirect → `/proof`
 - route: `/about` → bio + headshot
 - route: `/blog` → post list (sort pubDate desc)
 - route: `/blog/<slug>` → post detail
 - domain: `lab5.ca` ≡ primary; `mailpilot.ca` ≡ alias → serves same site (`wrangler.jsonc` routes)
 - cta: book-call `https://calendar.app.google/cYM3H3TsHsequR587`
 - cta: linkedin `https://www.linkedin.com/in/kborovik`
-- cta: demo-email ≡ code-chip clipboard-copy widget @ `/demo` — copies `demo@lab5.ca`; ⊥ `<a href="mailto:...">`
+- cta: demo-email ≡ code-chip clipboard-copy widget @ `/proof` — copies `demo@lab5.ca`; ⊥ `<a href="mailto:...">`
 - schema: blog frontmatter ≡ {title:str, description:str, pubDate:date, updatedDate?:date, draft?:bool=false, tags?:str[]=[]} per `src/content.config.ts`
 - cmd: `make {help,install,dev,preview,build,check,clean,clean-all,deploy,status,wrangler,playwright}`
 - env: GH Actions ! set `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`
@@ -70,12 +70,14 @@ V35: link href ≡ — internal: absolute path `/...`, ⊥ trailing `/`, ⊥ rel
 ## §T — tasks
 
 id|status|task|cites
-T2|.|define post-demo CTA ∈ auto-reply|
+T2|.|define post-proof CTA ∈ auto-reply|
 T3|.|set CF redirect `/services` → `/expertise`|I.routes
 T4|.|? decide analytics: CF Web Analytics ∨ Plausible ∨ Fathom ∨ ⊥|
 T5|.|? decide staging: CF Workers preview deployment ∨ ⊥|
 T6|x|prune palette token drift — scope: `{gh-green-muted, gh-blue-muted, gh-red, gh-red-hover, gh-yellow}` decl ∈ `src/styles/global.css` + `src/components/Logo.astro`; remediation ≡ drop unused tokens + Logo.astro ∨ amend §I to admit|V12,B1
 T7|x|sweep blog external-link anchor wraps — scope: `\[\*\*[^]]+\*\*\]\(` ∨ `` \[`[^`]+`\]\( `` ∈ `src/content/blog/**/*.md`; remediation ≡ unwrap anchor text → plain prose|V35,B2
+T8|.|rename /demo route → /proof: rename `src/pages/demo.astro` → `src/pages/proof.astro`, update internal link refs ∈ `Nav.astro` + home tile + any anchors; reframe page H1 + copy — product ≡ KB skills, MailPilot ≡ evidence (⊥ "try the demo" SaaS framing)|I.routes,V3
+T9|.|set CF redirect `/demo` → `/proof` (301) ∈ `public/_headers` ∨ `wrangler.jsonc`|I.routes
 
 ## §B — bugs
 
