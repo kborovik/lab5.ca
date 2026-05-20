@@ -2,31 +2,30 @@ Konstantin Borovik
 AI Automation Engineer · 20+ years engineering
 Toronto, Ontario, Canada
 
-LinkedIn:    https://www.linkedin.com/in/kborovik
-GitHub:      https://github.com/kborovik
-X:           https://x.com/kborovik
-Bluesky:     https://bsky.app/profile/lab5.ca
-Book a call: https://calendar.app.google/cYM3H3TsHsequR587
-Email:       kb@lab5.ca
+LinkedIn: https://www.linkedin.com/in/kborovik
+GitHub:   https://github.com/kborovik
+Email:    kb@lab5.ca
 
 
-## skills
+## tech stack
 
-AI automation
+AI & agents
+Pydantic AI, Claude Agent SDK, Claude Code, LLM agents and agentic workflows, agentic coding, retrieval-augmented generation (RAG), structured-extraction pipelines, MCP, Pydantic Logfire (agent observability)
 
-- ERP integration — NetSuite, QuickBooks, Xero, Salesforce, HubSpot; idempotent state machines triggered on upstream events
-- document workflow — OCR + LLM structured extraction, schema validation with confidence scoring, routing to systems of record
-- AI email & communication — Gmail API triage, retrieval over internal knowledge bases (RAG), drafted replies
-- data & reporting — scheduled aggregation across databases, sheets, and APIs; LLM narration with citations
+Programming languages
+Python, TypeScript, JavaScript, Bash, Terraform
 
-Stack
+Google Cloud
+Cloud Run, Cloud Functions, VPC, Cloud Load Balancing, Cloud DNS, Cloud CDN, Cloud Composer, Pub/Sub, BigQuery, Cloud SQL, Cloud Storage, Vertex AI, IAM, Secret Manager, Cloud Logging, Artifact Registry
 
-- Python, TypeScript
-- Pydantic AI, LLM agents and agentic workflows, retrieval-augmented generation, structured extraction, MCP
-- Astro, Cloudflare Workers
-- PostgreSQL, Pub/Sub, event-driven architecture, idempotent processing, DLQs
-- GCP — Cloud Run, Cloud Functions, BigQuery, Vertex AI, Cloud SQL, IAM
-- CI/CD and infra-as-code — Terraform, GitHub Actions, Azure DevOps, Docker, Kubernetes (GKE)
+SQL databases
+PostgreSQL, psycopg
+
+Web development
+Astro, Tailwind CSS, Cloudflare Workers, Wrangler
+
+DevOps & CI/CD
+Terraform, Ansible, Helm, Docker, Kubernetes (GKE), GitHub Actions, Azure DevOps
 
 
 ## engagements
@@ -61,7 +60,7 @@ I built platform tooling and workflow orchestration for backend
 engineering teams shipping microservices on GCP/GKE under
 NIST-800-53 and PCI-DSS controls.
 
-- Platform tooling and CI/CD for 20+ backend engineers shipping microservices on GCP and GKE
+- Platform tooling and CI/CD for 20+ backend engineers shipping microservices on GCP and GKE — Helm charts and release pipelines
 - Event-driven workflow orchestration with Airflow and Composer at scale
 - Secure data-handling per NIST-800-53 and PCI-DSS — secrets management and security controls
 
@@ -71,18 +70,20 @@ Software Engineer · Platform Engineer
 
 - Python automation tooling for cloud migration and deployment across client engagements
 - Led a team automating enterprise infrastructure provisioning and platform operations
+- NetApp storage, VMware virtualization, FortiGate firewalls — enterprise infrastructure stack across client engagements
 
 
 Tech Data (2010 — 2014)
 Systems Engineer
 
 - Automated enterprise infrastructure provisioning for large organizations
+- NetApp storage, VMware virtualization, FortiGate firewalls — enterprise infrastructure stack
 
 
 TD Bank Financial Group (2003 — 2009)
 Systems Engineer
 
-- Data center migration and large-scale virtualization rollouts (200+ VMs)
+- Datacenter operations across Dell & IBM servers and Windows Server fleets
 
 
 ## education
