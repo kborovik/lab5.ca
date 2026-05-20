@@ -3,14 +3,28 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
+type SchemaType = 'WebPage' | 'ProfilePage' | 'CollectionPage' | 'BlogPosting';
+
+interface BlogPostingMeta {
+  headline: string;
+  description: string;
+  datePublished: string;
+  dateModified?: string;
+  keywords?: string[];
+}
+
 interface Props {
   title?: string;
   description?: string;
+  schemaType?: SchemaType;
+  blogPosting?: BlogPostingMeta;
 }
 
 const {
   title,
   description = 'AI automation for business operations — ERP integration, document workflows, email, and reporting. 20+ years of hands-on engineering.',
+  schemaType = 'WebPage',
+  blogPosting,
 } = Astro.props;
 
 const pageTitle = title
@@ -18,6 +32,120 @@ const pageTitle = title
   : 'Konstantin Borovik — AI Automation Engineer';
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const siteOrigin = (Astro.site ?? new URL('https://lab5.ca')).origin;
+
+const personId = `${siteOrigin}/#person`;
+const websiteId = `${siteOrigin}/#website`;
+
+const personNode = {
+  '@type': 'Person',
+  '@id': personId,
+  name: 'Konstantin Borovik',
+  alternateName: 'K. Borovik',
+  url: `${siteOrigin}/`,
+  image: `${siteOrigin}/kb-headshot.jpg`,
+  jobTitle: 'AI Automation Engineer',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Toronto',
+    addressRegion: 'ON',
+    addressCountry: 'CA',
+  },
+  sameAs: [
+    'https://www.linkedin.com/in/kborovik',
+    'https://github.com/kborovik',
+  ],
+  knowsAbout: [
+    'ERP integration',
+    'document workflows',
+    'AI email and communication',
+    'data and reporting',
+  ],
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Konstantin Borovik',
+    url: `${siteOrigin}/`,
+  },
+};
+
+const websiteNode = {
+  '@type': 'WebSite',
+  '@id': websiteId,
+  url: `${siteOrigin}/`,
+  name: 'Konstantin Borovik',
+  publisher: { '@id': personId },
+  inLanguage: 'en-CA',
+};
+
+type JsonLdNode = Record<string, unknown>;
+
+const pageNode: JsonLdNode = {
+  '@type': schemaType,
+  '@id': `${canonicalURL.href}#${schemaType.toLowerCase()}`,
+  url: canonicalURL.href,
+  name: pageTitle,
+  description,
+  isPartOf: { '@id': websiteId },
+  inLanguage: 'en-CA',
+};
+
+if (schemaType === 'ProfilePage' || schemaType === 'BlogPosting') {
+  pageNode.about = { '@id': personId };
+}
+
+if (schemaType === 'BlogPosting' && blogPosting) {
+  pageNode.headline = blogPosting.headline;
+  pageNode.description = blogPosting.description;
+  pageNode.datePublished = blogPosting.datePublished;
+  if (blogPosting.dateModified) pageNode.dateModified = blogPosting.dateModified;
+  if (blogPosting.keywords && blogPosting.keywords.length > 0) {
+    pageNode.keywords = blogPosting.keywords;
+  }
+  pageNode.author = { '@id': personId };
+  pageNode.image = `${siteOrigin}/og.png`;
+}
+
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isRoot = pathname === '/';
+
+const segmentLabel: Record<string, string> = {
+  expertise: 'Expertise',
+  proof: 'Proof',
+  about: 'About',
+  blog: 'Blog',
+};
+
+let breadcrumbNode: JsonLdNode | null = null;
+if (!isRoot) {
+  const segments = pathname.split('/').filter(Boolean);
+  const items: Array<{ name: string; item: string }> = [
+    { name: 'Home', item: `${siteOrigin}/` },
+  ];
+  let acc = '';
+  for (let i = 0; i < segments.length; i++) {
+    acc += `/${segments[i]}`;
+    const isLast = i === segments.length - 1;
+    const name = isLast && title ? title : (segmentLabel[segments[i]] ?? segments[i]);
+    items.push({ name, item: `${siteOrigin}${acc}` });
+  }
+  breadcrumbNode = {
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((it, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      name: it.name,
+      item: it.item,
+    })),
+  };
+}
+
+const graph: JsonLdNode[] = [personNode, websiteNode, pageNode];
+if (breadcrumbNode) graph.push(breadcrumbNode);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': graph,
+};
 ---
 
 <!doctype html>
@@ -58,6 +186,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="https://lab5.ca/og.png" />
     <meta name="twitter:image:alt" content="Konstantin Borovik — AI Automation Engineer" />
+
+    <!-- JSON-LD structured data -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body class="font-mono antialiased bg-gh-canvas text-gh-fg">
     <svg aria-hidden="true" style="display:none;position:absolute;width:0;height:0">
