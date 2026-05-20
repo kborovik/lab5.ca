@@ -1,0 +1,14 @@
+Mocking the LLM is mocking the system under test.
+
+The standard testing pyramid inverts when an LLM sits at the core: the agent can pass every mocked test and still fabricate vendor specs that don't exist. So I run three layers, each catching what the layer below cannot.
+
+- ruff + basedpyright — type errors, import cycles, shape drift in three seconds. Pytest cannot replace this layer.
+- pytest — real Postgres, mocked HTTP boundaries, structured Logfire span assertions. Verifies the wiring.
+- A Claude Code smoke-test skill — real Gmail, real Drive, real model. Verifies that the agent works.
+
+The smoke-test runner is Claude Code itself. Gates are mostly deterministic; the one LLM-judged gate forces structured JSON with an unsupported_claims array — the anti-sycophancy lever. Critical bug failures auto-file as SPEC entries via /sdd:spec from the same Claude Code session, with the failed verdict JSON inline. No copy-paste between tools.
+
+The downside is honest: roughly seven minutes of wall clock per run plus an LLM round-trip per step. It is not a CI gate. It is a pre-commit ritual after a non-trivial change to the agent surface — the way you would run integration tests against staging, when the diff justifies it, not on every push.
+
+Write-up: https://lab5.ca/blog/where-pytest-stops-and-claude-code-starts/
+Skill: https://github.com/kborovik/mailpilot/blob/main/.claude/skills/smoke-test/SKILL.md
