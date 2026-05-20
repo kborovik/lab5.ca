@@ -110,7 +110,7 @@ const industries = [
     <p class="mt-4 max-w-2xl text-sm leading-relaxed text-gh-fg-muted sm:text-base">
       Twenty years of hands-on engineering &mdash; infrastructure, cloud, AI. I work with companies where manual processes and disconnected systems are the bottleneck.
     </p>
-    <p class="mt-6 text-xs text-gh-fg-subtle">
+    <p class="mt-6 text-xs text-gh-fg-muted">
       industries: {industries.join(' · ')}
     </p>
   </section>
@@ -121,7 +121,7 @@ const industries = [
         <div class="animate-on-scroll grid gap-10 sm:grid-cols-3 sm:gap-12">
 
           <div class="sm:col-span-2">
-            <div class="flex items-baseline gap-2 text-xs text-gh-fg-subtle">
+            <div class="flex items-baseline gap-2 text-xs text-gh-fg-muted">
               <span>{section.num}</span>
               <span class="h-px flex-1 bg-gh-border"></span>
             </div>
@@ -134,7 +134,7 @@ const industries = [
             <ul class="mt-6 space-y-1.5 text-sm text-gh-fg-muted">
               {section.capabilities.map(item => (
                 <li class="flex gap-3">
-                  <span class="text-gh-fg-subtle">&minus;</span>
+                  <span class="text-gh-fg-muted">&minus;</span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -142,13 +142,13 @@ const industries = [
           </div>
 
           <aside class="rounded-lg border border-gh-border bg-gh-canvas-subtle p-5">
-            <p class="text-xs font-bold uppercase tracking-[0.15em] text-gh-fg-subtle">
+            <p class="text-xs font-bold uppercase tracking-[0.15em] text-gh-fg-muted">
               implementation
             </p>
             <dl class="mt-4 space-y-2 text-xs">
               {section.stack.map(([key, value]) => (
                 <div class="grid grid-cols-[6rem_1fr] gap-2">
-                  <dt class="text-gh-fg-subtle">{key}</dt>
+                  <dt class="text-gh-fg-muted">{key}</dt>
                   <dd class="text-gh-fg">{value}</dd>
                 </div>
               ))}

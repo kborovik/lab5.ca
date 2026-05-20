@@ -70,7 +70,7 @@ const willDecline = [
     </p>
 
     <div class="mt-10 inline-flex items-center gap-3 rounded-lg border border-gh-border bg-gh-canvas-subtle px-5 py-3 text-sm text-gh-fg">
-      <span class="text-gh-fg-subtle">$</span>
+      <span class="text-gh-fg-muted">$</span>
       <span>mail demo@lab5.ca</span>
       <button
         id="copy-email-btn"
@@ -84,7 +84,7 @@ const willDecline = [
       </button>
     </div>
 
-    <p class="mt-4 text-xs text-gh-fg-subtle">
+    <p class="mt-4 text-xs text-gh-fg-muted">
       replies in &lt;60s · no signup · real production agent
     </p>
   </section>
@@ -98,7 +98,7 @@ const willDecline = [
       <div class="mt-10 grid gap-10 sm:grid-cols-3 sm:gap-8">
         {steps.map(step => (
           <div class="animate-on-scroll">
-            <div class="flex items-baseline gap-2 text-xs text-gh-fg-subtle">
+            <div class="flex items-baseline gap-2 text-xs text-gh-fg-muted">
               <span>{step.num}</span>
               <span class="h-px flex-1 bg-gh-border"></span>
             </div>
@@ -171,7 +171,7 @@ const willDecline = [
 
       <div class="mt-12">
         <p class="text-sm font-bold text-gh-fg">
-          <span class="text-gh-fg-subtle">[skip]</span> the agent will decline
+          <span class="text-gh-fg-muted">[skip]</span> the agent will decline
         </p>
         <p class="mt-1 text-xs text-gh-fg-muted">
           products not in the knowledge base &mdash; expect a polite refusal, not a guess.
@@ -208,7 +208,7 @@ const willDecline = [
       <div class="mt-10 grid gap-10 sm:grid-cols-3 sm:gap-8">
         {stack.map(layer => (
           <div class="animate-on-scroll">
-            <div class="flex items-baseline gap-2 text-xs text-gh-fg-subtle">
+            <div class="flex items-baseline gap-2 text-xs text-gh-fg-muted">
               <span>{layer.num}</span>
               <span class="h-px flex-1 bg-gh-border"></span>
             </div>

@@ -113,7 +113,7 @@ T25|x|extend `src/pages/blog/[...slug].astro` — pass `schemaType="BlogPosting"
 T26|x|add `<link rel="alternate" hreflang="en-ca">` ∧ `<link rel="alternate" hreflang="x-default">` to `Layout.astro` `<head>` per V45|V45
 T27|x|author `public/llms.txt` (pointer-form per V47) ∧ `public/llms-full.txt` (prose dump per V47)|V47
 T28|x|verify post-amend: `make check` + `make build` pass; spot-check JSON-LD via Schema.org validator (https://validator.schema.org/) ∧ Google Rich Results Test on `/`, `/about`, `/blog/<slug>` — manual, out-of-repo|V30,V31,V40
-T29|.|swap `text-gh-fg-subtle` → `text-gh-fg-muted` @ body-size text sites — scope: `rg "text-gh-fg-subtle" src/`; exempt large-text sites (≥18pt ∨ ≥14pt bold) per V49(a); V15 styling string already updated ∈ this fold-in|V49,B13
+T29|x|swap `text-gh-fg-subtle` → `text-gh-fg-muted` @ body-size text sites — scope: `rg "text-gh-fg-subtle" src/`; exempt large-text sites (≥18pt ∨ ≥14pt bold) per V49(a); V15 styling string already updated ∈ this fold-in|V49,B13
 T30|.|add `aria-label="Home"` ∈ `<a href="/">` @ `Nav.astro:14` (brand-logo link wrapping pinwheel SVG)|V49,B13
 T31|.|wrap `<slot />` ∈ `<main>` ∈ `Layout.astro:221` between `<Nav />` ∧ `<Footer />`|V49,B13
 T32|.|promote section kickers `// xxx` → `<h2>` element retaining V14 class string — scope: `rg 'text-sm font-bold uppercase tracking-\[0\.2em\] text-gh-blue' src/pages/`; ! `<h2>` ∀ kicker preceding tile `<h3>`s per V49(b)|V49,B13
