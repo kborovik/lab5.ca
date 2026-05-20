@@ -1,0 +1,79 @@
+Konstantin Borovik
+AI Automation Engineer · 20+ years engineering
+Toronto, Ontario, Canada
+
+LinkedIn:    https://www.linkedin.com/in/kborovik
+GitHub:      https://github.com/kborovik
+X:           https://x.com/kborovik
+Bluesky:     https://bsky.app/profile/lab5.ca
+Book a call: https://calendar.app.google/cYM3H3TsHsequR587
+Email:       kb@lab5.ca
+
+
+## skills
+
+AI automation
+
+- ERP integration — NetSuite, QuickBooks, Xero, Salesforce, HubSpot; idempotent state machines triggered on upstream events
+- document workflow — OCR + LLM structured extraction, schema validation with confidence scoring, routing to systems of record
+- AI email & communication — Gmail API triage, retrieval over internal knowledge bases, drafted replies
+- data & reporting — scheduled aggregation across databases, sheets, and APIs; LLM narration with citations
+
+Stack
+
+- Python, TypeScript
+- Pydantic AI, LLM agents, retrieval-augmented generation, structured extraction
+- Astro, Cloudflare Workers
+- PostgreSQL, Pub/Sub, event-driven architecture, idempotent processing, DLQs
+- GCP — Cloud Run, Cloud Functions, BigQuery, Vertex AI, Cloud SQL, IAM
+- Terraform, GitHub Actions, Azure DevOps, Docker, Kubernetes (GKE)
+
+
+## engagements
+
+lab5.ca (2026 — present)
+Independent contractor · AI Automation Engineer
+
+- MailPilot — AI email automation, end-to-end (Python, PostgreSQL, Pub/Sub, Cloud Run, GCP)
+- Pydantic AI agents, structured-extraction pipelines, idempotent state machines
+
+
+Colliers International (2023 — 2025)
+Senior Software Engineer
+
+- Serverless Python services on Cloud Functions and Cloud Run replacing manual data processing
+- Airflow ETL orchestration; self-recovering pipelines in place of manual data transfers
+- Terraform and Azure DevOps deployment pipelines; PostgreSQL for workflow state and operational reporting
+
+
+PayPal (2018 — 2023)
+Software Engineer
+
+- Platform tooling for 20+ backend engineers shipping microservices on GCP and GKE
+- Airflow / Composer workflow orchestration at scale
+- Secrets management and security controls for NIST-800-53 and PCI-DSS environments
+
+
+CDW (2014 — 2018)
+Software Engineer · Platform Engineer
+
+- Python automation tooling for cloud migration and deployment across client engagements
+- Led a team automating enterprise infrastructure provisioning and platform operations
+
+
+Tech Data (2010 — 2014)
+Systems Engineer
+
+- Automated enterprise infrastructure provisioning for large organizations
+
+
+TD Bank Financial Group (2003 — 2009)
+Systems Engineer
+
+- Data center migration and large-scale virtualization rollouts (200+ VMs)
+
+
+## education
+
+Northern Alberta Institute of Technology (2000 — 2002)
+Network Engineering Technology
