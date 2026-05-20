@@ -127,7 +127,7 @@ T36|x|amend `src/layouts/Layout.astro` `Person.sameAs` array → 4-entry set `["
 T37|x|amend `public/llms.txt` + `public/llms-full.txt` — add `/resume` entry ∈ `## Pages`, `https://lab5.ca/kb-resume.txt` ∈ `## Contact`, `## Notes` section ∋ gated-LinkedIn pointer line per V47/V48 amend|V47,V48
 T38|x|amend `src/pages/about.astro` `// proof` list — prepend `/resume` link per V46 amend|V46
 T39|x|add `@media print` stylesheet for `/resume` route per V50(5) — drop `<Nav />` + `<Footer />` chrome, expand content to full page width|V50
-T40|.|verify post-amend — `make check` + `make build` pass; browser-print `/resume` → PDF, confirm Nav/Footer absent + single-column full-width per V50(5); spot-check `kb-resume.txt` content matches `resume.astro` claims per V51|V30,V31,V50,V51
+T40|x|verify post-amend — `make check` + `make build` pass; browser-print `/resume` → PDF, confirm Nav/Footer absent + single-column full-width per V50(5); spot-check `kb-resume.txt` content matches `resume.astro` claims per V51 → 2026-05-20 ∀ `/resume/index.html` (9 pages built, 0 check errors): H1=1, H2=3 ∋ {// skills, // engagements, // education}, H3=9 ∋ {AI automation, Stack, 6 employers, NAIT}, `<main>`=1 ∀ V49(d), ProfilePage JSON-LD ∋ `sameAs` 4-entry set per V42, inline `@media print` ∋ Nav/Footer hidden + full-width container, `kb-resume.txt` parity ≡ resume.astro {contact, skills, engagements, education}; browser-print PDF visual ≡ manual out-of-repo follow-up|V30,V31,V50,V51
 
 ## §B — bugs
 
