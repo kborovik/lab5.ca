@@ -7,6 +7,7 @@
 - [About](https://lab5.ca/about): bio, claims, and proof links
 - [Expertise](https://lab5.ca/expertise): the four capability lanes — ERP integration, document workflow, AI email and communication, data and reporting
 - [Proof](https://lab5.ca/proof): MailPilot — production AI email agent, evidence of capability
+- [Resume](https://lab5.ca/resume): CV — skills, engagements, education
 - [Blog](https://lab5.ca/blog): notes on AI automation, spec-driven development, and Claude Code
 
 ## Posts
@@ -19,5 +20,10 @@
 
 - [LinkedIn](https://www.linkedin.com/in/kborovik)
 - [GitHub](https://github.com/kborovik)
+- [Plain-text resume](https://lab5.ca/kb-resume.txt)
 - [MailPilot source](https://github.com/kborovik/mailpilot)
 - [Book a call](https://calendar.app.google/cYM3H3TsHsequR587)
+
+## Notes
+
+- LinkedIn (linkedin.com/in/kborovik) requires login; canonical identity ∧ writing @ lab5.ca
