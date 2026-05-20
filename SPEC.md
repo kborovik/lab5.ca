@@ -116,7 +116,7 @@ T28|x|verify post-amend: `make check` + `make build` pass; spot-check JSON-LD vi
 T29|x|swap `text-gh-fg-subtle` → `text-gh-fg-muted` @ body-size text sites — scope: `rg "text-gh-fg-subtle" src/`; exempt large-text sites (≥18pt ∨ ≥14pt bold) per V49(a); V15 styling string already updated ∈ this fold-in|V49,B13
 T30|x|add `aria-label="Home"` ∈ `<a href="/">` @ `Nav.astro:14` (brand-logo link wrapping pinwheel SVG)|V49,B13
 T31|x|wrap `<slot />` ∈ `<main>` ∈ `Layout.astro:221` between `<Nav />` ∧ `<Footer />`|V49,B13
-T32|.|promote section kickers `// xxx` → `<h2>` element retaining V14 class string — scope: `rg 'text-sm font-bold uppercase tracking-\[0\.2em\] text-gh-blue' src/pages/`; ! `<h2>` ∀ kicker preceding tile `<h3>`s per V49(b)|V49,B13
+T32|x|promote section kickers `// xxx` → `<h2>` element retaining V14 class string — scope: `rg 'text-sm font-bold uppercase tracking-\[0\.2em\] text-gh-blue' src/pages/`; ! `<h2>` ∀ kicker preceding tile `<h3>`s per V49(b); 3 existing kickers promoted (`// why hire me`, `// how it works`, `// under the hood`); 1 missing kicker added (`// what I build` ∈ `index.astro` tile section) to satisfy V49(b) heading-order ∀ h1→h3-skipping section|V49,B13
 T33|.|re-run Lighthouse @ `/`, `/expertise`, `/proof`, `/about`, `/blog`, `/blog/<slug>` (one sample) post-fix; verify a11y ≥ 0.95 ∀; record result|V49
 
 ## §B — bugs
