@@ -110,7 +110,7 @@ T24|x|sweep primary pages — scope: `rg -L 'description=' $(rg -l '<Layout' src
 T25|x|extend `src/pages/blog/[...slug].astro` — pass `schemaType="BlogPosting"` ∧ supply blog-specific JSON-LD fields (datePublished, dateModified?, headline, description, keywords) per V43|V43
 T26|x|add `<link rel="alternate" hreflang="en-ca">` ∧ `<link rel="alternate" hreflang="x-default">` to `Layout.astro` `<head>` per V45|V45
 T27|x|author `public/llms.txt` (pointer-form per V47) ∧ `public/llms-full.txt` (prose dump per V47)|V47
-T28|.|verify post-amend: `make check` + `make build` pass; spot-check JSON-LD via Schema.org validator (https://validator.schema.org/) ∧ Google Rich Results Test on `/`, `/about`, `/blog/<slug>` — manual, out-of-repo|V30,V31,V40
+T28|x|verify post-amend: `make check` + `make build` pass; spot-check JSON-LD via Schema.org validator (https://validator.schema.org/) ∧ Google Rich Results Test on `/`, `/about`, `/blog/<slug>` — manual, out-of-repo|V30,V31,V40
 
 ## §B — bugs
 
