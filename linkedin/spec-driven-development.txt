@@ -10,4 +10,4 @@ The encoding is math-glyph notation: forall, exists, therefore, bottom, and, or,
 
 The piece I rely on most is backprop. On a test or build failure, /sdd:build does not just retry. It traces the cause, decides whether the failure class needs a new invariant, appends a bug row, and ships a failing test alongside the fix in one commit. Every incident becomes a permanent guard rail. The same bug cannot bite twice.
 
-Write-up: https://lab5.ca/blog/spec-driven-development/
+Read the full post: https://lab5.ca/blog/spec-driven-development/

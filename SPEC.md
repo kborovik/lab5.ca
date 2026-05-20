@@ -89,7 +89,7 @@ T13|x|fix V35 link-form @ src/content/blog/where-pytest-stops-and-claude-code-st
 T14|x|author linkedin/where-pytest-stops-and-claude-code-starts.txt per V36 — headline ≤ ~80 chars (bold/specific claim ∨ stance ∨ provocation), body, trailing `Write-up: https://lab5.ca/blog/where-pytest-stops-and-claude-code-starts/` block; ⊥ markdown syntax, ⊥ `word.tld` pattern, ⊥ `--` literal (em-dash → `—`)|V36,B7
 T15|x|update `.claude/check-extras.md` per V37 amend — add filter excluding §B `cause` ∧ §T `task` narrative columns ∈ SPEC.md from free-text `§[VTB]\.[0-9]+` grep; verify post-update /sdd:check ⊥ flag any documentary cites in §B/§T narrative as UNRESOLVED|V37,B8
 T16|x|sweep linkedin/*.txt per V36 amend — scope: `rg --pcre2 '^(?!Blog:\|Write-up:)[A-Z][a-z-]+:\s*https?://' linkedin/*.txt` (non-Write-up trailing URL rows) ∧ `head -1 linkedin/*.txt` ⊥ match `^Blog: ` (missing Blog header) — both ∈ `linkedin/*.txt − linkedin/resume.txt`; remediation ≡ (1) prepend `Blog: <title>` line 1 mirroring `src/content/blog/<slug>.md` frontmatter `title` verbatim, (2) remove non-Write-up labeled URL rows (current violators: `Skill:`, `Benchmark:`, `Plugin:`)|V36,B9
-T17|.|relabel `Write-up:` → `Read the full post:` ∈ linkedin/*.txt per V36 amend — scope: `rg --pcre2 '^Write-up:\s*https?://' linkedin/*.txt` ∈ `linkedin/*.txt − linkedin/resume.txt`; remediation ≡ replace `Write-up: ` prefix w/ `Read the full post: ` on matched lines|V36
+T17|x|relabel `Write-up:` → `Read the full post:` ∈ linkedin/*.txt per V36 amend — scope: `rg --pcre2 '^Write-up:\s*https?://' linkedin/*.txt` ∈ `linkedin/*.txt − linkedin/resume.txt`; remediation ≡ replace `Write-up: ` prefix w/ `Read the full post: ` on matched lines|V36
 
 ## §B — bugs
 

@@ -17,4 +17,4 @@ The benchmark: 30 rows x (1 source count + 2 decodes + 2 output counts) = 150 AP
 
 Two numbers, both honest about what they measure. If you are building any notation that claims to compress against prose, you probably want to measure both — not just the one that looks better.
 
-Write-up: https://lab5.ca/blog/measuring-glyph-compression/
+Read the full post: https://lab5.ca/blog/measuring-glyph-compression/
