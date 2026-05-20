@@ -1,4 +1,4 @@
-Blog: Where pytest stops and Claude Code starts
+Blog: Smoke-testing an LLM agent with a Claude Code skill
 
 Standard tests cover the wiring. The agent is the business logic.
 

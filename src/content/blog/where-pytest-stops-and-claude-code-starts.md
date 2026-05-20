@@ -1,21 +1,22 @@
 ---
-title: Where pytest stops and Claude Code starts
-description: Standard lints and pytest cover the wiring. The agent is the business logic, so an LLM-driven system needs a layer above &mdash; a Claude Code skill that runs real Gmail, real Drive, and a real model end-to-end.
+title: Smoke-testing an LLM agent with a Claude Code skill
+description: A Claude Code skill that smoke-tests an LLM agent end-to-end &mdash; real Gmail, real Drive, real model. Verifies that the agent does the right thing on real inputs, which ruff and pytest cannot.
 pubDate: 2026-05-19
 tags: [testing, claude-code, ai-coding, smoke-test]
 ---
 
 ## TLDR
 
-[MailPilot](https://github.com/kborovik/mailpilot) is an agent-driven CRM
-where the business logic lives inside a Pydantic AI agent. Standard
-test layers &mdash; `ruff`, `basedpyright`, `pytest` &mdash; verify
-that the *machinery* works. They cannot verify that the *agent* works
-against real Gmail and a real knowledge base. That's what a Claude
-Code [smoke-test skill](https://github.com/kborovik/mailpilot/blob/main/.claude/skills/smoke-test/SKILL.md)
-is for. The runner is Claude Code itself, the assertions live in
-deterministic gates plus one structured-JSON LLM judgment, and every
-recurrence-class failure auto-files into `SPEC.md` via `/sdd:spec`.
+I built [MailPilot](https://github.com/kborovik/mailpilot), an
+agent-driven CRM where the business logic lives inside a Pydantic AI
+agent. To test it I run three layers: `ruff` + `basedpyright`,
+`pytest`, and a Claude Code
+[smoke-test skill](https://github.com/kborovik/mailpilot/blob/main/.claude/skills/smoke-test/SKILL.md).
+The first two verify the *machinery*. The third verifies that the
+*agent* works against real Gmail and a real knowledge base. Claude
+Code is the runner, the assertions live in deterministic gates plus
+one structured-JSON LLM judgment, and every recurrence-class failure
+auto-files into `SPEC.md` via `/sdd:spec`.
 
 ## Why the pyramid is wrong here
 
@@ -80,7 +81,7 @@ which is not a test of the model.
 > The runner is Claude Code. The system under test is everything
 > else.
 
-`/smoke-test` is a Claude Code
+I wrote `/smoke-test` as a Claude Code
 [skill](https://github.com/kborovik/mailpilot/blob/main/.claude/skills/smoke-test/SKILL.md)
 &mdash; a markdown file at `.claude/skills/smoke-test/SKILL.md` that
 Claude Code loads when I type "smoke test" or after a non-trivial
@@ -187,9 +188,8 @@ justifies it, not on every push.
 
 ## What it caught
 
-The single most useful failure mode the smoke test surfaced,
-repeatedly, was the agent fabricating specs on out-of-scope
-questions. The Drive search returned no hits, but the agent answered
+The failure mode I hit most often was the agent fabricating specs on
+out-of-scope questions. The Drive search returned no hits, but the agent answered
 anyway with plausible-sounding vendor part numbers. That regression
 cannot be staged in pytest &mdash; `pytest-httpx` returns whatever I
 write into the mock. The smoke test catches it because the real
