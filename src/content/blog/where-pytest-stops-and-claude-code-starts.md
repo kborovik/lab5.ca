@@ -146,7 +146,7 @@ score.
 Shared Drive ACLs, Pub/Sub push notifications, the Anthropic API.
 The test accounts are real (`outbound@lab5.ca`, `inbound@lab5.ca`,
 `demo@lab5.ca`), the Drive folder is real (the same folder behind
-[/proof](/proof)), the LLM round-trip is real.
+[lab5.ca/proof](/proof)), the LLM round-trip is real.
 Failures in service-account delegation, Pub/Sub topic ACLs, or Shared
 Drive membership show up here and nowhere else.
 
