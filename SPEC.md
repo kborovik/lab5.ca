@@ -107,7 +107,7 @@ T21|x|refactor `Layout.astro` — accept `schemaType` prop ∈ {ProfilePage,WebP
 T22|x|finalize `Person.knowsAbout` keyword set (§I capability set ∪ lower-level skills: Python, TypeScript, Pydantic AI, Astro, Cloudflare Workers, LLM agents, RAG, structured extraction) ∧ embed ∈ Layout Person node|V40
 T23|x|amend `src/pages/about.astro` per V46 — add `<address>` semantic tag w/ `Toronto, Ontario, Canada`; add `// claims` dash-bullet section listing falsifiable facts; add `// proof` bordered link list → LinkedIn ∧ GitHub ∧ MailPilot source ∧ blog index; amend meta `description` to ∋ `Toronto, Canada` + `AI Automation Engineer` + `20+ years`|V46
 T24|x|sweep primary pages — scope: `rg -L 'description=' $(rg -l '<Layout' src/pages/{*.astro,blog/*.astro})` (Layout invocations w/o `description=` prop); remediation ≡ add explicit `description` prop per V44|V44
-T25|.|extend `src/pages/blog/[...slug].astro` — pass `schemaType="BlogPosting"` ∧ supply blog-specific JSON-LD fields (datePublished, dateModified?, headline, description, keywords) per V43|V43
+T25|x|extend `src/pages/blog/[...slug].astro` — pass `schemaType="BlogPosting"` ∧ supply blog-specific JSON-LD fields (datePublished, dateModified?, headline, description, keywords) per V43|V43
 T26|.|add `<link rel="alternate" hreflang="en-ca">` ∧ `<link rel="alternate" hreflang="x-default">` to `Layout.astro` `<head>` per V45|V45
 T27|.|author `public/llms.txt` (pointer-form per V47) ∧ `public/llms-full.txt` (prose dump per V47)|V47
 T28|.|verify post-amend: `make check` + `make build` pass; spot-check JSON-LD via Schema.org validator (https://validator.schema.org/) ∧ Google Rich Results Test on `/`, `/about`, `/blog/<slug>` — manual, out-of-repo|V30,V31,V40

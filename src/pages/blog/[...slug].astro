@@ -20,9 +20,22 @@ const dateFmt = new Intl.DateTimeFormat('en-CA', {
   day: '2-digit',
   timeZone: 'UTC',
 });
+
+const blogPosting = {
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.pubDate.toISOString(),
+  ...(post.data.updatedDate && { dateModified: post.data.updatedDate.toISOString() }),
+  ...(post.data.tags.length > 0 && { keywords: post.data.tags }),
+};
 ---
 
-<Layout title={post.data.title} description={post.data.description}>
+<Layout
+  title={post.data.title}
+  description={post.data.description}
+  schemaType="BlogPosting"
+  blogPosting={blogPosting}
+>
   <article>
     <!-- Header -->
     <section class="mx-auto max-w-5xl px-6 pt-16 pb-8 sm:pt-20 sm:pb-10">
