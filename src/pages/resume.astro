@@ -301,4 +301,51 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
   </article>
+
+  <style is:global>
+    @media print {
+      header,
+      footer {
+        display: none !important;
+      }
+      main {
+        padding: 0 !important;
+      }
+      .resume {
+        max-width: 100% !important;
+        padding: 0.5in !important;
+        margin: 0 !important;
+      }
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 10.5pt;
+      }
+      .resume h1 {
+        font-size: 18pt;
+      }
+      .resume h2 {
+        font-size: 10pt;
+      }
+      .resume h3 {
+        font-size: 11pt;
+      }
+      .resume a {
+        color: #000000 !important;
+        text-decoration: none;
+      }
+      .resume .border-t {
+        border-color: #d0d7de !important;
+      }
+      .resume article {
+        break-inside: avoid;
+      }
+      .animate-on-scroll,
+      .animate-hero {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+      }
+    }
+  </style>
 </Layout>

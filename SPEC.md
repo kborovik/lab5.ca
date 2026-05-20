@@ -126,7 +126,7 @@ T35|x|author `public/kb-resume.txt` plain-text mirror per V51 — equivalent cla
 T36|x|amend `src/layouts/Layout.astro` `Person.sameAs` array → 4-entry set `["https://www.linkedin.com/in/kborovik", "https://github.com/kborovik", "https://x.com/kborovik", "https://bsky.app/profile/lab5.ca"]` per V42 amend|V42
 T37|x|amend `public/llms.txt` + `public/llms-full.txt` — add `/resume` entry ∈ `## Pages`, `https://lab5.ca/kb-resume.txt` ∈ `## Contact`, `## Notes` section ∋ gated-LinkedIn pointer line per V47/V48 amend|V47,V48
 T38|x|amend `src/pages/about.astro` `// proof` list — prepend `/resume` link per V46 amend|V46
-T39|.|add `@media print` stylesheet for `/resume` route per V50(5) — drop `<Nav />` + `<Footer />` chrome, expand content to full page width|V50
+T39|x|add `@media print` stylesheet for `/resume` route per V50(5) — drop `<Nav />` + `<Footer />` chrome, expand content to full page width|V50
 T40|.|verify post-amend — `make check` + `make build` pass; browser-print `/resume` → PDF, confirm Nav/Footer absent + single-column full-width per V50(5); spot-check `kb-resume.txt` content matches `resume.astro` claims per V51|V30,V31,V50,V51
 
 ## §B — bugs
