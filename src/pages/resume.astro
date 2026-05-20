@@ -12,13 +12,10 @@ import Layout from '../layouts/Layout.astro';
     <!-- Contact -->
     <header class="resume-contact">
       <h1 class="text-3xl font-bold tracking-tight text-gh-fg sm:text-4xl">
-        Resume
+        AI Automation Engineer
       </h1>
-      <p class="mt-4 text-base font-semibold text-gh-fg">
-        Konstantin Borovik
-      </p>
-      <p class="mt-1 text-sm text-gh-fg-muted">
-        AI Automation Engineer &middot; 20+ years engineering
+      <p class="mt-4 text-sm text-gh-fg-muted">
+        Konstantin Borovik &middot; 20+ years engineering
       </p>
       <address class="mt-1 text-sm not-italic text-gh-fg-muted">
         Toronto, Ontario, Canada
@@ -295,8 +292,8 @@ import Layout from '../layouts/Layout.astro';
 
   <style is:global>
     @media print {
-      header,
-      footer {
+      body > header,
+      body > footer {
         display: none !important;
       }
       main {
@@ -310,16 +307,16 @@ import Layout from '../layouts/Layout.astro';
       body {
         background: #ffffff !important;
         color: #000000 !important;
-        font-size: 10.5pt;
-      }
-      .resume h1 {
-        font-size: 18pt;
-      }
-      .resume h2 {
         font-size: 10pt;
       }
-      .resume h3 {
+      .resume h1 {
+        font-size: 20pt;
+      }
+      .resume h2 {
         font-size: 11pt;
+      }
+      .resume h3 {
+        font-size: 10.5pt;
       }
       .resume a {
         color: #000000 !important;
