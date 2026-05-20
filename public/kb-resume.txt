@@ -4,7 +4,7 @@ Toronto, Ontario, Canada
 
 LinkedIn: https://www.linkedin.com/in/kborovik
 GitHub:   https://github.com/kborovik
-Email:    kb@lab5.ca
+Web:      https://lab5.ca
 
 
 ## tech stack
