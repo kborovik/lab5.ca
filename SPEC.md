@@ -85,7 +85,7 @@ T9|x|set CF redirect `/demo` → `/proof` (301) ∈ `public/_redirects`|I.routes
 T10|x|add MailPilot source-code link button ∈ `/proof` "under the hood" section — mirror home-page proof-of-capability pattern (bordered button, not pulse); href ≡ §I.cta.mailpilot-source|I.cta.mailpilot-source
 T11|x|create `.claude/check-extras.md` w/ `§-cite drift recipe extension` section excluding `src/content/blog/**/*.md` from §-cite drift scope per V37; verify post-create `/sdd:check` ⊥ flag blog cross-repo cites|V37,B5
 T12|x|sweep linkedin headline anti-example class — scope: line 1 grep `^(I |Across [0-9])` ∈ `linkedin/*.txt − linkedin/resume.txt`; remediation ≡ rewrite sentence 1 per V36 (≤ ~80 chars, ∋ bold/specific claim ∨ stance ∨ provocation)|V36,B6
-T13|.|fix V35 link-form @ src/content/blog/where-pytest-stops-and-claude-code-starts.md:149 — replace `[lab5.ca/demo](https://lab5.ca/proof/)` w/ absolute-path form `[/proof](/proof)`|V35,B7
+T13|x|fix V35 link-form @ src/content/blog/where-pytest-stops-and-claude-code-starts.md:149 — replace `[lab5.ca/demo](https://lab5.ca/proof/)` w/ absolute-path form `[/proof](/proof)`|V35,B7
 T14|.|author linkedin/where-pytest-stops-and-claude-code-starts.txt per V36 — headline ≤ ~80 chars (bold/specific claim ∨ stance ∨ provocation), body, trailing `Write-up: https://lab5.ca/blog/where-pytest-stops-and-claude-code-starts/` block; ⊥ markdown syntax, ⊥ `word.tld` pattern, ⊥ `--` literal (em-dash → `—`)|V36,B7
 T15|.|update `.claude/check-extras.md` per V37 amend — add filter excluding §B `cause` ∧ §T `task` narrative columns ∈ SPEC.md from free-text `§[VTB]\.[0-9]+` grep; verify post-update /sdd:check ⊥ flag any documentary cites in §B/§T narrative as UNRESOLVED|V37,B8
 
