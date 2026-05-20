@@ -1,3 +1,5 @@
+Blog: Compressed spec-driven development
+
 AI coding's real cost is review, not generation. So I built pilot-spec: a Claude Code plugin that puts the whole project — goals, constraints, interfaces, invariants, tasks, bugs — in one root SPEC. One file. One thread. No subagents.
 
 The pitch for multi-agent setups is throughput. Spin up subagents in parallel git worktrees, dispatch tasks, merge the wins. In practice I could not hold the whole picture in my head — which task was done, how it was tested, what regressed, which bugs were still open. The agents moved faster than I could review, and review was the part that had to be right.
@@ -9,4 +11,3 @@ The encoding is math-glyph notation: forall, exists, therefore, bottom, and, or,
 The piece I rely on most is backprop. On a test or build failure, /sdd:build does not just retry. It traces the cause, decides whether the failure class needs a new invariant, appends a bug row, and ships a failing test alongside the fix in one commit. Every incident becomes a permanent guard rail. The same bug cannot bite twice.
 
 Write-up: https://lab5.ca/blog/spec-driven-development/
-Plugin: https://github.com/kborovik/pilot-skills

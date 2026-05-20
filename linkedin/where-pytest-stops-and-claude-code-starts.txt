@@ -1,3 +1,5 @@
+Blog: Where pytest stops and Claude Code starts
+
 Standard tests cover the wiring. The agent is the business logic.
 
 The standard testing pyramid inverts when an LLM sits at the core: the agent can pass every mocked test and still fabricate vendor specs that don't exist. So I run three layers, each catching what the layer below cannot.
@@ -11,4 +13,3 @@ The smoke-test runner is Claude Code itself. Gates are mostly deterministic; the
 The downside is honest: roughly seven minutes of wall clock per run plus an LLM round-trip per step. It is not a CI gate. It is a pre-commit ritual after a non-trivial change to the agent surface — the way you would run integration tests against staging, when the diff justifies it, not on every push.
 
 Write-up: https://lab5.ca/blog/where-pytest-stops-and-claude-code-starts/
-Skill: https://github.com/kborovik/mailpilot/blob/main/.claude/skills/smoke-test/SKILL.md

@@ -1,3 +1,5 @@
+Blog: Measuring math-glyph compression
+
 Math-glyph notation can cut Claude Code SPEC by 89%. Here's the receipt.
 
 I called my SPEC "compressed" because the notation makes it fit in Claude's context. Without a benchmark, that's a marketing word — so I built one and ran 30 rows through the Claude tokenizer.
@@ -16,4 +18,3 @@ The benchmark: 30 rows x (1 source count + 2 decodes + 2 output counts) = 150 AP
 Two numbers, both honest about what they measure. If you are building any notation that claims to compress against prose, you probably want to measure both — not just the one that looks better.
 
 Write-up: https://lab5.ca/blog/measuring-glyph-compression/
-Benchmark: https://github.com/kborovik/pilot-skills/tree/main/benchmarks/glyph
