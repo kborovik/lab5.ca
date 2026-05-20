@@ -1,6 +1,6 @@
 ---
-title: Measuring math-glyph compression
-description: I ran 30 SPEC.md rows through Claude's tokenizer to measure how much math-glyph notation actually compresses. Two numbers — ~30% encoding, ~90% reviewer-facing.
+title: Measuring math-glyph token compression
+description: I ran 30 SPEC.md rows through Claude's tokenizer to measure how much math-glyph notation compresses token count. Two numbers — ~30% encoding, ~90% reviewer-facing.
 pubDate: 2026-05-18
 tags: [spec-driven-development, claude-code, ai-coding, benchmarks]
 ---

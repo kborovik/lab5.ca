@@ -1,4 +1,4 @@
-Blog: Measuring math-glyph compression
+Blog: Measuring math-glyph token compression
 
 Math-glyph notation can cut Claude Code SPEC by 89%. Here's the receipt.
 
