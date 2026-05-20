@@ -1,0 +1,304 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Resume"
+  schemaType="ProfilePage"
+  description="Konstantin Borovik — AI Automation Engineer in Toronto, Canada. 20+ years engineering. Skills, engagements, and education."
+>
+  <article class="resume mx-auto max-w-3xl px-6 py-12 sm:py-16">
+
+    <!-- Contact -->
+    <header class="resume-contact">
+      <h1 class="text-3xl font-bold tracking-tight text-gh-fg sm:text-4xl">
+        Resume
+      </h1>
+      <p class="mt-4 text-base font-semibold text-gh-fg">
+        Konstantin Borovik
+      </p>
+      <p class="mt-1 text-sm text-gh-fg-muted">
+        AI Automation Engineer &middot; 20+ years engineering
+      </p>
+      <address class="mt-1 text-sm not-italic text-gh-fg-muted">
+        Toronto, Ontario, Canada
+      </address>
+
+      <ul class="resume-links mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm text-gh-fg-muted">
+        <li>
+          <a
+            href="https://www.linkedin.com/in/kborovik"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-gh-blue"
+          >linkedin.com/in/kborovik</a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/kborovik"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-gh-blue"
+          >github.com/kborovik</a>
+        </li>
+        <li>
+          <a
+            href="https://x.com/kborovik"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-gh-blue"
+          >x.com/kborovik</a>
+        </li>
+        <li>
+          <a
+            href="https://bsky.app/profile/lab5.ca"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-gh-blue"
+          >bsky.app/profile/lab5.ca</a>
+        </li>
+        <li>
+          <a
+            href="https://calendar.app.google/cYM3H3TsHsequR587"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-gh-blue"
+          >book a call</a>
+        </li>
+        <li>
+          <a
+            href="mailto:kb@lab5.ca"
+            class="hover:text-gh-blue"
+          >kb@lab5.ca</a>
+        </li>
+      </ul>
+    </header>
+
+    <!-- Skills -->
+    <section class="mt-12 border-t border-gh-border pt-10">
+      <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-gh-blue">
+        // skills
+      </h2>
+
+      <div class="mt-8 space-y-8 text-sm leading-relaxed text-gh-fg-muted sm:text-base">
+        <div>
+          <h3 class="text-base font-semibold text-gh-fg">
+            AI automation
+          </h3>
+          <ul class="mt-3 space-y-1.5">
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>ERP integration &mdash; NetSuite, QuickBooks, Xero, Salesforce, HubSpot; idempotent state machines triggered on upstream events</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>document workflow &mdash; OCR + LLM structured extraction, schema validation w/ confidence scoring, routing to systems of record</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>AI email &amp; communication &mdash; Gmail API triage, retrieval over internal knowledge bases, drafted replies</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>data &amp; reporting &mdash; scheduled aggregation across databases, sheets, and APIs; LLM narration w/ citations</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-base font-semibold text-gh-fg">
+            Stack
+          </h3>
+          <ul class="mt-3 space-y-1.5">
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>Python, TypeScript</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>Pydantic AI, LLM agents, retrieval-augmented generation, structured extraction</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>Astro, Cloudflare Workers</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>PostgreSQL, Pub/Sub, event-driven architecture, idempotent processing, DLQs</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>GCP &mdash; Cloud Run, Cloud Functions, BigQuery, Vertex AI, Cloud SQL, IAM</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>Terraform, GitHub Actions, Azure DevOps, Docker, Kubernetes (GKE)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engagements -->
+    <section class="mt-12 border-t border-gh-border pt-10">
+      <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-gh-blue">
+        // engagements
+      </h2>
+
+      <div class="mt-8 space-y-10">
+
+        <article>
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+            <h3 class="text-base font-semibold text-gh-fg">
+              lab5.ca
+            </h3>
+            <span class="text-xs text-gh-fg-muted">2026 &mdash; present</span>
+          </div>
+          <p class="mt-1 text-sm text-gh-fg-muted">
+            Independent contractor &middot; AI Automation Engineer
+          </p>
+          <ul class="mt-3 space-y-1.5 text-sm leading-relaxed text-gh-fg-muted sm:text-base">
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>MailPilot &mdash; AI email automation, end-to-end (Python, PostgreSQL, Pub/Sub, Cloud Run, GCP)</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>Pydantic AI agents, structured-extraction pipelines, idempotent state machines</span>
+            </li>
+          </ul>
+        </article>
+
+        <article>
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+            <h3 class="text-base font-semibold text-gh-fg">
+              Colliers International
+            </h3>
+            <span class="text-xs text-gh-fg-muted">2023 &mdash; 2025</span>
+          </div>
+          <p class="mt-1 text-sm text-gh-fg-muted">
+            Senior Software Engineer
+          </p>
+          <ul class="mt-3 space-y-1.5 text-sm leading-relaxed text-gh-fg-muted sm:text-base">
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>Serverless Python services on Cloud Functions and Cloud Run replacing manual data processing</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>Airflow ETL orchestration; self-recovering pipelines in place of manual data transfers</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>Terraform and Azure DevOps deployment pipelines; PostgreSQL for workflow state and operational reporting</span>
+            </li>
+          </ul>
+        </article>
+
+        <article>
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+            <h3 class="text-base font-semibold text-gh-fg">
+              PayPal
+            </h3>
+            <span class="text-xs text-gh-fg-muted">2018 &mdash; 2023</span>
+          </div>
+          <p class="mt-1 text-sm text-gh-fg-muted">
+            Software Engineer
+          </p>
+          <ul class="mt-3 space-y-1.5 text-sm leading-relaxed text-gh-fg-muted sm:text-base">
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>Platform tooling for 20+ backend engineers shipping microservices on GCP and GKE</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>Airflow / Composer workflow orchestration at scale</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>Secrets management and security controls for NIST-800-53 and PCI-DSS environments</span>
+            </li>
+          </ul>
+        </article>
+
+        <article>
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+            <h3 class="text-base font-semibold text-gh-fg">
+              CDW
+            </h3>
+            <span class="text-xs text-gh-fg-muted">2014 &mdash; 2018</span>
+          </div>
+          <p class="mt-1 text-sm text-gh-fg-muted">
+            Software Engineer &middot; Platform Engineer
+          </p>
+          <ul class="mt-3 space-y-1.5 text-sm leading-relaxed text-gh-fg-muted sm:text-base">
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>Python automation tooling for cloud migration and deployment across client engagements</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>Led a team automating enterprise infrastructure provisioning and platform operations</span>
+            </li>
+          </ul>
+        </article>
+
+        <article>
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+            <h3 class="text-base font-semibold text-gh-fg">
+              Tech Data
+            </h3>
+            <span class="text-xs text-gh-fg-muted">2010 &mdash; 2014</span>
+          </div>
+          <p class="mt-1 text-sm text-gh-fg-muted">
+            Systems Engineer
+          </p>
+          <ul class="mt-3 space-y-1.5 text-sm leading-relaxed text-gh-fg-muted sm:text-base">
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>Automated enterprise infrastructure provisioning for large organizations</span>
+            </li>
+          </ul>
+        </article>
+
+        <article>
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+            <h3 class="text-base font-semibold text-gh-fg">
+              TD Bank Financial Group
+            </h3>
+            <span class="text-xs text-gh-fg-muted">2003 &mdash; 2009</span>
+          </div>
+          <p class="mt-1 text-sm text-gh-fg-muted">
+            Systems Engineer
+          </p>
+          <ul class="mt-3 space-y-1.5 text-sm leading-relaxed text-gh-fg-muted sm:text-base">
+            <li class="flex gap-3">
+              <span class="text-gh-fg-muted">&minus;</span>
+              <span>Data center migration and large-scale virtualization rollouts (200+ VMs)</span>
+            </li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="mt-12 border-t border-gh-border pt-10">
+      <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-gh-blue">
+        // education
+      </h2>
+      <article class="mt-6">
+        <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+          <h3 class="text-base font-semibold text-gh-fg">
+            Northern Alberta Institute of Technology
+          </h3>
+          <span class="text-xs text-gh-fg-muted">2000 &mdash; 2002</span>
+        </div>
+        <p class="mt-1 text-sm text-gh-fg-muted">
+          Network Engineering Technology
+        </p>
+      </article>
+    </section>
+
+  </article>
+</Layout>
