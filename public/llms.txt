@@ -1,0 +1,23 @@
+# Konstantin Borovik
+
+> AI Automation Engineer based in Toronto, Canada. 20+ years of hands-on engineering applied to ERP integration, document workflows, AI email, and reporting. MailPilot is the live proof of capability.
+
+## Pages
+
+- [About](https://lab5.ca/about): bio, claims, and proof links
+- [Expertise](https://lab5.ca/expertise): the four capability lanes — ERP integration, document workflow, AI email and communication, data and reporting
+- [Proof](https://lab5.ca/proof): MailPilot — production AI email agent, evidence of capability
+- [Blog](https://lab5.ca/blog): notes on AI automation, spec-driven development, and Claude Code
+
+## Posts
+
+- [Smoke-testing an LLM agent with a Claude Code skill](https://lab5.ca/blog/where-pytest-stops-and-claude-code-starts/)
+- [Measuring math-glyph token compression](https://lab5.ca/blog/measuring-glyph-compression/)
+- [Compressed spec-driven development](https://lab5.ca/blog/spec-driven-development/)
+
+## Contact
+
+- [LinkedIn](https://www.linkedin.com/in/kborovik)
+- [GitHub](https://github.com/kborovik)
+- [MailPilot source](https://github.com/kborovik/mailpilot)
+- [Book a call](https://calendar.app.google/cYM3H3TsHsequR587)
