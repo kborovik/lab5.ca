@@ -1,36 +1,17 @@
 LinkedIn Profile: Konstantin Borovik
 
-Headline
-
-AI Automation Engineer | Software Engineer
-
-Location
-
-Canada
-
-Website
-
-https://lab5.ca
-
-LinkedIn URL
-
-https://linkedin.com/in/kborovik
+Headline: AI Automation Engineer | Software Engineer
+Location: Canada
+Website: https://lab5.ca
+LinkedIn: https://linkedin.com/in/kborovik
 
 ---
 
 About
 
-I build systems that replace manual business work -- email processing, document handling, workflow automation.
+I build systems that replace manual business work -- ERP Integration, Document Workflow, AI Email & Communication, Data & Reporting.
 
-20+ years shipping production systems. Python, SQL, cloud infrastructure.
-
-Try it live: email demo@lab5.ca and get an automated response in minutes. See how it works: https://lab5.ca/demo/
-
-MailPilot is my proof-of-capability -- a production AI backend that ingests real business email, classifies intent, orchestrates workflows, and replies.
-
-Built with Python, PostgreSQL, Pub/Sub, and Cloud Run on GCP.
-
-lab5.ca | github.com/kborovik | hello@lab5.ca
+lab5.ca | github.com/kborovik
 
 ---
 
@@ -40,7 +21,7 @@ Senior Software Engineer Technical Lead
 lab5.ca
 January 2026 -- Present
 
-Building MailPilot -- an AI system that automates real business email end-to-end. Live demo at lab5.ca/demo/
+Building MailPilot -- an AI system that automates real business email end-to-end.
 
 - Built AI-driven email processing pipeline: ingest, classify intent, orchestrate response workflows, and reply -- zero manual handling
 - Designed document ingestion and extraction system that turns unstructured inputs into structured, searchable data
@@ -129,7 +110,6 @@ AI system that automates real business email -- no human in the loop. Send an em
 
 Ingests inbound email, classifies intent, orchestrates multi-step workflows, and generates replies. Built as a production backend: Python, PostgreSQL, Pub/Sub, Cloud Run on GCP.
 
-Live demo: https://lab5.ca/demo/
 Source: https://github.com/kborovik/mailpilot
 
 ---
