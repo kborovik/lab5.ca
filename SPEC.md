@@ -117,7 +117,7 @@ T29|x|swap `text-gh-fg-subtle` → `text-gh-fg-muted` @ body-size text sites —
 T30|x|add `aria-label="Home"` ∈ `<a href="/">` @ `Nav.astro:14` (brand-logo link wrapping pinwheel SVG)|V49,B13
 T31|x|wrap `<slot />` ∈ `<main>` ∈ `Layout.astro:221` between `<Nav />` ∧ `<Footer />`|V49,B13
 T32|x|promote section kickers `// xxx` → `<h2>` element retaining V14 class string — scope: `rg 'text-sm font-bold uppercase tracking-\[0\.2em\] text-gh-blue' src/pages/`; ! `<h2>` ∀ kicker preceding tile `<h3>`s per V49(b); 3 existing kickers promoted (`// why hire me`, `// how it works`, `// under the hood`); 1 missing kicker added (`// what I build` ∈ `index.astro` tile section) to satisfy V49(b) heading-order ∀ h1→h3-skipping section|V49,B13
-T33|.|re-run Lighthouse @ `/`, `/expertise`, `/proof`, `/about`, `/blog`, `/blog/<slug>` (one sample) post-fix; verify a11y ≥ 0.95 ∀; record result|V49
+T33|x|re-run Lighthouse @ `/`, `/expertise`, `/proof`, `/about`, `/blog`, `/blog/<slug>` (one sample) post-fix; verify a11y ≥ 0.95 ∀; record result → Lighthouse v13 (headless Chrome, npx lighthouse@latest, accessibility-only) 2026-05-20 ∀ 6 primary pages = 1.00 (`/blog/<slug>` sample ≡ spec-driven-development); pre-fix /=0.73 per B13 ⇒ T29–T32 fold-in closes ∀ 4 defect classes (color-contrast, heading-order, link-name, landmark-one-main)|V49
 
 ## §B — bugs
 
