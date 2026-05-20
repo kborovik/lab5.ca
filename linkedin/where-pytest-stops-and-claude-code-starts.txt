@@ -1,4 +1,4 @@
-Mocking the model out is mocking the system under test out.
+Standard tests cover the wiring. The agent is the business logic.
 
 The standard testing pyramid inverts when an LLM sits at the core: the agent can pass every mocked test and still fabricate vendor specs that don't exist. So I run three layers, each catching what the layer below cannot.
 
