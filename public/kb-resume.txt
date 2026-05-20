@@ -16,17 +16,17 @@ AI automation
 
 - ERP integration — NetSuite, QuickBooks, Xero, Salesforce, HubSpot; idempotent state machines triggered on upstream events
 - document workflow — OCR + LLM structured extraction, schema validation with confidence scoring, routing to systems of record
-- AI email & communication — Gmail API triage, retrieval over internal knowledge bases, drafted replies
+- AI email & communication — Gmail API triage, retrieval over internal knowledge bases (RAG), drafted replies
 - data & reporting — scheduled aggregation across databases, sheets, and APIs; LLM narration with citations
 
 Stack
 
 - Python, TypeScript
-- Pydantic AI, LLM agents, retrieval-augmented generation, structured extraction
+- Pydantic AI, LLM agents and agentic workflows, retrieval-augmented generation, structured extraction, MCP
 - Astro, Cloudflare Workers
 - PostgreSQL, Pub/Sub, event-driven architecture, idempotent processing, DLQs
 - GCP — Cloud Run, Cloud Functions, BigQuery, Vertex AI, Cloud SQL, IAM
-- Terraform, GitHub Actions, Azure DevOps, Docker, Kubernetes (GKE)
+- CI/CD and infra-as-code — Terraform, GitHub Actions, Azure DevOps, Docker, Kubernetes (GKE)
 
 
 ## engagements
@@ -41,17 +41,17 @@ Independent contractor · AI Automation Engineer
 Colliers International (2023 — 2025)
 Senior Software Engineer
 
-- Serverless Python services on Cloud Functions and Cloud Run replacing manual data processing
-- Airflow ETL orchestration; self-recovering pipelines in place of manual data transfers
-- Terraform and Azure DevOps deployment pipelines; PostgreSQL for workflow state and operational reporting
+- Event-driven Python services on Cloud Run and Cloud Functions, replacing manual data-processing workflows
+- Airflow ETL orchestration; idempotent self-recovering pipelines replacing manual data transfers
+- CI/CD and infra-as-code via Terraform and Azure DevOps; PostgreSQL workflow state
 
 
 PayPal (2018 — 2023)
 Software Engineer
 
-- Platform tooling for 20+ backend engineers shipping microservices on GCP and GKE
-- Airflow / Composer workflow orchestration at scale
-- Secrets management and security controls for NIST-800-53 and PCI-DSS environments
+- Platform tooling and CI/CD for 20+ backend engineers shipping microservices on GCP and GKE
+- Event-driven workflow orchestration with Airflow and Composer at scale
+- Secure data-handling per NIST-800-53 and PCI-DSS — secrets management and security controls
 
 
 CDW (2014 — 2018)
