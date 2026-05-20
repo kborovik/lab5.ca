@@ -34,12 +34,20 @@ Stack
 lab5.ca (2026 — present)
 Independent contractor · AI Automation Engineer
 
+I run an independent practice building AI automation for business
+operations — ERP integration, document workflow, AI email, and
+reporting. MailPilot is my proof-of-capability project (open source).
+
 - MailPilot — AI email automation, end-to-end (Python, PostgreSQL, Pub/Sub, Cloud Run, GCP)
 - Pydantic AI agents, structured-extraction pipelines, idempotent state machines
 
 
 Colliers International (2023 — 2025)
 Senior Software Engineer
+
+I replaced manual data-processing workflows with serverless Python
+on GCP and Airflow ETL pipelines, backed by PostgreSQL for workflow
+state.
 
 - Event-driven Python services on Cloud Run and Cloud Functions, replacing manual data-processing workflows
 - Airflow ETL orchestration; idempotent self-recovering pipelines replacing manual data transfers
@@ -48,6 +56,10 @@ Senior Software Engineer
 
 PayPal (2018 — 2023)
 Software Engineer
+
+I built platform tooling and workflow orchestration for backend
+engineering teams shipping microservices on GCP/GKE under
+NIST-800-53 and PCI-DSS controls.
 
 - Platform tooling and CI/CD for 20+ backend engineers shipping microservices on GCP and GKE
 - Event-driven workflow orchestration with Airflow and Composer at scale
