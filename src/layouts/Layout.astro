@@ -218,7 +218,9 @@ const jsonLd = {
       </defs>
     </svg>
     <Nav />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <Footer />
     <script>
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
