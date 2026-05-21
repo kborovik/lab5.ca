@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://lab5.ca/sitemap-index.xml
