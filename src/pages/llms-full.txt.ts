@@ -1,4 +1,23 @@
-# Konstantin Borovik — AI Automation Engineer
+import type { APIRoute } from 'astro';
+import { getCollection } from 'astro:content';
+import resumeRaw from '../../public/kb-resume.txt?raw';
+
+export const GET: APIRoute = async () => {
+  const resumeDemoted = resumeRaw.replace(/^## /gm, '### ').trimEnd();
+
+  const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  );
+
+  const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
+  const blogSection = posts
+    .map(
+      p =>
+        `${p.data.title} (${fmtDate(p.data.pubDate)}). ${p.data.description} https://lab5.ca/blog/${p.id}/`,
+    )
+    .join('\n\n');
+
+  const body = `# Konstantin Borovik — AI Automation Engineer
 
 Toronto, Ontario, Canada.
 
@@ -35,28 +54,13 @@ MailPilot — a production AI agent I built end-to-end. Email demo@lab5.ca with 
 
 ## Resume
 
-Full CV at https://lab5.ca/resume (plain-text mirror at https://lab5.ca/kb-resume.txt). Section order: contact → skills → engagements → education.
+Full CV at https://lab5.ca/resume (plain-text mirror at https://lab5.ca/kb-resume.txt). Section order: contact → tech stack → engagements → education.
 
-Skills — AI automation: ERP integration (NetSuite, QuickBooks, Xero, Salesforce, HubSpot); document workflow (OCR + LLM structured extraction); AI email & communication (Gmail API triage, retrieval, drafted replies); data & reporting (scheduled aggregation, LLM narration with citations). Stack: Python, TypeScript, Pydantic AI, Astro, Cloudflare Workers, LLM agents, retrieval-augmented generation, structured extraction, PostgreSQL, Pub/Sub, GCP (Cloud Run, Cloud Functions, BigQuery, Vertex AI), Terraform, Docker, Kubernetes.
-
-Engagements:
-
-- lab5.ca (2026 — present), independent contractor, AI Automation Engineer. MailPilot end-to-end on GCP.
-- Colliers International (2023 — 2025), Senior Software Engineer. Serverless Python services, Airflow ETL, Terraform + Azure DevOps.
-- PayPal (2018 — 2023), Software Engineer. Platform tooling for 20+ backend engineers on GCP/GKE; Airflow/Composer; NIST-800-53 and PCI-DSS environments.
-- CDW (2014 — 2018), Software Engineer · Platform Engineer. Python automation tooling for cloud migration; led infrastructure provisioning team.
-- Tech Data (2010 — 2014), Systems Engineer. Automated enterprise infrastructure provisioning.
-- TD Bank Financial Group (2003 — 2009), Systems Engineer. Data center migration; large-scale virtualization rollouts (200+ VMs).
-
-Education: Northern Alberta Institute of Technology, Network Engineering Technology (2000 — 2002).
+${resumeDemoted}
 
 ## Blog posts
 
-Smoke-testing an LLM agent with a Claude Code skill (2026-05-19). A Claude Code skill that smoke-tests an LLM agent end-to-end — real Gmail, real Drive, real model. Verifies that the agent does the right thing on real inputs, which ruff and pytest cannot. https://lab5.ca/blog/where-pytest-stops-and-claude-code-starts/
-
-Measuring math-glyph token compression (2026-05-18). I ran 30 SPEC.md rows through Claude's tokenizer to measure how much math-glyph notation compresses token count. Two numbers — ~30% encoding, ~90% reviewer-facing. https://lab5.ca/blog/measuring-glyph-compression/
-
-Compressed spec-driven development (2026-05-13). I built pilot-spec to keep AI coding agents on one thread, with one spec, so I can actually track what changed, what was tested, and what broke. https://lab5.ca/blog/spec-driven-development/
+${blogSection}
 
 ## Contact
 
@@ -69,3 +73,9 @@ Compressed spec-driven development (2026-05-13). I built pilot-spec to keep AI c
 ## Notes
 
 - LinkedIn (linkedin.com/in/kborovik) requires login; canonical identity ∧ writing @ lab5.ca
+`;
+
+  return new Response(body, {
+    headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+  });
+};
