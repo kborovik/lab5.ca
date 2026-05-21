@@ -1,4 +1,16 @@
-# Konstantin Borovik
+import type { APIRoute } from 'astro';
+import { getCollection } from 'astro:content';
+
+export const GET: APIRoute = async () => {
+  const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  );
+
+  const postsSection = posts
+    .map(p => `- [${p.data.title}](https://lab5.ca/blog/${p.id}/)`)
+    .join('\n');
+
+  const body = `# Konstantin Borovik
 
 > AI Automation Engineer based in Toronto, Canada. 20+ years of hands-on engineering applied to ERP integration, document workflows, AI email, and reporting. MailPilot is the live proof of capability.
 
@@ -12,14 +24,13 @@
 
 ## Posts
 
-- [Smoke-testing an LLM agent with a Claude Code skill](https://lab5.ca/blog/where-pytest-stops-and-claude-code-starts/)
-- [Measuring math-glyph token compression](https://lab5.ca/blog/measuring-glyph-compression/)
-- [Compressed spec-driven development](https://lab5.ca/blog/spec-driven-development/)
+${postsSection}
 
 ## Contact
 
 - [LinkedIn](https://www.linkedin.com/in/kborovik)
 - [GitHub](https://github.com/kborovik)
+- [Resume](https://lab5.ca/resume)
 - [Plain-text resume](https://lab5.ca/kb-resume.txt)
 - [MailPilot source](https://github.com/kborovik/mailpilot)
 - [Book a call](https://calendar.app.google/cYM3H3TsHsequR587)
@@ -27,3 +38,9 @@
 ## Notes
 
 - LinkedIn (linkedin.com/in/kborovik) requires login; canonical identity ∧ writing @ lab5.ca
+`;
+
+  return new Response(body, {
+    headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+  });
+};
