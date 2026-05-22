@@ -12,15 +12,14 @@ export const GET: APIRoute = async () => {
 
   const body = `# Konstantin Borovik
 
-> AI Automation Engineer based in Toronto, Canada. 20+ years of hands-on engineering applied to ERP integration, document workflows, AI email, and reporting. MailPilot is the live proof of capability.
+> Software Developer | DevOps Engineer based in Toronto, Canada. Generalist software delivery across cloud infrastructure, AI agents for business workflows, and web development. 20+ years engineering. MailPilot is the live AI-agent reference.
 
 ## Pages
 
-- [About](https://lab5.ca/about): bio, claims, and proof links
-- [Expertise](https://lab5.ca/expertise): the four capability lanes — ERP integration, document workflow, AI email and communication, data and reporting
+- [Projects](https://lab5.ca/projects): skill → GitHub-repo card grid (gcp-devops, MailPilot, Pilot Skills, lab5.ca)
 - [Proof](https://lab5.ca/proof): MailPilot — production AI email agent, evidence of capability
-- [Resume](https://lab5.ca/resume): CV — skills, engagements, education
-- [Blog](https://lab5.ca/blog): notes on AI automation, spec-driven development, and Claude Code
+- [Resume](https://lab5.ca/resume): CV — tech stack, projects, engagements, education
+- [Blog](https://lab5.ca/blog): notes on cloud infrastructure, AI agents, spec-driven development, and Claude Code
 
 ## Posts
 
