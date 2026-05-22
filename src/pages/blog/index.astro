@@ -48,7 +48,7 @@ const dateFmt = new Intl.DateTimeFormat('en-CA', {
                 </time>
               </div>
               <h2 class="mt-3 text-xl font-bold tracking-tight text-gh-fg sm:text-2xl">
-                <a href={`/blog/${post.id}`} class="link-animated text-gh-green hover:text-gh-green-hover">
+                <a href={`/blog/${post.id}`} class="text-gh-green hover:text-gh-green-hover underline underline-offset-[3px]">
                   {post.data.title}
                 </a>
               </h2>
@@ -63,7 +63,7 @@ const dateFmt = new Intl.DateTimeFormat('en-CA', {
               <p class="mt-4">
                 <a
                   href={`/blog/${post.id}`}
-                  class="text-xs font-bold uppercase tracking-[0.15em] text-gh-green hover:text-gh-green-hover"
+                  class="text-xs font-bold uppercase tracking-[0.15em] text-gh-green hover:text-gh-green-hover underline underline-offset-[3px]"
                 >
                   read &rarr;
                 </a>
