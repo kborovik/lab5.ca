@@ -9,23 +9,32 @@ Web:      https://lab5.ca
 
 ## tech stack
 
-AI & agents
-Pydantic AI, Claude Agent SDK, Claude Code, LLM agents and agentic workflows, agentic coding, retrieval-augmented generation (RAG), structured-extraction pipelines, MCP, Pydantic Logfire (agent observability)
-
 Programming languages
-Python, TypeScript, JavaScript, Bash, Terraform
+Python, TypeScript, Bash, SQL
 
 Google Cloud
-Cloud Run, Cloud Functions, VPC, Cloud Load Balancing, Cloud DNS, Cloud CDN, Cloud Composer, Pub/Sub, BigQuery, Cloud SQL, Cloud Storage, Vertex AI, IAM, Secret Manager, Cloud Logging, Artifact Registry
+Cloud Run, Cloud Functions, BigQuery, Vertex AI, Cloud SQL, Composer, Pub/Sub
 
-SQL databases
-PostgreSQL, psycopg
-
-Web development
-Astro, Tailwind CSS, Cloudflare Workers, Wrangler
+Azure
+App Service, Functions, Service Bus, Key Vault
 
 DevOps & CI/CD
-Terraform, Ansible, Helm, Docker, Kubernetes (GKE), GitHub Actions, Azure DevOps
+Terraform, Ansible, GitHub Actions, Azure DevOps, Docker, Kubernetes (GKE)
+
+AI & agents
+Pydantic AI, LLM agents and agentic workflows, RAG, structured-extraction pipelines, MCP
+
+APIs & integration
+REST, event-driven, Pub/Sub patterns, webhooks, OpenAPI
+
+Security & compliance
+IAM, NIST-800-53, PCI-DSS, secrets management
+
+SQL databases
+PostgreSQL, SQLite
+
+Web development
+Astro, Cloudflare Workers
 
 
 ## engagements
