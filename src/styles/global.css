@@ -188,14 +188,14 @@ body {
 }
 
 .prose a {
-  color: var(--color-gh-blue);
+  color: var(--color-gh-green);
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
 }
 
 .prose a:hover {
-  color: var(--color-gh-blue-hover);
+  color: var(--color-gh-green-hover);
 }
 
 .prose ul,
