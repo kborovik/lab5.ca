@@ -3,20 +3,20 @@ import Layout from '../layouts/Layout.astro';
 
 const projects = [
   {
-    id: 'gcp-devops',
-    repo: 'gcp-devops',
-    label: 'Google Cloud',
-    context: 'Reference Terraform and Ansible patterns for Google Cloud — Cloud Run services, Pub/Sub topologies, IAM, observability.',
-    stack: 'Terraform · Ansible · Cloud Run · Pub/Sub · IaC',
-    href: 'https://github.com/kborovik/gcp-devops',
-  },
-  {
     id: 'mailpilot',
     repo: 'mailpilot',
     label: 'Python',
     context: 'Production AI agent handling real business email — Pydantic AI on a Google Cloud backend; live at demo@lab5.ca.',
     stack: 'Pydantic AI · LLM workflows · GCP · Cloud Run',
     href: 'https://github.com/kborovik/mailpilot',
+  },
+  {
+    id: 'gcp-devops',
+    repo: 'gcp-devops',
+    label: 'Google Cloud',
+    context: 'Reference Terraform and Ansible patterns for Google Cloud — Cloud Run services, Pub/Sub topologies, IAM, observability.',
+    stack: 'Terraform · Ansible · Cloud Run · Pub/Sub · IaC',
+    href: 'https://github.com/kborovik/gcp-devops',
   },
   {
     id: 'pilot-skills',
@@ -38,7 +38,7 @@ const projects = [
 ---
 
 <Layout
-  description="Konstantin Borovik — projects. Hand-authored skill→GitHub-repo proof grid: gcp-devops (Google Cloud), mailpilot (Python), pilot-skills (AI agent tooling), lab5.ca (Web development)."
+  description="Konstantin Borovik — projects. Hand-authored skill→GitHub-repo proof grid: mailpilot (Python), gcp-devops (Google Cloud), pilot-skills (AI agent tooling), lab5.ca (Web development)."
 >
   <!-- Header -->
   <section class="mx-auto max-w-5xl px-6 pt-16 pb-10 sm:pt-20 sm:pb-12 font-mono">
@@ -65,7 +65,11 @@ const projects = [
             <span>{p.label}</span>
           </div>
           <h3 class="mt-3 text-base font-semibold text-gh-fg">
-            {p.repo}
+            {p.id === 'mailpilot' ? (
+              <a href="/mailpilot" class="hover:text-gh-green transition-colors">{p.repo}</a>
+            ) : (
+              p.repo
+            )}
           </h3>
           <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted">
             {p.context}

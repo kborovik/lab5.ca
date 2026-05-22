@@ -45,8 +45,8 @@ MailPilot is the live AI-agent reference: a Pydantic AI agent on Google Cloud, h
 
 ## Projects
 
-- gcp-devops — Reference Terraform / Ansible / IaC patterns for Google Cloud. https://github.com/kborovik/gcp-devops
 - MailPilot — Production AI agent for business email; Pydantic AI on a Google Cloud backend; live at demo@lab5.ca. https://github.com/kborovik/mailpilot
+- gcp-devops — Reference Terraform / Ansible / IaC patterns for Google Cloud. https://github.com/kborovik/gcp-devops
 - Pilot Skills — Claude Code skills SDK plugins for spec-driven development and agentic workflows. https://github.com/kborovik/pilot-skills
 - lab5.ca — This site; Astro 6, Tailwind v4, TypeScript, Cloudflare Workers. https://github.com/kborovik/lab5.ca
 

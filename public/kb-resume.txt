@@ -39,13 +39,13 @@ Astro, Cloudflare Workers
 
 ## projects
 
-gcp-devops
-Reference Terraform / Ansible / IaC patterns for Google Cloud — Cloud Run, Pub/Sub, observability.
-https://github.com/kborovik/gcp-devops
-
 MailPilot
 Pydantic AI agent for business email — LLM workflows on a Google Cloud backend; live at demo@lab5.ca.
 https://github.com/kborovik/mailpilot
+
+gcp-devops
+Reference Terraform / Ansible / IaC patterns for Google Cloud — Cloud Run, Pub/Sub, observability.
+https://github.com/kborovik/gcp-devops
 
 Pilot Skills
 Claude Code skills SDK plugins — spec-driven development and agentic workflows.
