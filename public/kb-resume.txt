@@ -59,7 +59,7 @@ https://github.com/kborovik/lab5.ca
 ## engagements
 
 lab5.ca (2026 — present)
-Independent contractor · AI Automation Engineer
+Independent contractor · Software Developer | DevOps Engineer
 
 I run an independent practice building AI automation for business
 operations — ERP integration, document workflow, AI email, and

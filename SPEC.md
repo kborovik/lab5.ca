@@ -164,7 +164,7 @@ T68|x|rewrite `Person.knowsAbout` JSON-LD set ∈ `src/layouts/Layout.astro` aga
 T69|x|regen `public/og.png` (1200×630 via `og.html`) + `public/banner-linkedin.png` (1584×396 via `linkedin-banner.html`) per CLAUDE.md regen recipes — new visible strings `Software Developer \| DevOps Engineer` (pipe verbatim) + stack-token sub-line `Python · Google Cloud · LLM agents · CI/CD`|I.assets
 T70|x|update `src/pages/llms.txt.ts` + `src/pages/llms-full.txt.ts` per V47 + V48 amend — drop `/expertise` + `/about` pointers; add `/projects` pointer ∈ `## Pages` link list; update hero / claims / capability blurbs (inline TS strings) to new pitch per §G + V1 + V2 amend|V47,V48
 T71|x|add `index.astro` `// résumé` section per V46(f) — single bordered button `Download résumé (PDF)` → `/resume` (new tab); confirm V4 (≤ 1 prominent CTA per page) holds — Book-a-Call stays primary `cta-pulse` ∈ `<Nav />`, résumé button ≡ secondary bordered|V4,V46
-T72|.|sweep residual `AI Automation Engineer` strings — scope: `rg -F 'AI Automation Engineer' src/ public/` (! ≡ ∅ post-fold); remediation ≡ patch any stragglers to `Software Developer \| DevOps Engineer`|V1,V50
+T72|x|sweep residual `AI Automation Engineer` strings — scope: `rg -F 'AI Automation Engineer' src/ public/` (! ≡ ∅ post-fold); remediation ≡ patch any stragglers to `Software Developer \| DevOps Engineer`|V1,V50
 T73|.|verify post-amend — `make check` + `make build` pass; Lighthouse a11y ≥ 0.95 ∀ primary page per V49 ({`/`, `/projects`, `/proof`, `/blog`, `/blog/<slug>`}); Playwright snapshot `/` + `/projects` + `/resume` confirms structure (hero 3-line block, 3-tile services grid, 9-subgroup tech stack, 4-entry projects grid, hidden /resume in nav)|V30,V31,V49
 
 ## §B — bugs
