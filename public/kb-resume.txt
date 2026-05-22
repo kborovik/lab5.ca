@@ -37,6 +37,25 @@ Web development
 Astro, Cloudflare Workers
 
 
+## projects
+
+gcp-devops
+Reference Terraform / Ansible / IaC patterns for Google Cloud — Cloud Run, Pub/Sub, observability.
+https://github.com/kborovik/gcp-devops
+
+MailPilot
+Pydantic AI agent for business email — LLM workflows on a Google Cloud backend; live at demo@lab5.ca.
+https://github.com/kborovik/mailpilot
+
+Pilot Skills
+Claude Code skills SDK plugins — spec-driven development and agentic workflows.
+https://github.com/kborovik/pilot-skills
+
+lab5.ca
+This site — Astro 6, Tailwind v4, TypeScript, Cloudflare Workers; spec-driven, deploy on push.
+https://github.com/kborovik/lab5.ca
+
+
 ## engagements
 
 lab5.ca (2026 — present)
