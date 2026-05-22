@@ -37,11 +37,11 @@ MailPilot is the live AI-agent reference: a Pydantic AI agent on Google Cloud, h
 
 ## What I do
 
-01 Cloud infrastructure. Google Cloud platforms built with Terraform and GitHub Actions — Cloud Run, Cloud Functions, Pub/Sub, BigQuery. Provisioned, observable, repeatable. Reference: github.com/kborovik/gcp-devops.
+01 Cloud Infrastructure. Google Cloud platforms built with Terraform and GitHub Actions — Cloud Run, Cloud Functions, Pub/Sub, BigQuery. Provisioned, observable, repeatable. Reference: github.com/kborovik/gcp-devops.
 
-02 AI agents for business workflows. Pydantic AI agents wired to real APIs — email triage, structured extraction, retrieval over internal knowledge bases. MailPilot is the live reference: github.com/kborovik/mailpilot.
+02 AI Agents for Business Workflows. Pydantic AI agents wired to real APIs — email triage, structured extraction, retrieval over internal knowledge bases. MailPilot is the live reference: github.com/kborovik/mailpilot.
 
-03 Web development. Astro static sites on Cloudflare Workers with Tailwind v4 and TypeScript. Spec-driven, deploy on push. This site is the reference build: github.com/kborovik/lab5.ca.
+03 Web Development. Astro static sites on Cloudflare Workers with Tailwind v4 and TypeScript. Spec-driven, deploy on push. This site is the reference build: github.com/kborovik/lab5.ca.
 
 ## Projects
 
