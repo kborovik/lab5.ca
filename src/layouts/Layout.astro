@@ -149,10 +149,10 @@ const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 const isRoot = pathname === '/';
 
 const segmentLabel: Record<string, string> = {
-  expertise: 'Expertise',
+  projects: 'Projects',
   proof: 'Proof',
-  about: 'About',
   blog: 'Blog',
+  resume: 'Resume',
 };
 
 let breadcrumbNode: JsonLdNode | null = null;
