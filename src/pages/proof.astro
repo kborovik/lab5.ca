@@ -59,7 +59,7 @@ const willDecline = [
 >
   <!-- Header -->
   <section class="mx-auto max-w-3xl px-6 pt-16 pb-8 sm:pt-20 sm:pb-10 text-center">
-    <p class="text-sm font-bold uppercase tracking-[0.2em] text-gh-blue">
+    <p class="text-base font-bold uppercase tracking-[0.2em] text-gh-blue">
       // proof of capability
     </p>
     <h1 class="mt-4 text-3xl font-bold tracking-tight text-gh-fg sm:text-4xl">
@@ -92,7 +92,7 @@ const willDecline = [
   <!-- How it works -->
   <section class="border-t border-gh-border py-12 sm:py-14">
     <div class="mx-auto max-w-3xl px-6">
-      <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-gh-blue">
+      <h2 class="text-base font-bold uppercase tracking-[0.2em] text-gh-blue">
         // how it works
       </h2>
       <div class="mt-10 grid gap-10 sm:grid-cols-3 sm:gap-8">
@@ -103,7 +103,7 @@ const willDecline = [
               <span class="h-px flex-1 bg-gh-border"></span>
             </div>
             <h3 class="mt-3 text-sm font-bold text-gh-fg">{step.title}</h3>
-            <p class="mt-2 text-xs leading-relaxed text-gh-fg-muted">{step.body}</p>
+            <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted">{step.body}</p>
           </div>
         ))}
       </div>
@@ -113,7 +113,7 @@ const willDecline = [
   <!-- Knowledge base -->
   <section class="border-t border-gh-border py-12 sm:py-14">
     <div class="mx-auto max-w-3xl px-6">
-      <p class="text-sm font-bold uppercase tracking-[0.2em] text-gh-blue">
+      <p class="text-base font-bold uppercase tracking-[0.2em] text-gh-blue">
         // knowledge base
       </p>
       <p class="mt-6 max-w-2xl text-sm leading-relaxed text-gh-fg-muted">
@@ -141,7 +141,7 @@ const willDecline = [
   <!-- Try it -->
   <section class="border-t border-gh-border py-12 sm:py-14">
     <div class="mx-auto max-w-3xl px-6">
-      <p class="text-sm font-bold uppercase tracking-[0.2em] text-gh-blue">
+      <p class="text-base font-bold uppercase tracking-[0.2em] text-gh-blue">
         // try these questions
       </p>
 
@@ -155,7 +155,7 @@ const willDecline = [
         <ul class="mt-4 space-y-2">
           {canAnswer.map(q => (
             <li class="flex items-start justify-between gap-3 border-b border-gh-border py-2 last:border-b-0">
-              <span class="text-xs leading-relaxed text-gh-fg-muted">{q}</span>
+              <span class="text-sm leading-relaxed text-gh-fg-muted">{q}</span>
               <button
                 data-copy-question
                 data-copy-text={q}
@@ -179,7 +179,7 @@ const willDecline = [
         <ul class="mt-4 space-y-2">
           {willDecline.map(q => (
             <li class="flex items-start justify-between gap-3 border-b border-gh-border py-2 last:border-b-0">
-              <span class="text-xs leading-relaxed text-gh-fg-muted">{q}</span>
+              <span class="text-sm leading-relaxed text-gh-fg-muted">{q}</span>
               <button
                 data-copy-question
                 data-copy-text={q}
@@ -198,7 +198,7 @@ const willDecline = [
   <!-- Under the hood -->
   <section class="border-t border-gh-border py-12 sm:py-14">
     <div class="mx-auto max-w-5xl px-6">
-      <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-gh-blue">
+      <h2 class="text-base font-bold uppercase tracking-[0.2em] text-gh-blue">
         // under the hood
       </h2>
       <p class="mt-6 max-w-2xl text-sm leading-relaxed text-gh-fg-muted">
@@ -213,7 +213,7 @@ const willDecline = [
               <span class="h-px flex-1 bg-gh-border"></span>
             </div>
             <h3 class="mt-3 text-sm font-bold text-gh-fg">{layer.title}</h3>
-            <p class="mt-2 text-xs leading-relaxed text-gh-fg-muted">{layer.body}</p>
+            <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted">{layer.body}</p>
           </div>
         ))}
       </div>
