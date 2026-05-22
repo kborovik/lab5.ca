@@ -61,9 +61,9 @@ https://github.com/kborovik/lab5.ca
 lab5.ca (2026 — present)
 Independent contractor · Software Developer | DevOps Engineer
 
-I run an independent practice building AI automation for business
-operations — ERP integration, document workflow, AI email, and
-reporting. MailPilot is my proof-of-capability project (open source).
+I run an independent practice delivering cloud infrastructure,
+AI agents for business workflows, and web development end-to-end.
+MailPilot is my live proof-of-capability project (open source).
 
 - MailPilot — AI email automation, end-to-end (Python, PostgreSQL, Pub/Sub, Cloud Run, GCP)
 - Pydantic AI agents, structured-extraction pipelines, idempotent state machines
