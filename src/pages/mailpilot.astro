@@ -22,16 +22,11 @@ const steps = [
 const stack = [
   {
     num: '01',
-    title: 'Frontend',
-    body: 'Astro SSG, Tailwind CSS, Cloudflare Workers. Static generation, zero cold-start, globally distributed.',
-  },
-  {
-    num: '02',
     title: 'Backend',
     body: 'Python, serverless functions, event-driven. Triggered by Gmail push notifications via Pub/Sub. Scale-to-zero costs.',
   },
   {
-    num: '03',
+    num: '02',
     title: 'AI Layer',
     body: 'LLM with retrieval over Google Drive. Structured prompts guide answer format. Out-of-kb detection prevents hallucination.',
   },
@@ -205,7 +200,7 @@ const willDecline = [
         For technical reviewers &mdash; the stack and the reasoning.
       </p>
 
-      <div class="mt-10 grid gap-10 sm:grid-cols-3 sm:gap-8">
+      <div class="mt-10 grid gap-10 sm:grid-cols-2 sm:gap-8">
         {stack.map(layer => (
           <div class="animate-on-scroll">
             <div class="flex items-baseline gap-2 text-xs text-gh-fg-muted">
