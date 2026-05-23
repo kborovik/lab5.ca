@@ -12,7 +12,7 @@ export const GET: APIRoute = async () => {
 
   const body = `# Konstantin Borovik
 
-> Software Developer | DevOps Engineer based in Toronto, Canada. Generalist software delivery across cloud infrastructure, AI agents for business workflows, and web development. 20+ years engineering. MailPilot is the live AI-agent reference.
+> Software Engineer | DevOps Engineer based in Toronto, Canada. Generalist software delivery across cloud infrastructure, AI agents for business workflows, and web development. 20+ years engineering. MailPilot is the live AI-agent reference.
 
 ## Pages
 

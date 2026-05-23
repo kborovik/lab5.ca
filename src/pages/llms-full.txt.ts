@@ -21,7 +21,7 @@ export const GET: APIRoute = async () => {
     )
     .join('\n\n');
 
-  const body = `# Konstantin Borovik — Software Developer | DevOps Engineer
+  const body = `# Konstantin Borovik — Software Engineer | DevOps Engineer
 
 Toronto, Ontario, Canada.
 
