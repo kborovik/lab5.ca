@@ -41,11 +41,11 @@ MailPilot is the live AI-agent reference: a Pydantic AI agent on Google Cloud, h
 
 ## What I do
 
-01 Back-End Development. Python and SQL services on PostgreSQL — REST APIs, async workers, webhooks, OpenAPI contracts. Production LLM agents on Pydantic AI: RAG over knowledge bases, structured extraction, real-API tool calls. MailPilot is the live reference: github.com/kborovik/mailpilot.
+01 Software Development. Python and TypeScript backends and full-stack applications — FastAPI, Pydantic, Astro, Cloudflare Workers. REST APIs, event-driven architectures, structured-extraction pipelines on PostgreSQL. Test-driven and spec-driven; Pytest end-to-end. Reference builds: github.com/kborovik/mailpilot, github.com/kborovik/lab5.ca.
 
-02 Front-End Development. HTML, CSS, JavaScript, TypeScript with Astro and Tailwind CSS. Responsive layouts, accessibility (WCAG), static-output sites that deploy on push. This site is the reference build: github.com/kborovik/lab5.ca.
+02 DevOps. Google Cloud and Azure infrastructure shipped with Terraform and Ansible — Cloud Run, GKE, Docker, Kubernetes, Cloud SQL, IAM, org policies. CI/CD via GitHub Actions and Azure DevOps, ETL on Cloud Composer / Apache Airflow, observability with OpenTelemetry and Pydantic Logfire. NIST 800-53 and PCI DSS controls. Reference: github.com/kborovik/gcp-devops.
 
-03 Cloud Infrastructure. Google Cloud and Azure platforms built with Terraform, Ansible, and GitHub Actions — Cloud Run, Docker, Kubernetes, IaC, CI/CD. Provisioned, observable, repeatable. Reference: github.com/kborovik/gcp-devops.
+03 AI & LLM. Production agentic systems on Anthropic Claude and Google Gemini — Pydantic AI, multi-agent orchestration, RAG over knowledge bases, Model Context Protocol (MCP) integrations, prompt engineering. Claude Code plugins and skills for developer workflows. MailPilot is the live reference: github.com/kborovik/mailpilot.
 
 ## Projects
 
