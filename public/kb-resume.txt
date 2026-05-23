@@ -70,7 +70,7 @@ MailPilot is my live proof-of-capability project (open source).
 
 
 Colliers International (2023 — 2025)
-Senior Software Engineer
+Software Engineer
 
 I replaced manual data-processing workflows with serverless Python
 on GCP and Airflow ETL pipelines, backed by PostgreSQL for workflow
@@ -82,7 +82,7 @@ state.
 
 
 PayPal (2018 — 2023)
-Software Engineer
+DevOps Engineer
 
 I built platform tooling and workflow orchestration for backend
 engineering teams shipping microservices on GCP/GKE under
@@ -94,7 +94,7 @@ NIST-800-53 and PCI-DSS controls.
 
 
 CDW (2014 — 2018)
-Software Engineer · Platform Engineer
+DevOps Engineer · Platform Engineer
 
 - Python automation tooling for cloud migration and deployment across client engagements
 - Led a team automating enterprise infrastructure provisioning and platform operations
