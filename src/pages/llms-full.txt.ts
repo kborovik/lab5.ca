@@ -60,7 +60,7 @@ MailPilot — a production AI agent I built end-to-end. Email demo@lab5.ca with 
 
 ## Resume
 
-Full CV at https://lab5.ca/resume (markdown mirror at https://lab5.ca/kb-resume.md). Section order: contact → tech stack → projects → engagements → education.
+Full CV at https://lab5.ca/resume (markdown mirror at https://lab5.ca/kb-resume.md). Section order: contact → tech skills → projects → engagements → education.
 
 ${resumeDemoted}
 
