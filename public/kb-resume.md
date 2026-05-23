@@ -55,17 +55,17 @@ AI-Augmented Development: Claude Code, Claude Skills, AI-Augmented Development
 
 Agent-operated CRM with Gmail as the communication layer — Anthropic Claude as strategic orchestrator and an internal Pydantic AI agent as tactical executor for inbound classification, auto-reply, and follow-up scheduling. CLI-first with JSON output designed for LLM consumption; Python 3.14, PostgreSQL 18, Gmail API with domain-wide delegation, Pub/Sub for real-time sync, Pydantic Logfire / OpenTelemetry for tracing.
 
-### [pilot-skills](https://github.com/kborovik/pilot-skills)
-
-*Skills: AI & LLM, Software Development*
-
-Claude Code plugin marketplace shipping pilot-spec (Spec-Driven Development with a single SPEC.md and math-glyph compression for invariants, tasks, and bugs), pilot-plan (GitHub workflow — issue, PR, commit, merge, release), and pilot-core (shared intent-gating and shorthand skills). Demonstrates AI agent orchestration, prompt engineering, and AI-augmented development workflow built on the Anthropic API.
-
 ### [gcp-devops](https://github.com/kborovik/gcp-devops)
 
 *Skills: DevOps & Cloud Platforms & Platform Engineering*
 
 Production Google Cloud Platform infrastructure powering MailPilot — Terraform for GCE instances, networking, DNS, IAM, service accounts, and org policies, plus Ansible for VM configuration (ZFS, Tailscale, Google Ops Agent). Make-based deployment pipeline with confirm-gated production deploys and a two-layer PostgreSQL backup architecture (Sanoid ZFS snapshots plus GCE persistent-disk snapshots).
+
+### [pilot-skills](https://github.com/kborovik/pilot-skills)
+
+*Skills: AI & LLM, Software Development*
+
+Claude Code plugin marketplace shipping pilot-spec (Spec-Driven Development with a single SPEC.md and math-glyph compression for invariants, tasks, and bugs), pilot-plan (GitHub workflow — issue, PR, commit, merge, release), and pilot-core (shared intent-gating and shorthand skills). Demonstrates AI agent orchestration, prompt engineering, and AI-augmented development workflow built on the Anthropic API.
 
 ### [lab5.ca](https://github.com/kborovik/lab5.ca)
 
