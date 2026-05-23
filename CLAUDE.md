@@ -72,7 +72,6 @@ Flow: `make dev` → `browser_navigate` → `browser_snapshot` (a11y, preferred)
 
 ## gotchas
 
-- `README.md` ≡ symlink → `CLAUDE.md`
 - `mailpilot.ca` ≡ CF custom-domain alias ∀ `lab5.ca` (§I); both ∈ `wrangler.jsonc` — edits affect both surfaces
 - OG (1200×630): edit `assets-src/og.html`; `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --screenshot=public/og.png --window-size=1200,630 assets-src/og.html`
 - LinkedIn banner (1584×396): edit `assets-src/linkedin-banner.html`; `--screenshot=public/banner-linkedin.png --window-size=1584,396 assets-src/linkedin-banner.html`
