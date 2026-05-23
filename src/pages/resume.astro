@@ -38,7 +38,7 @@ import Layout from '../layouts/Layout.astro';
     <section class="mt-12 border-t border-gh-border pt-10">
       <h2 class="text-base font-bold uppercase tracking-[0.2em] text-gh-blue">// tech stack</h2>
 
-      <div class="mt-8 space-y-6 text-base leading-relaxed text-gh-fg-muted">
+      <div class="tech-stack-grid mt-8 space-y-6 text-base leading-relaxed text-gh-fg-muted">
         <div>
           <h3 class="text-base font-semibold text-gh-fg">Programming languages</h3>
           <p class="mt-2">Python, TypeScript, Bash, SQL</p>
@@ -318,8 +318,16 @@ import Layout from '../layouts/Layout.astro';
 
   <style is:global>
     @media print {
+      @page {
+        size: letter;
+        margin: 0.5in 0.55in;
+      }
       html {
-        font-size: 10px;
+        font-size: 10px !important;
+      }
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
       }
       body > header,
       body > footer {
@@ -330,34 +338,103 @@ import Layout from '../layouts/Layout.astro';
       }
       .resume {
         max-width: 100% !important;
-        padding: 0.75in !important;
+        padding: 0 !important;
         margin: 0 !important;
       }
-      body {
-        background: #ffffff !important;
-        color: #000000 !important;
+      .resume,
+      .resume p,
+      .resume li,
+      .resume span,
+      .resume address,
+      .resume ul,
+      .resume a,
+      .resume div {
+        font-size: 1rem !important;
+        line-height: 1.4 !important;
       }
       .resume h1 {
-        font-size: 1.6rem;
+        font-size: 1.6rem !important;
+        line-height: 1.15 !important;
+        margin: 0 !important;
       }
       .resume h2 {
-        font-size: 1.15rem;
+        font-size: 1.05rem !important;
+        line-height: 1.2 !important;
+        letter-spacing: 0.18em !important;
+        margin: 0 !important;
       }
       .resume h3 {
-        font-size: 1.3rem;
+        font-size: 1.3rem !important;
+        line-height: 1.2 !important;
+        margin: 0 !important;
       }
       .resume article > div + p {
-        font-size: 1.1rem;
+        font-size: 1.1rem !important;
+        line-height: 1.25 !important;
+      }
+      .resume article > div > span {
+        font-size: 0.9rem !important;
+        color: #57606a !important;
       }
       .resume a {
         color: #000000 !important;
-        text-decoration: none;
+        text-decoration: none !important;
       }
       .resume .border-t {
         border-color: #d0d7de !important;
       }
-      .resume article {
+      .resume .mt-12 {
+        margin-top: 0.8rem !important;
+      }
+      .resume .pt-10 {
+        padding-top: 0.5rem !important;
+      }
+      .resume .mt-8 {
+        margin-top: 0.35rem !important;
+      }
+      .resume .mt-5 {
+        margin-top: 0.25rem !important;
+      }
+      .resume .mt-4 {
+        margin-top: 0.2rem !important;
+      }
+      .resume .mt-3 {
+        margin-top: 0.15rem !important;
+      }
+      .resume .mt-2 {
+        margin-top: 0.1rem !important;
+      }
+      .resume .mt-1 {
+        margin-top: 0.05rem !important;
+      }
+      .resume .py-12,
+      .resume .sm\:py-16 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+      }
+      .resume .space-y-10 > :not([hidden]) ~ :not([hidden]) {
+        margin-top: 0.5rem !important;
+      }
+      .resume .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+        margin-top: 0 !important;
+      }
+      .resume .space-y-1\.5 > :not([hidden]) ~ :not([hidden]) {
+        margin-top: 0.05rem !important;
+      }
+      .resume .tech-stack-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        column-gap: 0.8rem !important;
+        row-gap: 0.35rem !important;
+      }
+      .resume section,
+      .resume article,
+      .resume .tech-stack-grid > div {
         break-inside: avoid;
+      }
+      .resume section {
+        margin-top: 0.8rem !important;
+        padding-top: 0.5rem !important;
       }
       .animate-on-scroll,
       .animate-hero {
