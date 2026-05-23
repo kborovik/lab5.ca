@@ -1,9 +1,13 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
-import resumeRaw from '../../public/kb-resume.txt?raw';
+import resumeRaw from '../../public/kb-resume.md?raw';
 
 export const GET: APIRoute = async () => {
-  const resumeDemoted = resumeRaw.replace(/^## /gm, '### ').trimEnd();
+  const resumeDemoted = resumeRaw
+    .replace(/^# .+\n+/, '')
+    .replace(/^### /gm, '#### ')
+    .replace(/^## /gm, '### ')
+    .trimEnd();
 
   const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -56,7 +60,7 @@ MailPilot — a production AI agent I built end-to-end. Email demo@lab5.ca with 
 
 ## Resume
 
-Full CV at https://lab5.ca/resume (plain-text mirror at https://lab5.ca/kb-resume.txt). Section order: contact → tech stack → projects → engagements → education.
+Full CV at https://lab5.ca/resume (markdown mirror at https://lab5.ca/kb-resume.md). Section order: contact → tech stack → projects → engagements → education.
 
 ${resumeDemoted}
 
@@ -69,7 +73,7 @@ ${blogSection}
 - LinkedIn: https://www.linkedin.com/in/kborovik
 - GitHub: https://github.com/kborovik
 - Resume: https://lab5.ca/resume
-- Plain-text resume: https://lab5.ca/kb-resume.txt
+- Markdown resume: https://lab5.ca/kb-resume.md
 - MailPilot source: https://github.com/kborovik/mailpilot
 - Book a call: https://calendar.app.google/cYM3H3TsHsequR587
 
