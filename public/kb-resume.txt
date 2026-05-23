@@ -39,21 +39,17 @@ Astro, Cloudflare Workers
 
 ## projects
 
-mailpilot
+github.com/kborovik/mailpilot
 Pydantic AI agent for business email — LLM workflows on a Google Cloud backend; live at demo@lab5.ca.
-https://github.com/kborovik/mailpilot
 
-gcp-devops
+github.com/kborovik/gcp-devops
 Reference Terraform / Ansible / IaC patterns for Google Cloud — Cloud Run, Pub/Sub, observability.
-https://github.com/kborovik/gcp-devops
 
-pilot-skills
+github.com/kborovik/pilot-skills
 Claude Code skills SDK plugins — spec-driven development and agentic workflows.
-https://github.com/kborovik/pilot-skills
 
-lab5.ca
+github.com/kborovik/lab5.ca
 This site — Astro 6, Tailwind v4, TypeScript, Cloudflare Workers; spec-driven, deploy on push.
-https://github.com/kborovik/lab5.ca
 
 
 ## engagements
@@ -61,9 +57,7 @@ https://github.com/kborovik/lab5.ca
 lab5.ca (2026 — present)
 Independent contractor · Software Developer | DevOps Engineer
 
-I run an independent practice delivering cloud infrastructure,
-AI agents for business workflows, and web development end-to-end.
-MailPilot is my live proof-of-capability project (open source).
+I run an independent practice delivering cloud infrastructure, AI agents for business workflows, and web development end-to-end. MailPilot is my live proof-of-capability project (open source).
 
 - MailPilot — AI email automation, end-to-end (Python, PostgreSQL, Pub/Sub, Cloud Run, GCP)
 - Pydantic AI agents, structured-extraction pipelines, idempotent state machines
@@ -72,9 +66,7 @@ MailPilot is my live proof-of-capability project (open source).
 Colliers International (2023 — 2025)
 Software Engineer
 
-I replaced manual data-processing workflows with serverless Python
-on GCP and Airflow ETL pipelines, backed by PostgreSQL for workflow
-state.
+I replaced manual data-processing workflows with serverless Python on GCP and Airflow ETL pipelines, backed by PostgreSQL for workflow state.
 
 - Event-driven Python services on Cloud Run and Cloud Functions, replacing manual data-processing workflows
 - Airflow ETL orchestration; idempotent self-recovering pipelines replacing manual data transfers
@@ -84,9 +76,7 @@ state.
 PayPal (2018 — 2023)
 DevOps Engineer
 
-I built platform tooling and workflow orchestration for backend
-engineering teams shipping microservices on GCP/GKE under
-NIST-800-53 and PCI-DSS controls.
+I built platform tooling and workflow orchestration for backend engineering teams shipping microservices on GCP/GKE under NIST-800-53 and PCI-DSS controls.
 
 - Platform tooling and CI/CD for 20+ backend engineers shipping microservices on GCP and GKE — Helm charts and release pipelines
 - Event-driven workflow orchestration with Airflow and Composer at scale
