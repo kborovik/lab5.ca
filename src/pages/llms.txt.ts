@@ -30,7 +30,7 @@ ${postsSection}
 - [LinkedIn](https://www.linkedin.com/in/kborovik)
 - [GitHub](https://github.com/kborovik)
 - [Resume](https://lab5.ca/resume)
-- [Plain-text resume](https://lab5.ca/kb-resume.txt)
+- [Markdown resume](https://lab5.ca/kb-resume.md)
 - [MailPilot source](https://github.com/kborovik/mailpilot)
 - [Book a call](https://calendar.app.google/cYM3H3TsHsequR587)
 
