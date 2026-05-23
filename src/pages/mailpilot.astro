@@ -4,35 +4,30 @@ import Layout from '../layouts/Layout.astro';
 const steps = [
   {
     num: '01',
-    title: 'send a product question',
+    title: 'Send a Product Question',
     body: 'Email demo@lab5.ca with a question about the product specs in the knowledge base. Out-of-kb questions get a reply explaining how the demo works.',
   },
   {
     num: '02',
-    title: 'agent searches the knowledge base',
+    title: 'Agent Searches the Knowledge Base',
     body: 'The agent searches product documentation stored in Google Drive, running retrieval over indexed specs to find relevant passages.',
   },
   {
     num: '03',
-    title: 'you get a sourced reply',
-    body: 'Within sixty seconds the agent replies with an answer grounded in the source documents. End-to-end automated: Gmail push → retrieval → llm → reply.',
+    title: 'You Get a Sourced Reply',
+    body: 'Within 60 seconds the agent replies with an answer grounded in the source documents. End-to-end automated: Gmail push → retrieval → llm → reply.',
   },
 ];
 
 const stack = [
   {
     num: '01',
-    title: 'frontend',
-    body: 'Astro SSG, Tailwind CSS, Cloudflare Workers. Static generation, zero cold-start, globally distributed.',
-  },
-  {
-    num: '02',
-    title: 'backend',
+    title: 'Backend',
     body: 'Python, serverless functions, event-driven. Triggered by Gmail push notifications via Pub/Sub. Scale-to-zero costs.',
   },
   {
-    num: '03',
-    title: 'ai layer',
+    num: '02',
+    title: 'AI Layer',
     body: 'LLM with retrieval over Google Drive. Structured prompts guide answer format. Out-of-kb detection prevents hallucination.',
   },
 ];
@@ -54,7 +49,7 @@ const willDecline = [
 ---
 
 <Layout
-  title="Proof"
+  title="MailPilot"
   description="MailPilot — a production AI agent I built end-to-end. Email it a question; the reply is evidence of the work."
 >
   <!-- Header -->
@@ -66,7 +61,7 @@ const willDecline = [
       MailPilot
     </h1>
     <p class="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-gh-fg-muted sm:text-base">
-      A production AI agent I built end-to-end. Reads email, retrieves from a knowledge base, replies in under sixty seconds. Evidence of the work, not a sandbox.
+      A production AI agent I built end-to-end. Reads email, retrieves from a knowledge base, replies in under 60 seconds. Evidence of the work, not a sandbox.
     </p>
 
     <div class="mt-10 inline-flex items-center gap-3 rounded-lg border border-gh-border bg-gh-canvas-subtle px-5 py-3 text-sm text-gh-fg">
@@ -205,7 +200,7 @@ const willDecline = [
         For technical reviewers &mdash; the stack and the reasoning.
       </p>
 
-      <div class="mt-10 grid gap-10 sm:grid-cols-3 sm:gap-8">
+      <div class="mt-10 grid gap-10 sm:grid-cols-2 sm:gap-8">
         {stack.map(layer => (
           <div class="animate-on-scroll">
             <div class="flex items-baseline gap-2 text-xs text-gh-fg-muted">

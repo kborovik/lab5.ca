@@ -1,9 +1,13 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
-import resumeRaw from '../../public/kb-resume.txt?raw';
+import resumeRaw from '../../public/kb-resume.md?raw';
 
 export const GET: APIRoute = async () => {
-  const resumeDemoted = resumeRaw.replace(/^## /gm, '### ').trimEnd();
+  const resumeDemoted = resumeRaw
+    .replace(/^# .+\n+/, '')
+    .replace(/^### /gm, '#### ')
+    .replace(/^## /gm, '### ')
+    .trimEnd();
 
   const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -17,36 +21,38 @@ export const GET: APIRoute = async () => {
     )
     .join('\n\n');
 
-  const body = `# Konstantin Borovik — AI Automation Engineer
+  const body = `# Konstantin Borovik — Software Engineer | DevOps Engineer
 
 Toronto, Ontario, Canada.
 
-20+ years progressing from systems engineering to cloud architecture to production AI. From enterprise data centers to global payment infrastructure to commercial real estate platforms — built and led at every scale.
+20+ years of generalist software delivery — from enterprise data centers and systems engineering to cloud architecture to production AI agents. Built and shipped at every scale.
 
-What I do now: automate repetitive business processes with AI. ERP integration, document workflows, email, and reporting — if a team does it manually and it follows a pattern, AI can handle it.
+What I do now: cloud infrastructure, AI agents for business workflows, and web development. Each capability anchored on a public GitHub repository — proof, not pitch.
 
-Looking for a company where manual processes are the bottleneck and leadership is ready to invest in automation.
-
-MailPilot demonstrates the approach: find a real business problem, automate it with AI, ship to production. This site is part of that — Astro, Tailwind, Cloudflare Workers.
+MailPilot is the live AI-agent reference: a Pydantic AI agent on Google Cloud, handling real business email end-to-end. This site is part of the proof — Astro, Tailwind, Cloudflare Workers, spec-driven.
 
 ## Claims
 
-- 20+ years shipping production systems — data centers, global payments, commercial real estate, automation.
+- 20+ years shipping production systems — data centers, global payments, commercial real estate, AI automation.
 - Python and TypeScript daily; production LLM agents on Pydantic AI and the Claude API.
-- MailPilot built end-to-end: agent, Cloudflare Workers, IaC, deploy — one engineer, the whole pipeline.
-- Current focus: AI automation for ERP integration, document workflows, email, and reporting.
+- Google Cloud infrastructure shipped with Terraform, GitHub Actions, and Cloud Run — one engineer, end-to-end.
+- MailPilot built end-to-end: Pydantic AI agent, GCP backend, IaC, deploy — live at demo@lab5.ca.
+- Current focus: cloud infrastructure, AI agents for business workflows, and web development.
 
-## Expertise
+## What I do
 
-01 ERP Integration. Connect ERP, accounting, CRM, and document stores so orders, approvals, and reporting run end-to-end. Each step triggered by the upstream event, idempotent, observable. Stack: NetSuite, QuickBooks, Xero, Salesforce, HubSpot; idempotent state machines; Terraform and GitHub Actions; structured logs and traces.
+01 Software Development. Python and TypeScript backends and full-stack applications — FastAPI, Pydantic, Astro, Cloudflare Workers. REST APIs, event-driven architectures, structured-extraction pipelines on PostgreSQL. Test-driven and spec-driven; Pytest end-to-end. Reference builds: github.com/kborovik/mailpilot, github.com/kborovik/lab5.ca.
 
-02 Document Workflow. Extract data from invoices, contracts, purchase orders, and forms automatically. AI reads documents, pulls the data, and writes it to the system of record — no manual data entry. Stack: file watchers and attachment intake, OCR plus LLM structured output, schema validation with confidence scoring, routing to ERP/CRM/accounting, immutable audit log per doc.
+02 DevOps. Google Cloud and Azure infrastructure shipped with Terraform and Ansible — Cloud Run, GKE, Docker, Kubernetes, Cloud SQL, IAM, org policies. CI/CD via GitHub Actions and Azure DevOps, ETL on Cloud Composer / Apache Airflow, observability with OpenTelemetry and Pydantic Logfire. NIST 800-53 and PCI DSS controls. Reference: github.com/kborovik/gcp-devops.
 
-03 AI Email and Communication. Automate email triage, draft responses, handle customer inquiries, and route messages to the right person. AI handles routine communication; the team handles what AI can't. Stack: Gmail push API trigger, LLM with structured prompts, vector store over an internal knowledge base, serverless runtime, Gmail API drafts.
+03 AI & LLM. Production agentic systems on Anthropic Claude and Google Gemini — Pydantic AI, multi-agent orchestration, RAG over knowledge bases, Model Context Protocol (MCP) integrations, prompt engineering. Claude Code plugins and skills for developer workflows. MailPilot is the live reference: github.com/kborovik/mailpilot.
 
-04 Data and Reporting. Aggregate data from scattered systems, generate summaries with citations, and surface what changed. The reports your team used to build by hand, generated on a schedule. Stack: databases, sheets, exports, APIs as sources; scheduled aggregation jobs; LLM narration with citations; delivery to email digest, Slack, or Drive; cron or on-demand scheduling.
+## Projects
 
-Industries shipped: logistics, distribution, construction, insurance, manufacturing, accounting, property management.
+- MailPilot — Production AI agent for business email; Pydantic AI on a Google Cloud backend; live at demo@lab5.ca. https://github.com/kborovik/mailpilot
+- gcp-devops — Reference Terraform / Ansible / IaC patterns for Google Cloud. https://github.com/kborovik/gcp-devops
+- Pilot Skills — Claude Code skills SDK plugins for spec-driven development and agentic workflows. https://github.com/kborovik/pilot-skills
+- lab5.ca — This site; Astro 6, Tailwind v4, TypeScript, Cloudflare Workers. https://github.com/kborovik/lab5.ca
 
 ## Proof
 
@@ -54,7 +60,7 @@ MailPilot — a production AI agent I built end-to-end. Email demo@lab5.ca with 
 
 ## Resume
 
-Full CV at https://lab5.ca/resume (plain-text mirror at https://lab5.ca/kb-resume.txt). Section order: contact → tech stack → engagements → education.
+Full CV at https://lab5.ca/resume (markdown mirror at https://lab5.ca/kb-resume.md). Section order: contact → tech skills → projects → engagements → education.
 
 ${resumeDemoted}
 
@@ -66,7 +72,8 @@ ${blogSection}
 
 - LinkedIn: https://www.linkedin.com/in/kborovik
 - GitHub: https://github.com/kborovik
-- Plain-text resume: https://lab5.ca/kb-resume.txt
+- Resume: https://lab5.ca/resume
+- Markdown resume: https://lab5.ca/kb-resume.md
 - MailPilot source: https://github.com/kborovik/mailpilot
 - Book a call: https://calendar.app.google/cYM3H3TsHsequR587
 

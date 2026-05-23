@@ -1,179 +1,190 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import headshot from '../assets/konstantin-borovik-headshot.jpg';
 ---
 
 <Layout
-  description="Konstantin Borovik — AI Automation Engineer. ERP integration, document workflows, AI email, and reporting. MailPilot is the live proof of capability."
+  description="Konstantin Borovik — Software Engineer | DevOps Engineer based in Toronto, Canada. Cloud infrastructure, AI agents for business workflows, web development. 20+ years engineering."
 >
-  <!-- Hero — all mono, terminal/docs aesthetic -->
-  <section class="mx-auto max-w-4xl px-6 pt-16 pb-10 sm:pt-20 sm:pb-12 text-center font-mono">
-    <p class="animate-hero text-base font-bold uppercase tracking-[0.2em] text-gh-blue" style="animation-delay: 0ms;">
-      // ai automation engineer
-    </p>
+  <!-- (a) hero -->
+  <section class="mx-auto max-w-5xl px-6 pt-16 pb-12 sm:pt-20 sm:pb-14 font-mono">
+    <div class="grid gap-10 sm:grid-cols-3 sm:items-center">
 
-    <h1 class="animate-hero mt-6 text-3xl font-bold tracking-tight text-gh-fg sm:text-4xl" style="animation-delay: 80ms;">
-      AI automation for<br class="hidden sm:inline" /> business operations
-    </h1>
-
-    <p class="animate-hero mx-auto mt-6 max-w-xl text-sm leading-relaxed text-gh-fg-muted sm:text-base" style="animation-delay: 160ms;">
-      Twenty years of hands-on engineering applied to ERP integration, document workflows, email, and reporting.
-    </p>
-  </section>
-
-  <!-- What I build — four numbered tiles, mono everywhere -->
-  <section class="mx-auto max-w-4xl px-6 pb-12 sm:pb-14 font-mono">
-    <h2 class="animate-on-scroll text-center text-base font-bold uppercase tracking-[0.2em] text-gh-blue" style="transition-delay: 0ms;">
-      // what I build
-    </h2>
-
-    <div class="mt-12 grid gap-10 sm:grid-cols-2 sm:gap-x-12 sm:gap-y-14">
-
-      <a href="/expertise#erp" class="animate-on-scroll group block" style="transition-delay: 0ms;">
-        <div class="flex items-baseline gap-2 text-xs text-gh-fg-muted">
-          <span>01</span>
-          <span class="h-px flex-1 bg-gh-border"></span>
-        </div>
-        <h3 class="mt-3 text-base font-semibold text-gh-fg group-hover:text-gh-green transition-colors">
-          ERP integration
-        </h3>
-        <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted">
-          ERP, accounting, CRM, and document stores connected so approvals, orders, and reporting run end-to-end without a person in the middle.
+      <div class="sm:col-span-2">
+        <h1 class="animate-hero text-3xl font-bold tracking-tight text-gh-fg sm:text-4xl" style="animation-delay: 0ms;">
+          Konstantin Borovik
+        </h1>
+        <p class="animate-hero mt-3 text-base font-semibold text-gh-fg sm:text-lg" style="animation-delay: 80ms;">
+          Software Engineer | DevOps Engineer
         </p>
-      </a>
+        <address class="animate-hero mt-4 text-sm not-italic text-gh-fg-muted" style="animation-delay: 160ms;">
+          Toronto, Ontario, Canada
+        </address>
+      </div>
 
-      <a href="/expertise#documents" class="animate-on-scroll group block" style="transition-delay: 80ms;">
-        <div class="flex items-baseline gap-2 text-xs text-gh-fg-muted">
-          <span>02</span>
-          <span class="h-px flex-1 bg-gh-border"></span>
-        </div>
-        <h3 class="mt-3 text-base font-semibold text-gh-fg group-hover:text-gh-green transition-colors">
-          document workflow
-        </h3>
-        <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted">
-          Structured extraction from invoices, contracts, and forms. Auto-routing to the system of record, with confidence scoring.
-        </p>
-      </a>
-
-      <a href="/expertise#email" class="animate-on-scroll group block" style="transition-delay: 160ms;">
-        <div class="flex items-baseline gap-2 text-xs text-gh-fg-muted">
-          <span>03</span>
-          <span class="h-px flex-1 bg-gh-border"></span>
-        </div>
-        <h3 class="mt-3 text-base font-semibold text-gh-fg group-hover:text-gh-green transition-colors">
-          email &amp; communication
-        </h3>
-        <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted">
-          Triage, classification, and automated replies for inbound business email. LLM with retrieval over an internal knowledge base.
-        </p>
-      </a>
-
-      <a href="/expertise#data" class="animate-on-scroll group block" style="transition-delay: 240ms;">
-        <div class="flex items-baseline gap-2 text-xs text-gh-fg-muted">
-          <span>04</span>
-          <span class="h-px flex-1 bg-gh-border"></span>
-        </div>
-        <h3 class="mt-3 text-base font-semibold text-gh-fg group-hover:text-gh-green transition-colors">
-          data &amp; reporting
-        </h3>
-        <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted">
-          Aggregate from databases, sheets, and APIs. LLM summaries with citations, delivered on schedule to email, Slack, or Drive.
-        </p>
-      </a>
+      <Image
+        src={headshot}
+        alt="Konstantin Borovik"
+        width={400}
+        height={400}
+        class="animate-hero mx-auto h-40 w-40 rounded-lg border border-gh-border object-cover object-top sm:mx-0 sm:h-48 sm:w-48"
+        style="animation-delay: 320ms;"
+      />
 
     </div>
   </section>
 
-  <!-- Why hire me — grid of credibility points -->
-  <section class="mx-auto max-w-4xl px-6 pb-12 sm:pb-14">
-    <h2 class="animate-on-scroll text-center text-base font-bold uppercase tracking-[0.2em] text-gh-blue" style="transition-delay: 0ms;">
-      // why hire me
+  <!-- (b) // what I do — 3-tile services grid per V2 -->
+  <section class="mx-auto max-w-5xl px-6 pb-12 sm:pb-14 font-mono">
+    <h2 class="animate-on-scroll text-base font-bold uppercase tracking-[0.2em] text-gh-blue" style="transition-delay: 0ms;">
+      // what I do
     </h2>
 
-    <div class="mt-12 grid gap-10 sm:grid-cols-2 sm:gap-x-12 sm:gap-y-14">
+    <div class="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-x-12 sm:gap-y-14">
 
-      <div class="animate-on-scroll" style="transition-delay: 80ms;">
+      <div class="animate-on-scroll" style="transition-delay: 0ms;">
         <div class="flex items-baseline gap-2 text-xs text-gh-fg-muted">
-          <span>05</span>
+          <span>01</span>
           <span class="h-px flex-1 bg-gh-border"></span>
         </div>
         <h3 class="mt-3 text-base font-semibold text-gh-fg">
-          twenty years of production engineering
+          Software Development
         </h3>
         <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted">
-          From data-center infrastructure to global payment systems to production AI agents. Built and shipped at every scale.
+          Python &middot; TypeScript &middot; Bash &middot; SQL &middot; FastAPI &middot; Pydantic &middot; Astro &middot; Cloudflare Workers &middot; REST APIs &middot; OpenAPI &middot; Event-Driven Architecture &middot; Microservices &middot; PostgreSQL &middot; ETL &middot; Structured-Extraction Pipelines &middot; Pytest &middot; TDD
+        </p>
+      </div>
+
+      <div class="animate-on-scroll" style="transition-delay: 80ms;">
+        <div class="flex items-baseline gap-2 text-xs text-gh-fg-muted">
+          <span>02</span>
+          <span class="h-px flex-1 bg-gh-border"></span>
+        </div>
+        <h3 class="mt-3 text-base font-semibold text-gh-fg">
+          DevOps
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted">
+          Google Cloud &middot; Azure &middot; Terraform &middot; Ansible &middot; Helm &middot; GitHub Actions &middot; Azure DevOps &middot; Docker &middot; Kubernetes &middot; GKE &middot; AKS &middot; Cloud Run &middot; Apache Airflow &middot; IaC &middot; CI/CD &middot; OpenTelemetry &middot; IAM &middot; NIST 800-53 &middot; PCI DSS
         </p>
       </div>
 
       <div class="animate-on-scroll" style="transition-delay: 160ms;">
         <div class="flex items-baseline gap-2 text-xs text-gh-fg-muted">
-          <span>06</span>
+          <span>03</span>
           <span class="h-px flex-1 bg-gh-border"></span>
         </div>
         <h3 class="mt-3 text-base font-semibold text-gh-fg">
-          full-stack AI, end-to-end
+          AI &amp; LLM
         </h3>
         <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted">
-          Architecture, backend, LLM layer, IaC, deployment. One engineer, the whole pipeline &mdash; no handoffs, no missing pieces.
-        </p>
-      </div>
-
-      <div class="animate-on-scroll" style="transition-delay: 240ms;">
-        <div class="flex items-baseline gap-2 text-xs text-gh-fg-muted">
-          <span>07</span>
-          <span class="h-px flex-1 bg-gh-border"></span>
-        </div>
-        <h3 class="mt-3 text-base font-semibold text-gh-fg">
-          production over prototypes
-        </h3>
-        <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted">
-          Live agents handling real business email &mdash; not slide decks, not sandbox demos. The site you&rsquo;re reading is part of the proof.
-        </p>
-      </div>
-
-      <div class="animate-on-scroll" style="transition-delay: 320ms;">
-        <div class="flex items-baseline gap-2 text-xs text-gh-fg-muted">
-          <span>08</span>
-          <span class="h-px flex-1 bg-gh-border"></span>
-        </div>
-        <h3 class="mt-3 text-base font-semibold text-gh-fg">
-          pattern-matching across domains
-        </h3>
-        <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted">
-          Payments, real estate, logistics, manufacturing. The bottlenecks repeat across industries; the fixes generalize.
+          Anthropic Claude &middot; Google Gemini &middot; Pydantic AI &middot; LLM Agents &middot; Agentic AI Development &middot; RAG &middot; Structured Extraction &middot; MCP &middot; Prompt Engineering &middot; Claude Code &middot; Claude Skills &middot; AI-Augmented Development
         </p>
       </div>
 
     </div>
   </section>
 
-  <!-- Proof of capability — MailPilot -->
-  <section class="mx-auto max-w-4xl px-6 pb-20 sm:pb-24 text-center">
-    <p class="animate-on-scroll text-base font-bold uppercase tracking-[0.2em] text-gh-blue" style="transition-delay: 0ms;">
-      // proof of capability
-    </p>
+  <!-- (c) // claims — falsifiable facts -->
+  <section class="mx-auto max-w-5xl px-6 pb-12 sm:pb-14 font-mono">
+    <h2 class="animate-on-scroll text-base font-bold uppercase tracking-[0.2em] text-gh-blue" style="transition-delay: 0ms;">
+      // claims
+    </h2>
+    <ul class="animate-on-scroll mt-6 space-y-2 text-sm leading-relaxed text-gh-fg-muted sm:text-base" style="transition-delay: 80ms;">
+      <li class="flex gap-3">
+        <span class="text-gh-fg-muted">&minus;</span>
+        <span>20+ years shipping production software &mdash; data centers, payments, real estate</span>
+      </li>
+      <li class="flex gap-3">
+        <span class="text-gh-fg-muted">&minus;</span>
+        <span>AI agents in production &mdash; LLMs, RAG, structured extraction</span>
+      </li>
+      <li class="flex gap-3">
+        <span class="text-gh-fg-muted">&minus;</span>
+        <span>Solo delivery, end-to-end &mdash; back-end, IaC, CI/CD, deploy, observability</span>
+      </li>
+      <li class="flex gap-3">
+        <span class="text-gh-fg-muted">&minus;</span>
+        <span>Toronto-based, long-term contract &mdash; embedded, full product cycle ownership</span>
+      </li>
+    </ul>
+  </section>
 
-    <p class="animate-on-scroll mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-gh-fg-muted sm:text-base" style="transition-delay: 80ms;">
-      MailPilot &mdash; a production AI agent that handles real business email end-to-end. Live at <span class="font-bold text-gh-fg">demo@lab5.ca</span>.
-    </p>
+  <!-- (e) // proof of skills — link list -->
+  <section class="mx-auto max-w-5xl px-6 pb-12 sm:pb-14 font-mono">
+    <h2 class="animate-on-scroll text-base font-bold uppercase tracking-[0.2em] text-gh-blue" style="transition-delay: 0ms;">
+      // proof of skills
+    </h2>
+    <a
+      href="/mailpilot"
+      class="animate-on-scroll mt-6 block rounded-lg border border-gh-border bg-gh-canvas-subtle px-6 py-5 transition-colors hover:bg-white"
+      style="transition-delay: 80ms;"
+    >
+      <div class="flex items-baseline justify-between gap-4">
+        <span class="text-sm font-bold text-gh-green sm:text-base underline underline-offset-[3px]">Let AI handle your repeat email questions &rarr;</span>
+        <span class="text-xs text-gh-fg-muted">/mailpilot</span>
+      </div>
+      <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted">
+        Production LLM agent that auto-answers business email inquiries &mdash; retrieval (RAG) over a knowledge base, sourced replies in under 60 seconds. Send a question to <span class="font-bold text-gh-fg">demo@lab5.ca</span>.
+      </p>
+    </a>
 
-    <div class="animate-on-scroll mt-8 flex flex-wrap justify-center gap-3" style="transition-delay: 160ms;">
+    <div class="animate-on-scroll mt-4 flex flex-wrap gap-3" style="transition-delay: 160ms;">
       <a
-        href="/proof"
+        href="/projects"
         class="inline-flex items-center gap-2 rounded-lg border border-gh-border bg-white px-4 py-2 text-sm font-bold text-gh-fg transition-colors hover:bg-gh-canvas-subtle"
       >
         <svg class="h-4 w-4 text-gh-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
         </svg>
-        MailPilot
+        projects
       </a>
       <a
-        href="https://github.com/kborovik/mailpilot"
+        href="/blog"
+        class="inline-flex items-center gap-2 rounded-lg border border-gh-border bg-white px-4 py-2 text-sm font-bold text-gh-fg transition-colors hover:bg-gh-canvas-subtle"
+      >
+        <svg class="h-4 w-4 text-gh-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+        </svg>
+        blog
+      </a>
+      <a
+        href="https://github.com/kborovik"
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center gap-2 rounded-lg border border-gh-border bg-white px-4 py-2 text-sm font-bold text-gh-fg transition-colors hover:bg-gh-canvas-subtle"
       >
         <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
         github
+      </a>
+    </div>
+  </section>
+
+  <!-- (f) // résumé — single bordered button -->
+  <section class="mx-auto max-w-5xl px-6 pb-20 sm:pb-24 font-mono">
+    <h2 class="animate-on-scroll text-base font-bold uppercase tracking-[0.2em] text-gh-blue" style="transition-delay: 0ms;">
+      // résumé
+    </h2>
+    <div class="animate-on-scroll mt-6 flex flex-wrap gap-3" style="transition-delay: 80ms;">
+      <a
+        href="/resume"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-lg border border-gh-border bg-white px-4 py-2 text-sm font-bold text-gh-fg transition-colors hover:bg-gh-canvas-subtle"
+      >
+        <svg class="h-4 w-4 text-gh-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+        Download résumé (PDF)
+      </a>
+      <a
+        href="https://www.linkedin.com/in/kborovik"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-lg border border-gh-border bg-white px-4 py-2 text-sm font-bold text-gh-fg transition-colors hover:bg-gh-canvas-subtle"
+      >
+        <svg class="h-4 w-4 text-gh-blue" fill="currentColor" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" /></svg>
+        linkedin
       </a>
     </div>
   </section>

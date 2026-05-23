@@ -22,14 +22,14 @@ interface Props {
 
 const {
   title,
-  description = 'AI automation for business operations — ERP integration, document workflows, email, and reporting. 20+ years of hands-on engineering.',
+  description = 'Software Engineer | DevOps Engineer based in Toronto. Generalist software delivery across cloud infrastructure, AI agents for business workflows, and web development. 20+ years of hands-on engineering.',
   schemaType = 'WebPage',
   blogPosting,
 } = Astro.props;
 
 const pageTitle = title
   ? `${title} | Konstantin Borovik`
-  : 'Konstantin Borovik — AI Automation Engineer';
+  : 'Konstantin Borovik — Software Engineer | DevOps Engineer';
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const siteOrigin = (Astro.site ?? new URL('https://lab5.ca')).origin;
@@ -44,7 +44,7 @@ const personNode = {
   alternateName: 'K. Borovik',
   url: `${siteOrigin}/`,
   image: `${siteOrigin}/kb-headshot.jpg`,
-  jobTitle: 'AI Automation Engineer',
+  jobTitle: 'Software Engineer | DevOps Engineer',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Toronto',
@@ -56,27 +56,101 @@ const personNode = {
     'https://github.com/kborovik',
   ],
   knowsAbout: [
-    'ERP integration',
-    'document workflows',
-    'AI email and communication',
-    'data and reporting',
     'Python',
     'TypeScript',
-    'Pydantic AI',
+    'Node.js',
+    'Bash',
+    'SQL',
+    'FastAPI',
+    'Pydantic',
     'Astro',
     'Cloudflare Workers',
-    'LLM agents',
-    'retrieval-augmented generation',
-    'structured extraction',
-    'Claude Code',
-    'Claude Agent SDK',
-    'Model Context Protocol',
-    'agentic coding',
-    'Google Cloud Platform',
-    'BigQuery',
+    'REST APIs',
+    'API Design',
+    'OpenAPI',
+    'Webhooks',
+    'Event-Driven Architecture',
+    'Microservices',
+    'Distributed Systems',
+    'Asynchronous Programming',
+    'PostgreSQL',
+    'SQLite',
+    'Cloud SQL',
+    'ETL',
+    'Data Pipelines',
+    'Structured-Extraction Pipelines',
+    'Salesforce Developer',
+    'Salesforce Integration',
+    'Salesforce APIs',
+    'Pytest',
+    'Test Automation',
+    'Unit Testing',
+    'Test-Driven Development (TDD)',
+    'Spec-Driven Development (SDD)',
+    'Git',
+    'Version Control',
+    'Object-Oriented Programming',
+    'Backend Development',
+    'Full-Stack Development',
+    'Software Architecture',
+    'Google Cloud Platform (GCP)',
     'Cloud Run',
+    'Cloud Functions',
+    'BigQuery',
     'Vertex AI',
+    'Cloud Composer',
+    'Pub/Sub',
+    'Microsoft Azure',
+    'Azure App Service',
+    'Azure Functions',
+    'Azure Service Bus',
+    'Azure Key Vault',
+    'DevOps',
+    'Platform Engineering',
+    'DevSecOps',
+    'Infrastructure as Code (IaC)',
+    'Terraform',
+    'Ansible',
+    'Helm',
+    'Docker',
+    'Kubernetes',
+    'Google Kubernetes Engine (GKE)',
+    'Azure Kubernetes Service (AKS)',
+    'Container Orchestration',
+    'Continuous Integration',
+    'Continuous Deployment',
+    'GitHub Actions',
+    'Azure DevOps',
+    'Apache Airflow',
+    'Workflow Orchestration',
+    'Linux',
+    'Shell Scripting',
+    'YAML',
+    'Observability',
+    'OpenTelemetry',
     'Pydantic Logfire',
+    'GCP Cloud Logging',
+    'GCP Log Analysis',
+    'Cloud Security',
+    'Secrets Management',
+    'Identity and Access Management (IAM)',
+    'NIST 800-53',
+    'PCI DSS',
+    'Agentic AI Development',
+    'AI Agents',
+    'AI Engineering',
+    'Large Language Models (LLM)',
+    'LLM Integration',
+    'Anthropic Claude',
+    'Anthropic API',
+    'Google Gemini',
+    'Pydantic AI',
+    'Model Context Protocol (MCP)',
+    'Retrieval-Augmented Generation (RAG)',
+    'Prompt Engineering',
+    'Claude Code',
+    'Claude Skills',
+    'AI-Augmented Development',
   ],
   worksFor: {
     '@type': 'Organization',
@@ -126,10 +200,10 @@ const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 const isRoot = pathname === '/';
 
 const segmentLabel: Record<string, string> = {
-  expertise: 'Expertise',
-  proof: 'Proof',
-  about: 'About',
+  projects: 'Projects',
+  mailpilot: 'MailPilot',
   blog: 'Blog',
+  resume: 'Resume',
 };
 
 let breadcrumbNode: JsonLdNode | null = null;
@@ -197,14 +271,14 @@ const jsonLd = {
     <meta property="og:image" content="https://lab5.ca/og.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Konstantin Borovik — AI Automation Engineer" />
+    <meta property="og:image:alt" content="Konstantin Borovik — Software Engineer | DevOps Engineer" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="https://lab5.ca/og.png" />
-    <meta name="twitter:image:alt" content="Konstantin Borovik — AI Automation Engineer" />
+    <meta name="twitter:image:alt" content="Konstantin Borovik — Software Engineer | DevOps Engineer" />
 
     <!-- JSON-LD structured data -->
     <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

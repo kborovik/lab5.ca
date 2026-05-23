@@ -15,7 +15,7 @@ const dateFmt = new Intl.DateTimeFormat('en-CA', {
 
 <Layout
   title="Blog"
-  description="Notes on AI automation, ERP integration, document workflows, and production engineering."
+  description="Notes on cloud infrastructure, AI agents for business workflows, and web development."
 >
   <!-- Header -->
   <section class="mx-auto max-w-5xl px-6 pt-16 pb-8 sm:pt-20 sm:pb-10">
@@ -26,8 +26,8 @@ const dateFmt = new Intl.DateTimeFormat('en-CA', {
       Notes
     </h1>
     <p class="mt-4 max-w-2xl text-sm leading-relaxed text-gh-fg-muted sm:text-base">
-      Field notes on AI automation, ERP integration, document workflows, and the
-      boring engineering that decides whether a system runs for a quarter or five years.
+      Field notes on cloud infrastructure, AI agents, and the boring engineering
+      that decides whether a system runs for a quarter or 5 years.
     </p>
   </section>
 
@@ -48,7 +48,7 @@ const dateFmt = new Intl.DateTimeFormat('en-CA', {
                 </time>
               </div>
               <h2 class="mt-3 text-xl font-bold tracking-tight text-gh-fg sm:text-2xl">
-                <a href={`/blog/${post.id}`} class="link-animated hover:text-gh-green">
+                <a href={`/blog/${post.id}`} class="text-gh-green hover:text-gh-green-hover underline underline-offset-[3px]">
                   {post.data.title}
                 </a>
               </h2>
@@ -63,7 +63,7 @@ const dateFmt = new Intl.DateTimeFormat('en-CA', {
               <p class="mt-4">
                 <a
                   href={`/blog/${post.id}`}
-                  class="text-xs font-bold uppercase tracking-[0.15em] text-gh-blue hover:text-gh-blue-hover"
+                  class="text-xs font-bold uppercase tracking-[0.15em] text-gh-green hover:text-gh-green-hover underline underline-offset-[3px]"
                 >
                   read &rarr;
                 </a>
