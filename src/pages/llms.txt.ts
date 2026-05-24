@@ -7,7 +7,10 @@ export const GET: APIRoute = async () => {
   );
 
   const postsSection = posts
-    .map(p => `- [${p.data.title}](https://lab5.ca/blog/${p.id}/)`)
+    .map(
+      p =>
+        `- [${p.data.title}](https://lab5.ca/blog/${p.id}/): ${p.data.description}`,
+    )
     .join('\n');
 
   const body = `# Konstantin Borovik
@@ -40,6 +43,6 @@ ${postsSection}
 `;
 
   return new Response(body, {
-    headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+    headers: { 'Content-Type': 'text/markdown; charset=utf-8' },
   });
 };

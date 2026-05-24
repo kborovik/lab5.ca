@@ -33,6 +33,15 @@ body {
   --color-gh-blue-hover: #0550ae;
 }
 
+/* ===== Section kicker — semantic-text + decorative-prefix split (V14) ===== */
+
+/* DOM text content of `.section-kicker` ≡ section name only (e.g. `what I do`),
+   without literal `// ` prefix. Pseudo-element renders the visual `// ` marker so
+   agent parsers see clean heading text while sighted readers see `// what I do`. */
+.section-kicker::before {
+  content: '// ';
+}
+
 /* ===== Animations ===== */
 
 @keyframes fadeUp {

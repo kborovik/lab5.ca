@@ -18,6 +18,7 @@ interface Props {
   description?: string;
   schemaType?: SchemaType;
   blogPosting?: BlogPostingMeta;
+  markdownAlternate?: string;
 }
 
 const {
@@ -25,6 +26,7 @@ const {
   description = 'Software Engineer | DevOps Engineer based in Toronto. Generalist software delivery across cloud infrastructure, AI agents for business workflows, and web development. 20+ years of hands-on engineering.',
   schemaType = 'WebPage',
   blogPosting,
+  markdownAlternate,
 } = Astro.props;
 
 const pageTitle = title
@@ -157,6 +159,20 @@ const personNode = {
     name: 'Konstantin Borovik',
     url: `${siteOrigin}/`,
   },
+  potentialAction: {
+    '@type': 'EmailAction',
+    name: 'Email MailPilot live agent',
+    description:
+      'Send a question to demo@lab5.ca; live AI agent reply returns under 60 seconds.',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: 'mailto:demo@lab5.ca',
+      actionPlatform: [
+        'http://schema.org/DesktopWebPlatform',
+        'http://schema.org/MobileWebPlatform',
+      ],
+    },
+  },
 };
 
 const websiteNode = {
@@ -249,6 +265,10 @@ const jsonLd = {
     <link rel="canonical" href={canonicalURL} />
     <link rel="alternate" hreflang="en-ca" href={canonicalURL} />
     <link rel="alternate" hreflang="x-default" href={canonicalURL} />
+    <link rel="alternate" type="application/rss+xml" title="lab5.ca blog" href="/rss.xml" />
+    {markdownAlternate && (
+      <link rel="alternate" type="text/markdown" href={markdownAlternate} />
+    )}
     <meta name="generator" content={Astro.generator} />
 
     <!-- Fonts -->
