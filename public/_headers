@@ -21,3 +21,9 @@
 
 /sitemap-0.xml
   Cache-Control: public, max-age=3600
+
+/llms.txt
+  Content-Type: text/markdown; charset=utf-8
+
+/llms-full.txt
+  Content-Type: text/markdown; charset=utf-8
