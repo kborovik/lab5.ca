@@ -36,7 +36,7 @@ MailPilot is the live AI-agent reference: a Pydantic AI agent on Google Cloud, h
 - 20+ years shipping production systems — data centers, global payments, commercial real estate, AI automation.
 - Python and TypeScript daily; production LLM agents on Pydantic AI and the Claude API.
 - Google Cloud infrastructure shipped with Terraform, GitHub Actions, and Cloud Run — one engineer, end-to-end.
-- MailPilot built end-to-end: Pydantic AI agent, GCP backend, IaC, deploy — live at demo@lab5.ca.
+- MailPilot built end-to-end: Pydantic AI agent, GCP backend, IaC, deploy — live at hello@lab5.ca.
 - Current focus: cloud infrastructure, AI agents for business workflows, and web development.
 
 ## What I do
@@ -49,14 +49,14 @@ MailPilot is the live AI-agent reference: a Pydantic AI agent on Google Cloud, h
 
 ## Projects
 
-- MailPilot — Production AI agent for business email; Pydantic AI on a Google Cloud backend; live at demo@lab5.ca. https://github.com/kborovik/mailpilot
+- MailPilot — Production AI agent for business email; Pydantic AI on a Google Cloud backend; live at hello@lab5.ca. https://github.com/kborovik/mailpilot
 - gcp-devops — Reference Terraform / Ansible / IaC patterns for Google Cloud. https://github.com/kborovik/gcp-devops
 - Pilot Skills — Claude Code skills SDK plugins for spec-driven development and agentic workflows. https://github.com/kborovik/pilot-skills
 - lab5.ca — This site; Astro 6, Tailwind v4, TypeScript, Cloudflare Workers. https://github.com/kborovik/lab5.ca
 
 ## Proof
 
-MailPilot — a production AI agent I built end-to-end. Email demo@lab5.ca with a question; the reply is evidence of the work. Source: https://github.com/kborovik/mailpilot.
+MailPilot — a production AI agent I built end-to-end. Email hello@lab5.ca with a question; the reply is evidence of the work. Source: https://github.com/kborovik/mailpilot.
 
 ## Resume
 

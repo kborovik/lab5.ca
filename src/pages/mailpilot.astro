@@ -5,7 +5,7 @@ const steps = [
   {
     num: '01',
     title: 'Send a Product Question',
-    body: 'Email demo@lab5.ca with a question about the product specs in the knowledge base. Out-of-kb questions get a reply explaining how the demo works.',
+    body: 'Email hello@lab5.ca with a question about the product specs in the knowledge base. Out-of-kb questions get a reply explaining how the demo works.',
   },
   {
     num: '02',
@@ -66,7 +66,7 @@ const willDecline = [
 
     <div class="mt-10 inline-flex items-center gap-3 rounded-lg border border-gh-border bg-gh-canvas-subtle px-5 py-3 text-sm text-gh-fg">
       <span class="text-gh-fg-muted">$</span>
-      <span>mail demo@lab5.ca</span>
+      <span>mail hello@lab5.ca</span>
       <button
         id="copy-email-btn"
         aria-label="Copy email address"
@@ -231,7 +231,7 @@ const willDecline = [
     const icon = document.getElementById('copy-icon');
 
     btn?.addEventListener('click', () => {
-      navigator.clipboard.writeText('demo@lab5.ca').then(() => {
+      navigator.clipboard.writeText('hello@lab5.ca').then(() => {
         if (label) label.textContent = '✓ copied';
         if (icon) (icon as HTMLElement).style.display = 'none';
         setTimeout(() => {
