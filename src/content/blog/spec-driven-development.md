@@ -15,7 +15,7 @@ I kept losing track of what Claude was doing.
 
 The pitch for multi-agent setups is throughput. Spin up subagents in parallel git worktrees, dispatch tasks, merge the wins. In practice I couldn't hold the whole picture in my head: which task was done, how it was tested, what regressed, which bugs were still open. The agents moved faster than I could review, and review was the part that had to be right.
 
-[pilot-spec](https://github.com/kborovik/pilot-skills) is what I built to fix that. It's a **Claude Code plugin** that collapses everything I need to know about a project — goals, constraints, interfaces, invariants, tasks, bugs — into one root `SPEC.md`.
+[github.com/kborovik/pilot-skills](https://github.com/kborovik/pilot-skills) is what I built to fix that. It's a **Claude Code plugin** that collapses everything I need to know about a project — goals, constraints, interfaces, invariants, tasks, bugs — into one root `SPEC.md`.
 
 > **One file. One thread. No subagents.**
 
