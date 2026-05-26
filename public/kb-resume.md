@@ -38,7 +38,7 @@ Systems: Linux, Shell Scripting, YAML
 Observability: Observability, OpenTelemetry, Pydantic Logfire, GCP Cloud Logging, GCP Log Analysis
 Security & Compliance: Cloud Security, Secrets Management, Identity and Access Management (IAM), NIST 800-53, PCI DSS
 
-### AI & LLM
+### AI & LLM Engineering
 
 Agents: Agentic AI Development, AI Agents, AI Engineering
 Models & APIs: Large Language Models (LLM), LLM Integration, Anthropic Claude, Anthropic API, Google Gemini
@@ -51,7 +51,7 @@ AI-Augmented Development: Claude Code, Claude Skills, AI-Augmented Development
 
 ### [mailpilot](https://github.com/kborovik/mailpilot)
 
-*Skills: AI & LLM, Software Development*
+*Skills: AI & LLM Engineering, Software Development*
 
 Agent-operated CRM with Gmail as the communication layer — Anthropic Claude as strategic orchestrator and an internal Pydantic AI agent as tactical executor for inbound classification, auto-reply, and follow-up scheduling. CLI-first with JSON output designed for LLM consumption; Python 3.14, PostgreSQL 18, Gmail API with domain-wide delegation, Pub/Sub for real-time sync, Pydantic Logfire / OpenTelemetry for tracing.
 
@@ -63,7 +63,7 @@ Production Google Cloud Platform infrastructure powering MailPilot — Terraform
 
 ### [pilot-skills](https://github.com/kborovik/pilot-skills)
 
-*Skills: AI & LLM, Software Development*
+*Skills: AI & LLM Engineering, Software Development*
 
 Claude Code plugin marketplace shipping pilot-spec (Spec-Driven Development with a single SPEC.md and math-glyph compression for invariants, tasks, and bugs), pilot-plan (GitHub workflow — issue, PR, commit, merge, release), and pilot-core (shared intent-gating and shorthand skills). Demonstrates AI agent orchestration, prompt engineering, and AI-augmented development workflow built on the Anthropic API.
 
@@ -81,11 +81,11 @@ Engineering practice site and publishing platform for AI-augmented development �
 
 *2026 — Present*
 
-lab5.ca is my independent consulting practice with client engagements across AI & LLM engineering, DevOps & Cloud Platform Engineering, and modern software development. I take systems from prototype to production: designing agentic architectures, writing the Infrastructure as Code that runs them, and building the developer tooling that keeps them shipping.
+lab5.ca is my independent consulting practice with client engagements across AI & LLM Engineering, DevOps & Cloud Platform Engineering, and modern software development. I take systems from prototype to production: designing agentic architectures, writing the Infrastructure as Code that runs them, and building the developer tooling that keeps them shipping.
 
 What I deliver:
 
-- AI & LLM engineering — production agentic systems on Anthropic Claude and Google Gemini (Pydantic AI, multi-agent orchestration, structured-extraction pipelines), Claude Code plugins and skills for developer workflows, Model Context Protocol (MCP) integrations, prompt engineering, and LLMOps practices for AI applications.
+- AI & LLM Engineering — production agentic systems on Anthropic Claude and Google Gemini (Pydantic AI, multi-agent orchestration, structured-extraction pipelines), Claude Code plugins and skills for developer workflows, Model Context Protocol (MCP) integrations, prompt engineering, and LLMOps practices for AI applications.
 
 - DevOps & Cloud Platform Engineering — Terraform across the full Google Cloud spectrum (GKE, GCE, Cloud SQL, networking, firewalls, IAM, org policies), Helm for Kubernetes release pipelines, CI/CD via GitHub Actions and Azure DevOps, Cloud Composer / Apache Airflow for ETL orchestration, and observability with OpenTelemetry and Pydantic Logfire.
 
