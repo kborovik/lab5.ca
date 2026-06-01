@@ -106,7 +106,7 @@ carrying `exception_type = 'TimeoutError'` and the trace ID
 application logs already said &mdash; a timeout &mdash; but it also gave me
 the one thing the application logs could not.
 
-![Logfire trace view with the agent.invoke span selected; the side panel shows exception_type TimeoutError and a Python traceback ending in &ldquo;The read operation timed out&rdquo;.](/blog/troubleshooting-application-failures-with-logfire/screenshot2.png)
+![Logfire trace view with the agent.invoke span selected; the side panel shows exception_type TimeoutError and a Python traceback ending in &ldquo;The read operation timed out&rdquo;.](/blog/troubleshooting-application-failures-with-logfire/screenshot2.webp)
 *Naming the failure: selecting the failed span surfaces the exception
 type, message, and the full Python traceback &mdash; columns, not
 substrings of a log line.*
@@ -164,7 +164,7 @@ that happened near each other*. The span tree preserves the relationship
 between them &mdash; both as siblings of a single LLM turn &mdash; and that
 relationship is what carries the diagnosis.
 
-![Logfire trace view with the hung running tool: read_drive_markdown span selected at the deepest level of the agent's tool-call path; the side panel shows the same TimeoutError exception, anchored to that leaf.](/blog/troubleshooting-application-failures-with-logfire/screenshot3.png)
+![Logfire trace view with the hung running tool: read_drive_markdown span selected at the deepest level of the agent's tool-call path; the side panel shows the same TimeoutError exception, anchored to that leaf.](/blog/troubleshooting-application-failures-with-logfire/screenshot3.webp)
 *Following the exception down the tree: the deepest span tagged with
 `TimeoutError` is the read_drive_markdown leaf. Everything above it
 &mdash; the agent run, `agent.invoke`, `run.execute_task` &mdash; is just
@@ -207,7 +207,7 @@ SQL, no code changes, no re-running anything. Without it, the temptation
 is to just press `retry` and move on, and the bug fires again next time
 the same input arrives.
 
-![Logfire timeline showing four run.task.transient_retry rows and one terminal run.task.agent_failed row from a task_id filter; the side panel shows the selected retry's attempt and backoff_seconds attributes.](/blog/troubleshooting-application-failures-with-logfire/screenshot1.png)
+![Logfire timeline showing four run.task.transient_retry rows and one terminal run.task.agent_failed row from a task_id filter; the side panel shows the selected retry's attempt and backoff_seconds attributes.](/blog/troubleshooting-application-failures-with-logfire/screenshot1.webp)
 *Four retries, one shape. The `attempt` and `backoff_seconds`
 attributes on each retry row turn "it failed four times" into "it failed
 the same way four times" &mdash; the difference between a flake and a
