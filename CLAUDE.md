@@ -60,7 +60,7 @@ Path ≡ `src/content/blog/<slug>.md`; filename ≡ URL slug.
 - hard-wrap ~78 col; UTF-8, LF, ⊥ BOM
 - ⊥ non-post `.md` ∈ blog dir → glob fails build (§V.25)
 - undeclared frontmatter (`author`, `image`, `canonical`) → `astro check` ✗ (§V.24)
-- `.prose` ∋ {bold, italic, inline+fenced code, ul/ol, blockquote, `---`, inline link}; ⊥ {raw HTML beyond `<br>`+entities, image, table, footnote} (§V.29)
+- `.prose` ∋ {bold, italic, inline+fenced code, ul/ol, blockquote, `---`, inline link, image (`![alt](src)` form, src ∈ `public/blog/<slug>/`, alt mandatory), table (pipe-syntax)}; ⊥ {raw HTML beyond `<br>`+entities, footnote} (§V.29)
 
 Verify: `make check` → `make build`; optional Playwright @ `localhost:4321/blog/<slug>`.
 
