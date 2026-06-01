@@ -280,6 +280,53 @@ body {
   height: auto;
   border: 1px solid var(--color-gh-border);
   border-radius: 8px;
+  cursor: zoom-in;
+}
+
+#blog-image-viewer {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: 95vw;
+  max-height: 95vh;
+  color: var(--color-gh-fg);
+}
+
+#blog-image-viewer::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#blog-image-viewer .viewer-close-form {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+#blog-image-viewer .viewer-close {
+  background-color: var(--color-gh-canvas);
+  color: var(--color-gh-fg);
+  border: 1px solid var(--color-gh-border);
+  border-radius: 6px;
+  padding: 0.25rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#blog-image-viewer .viewer-close:hover {
+  background-color: var(--color-gh-canvas-subtle);
+}
+
+#blog-image-viewer .viewer-image {
+  display: block;
+  max-width: 95vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  border: 1px solid var(--color-gh-border);
+  border-radius: 8px;
+  cursor: zoom-out;
 }
 
 .prose img + em {

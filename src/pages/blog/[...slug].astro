@@ -82,4 +82,36 @@ const blogPosting = {
       </div>
     </section>
   </article>
+
+  <dialog id="blog-image-viewer" aria-label="Enlarged image">
+    <form method="dialog" class="viewer-close-form">
+      <button type="submit" class="viewer-close">Close</button>
+    </form>
+    <img class="viewer-image" alt="" />
+  </dialog>
+
+  <script>
+    const dialog = document.getElementById('blog-image-viewer');
+    if (dialog instanceof HTMLDialogElement) {
+      const viewerImg = dialog.querySelector('.viewer-image');
+      document.querySelectorAll('.prose img').forEach((el) => {
+        el.addEventListener('click', () => {
+          if (viewerImg instanceof HTMLImageElement && el instanceof HTMLImageElement) {
+            viewerImg.src = el.currentSrc || el.src;
+            viewerImg.alt = el.alt;
+            dialog.showModal();
+          }
+        });
+      });
+      dialog.addEventListener('click', (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+      dialog.addEventListener('close', () => {
+        if (viewerImg instanceof HTMLImageElement) {
+          viewerImg.removeAttribute('src');
+          viewerImg.alt = '';
+        }
+      });
+    }
+  </script>
 </Layout>
