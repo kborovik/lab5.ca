@@ -67,7 +67,7 @@ Without this, you cannot filter the trillions of spans down to the
 handful that touched the failing entity.
 
 **Two: framework instrumentation is in place.** OpenTelemetry's
-[`gen_ai.*` semantic conventions](https://opentelemetry.io/docs/specs/semconv/gen-ai/)
+[gen_ai.* semantic conventions](https://opentelemetry.io/docs/specs/semconv/gen-ai/)
 standardize how LLM frameworks tag tool names, call IDs, arguments, and
 responses. Pydantic AI emits them automatically. The same is true for
 the standard HTTP, database, and queue instrumentations. The payoff is
