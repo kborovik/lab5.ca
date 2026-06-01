@@ -1,0 +1,19 @@
+Blog: Troubleshooting application failures with Logfire
+
+Most application failures arrive as a single sentence wrapped in a retry counter. "The read operation timed out. Attempt 4 of 4." That sentence is the worst possible starting point — the signal has been collapsed into a string and the retry loop has erased the shape of the failure.
+
+So I wrote up the workflow I use to recover that shape: five SQL queries against Logfire traces, in a fixed order, that take an investigation from "something failed" to "here is the line of code." The example is a real production bug in an LLM agent, diagnosed in under thirty minutes.
+
+The sequence:
+
+- Filter by domain identifier. Surface a trace_id, stop guessing.
+- Pull the full trace tree. Read sibling-duration mismatches; the deepest span tagged with the exception is where the bug lives.
+- Confirm determinism across retries. Two minutes of SQL prevents an hour spent chasing a flake that is actually a bug.
+- Extract structured I/O via OpenTelemetry semantic conventions. Arguments and responses are already on the span.
+- Bridge to source. Open the file the failing span lives in, search for the duration constant, read the surrounding code with the trace tree as the index.
+
+The diagnosis in the example: two sibling tool calls dispatched 403 microseconds apart under one LLM turn — one finished in 1.12 seconds, the other hung 60.83 seconds and raised TimeoutError. The bug was a shared, non-thread-safe HTTP client contending on a connection-pool dict across two parallel tool invocations. The trace named the bug. The source confirmed it.
+
+If you operate any system where work fans out across threads, async tasks, or parallel tool calls, the shape of failure matters more than the message of failure. The retry classifier sees a message and calls it transient. The span tree sees a shape and tells you the truth.
+
+Read the full post: https://lab5.ca/blog/troubleshooting-application-failures-with-logfire/
