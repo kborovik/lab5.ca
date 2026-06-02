@@ -1,0 +1,368 @@
+[
+  {
+    "run": "2026-06-01",
+    "topic": "site-pitch-and-home-page",
+    "old": "V8",
+    "new": "V3"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "site-pitch-and-home-page",
+    "old": "V46",
+    "new": "V4"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "site-pitch-and-home-page",
+    "old": "V58",
+    "new": "V5"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "voice-and-casing-discipline",
+    "old": "V3",
+    "new": "V11"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "voice-and-casing-discipline",
+    "old": "V5",
+    "new": "V12"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "voice-and-casing-discipline",
+    "old": "V6",
+    "new": "V13"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "voice-and-casing-discipline",
+    "old": "V7",
+    "new": "V14"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "voice-and-casing-discipline",
+    "old": "V14",
+    "new": "V15"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "voice-and-casing-discipline",
+    "old": "V15",
+    "new": "V16"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "voice-and-casing-discipline",
+    "old": "V16",
+    "new": "V17"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "voice-and-casing-discipline",
+    "old": "V56",
+    "new": "V18"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "interaction-and-accessibility",
+    "old": "V4",
+    "new": "V21"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "interaction-and-accessibility",
+    "old": "V35",
+    "new": "V22"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "interaction-and-accessibility",
+    "old": "V49",
+    "new": "V23"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "interaction-and-accessibility",
+    "old": "V57",
+    "new": "V24"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "design-system",
+    "old": "V9",
+    "new": "V31"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "design-system",
+    "old": "V10",
+    "new": "V32"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "design-system",
+    "old": "V11",
+    "new": "V33"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "design-system",
+    "old": "V12",
+    "new": "V34"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "design-system",
+    "old": "V13",
+    "new": "V35"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "design-system",
+    "old": "V17",
+    "new": "V36"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "design-system",
+    "old": "V19",
+    "new": "V37"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "build-deploy-and-tooling",
+    "old": "V18",
+    "new": "V41"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "build-deploy-and-tooling",
+    "old": "V20",
+    "new": "V42"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "build-deploy-and-tooling",
+    "old": "V21",
+    "new": "V43"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "build-deploy-and-tooling",
+    "old": "V22",
+    "new": "V44"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "build-deploy-and-tooling",
+    "old": "V30",
+    "new": "V45"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "build-deploy-and-tooling",
+    "old": "V31",
+    "new": "V46"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "build-deploy-and-tooling",
+    "old": "V32",
+    "new": "V47"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "build-deploy-and-tooling",
+    "old": "V33",
+    "new": "V48"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "build-deploy-and-tooling",
+    "old": "V34",
+    "new": "V49"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "blog-and-companion-posts",
+    "old": "V23",
+    "new": "V51"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "blog-and-companion-posts",
+    "old": "V24",
+    "new": "V52"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "blog-and-companion-posts",
+    "old": "V25",
+    "new": "V53"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "blog-and-companion-posts",
+    "old": "V26",
+    "new": "V54"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "blog-and-companion-posts",
+    "old": "V27",
+    "new": "V55"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "blog-and-companion-posts",
+    "old": "V28",
+    "new": "V56"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "blog-and-companion-posts",
+    "old": "V29",
+    "new": "V57"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "blog-and-companion-posts",
+    "old": "V36",
+    "new": "V58"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "blog-and-companion-posts",
+    "old": "V38",
+    "new": "V59"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "blog-and-companion-posts",
+    "old": "V39",
+    "new": "V60"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "structured-data-schema-org",
+    "old": "V40",
+    "new": "V61"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "structured-data-schema-org",
+    "old": "V41",
+    "new": "V62"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "structured-data-schema-org",
+    "old": "V42",
+    "new": "V63"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "structured-data-schema-org",
+    "old": "V43",
+    "new": "V64"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "structured-data-schema-org",
+    "old": "V44",
+    "new": "V65"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "structured-data-schema-org",
+    "old": "V45",
+    "new": "V66"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "machine-discovery-surfaces",
+    "old": "V47",
+    "new": "V71"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "machine-discovery-surfaces",
+    "old": "V48",
+    "new": "V72"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "machine-discovery-surfaces",
+    "old": "V59",
+    "new": "V73"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "machine-discovery-surfaces",
+    "old": "V60",
+    "new": "V74"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "machine-discovery-surfaces",
+    "old": "V61",
+    "new": "V75"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "resume-and-canonical-source",
+    "old": "V50",
+    "new": "V81"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "resume-and-canonical-source",
+    "old": "V51",
+    "new": "V82"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "resume-and-canonical-source",
+    "old": "V52",
+    "new": "V83"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "resume-and-canonical-source",
+    "old": "V53",
+    "new": "V84"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "resume-and-canonical-source",
+    "old": "V54",
+    "new": "V85"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "resume-and-canonical-source",
+    "old": "V62",
+    "new": "V86"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "resume-and-canonical-source",
+    "old": "V63",
+    "new": "V87"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "audit-and-surface-completeness",
+    "old": "V37",
+    "new": "V91"
+  },
+  {
+    "run": "2026-06-01",
+    "topic": "audit-and-surface-completeness",
+    "old": "V55",
+    "new": "V92"
+  }
+]
