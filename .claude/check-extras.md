@@ -4,7 +4,7 @@ Loaded by `sdd:check` via path probe `.claude/check-extras.md`. Each section ≡
 
 ## §-cite drift recipe — scope override
 
-Per V37 (lab5.ca SPEC.md): documentary cite forms ≡ ⊥ live cites; live cites stay ∈ typed `§T.cites` ∧ `§B.fix` columns. Two exclusions apply when running CHECK §-cite step 2 (free-text grep `§[VTB]\.[0-9]+`):
+Per V91 (lab5.ca SPEC.md): documentary cite forms ≡ ⊥ live cites; live cites stay ∈ typed `§T.cites` ∧ `§B.fix` columns. Two exclusions apply when running CHECK §-cite step 2 (free-text grep `§[VTB]\.[0-9]+`):
 
 ### (1) blog content
 
@@ -18,11 +18,11 @@ blog body ≡ documentary prose discussing external SPECs (pilot-skills SPEC.md,
 
 **Effect**: when scanning SPEC.md for free-text `§[VTB]\.[0-9]+` matches, exclude matches within §B `cause` column (col 3 of `id|date|cause|fix` table) ∧ §T `task` column (col 3 of `id|status|task|cites` table). Typed cite columns (§T.cites, §B.fix) remain ∈ scope per step 1. Implementation ≡ pipe-split each row of §B/§T pipe-tables on `|`, scope free-text grep to cols {1,2,4+} only ∀ those tables; rest of SPEC.md (§G, §C, §I, §V bodies) stays ∈ scope unchanged.
 
-**REPORT header declaration** (auditor surfaces in §-cite drift block): `blog content (src/content/blog/**) ∧ SPEC.md §B/§T narrative columns excluded from free-text §-cite scope per V37`.
+**REPORT header declaration** (auditor surfaces in §-cite drift block): `blog content (src/content/blog/**) ∧ SPEC.md §B/§T narrative columns excluded from free-text §-cite scope per V91`.
 
-## tech-token era-floor audit — V53 recipe extension
+## tech-token era-floor audit — V84 recipe extension
 
-Per V53 (lab5.ca SPEC.md): engagement bullet ∈ `/resume` ∧ `kb-resume.md` ! satisfy tech-token era-floor per §I `tech-token era-floor` table.
+Per V84 (lab5.ca SPEC.md): engagement bullet ∈ `/resume` ∧ `kb-resume.md` ! satisfy tech-token era-floor per §I `tech-token era-floor` table.
 
 **Recipe**: ∀ engagement row ∈ {`src/pages/resume.astro`, `public/kb-resume.md`}:
 
@@ -40,9 +40,9 @@ Per V53 (lab5.ca SPEC.md): engagement bullet ∈ `/resume` ∧ `kb-resume.md` ! 
 
 **Vocab maintenance**: era-token vocab ! be appended to §I `tech-token era-floor` table on first use ∈ /resume bullets (table append-only per §I).
 
-## surface-completeness audit — V55 recipe extension
+## surface-completeness audit — V92 recipe extension
 
-Per V55 (lab5.ca SPEC.md): ∀ URL-accessible surface ! enumerated ∈ §I `asset:` list ∨ `route:` list.
+Per V92 (lab5.ca SPEC.md): ∀ URL-accessible surface ! enumerated ∈ §I `asset:` list ∨ `route:` list.
 
 **Recipe** (`/sdd:check §I` list-shape sub-recipe):
 
@@ -50,6 +50,6 @@ Per V55 (lab5.ca SPEC.md): ∀ URL-accessible surface ! enumerated ∈ §I `asse
 2. Extract code surface set: `rg public/* tracked files ∪ rg integrations: ∈ astro.config.mjs ∪ ls src/pages/*.{ts,js}`.
 3. Diff:
    - §I − code → MISSING (declared but unbuilt).
-   - code − §I → EXTRA (built but undeclared → V55 violation, recurrence class of B15/B16/B19).
+   - code − §I → EXTRA (built but undeclared → V92 violation, recurrence class of B15/B16/B19).
 4. Carrier-pairing check: closed §T touching `public/` ∨ `astro.config.mjs integrations[]` ∨ `src/pages/*.{ts,js}` ! pair w/ §I admission ∈ same commit ∨ §B record ∀ intentional deferral.
-5. Internal config refs ∈ {`public/_headers` cache-rule blocks, `src/layouts/Layout.astro` route-label maps} ! reference only §I-enumerated live surfaces — dead-route ∨ dead-build-output refs ≡ V55 violation (same surface-completeness class as B15/B16/B19).
+5. Internal config refs ∈ {`public/_headers` cache-rule blocks, `src/layouts/Layout.astro` route-label maps} ! reference only §I-enumerated live surfaces — dead-route ∨ dead-build-output refs ≡ V92 violation (same surface-completeness class as B15/B16/B19).
