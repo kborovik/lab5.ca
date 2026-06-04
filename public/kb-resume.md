@@ -71,7 +71,7 @@ Agent-operated CRM with Gmail as the communication layer — Anthropic Claude as
 
 ### [github.com/kborovik/gcp-devops](https://github.com/kborovik/gcp-devops)
 
-*Skills: DevOps & Operations*
+*Skills: DevOps & Cloud Platforms*
 
 Production Google Cloud Platform infrastructure powering MailPilot — Terraform for GCE instances, networking, DNS, IAM, service accounts, and org policies, plus Ansible for VM configuration (ZFS, Tailscale, Google Ops Agent). Make-based deployment pipeline with confirm-gated production deploys and a two-layer PostgreSQL backup architecture (Sanoid ZFS snapshots plus GCE persistent-disk snapshots).
 
@@ -83,7 +83,7 @@ Claude Code plugin marketplace shipping pilot-spec (Spec-Driven Development with
 
 ### [github.com/kborovik/lab5.ca](https://github.com/kborovik/lab5.ca)
 
-*Skills: Software Development, DevOps & Operations*
+*Skills: Software Development, DevOps & Cloud Platforms*
 
 Engineering practice site and publishing platform for AI-augmented development — Astro 6, Tailwind v4, TypeScript, and Cloudflare Workers, fully type-checked end-to-end. Spec-driven with deploy-on-push CI/CD via GitHub Actions; built entirely with Claude Code.
 
@@ -120,7 +120,7 @@ Testing: Pytest, Test Automation, Unit Testing
 Methodologies: Test-Driven Development (TDD), Spec-Driven Development (SDD)
 Foundations: Git, Version Control, Object-Oriented Programming
 
-### DevOps & Operations
+### DevOps & Cloud Platforms
 
 Google Cloud Platform (GCP): Cloud Run, Cloud Functions, BigQuery, Vertex AI, Cloud SQL, Cloud Composer, Pub/Sub
 Microsoft Azure: Azure App Service, Azure Functions, Azure Service Bus, Azure Key Vault

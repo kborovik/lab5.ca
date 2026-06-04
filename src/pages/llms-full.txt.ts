@@ -45,7 +45,7 @@ MailPilot is the live AI-agent reference: a Pydantic AI agent on Google Cloud, h
 
 02 Software Development. Python and TypeScript backends and full-stack applications — FastAPI, Pydantic, Astro, Cloudflare Workers. REST APIs, event-driven architectures, structured-extraction pipelines on PostgreSQL. Test-driven and spec-driven; Pytest end-to-end. Reference builds: github.com/kborovik/mailpilot, github.com/kborovik/lab5.ca.
 
-03 DevOps & Operations. Google Cloud and Azure infrastructure shipped with Terraform and Ansible — Cloud Run, GKE, Docker, Kubernetes, Cloud SQL, IAM, org policies. CI/CD via GitHub Actions and Azure DevOps, ETL on Cloud Composer / Apache Airflow, observability with OpenTelemetry and Pydantic Logfire. NIST 800-53 and PCI DSS controls. Reference: github.com/kborovik/gcp-devops.
+03 DevOps & Cloud Platforms. Google Cloud and Azure infrastructure shipped with Terraform and Ansible — Cloud Run, GKE, Docker, Kubernetes, Cloud SQL, IAM, org policies. CI/CD via GitHub Actions and Azure DevOps, ETL on Cloud Composer / Apache Airflow, observability with OpenTelemetry and Pydantic Logfire. NIST 800-53 and PCI DSS controls. Reference: github.com/kborovik/gcp-devops.
 
 ## Projects
 
