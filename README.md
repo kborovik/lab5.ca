@@ -9,11 +9,10 @@ Live at <https://lab5.ca>
 
 Static site built with Astro 6, deployed to Cloudflare Workers. Surfaces:
 
-- `/` — hero, capabilities, claims, proof, résumé link
+- `/` — hero, capabilities, claims, proof
 - `/projects` — skills→GitHub-repo proof grid
 - `/mailpilot` — MailPilot demo (proof-of-capability for LLM agent work)
 - `/blog` — long-form writing
-- `/resume` — printable CV (browser → PDF via `@media print`)
 
 ## Stack
 
@@ -70,5 +69,5 @@ custom domains in `wrangler.jsonc` and serve the same site.
 
 ## License
 
-Source code: MIT. Site content, copy, and assets (résumé, headshot, OG
-images, blog posts): © Konstantin Borovik, all rights reserved.
+Source code: MIT. Site content, copy, and assets (headshot, OG images,
+blog posts): © Konstantin Borovik, all rights reserved.

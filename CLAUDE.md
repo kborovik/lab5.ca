@@ -76,7 +76,6 @@ Flow: `make dev` → `browser_navigate` → `browser_snapshot` (a11y, preferred)
 - OG (1200×630): edit `assets-src/og.html`; `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --screenshot=public/og.png --window-size=1200,630 assets-src/og.html`
 - LinkedIn banner (1584×396): edit `assets-src/linkedin-banner.html`; `--screenshot=public/banner-linkedin.png --window-size=1584,396 assets-src/linkedin-banner.html`
 - favicon regen: `magick -background none public/favicon.svg -define icon:auto-resize=48,32,16 public/favicon.ico`
-- /resume PDF render (per §V.86 browser-print → PDF ≡ canonical PDF path; ⊥ in-repo artifact): `make dev` (astro @ `:4321`) → `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --disable-gpu --user-data-dir=$(mktemp -d) --disable-cache --no-pdf-header-footer --print-to-pdf=/tmp/resume.pdf http://localhost:4321/resume/`. Fresh `--user-data-dir` per iteration defeats Chrome cache between renders. `make dev` (not `wrangler dev`) ∵ astro dev hot-reloads ∧ keeps `dist/` out of contention; wrangler dev needs prior `make build` ∧ may clear `dist/` mid-session. Rasterize for visual check: `pdftoppm -r 100 /tmp/resume.pdf /tmp/p -png`.
 
 ## paths
 

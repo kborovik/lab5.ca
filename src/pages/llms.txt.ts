@@ -21,7 +21,6 @@ export const GET: APIRoute = async () => {
 
 - [Projects](https://lab5.ca/projects): skill → GitHub-repo card grid (gcp-devops, MailPilot, Pilot Skills, lab5.ca)
 - [MailPilot](https://lab5.ca/mailpilot): production AI agent for business email, evidence of capability
-- [Resume](https://lab5.ca/resume): CV — engagements, projects, education, tech skills
 - [Blog](https://lab5.ca/blog): notes on cloud infrastructure, AI agents, spec-driven development, and Claude Code
 
 ## Posts
@@ -32,8 +31,7 @@ ${postsSection}
 
 - [LinkedIn](https://www.linkedin.com/in/kborovik)
 - [GitHub](https://github.com/kborovik)
-- [Resume](https://lab5.ca/resume)
-- [Markdown resume](https://lab5.ca/kb-resume.md)
+- [Resume (GitHub)](https://github.com/kborovik/resume)
 - [MailPilot source](https://github.com/kborovik/mailpilot)
 - [Book a call](https://calendar.app.google/cYM3H3TsHsequR587)
 

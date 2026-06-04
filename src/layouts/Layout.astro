@@ -3,7 +3,7 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
-type SchemaType = 'WebPage' | 'ProfilePage' | 'CollectionPage' | 'BlogPosting';
+type SchemaType = 'WebPage' | 'CollectionPage' | 'BlogPosting';
 
 interface BlogPostingMeta {
   headline: string;
@@ -196,7 +196,7 @@ const pageNode: JsonLdNode = {
   inLanguage: 'en-CA',
 };
 
-if (schemaType === 'ProfilePage' || schemaType === 'BlogPosting') {
+if (schemaType === 'BlogPosting') {
   pageNode.about = { '@id': personId };
 }
 
@@ -219,7 +219,6 @@ const segmentLabel: Record<string, string> = {
   projects: 'Projects',
   mailpilot: 'MailPilot',
   blog: 'Blog',
-  resume: 'Resume',
 };
 
 let breadcrumbNode: JsonLdNode | null = null;
