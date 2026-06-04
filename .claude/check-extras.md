@@ -20,26 +20,6 @@ blog body ≡ documentary prose discussing external SPECs (pilot-skills SPEC.md,
 
 **REPORT header declaration** (auditor surfaces in §-cite drift block): `blog content (src/content/blog/**) ∧ SPEC.md §B/§T narrative columns excluded from free-text §-cite scope per V91`.
 
-## tech-token era-floor audit — V84 recipe extension
-
-Per V84 (lab5.ca SPEC.md): engagement bullet ∈ `/resume` ∧ `kb-resume.md` ! satisfy tech-token era-floor per §I `tech-token era-floor` table.
-
-**Recipe**: ∀ engagement row ∈ {`src/pages/resume.astro`, `public/kb-resume.md`}:
-
-1. Extract engagement-start-year from date range column.
-2. Parse tech-token mentions ∈ bullet text body (free-text grep against §I era-floor token set).
-3. Lookup floor year ∀ matched token ∈ §I `tech-token era-floor` table.
-4. Flag token-year-floor > engagement-start-year as VIOLATE.
-
-**Violation examples** (anti-pattern set):
-
-- `DevOps` role-naming ∈ Systems Engineer position pre-2009 (DevOps-as-discipline ≥2009 floor).
-- Kubernetes claim pre-2015 (K8s ≥2015 floor).
-- Docker claim pre-2013 (Docker ≥2013 floor).
-- LLM-agent ∨ Pydantic AI claim pre-2023 (LLM agents production-ish ≥2023, Pydantic AI ≥2024).
-
-**Vocab maintenance**: era-token vocab ! be appended to §I `tech-token era-floor` table on first use ∈ /resume bullets (table append-only per §I).
-
 ## surface-completeness audit — V92 recipe extension
 
 Per V92 (lab5.ca SPEC.md): ∀ URL-accessible surface ! enumerated ∈ §I `asset:` list ∨ `route:` list.
