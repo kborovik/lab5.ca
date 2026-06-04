@@ -1,6 +1,6 @@
 # Konstantin Borovik
 
-**Software Engineer | DevOps Engineer** · 20+ years engineering
+**Software Engineer | AI & LLM Engineering** · 20+ years engineering
 Toronto, Ontario, Canada
 
 - LinkedIn: <https://www.linkedin.com/in/kborovik>
@@ -11,7 +11,7 @@ Toronto, Ontario, Canada
 
 ## Engagements
 
-### lab5.ca — Independent Contractor · Software Engineer | DevOps Engineer
+### lab5.ca — Software Engineer | AI & LLM Engineering
 
 *2026 — Present*
 
@@ -71,7 +71,7 @@ Agent-operated CRM with Gmail as the communication layer — Anthropic Claude as
 
 ### [github.com/kborovik/gcp-devops](https://github.com/kborovik/gcp-devops)
 
-*Skills: DevOps & Cloud Platforms & Platform Engineering*
+*Skills: DevOps & Operations*
 
 Production Google Cloud Platform infrastructure powering MailPilot — Terraform for GCE instances, networking, DNS, IAM, service accounts, and org policies, plus Ansible for VM configuration (ZFS, Tailscale, Google Ops Agent). Make-based deployment pipeline with confirm-gated production deploys and a two-layer PostgreSQL backup architecture (Sanoid ZFS snapshots plus GCE persistent-disk snapshots).
 
@@ -83,7 +83,7 @@ Claude Code plugin marketplace shipping pilot-spec (Spec-Driven Development with
 
 ### [github.com/kborovik/lab5.ca](https://github.com/kborovik/lab5.ca)
 
-*Skills: Software Development, DevOps & Cloud Platforms*
+*Skills: Software Development, DevOps & Operations*
 
 Engineering practice site and publishing platform for AI-augmented development — Astro 6, Tailwind v4, TypeScript, and Cloudflare Workers, fully type-checked end-to-end. Spec-driven with deploy-on-push CI/CD via GitHub Actions; built entirely with Claude Code.
 
@@ -99,6 +99,13 @@ Engineering practice site and publishing platform for AI-augmented development �
 
 ## Skills
 
+### AI & LLM Engineering
+
+Agents: Agentic AI Development, AI Agents, AI Engineering
+Models & APIs: Large Language Models (LLM), LLM Integration, Anthropic Claude, Anthropic API, Google Gemini
+Tooling: Pydantic AI, Model Context Protocol (MCP), Retrieval-Augmented Generation (RAG), Prompt Engineering
+AI-Augmented Development: Claude Code, Claude Skills, AI-Augmented Development
+
 ### Software Development
 
 Languages: Python, TypeScript, Node.js, Bash, SQL
@@ -113,7 +120,7 @@ Testing: Pytest, Test Automation, Unit Testing
 Methodologies: Test-Driven Development (TDD), Spec-Driven Development (SDD)
 Foundations: Git, Version Control, Object-Oriented Programming
 
-### DevOps & Cloud Platforms & Platform Engineering
+### DevOps & Operations
 
 Google Cloud Platform (GCP): Cloud Run, Cloud Functions, BigQuery, Vertex AI, Cloud SQL, Cloud Composer, Pub/Sub
 Microsoft Azure: Azure App Service, Azure Functions, Azure Service Bus, Azure Key Vault
@@ -125,10 +132,3 @@ Orchestration: Apache Airflow, Workflow Orchestration
 Systems: Linux, Shell Scripting, YAML
 Observability: Observability, OpenTelemetry, Pydantic Logfire, GCP Cloud Logging, GCP Log Analysis
 Security & Compliance: Cloud Security, Secrets Management, Identity and Access Management (IAM), NIST 800-53, PCI DSS
-
-### AI & LLM Engineering
-
-Agents: Agentic AI Development, AI Agents, AI Engineering
-Models & APIs: Large Language Models (LLM), LLM Integration, Anthropic Claude, Anthropic API, Google Gemini
-Tooling: Pydantic AI, Model Context Protocol (MCP), Retrieval-Augmented Generation (RAG), Prompt Engineering
-AI-Augmented Development: Claude Code, Claude Skills, AI-Augmented Development

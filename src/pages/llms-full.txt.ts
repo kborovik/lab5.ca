@@ -21,7 +21,7 @@ export const GET: APIRoute = async () => {
     )
     .join('\n\n');
 
-  const body = `# Konstantin Borovik — Software Engineer | DevOps Engineer
+  const body = `# Konstantin Borovik — Software Engineer | AI & LLM Engineering
 
 Toronto, Ontario, Canada.
 
@@ -41,11 +41,11 @@ MailPilot is the live AI-agent reference: a Pydantic AI agent on Google Cloud, h
 
 ## What I do
 
-01 Software Development. Python and TypeScript backends and full-stack applications — FastAPI, Pydantic, Astro, Cloudflare Workers. REST APIs, event-driven architectures, structured-extraction pipelines on PostgreSQL. Test-driven and spec-driven; Pytest end-to-end. Reference builds: github.com/kborovik/mailpilot, github.com/kborovik/lab5.ca.
+01 AI & LLM Engineering. Production agentic systems on Anthropic Claude and Google Gemini — Pydantic AI, multi-agent orchestration, RAG over knowledge bases, Model Context Protocol (MCP) integrations, prompt engineering. Claude Code plugins and skills for developer workflows. MailPilot is the live reference: github.com/kborovik/mailpilot.
 
-02 DevOps. Google Cloud and Azure infrastructure shipped with Terraform and Ansible — Cloud Run, GKE, Docker, Kubernetes, Cloud SQL, IAM, org policies. CI/CD via GitHub Actions and Azure DevOps, ETL on Cloud Composer / Apache Airflow, observability with OpenTelemetry and Pydantic Logfire. NIST 800-53 and PCI DSS controls. Reference: github.com/kborovik/gcp-devops.
+02 Software Development. Python and TypeScript backends and full-stack applications — FastAPI, Pydantic, Astro, Cloudflare Workers. REST APIs, event-driven architectures, structured-extraction pipelines on PostgreSQL. Test-driven and spec-driven; Pytest end-to-end. Reference builds: github.com/kborovik/mailpilot, github.com/kborovik/lab5.ca.
 
-03 AI & LLM Engineering. Production agentic systems on Anthropic Claude and Google Gemini — Pydantic AI, multi-agent orchestration, RAG over knowledge bases, Model Context Protocol (MCP) integrations, prompt engineering. Claude Code plugins and skills for developer workflows. MailPilot is the live reference: github.com/kborovik/mailpilot.
+03 DevOps & Operations. Google Cloud and Azure infrastructure shipped with Terraform and Ansible — Cloud Run, GKE, Docker, Kubernetes, Cloud SQL, IAM, org policies. CI/CD via GitHub Actions and Azure DevOps, ETL on Cloud Composer / Apache Airflow, observability with OpenTelemetry and Pydantic Logfire. NIST 800-53 and PCI DSS controls. Reference: github.com/kborovik/gcp-devops.
 
 ## Projects
 
