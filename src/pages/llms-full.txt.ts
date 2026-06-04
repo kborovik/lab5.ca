@@ -18,19 +18,19 @@ export const GET: APIRoute = async () => {
 
 Toronto, Ontario, Canada.
 
-20+ years of generalist software delivery — from enterprise data centers and systems engineering to cloud architecture to production AI agents. Built and shipped at every scale.
+AI & LLM Engineering — production agentic systems on Anthropic Claude and Google Gemini, Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), structured extraction. Each capability anchored on a public GitHub repository — proof, not pitch.
 
-What I do now: cloud infrastructure, AI agents for business workflows, and web development. Each capability anchored on a public GitHub repository — proof, not pitch.
+MailPilot is the live AI-agent reference: a Pydantic AI agent on Google Cloud, handling real business email end-to-end.
 
-MailPilot is the live AI-agent reference: a Pydantic AI agent on Google Cloud, handling real business email end-to-end. This site is part of the proof — Astro, Tailwind, Cloudflare Workers, spec-driven.
+20+ years of generalist software delivery — from enterprise data centers and systems engineering to cloud architecture to production AI agents. Software development and DevOps across Google Cloud and Azure. This site is part of the proof — Astro, Tailwind, Cloudflare Workers, spec-driven.
 
 ## Claims
 
-- 20+ years shipping production systems — data centers, global payments, commercial real estate, AI automation.
-- Python and TypeScript daily; production LLM agents on Pydantic AI and the Claude API.
-- Google Cloud infrastructure shipped with Terraform, GitHub Actions, and Cloud Run — one engineer, end-to-end.
+- Production LLM agents on Pydantic AI and the Claude API — RAG, Model Context Protocol (MCP), structured extraction.
 - MailPilot built end-to-end: Pydantic AI agent, GCP backend, IaC, deploy — live at hello@lab5.ca.
-- Current focus: cloud infrastructure, AI agents for business workflows, and web development.
+- 20+ years shipping production systems — data centers, global payments, commercial real estate, AI automation.
+- Python and TypeScript daily; Google Cloud infrastructure with Terraform, GitHub Actions, and Cloud Run — one engineer, end-to-end.
+- Current focus: AI agents for business workflows, software development, and cloud infrastructure.
 
 ## What I do
 
