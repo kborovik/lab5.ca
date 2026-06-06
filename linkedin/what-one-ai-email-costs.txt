@@ -1,0 +1,15 @@
+Blog: What one AI email actually costs
+
+Most AI ROI talk is hand-waving. So I wrote up a traced, per-email cost from a production agent.
+
+The number, end to end: about $0.03 per email, in roughly 20 seconds, for a sourced reply grounded in product documentation. Versus a knowledgeable person at a $40/hour loaded rate, the same lookup-and-reply task is around $5 and the customer waits hours. At 1,000 emails a month, that is ~$30 vs ~$5,000 — more than a 100x difference, and hours-to-seconds in speed.
+
+The point is not "replace people." A category of repetitive, lookup-heavy email stops consuming a sizable chunk of skilled time each month and gets answered instantly — freeing that person for work that actually needs them.
+
+The real risk is not cost. It is the agent confidently inventing a spec, a price, or a model number and sending it to a customer over your name. So the engineering discipline is the part most pilots skip: ground every answer in a source, cite the file it came from, and decline rather than improvise when the question is out of scope. In a recent run of 29 inbound emails, every one of the 5 out-of-scope questions was correctly declined — no fabricated specs.
+
+The post also separates operating cost (~$0.03 per email) from build cost — the one-time engineering investment of retrieval, grounding, guardrails, observability, scale-to-zero deploy. An ROI number that hides the build cost is exactly the kind of claim the AI hype cycle has earned its skepticism for.
+
+Numbers read straight from OpenTelemetry traces in Logfire — checkable, not asserted.
+
+Read the full post: https://lab5.ca/blog/what-one-ai-email-costs/
