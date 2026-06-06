@@ -9,8 +9,8 @@ body {
 }
 
 @theme {
-  /* Typography — IBM Plex Mono (site-wide default) */
-  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+  /* Typography — dual-family per §V.31(∆): Space Grotesk prose default site-wide (token name `--font-mono` retained ∵ Tailwind `font-mono` class ≡ body default ∴ rename ! class-sweep); code surface family override declared on `.prose code` ∧ `.prose pre` rules below */
+  --font-mono: 'Space Grotesk', system-ui, -apple-system, sans-serif;
 
   /* Canvas / Backgrounds */
   --color-gh-canvas: #ffffff;
@@ -255,6 +255,7 @@ body {
   padding: 0.1em 0.35em;
   font-size: 0.9em;
   color: var(--color-gh-fg);
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
 }
 
 .prose pre {
@@ -265,6 +266,7 @@ body {
   overflow-x: auto;
   font-size: 0.85rem;
   line-height: 1.6;
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
 }
 
 .prose pre code {
@@ -272,6 +274,7 @@ body {
   border: 0;
   padding: 0;
   font-size: inherit;
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
 }
 
 .prose img {

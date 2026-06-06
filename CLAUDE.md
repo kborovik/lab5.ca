@@ -36,6 +36,8 @@ makefile, og.html, linkedin-banner.html, wrangler.jsonc
 
 Routes/domains/palette/typeface/asset list/blog schema/CTA URLs → §I. Tailwind v4 ∈ `@theme` ∈ `global.css` (§V.37); ⊥ `tailwind.config.js`.
 
+Typeface (§C): Space Grotesk for body/headings/nav + IBM Plex Mono for code/pre across site + social assets.
+
 ## voice (§V.11 anti-examples)
 
 - ⊥ aspirational verbs: "move faster", "transform", "unlock", "empower"
@@ -43,7 +45,7 @@ Routes/domains/palette/typeface/asset list/blog schema/CTA URLs → §I. Tailwin
 - ⊥ persona breakouts: Owner / CTO / COO
 - ⊥ marketing decoration: pill badges, stacked hero CTAs, colored icon boxes, "Learn more →"
 - ∋ tech vocab: LLM, retrieval, structured extraction, system of record, idempotent state machine
-- ref aesthetic: openspec.dev, Stripe docs (framework-docs / terminal, ⊥ SaaS marketing)
+- ref aesthetic: openspec.dev, Stripe docs (framework-docs, ⊥ SaaS marketing)
 
 ## casing (§V.12–14 examples)
 
