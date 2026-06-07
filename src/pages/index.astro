@@ -2,10 +2,53 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import headshot from '../assets/konstantin-borovik-headshot.jpg';
+
+const bookCallHref = 'https://calendar.app.google/cYM3H3TsHsequR587';
+const costPostHref = '/blog/what-one-ai-email-costs';
+const primaryCtaClass =
+  'inline-flex items-center gap-2 rounded-lg bg-gh-green px-4 py-2 text-base font-semibold text-white transition-colors hover:bg-gh-green-hover';
+const secondaryCtaClass =
+  'inline-flex items-center gap-2 rounded-lg border border-gh-border bg-white px-4 py-2 text-base font-semibold text-gh-fg transition-colors hover:bg-gh-canvas-subtle';
+const secondaryLinkClass =
+  'text-gh-green underline underline-offset-[3px] hover:text-gh-green-hover transition-colors';
+
+const moneyDiscipline = [
+  { lead: 'Measure cost per outcome', body: 'per email, per document, per ticket — not token volume.' },
+  { lead: 'Cap usage', body: 'so a bug can’t run up a fortune overnight.' },
+  { lead: 'Instrument every call', body: 'so you can see exactly where the money goes.' },
+  { lead: 'Ground answers in real sources', body: 'and decline when uncertain, so the system doesn’t invent facts under your brand.' },
+  { lead: 'Scale to zero when idle', body: 'so you’re not paying for it overnight.' },
+];
+
+const trackRecord = [
+  {
+    lead: '20+ years shipping production software',
+    body: 'data centers, payments, real estate. This isn’t my first system that has to work on Monday.',
+  },
+  {
+    lead: 'Solo, end-to-end delivery',
+    body: 'back-end, infrastructure, CI/CD, deployment, observability. One accountable owner, full product-cycle ownership.',
+  },
+  {
+    lead: 'AI agents in production today',
+    body: 'LLMs, retrieval (RAG), structured extraction, with the guardrails and tracing that make them safe to put in front of customers.',
+  },
+  {
+    lead: 'Toronto-based, long-term contract',
+    body: 'embedded with your team, not a drive-by engagement.',
+  },
+];
+
+const costTable = [
+  { metric: 'Cost per sourced reply', mailpilot: '~$0.03', person: '~$5.00' },
+  { metric: 'Response time', mailpilot: '~20 seconds', person: 'hours' },
+  { metric: 'Out-of-scope questions', mailpilot: 'declines, no guessing', person: 'varies' },
+  { metric: 'At 1,000 emails / month', mailpilot: '~$30', person: '~$5,000' },
+];
 ---
 
 <Layout
-  description="AI & LLM Engineering — production agentic systems on Anthropic Claude and Google Gemini, Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), structured extraction. Konstantin Borovik, Software Engineer in Toronto; 20+ years shipping software, cloud infrastructure, and DevOps."
+  description="AI & LLM systems that do real work — measured cost per outcome, production agents traced to the dollar. Konstantin Borovik, Software Engineer in Toronto; 20+ years shipping software, AI agents in production today."
 >
   <!-- (a) hero -->
   <section class="mx-auto max-w-5xl px-6 pt-16 pb-12 sm:pt-20 sm:pb-14 font-mono">
@@ -13,12 +56,27 @@ import headshot from '../assets/konstantin-borovik-headshot.jpg';
 
       <div class="sm:col-span-2">
         <h1 class="animate-hero text-3xl font-bold tracking-tight text-gh-fg sm:text-4xl" style="animation-delay: 0ms;">
-          Konstantin Borovik
+          LLM systems that do real work &mdash; without becoming a money pit.
         </h1>
-        <p class="animate-hero mt-3 text-base font-semibold text-gh-fg sm:text-lg" style="animation-delay: 80ms;">
-          Software Engineer | AI &amp; LLM Engineering
+        <p class="animate-hero mt-4 text-base leading-relaxed text-gh-fg-muted sm:text-lg" style="animation-delay: 80ms;">
+          I build and optimize business processes with AI agents, then measure the cost per outcome so you can see the return before you scale it. Production systems, traced to the dollar &mdash; not pilots that quietly bleed.
         </p>
-        <div class="animate-hero mt-4 flex flex-wrap gap-3" style="animation-delay: 160ms;">
+
+        <div class="animate-hero mt-6 flex flex-wrap items-center gap-x-5 gap-y-3" style="animation-delay: 160ms;">
+          <a href={bookCallHref} target="_blank" rel="noopener noreferrer" class={primaryCtaClass}>
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7v-5z"/></svg>
+            Book a 30-minute call
+          </a>
+          <a href={costPostHref} class={secondaryCtaClass}>
+            See the cost-per-outcome math
+          </a>
+        </div>
+
+        <p class="animate-hero mt-5 text-xs text-gh-fg-muted sm:text-sm" style="animation-delay: 240ms;">
+          20+ years shipping production software &middot; AI agents running in production today &middot; Toronto-based
+        </p>
+
+        <div class="animate-hero mt-6 flex flex-wrap gap-3" style="animation-delay: 320ms;">
           <a
             href="https://www.linkedin.com/in/kborovik"
             target="_blank"
@@ -46,30 +104,48 @@ import headshot from '../assets/konstantin-borovik-headshot.jpg';
         width={400}
         height={400}
         class="animate-hero mx-auto h-40 w-40 rounded-lg border border-gh-border object-cover object-top sm:mx-0 sm:h-48 sm:w-48"
-        style="animation-delay: 320ms;"
+        style="animation-delay: 400ms;"
       />
 
     </div>
   </section>
 
-  <!-- (b) // what I do — 3-tile services grid per V2 -->
+  <!-- (b) the problem -->
+  <section class="mx-auto max-w-5xl px-6 pb-12 sm:pb-14 font-mono">
+    <h2 class="section-kicker animate-on-scroll text-base font-bold uppercase tracking-[0.2em] text-gh-blue" style="transition-delay: 0ms;">
+      the problem
+    </h2>
+    <div class="animate-on-scroll mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-gh-fg-muted" style="transition-delay: 80ms;">
+      <p>
+        Every business runs on a layer of repetitive, lookup-heavy work that quietly consumes skilled time. Answering the same product questions over and over. Pulling a number out of a document and writing it into a reply. Triaging inbound email. Filling the same fields from the same forms. None of it is hard &mdash; that&rsquo;s exactly why it&rsquo;s expensive. It&rsquo;s a knowledgeable person, on a loaded salary, spending hours a week on tasks that follow a pattern.
+      </p>
+      <p>
+        The cost is hidden because it never shows up as a line item. It&rsquo;s spread across people who could be doing higher-value work, and across customers who wait hours for an answer that could take seconds.
+      </p>
+      <p>
+        <span class="font-semibold text-gh-fg">This is the work LLM systems are genuinely good at</span> &mdash; high-volume, repetitive, rule-following tasks, done instantly and consistently. The promise is simple: take that repetitive load off your team, answer it in seconds instead of hours, and free your skilled people for the work that actually needs a human.
+      </p>
+      <p>
+        The catch is that it has to be built so you can trust it and afford it &mdash; grounded in real sources, designed to decline rather than guess, and measured to the dollar. To show what that looks like in practice, here&rsquo;s a real one I built and the math behind it.
+      </p>
+    </div>
+  </section>
+
+  <!-- (c) what I do — 2-offer block -->
   <section class="mx-auto max-w-5xl px-6 pb-12 sm:pb-14 font-mono">
     <h2 class="section-kicker animate-on-scroll text-base font-bold uppercase tracking-[0.2em] text-gh-blue" style="transition-delay: 0ms;">
       what I do
     </h2>
 
-    <div class="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-x-12 sm:gap-y-14">
-
+    <div class="mt-10 grid gap-10 sm:grid-cols-2 sm:gap-x-12">
       <div class="animate-on-scroll" style="transition-delay: 0ms;">
         <div class="flex items-baseline gap-2 text-xs text-gh-fg-muted">
           <span>01</span>
           <span class="h-px flex-1 bg-gh-border"></span>
         </div>
-        <h3 class="mt-3 text-base font-semibold text-gh-fg">
-          AI &amp; LLM Engineering
-        </h3>
-        <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted">
-          Anthropic Claude &middot; Google Gemini &middot; Pydantic AI &middot; LLM Agents &middot; Agentic AI Development &middot; RAG &middot; Structured Extraction &middot; MCP &middot; Prompt Engineering &middot; Claude Code &middot; Claude Skills &middot; AI-Augmented Development
+        <h3 class="mt-3 text-base font-semibold text-gh-fg">Build</h3>
+        <p class="mt-3 text-sm leading-relaxed text-gh-fg-muted sm:text-base">
+          A new business process, powered by an LLM agent and built to be measured from day one. High-volume, lookup-heavy, repetitive work &mdash; pre-sales questions, RFP responses, document processing, tier-one support &mdash; answered instantly and consistently, with the cost per outcome traced before you scale it.
         </p>
       </div>
 
@@ -78,73 +154,143 @@ import headshot from '../assets/konstantin-borovik-headshot.jpg';
           <span>02</span>
           <span class="h-px flex-1 bg-gh-border"></span>
         </div>
-        <h3 class="mt-3 text-base font-semibold text-gh-fg">
-          Software Development
-        </h3>
-        <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted">
-          Python &middot; TypeScript &middot; Bash &middot; SQL &middot; FastAPI &middot; Pydantic &middot; Astro &middot; Cloudflare Workers &middot; REST APIs &middot; OpenAPI &middot; Event-Driven Architecture &middot; Microservices &middot; PostgreSQL &middot; ETL &middot; Structured-Extraction Pipelines &middot; Pytest &middot; TDD
+        <h3 class="mt-3 text-base font-semibold text-gh-fg">Optimize / rescue</h3>
+        <p class="mt-3 text-sm leading-relaxed text-gh-fg-muted sm:text-base">
+          An AI initiative that&rsquo;s stalled or running up a bill nobody can explain. I instrument what it&rsquo;s actually doing, find where the money goes, cap the runaway paths, and add the grounding and guardrails that should have been there first &mdash; so it earns its keep instead of becoming the budget line you regret.
         </p>
       </div>
+    </div>
 
-      <div class="animate-on-scroll" style="transition-delay: 160ms;">
-        <div class="flex items-baseline gap-2 text-xs text-gh-fg-muted">
-          <span>03</span>
-          <span class="h-px flex-1 bg-gh-border"></span>
-        </div>
-        <h3 class="mt-3 text-base font-semibold text-gh-fg">
-          DevOps &amp; Cloud Platforms
-        </h3>
-        <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted">
-          Google Cloud &middot; Azure &middot; Terraform &middot; Ansible &middot; Helm &middot; GitHub Actions &middot; Azure DevOps &middot; Docker &middot; Kubernetes &middot; GKE &middot; AKS &middot; Cloud Run &middot; Apache Airflow &middot; IaC &middot; CI/CD &middot; OpenTelemetry &middot; IAM &middot; NIST 800-53 &middot; PCI DSS
-        </p>
-      </div>
+    <p class="animate-on-scroll mt-10 max-w-3xl text-sm leading-relaxed text-gh-fg-muted sm:text-base" style="transition-delay: 160ms;">
+      Either way you get one senior owner end to end: the retrieval, the guardrails, the observability, the deployment. No layer of account managers between you and the person building it.
+    </p>
+  </section>
 
+  <!-- (d) proof — MailPilot evidence -->
+  <section class="mx-auto max-w-5xl px-6 pb-12 sm:pb-14 font-mono">
+    <h2 class="section-kicker animate-on-scroll text-base font-bold uppercase tracking-[0.2em] text-gh-blue" style="transition-delay: 0ms;">
+      proof
+    </h2>
+
+    <div class="animate-on-scroll mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-gh-fg-muted" style="transition-delay: 80ms;">
+      <p>
+        I built <span class="font-semibold text-gh-fg">MailPilot</span> to solve a business problem of my own &mdash; a production AI agent running on my company&rsquo;s inbox, not a product I sell. It reads an incoming business email, searches a knowledge base, and replies with a sourced answer in under a minute. If the question is outside its knowledge base, it declines and says so rather than guessing. It&rsquo;s a live system &mdash; <a href="/mailpilot" class={secondaryLinkClass}>you can email it yourself</a>, not watch a demo video.
+      </p>
+      <p>Every model call is traced, so the economics aren&rsquo;t a guess:</p>
+    </div>
+
+    <div class="animate-on-scroll mt-6 overflow-x-auto" style="transition-delay: 160ms;">
+      <table class="w-full max-w-3xl border border-gh-border text-sm">
+        <thead class="bg-gh-canvas-subtle">
+          <tr>
+            <th class="px-4 py-3 text-left font-semibold text-gh-fg"></th>
+            <th class="px-4 py-3 text-left font-semibold text-gh-fg">MailPilot (measured)</th>
+            <th class="px-4 py-3 text-left font-semibold text-gh-fg">A person (assumption)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {costTable.map((row, idx) => (
+            <tr class={idx < costTable.length - 1 ? 'border-b border-gh-border' : ''}>
+              <td class="px-4 py-3 font-semibold text-gh-fg">{row.metric}</td>
+              <td class="px-4 py-3 text-gh-fg-muted">{row.mailpilot}</td>
+              <td class="px-4 py-3 text-gh-fg-muted">{row.person}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="animate-on-scroll mt-8 max-w-3xl space-y-4 text-base leading-relaxed text-gh-fg-muted" style="transition-delay: 240ms;">
+      <p>
+        More than a 100&times; difference in cost, hours-to-seconds in speed. The point isn&rsquo;t to replace people &mdash; you can&rsquo;t fire 1/100th of an employee. It&rsquo;s that a category of repetitive work stops consuming thousands of dollars of skilled time and frees that person for work that needs them.
+      </p>
+      <p>
+        <span class="font-semibold text-gh-fg">The real risk isn&rsquo;t cost &mdash; it&rsquo;s an agent confidently inventing a price or a spec and sending it over your name.</span> MailPilot grounds every answer in a source document and cites the file it used, so any reply is checkable. In a recent test run, every out-of-scope question was correctly declined and none produced a fabricated specification. That behavior is measured in the logs, not asserted in a slide.
+      </p>
+      <p>
+        <a href={costPostHref} class={secondaryLinkClass}>
+          Read the full cost-per-outcome breakdown &rarr;
+        </a>
+      </p>
     </div>
   </section>
 
-  <!-- (c) // claims — falsifiable facts -->
+  <!-- (f) how the money stays under control -->
   <section class="mx-auto max-w-5xl px-6 pb-12 sm:pb-14 font-mono">
     <h2 class="section-kicker animate-on-scroll text-base font-bold uppercase tracking-[0.2em] text-gh-blue" style="transition-delay: 0ms;">
-      claims
+      how the money stays under control
     </h2>
-    <ul class="animate-on-scroll mt-6 space-y-2 text-sm leading-relaxed text-gh-fg-muted sm:text-base" style="transition-delay: 80ms;">
-      <li class="flex gap-3">
-        <span class="text-gh-fg-muted">&minus;</span>
-        <span>20+ years shipping production software &mdash; data centers, payments, real estate</span>
-      </li>
-      <li class="flex gap-3">
-        <span class="text-gh-fg-muted">&minus;</span>
-        <span>AI agents in production &mdash; LLMs, RAG, structured extraction</span>
-      </li>
-      <li class="flex gap-3">
-        <span class="text-gh-fg-muted">&minus;</span>
-        <span>Solo delivery, end-to-end &mdash; back-end, IaC, CI/CD, deploy, observability</span>
-      </li>
-      <li class="flex gap-3">
-        <span class="text-gh-fg-muted">&minus;</span>
-        <span>Toronto-based, long-term contract &mdash; embedded, full product cycle ownership</span>
-      </li>
+    <p class="animate-on-scroll mt-6 max-w-3xl text-base leading-relaxed text-gh-fg-muted" style="transition-delay: 80ms;">
+      None of this is exotic &mdash; it&rsquo;s just the discipline most pilots skip:
+    </p>
+    <ul class="animate-on-scroll mt-6 max-w-3xl space-y-3 text-base leading-relaxed text-gh-fg-muted" style="transition-delay: 160ms;">
+      {moneyDiscipline.map(item => (
+        <li class="flex gap-3">
+          <span class="text-gh-fg-muted">&minus;</span>
+          <span><span class="font-semibold text-gh-fg">{item.lead}</span> &mdash; {item.body}</span>
+        </li>
+      ))}
     </ul>
+    <p class="animate-on-scroll mt-8 max-w-3xl text-base leading-relaxed text-gh-fg-muted" style="transition-delay: 240ms;">
+      That&rsquo;s the difference between the 5% and the 95%, and it&rsquo;s mostly a question of how the system is built &mdash; not which model it uses.
+    </p>
   </section>
 
-  <!-- (e) // proof of skills — link list -->
+  <!-- (g) why me — wholesale-vs-retail + track record -->
   <section class="mx-auto max-w-5xl px-6 pb-12 sm:pb-14 font-mono">
     <h2 class="section-kicker animate-on-scroll text-base font-bold uppercase tracking-[0.2em] text-gh-blue" style="transition-delay: 0ms;">
-      proof of skills
+      why me
     </h2>
-    <a
-      href="/mailpilot"
-      class="animate-on-scroll mt-6 block rounded-lg border border-gh-border bg-gh-canvas-subtle px-6 py-5 transition-colors hover:bg-white"
-      style="transition-delay: 80ms;"
-    >
-      <div class="flex items-baseline justify-between gap-4">
-        <span class="text-sm font-bold text-gh-green sm:text-base underline underline-offset-[3px]">Let AI handle your repeat email questions &rarr;</span>
-        <span class="text-xs text-gh-fg-muted">/mailpilot</span>
-      </div>
-      <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted">
-        Production LLM agent that auto-answers business email inquiries &mdash; retrieval (RAG) over a knowledge base, sourced replies in under 60 seconds. Send a question to <span class="font-bold text-gh-fg">hello@lab5.ca</span>.
+
+    <div class="animate-on-scroll mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-gh-fg-muted" style="transition-delay: 80ms;">
+      <p>
+        <span class="font-semibold text-gh-fg">You pay wholesale, not retail.</span>
       </p>
-    </a>
+      <p>
+        When you hire a software agency, most of your bill never reaches the people writing your software. It pays for the sales team that closed the deal, the account manager who forwards your emails, the project manager who runs the standups, and the margin stacked on top of all of it. The engineer doing the actual work often sees only a fraction of the rate you&rsquo;re billed &mdash; by common estimates as little as a quarter of it. Put the other way: the rate an agency charges is frequently three to four times what reaches the person who writes your code.
+      </p>
+      <p>
+        Working with me, that overhead doesn&rsquo;t exist. No sales layer, no management tier, no markup on a subcontractor. You pay the person building the system directly &mdash; and you get that senior person on every call, not a junior assigned after the pitch.
+      </p>
+      <p>
+        It&rsquo;s also why the strongest engineers don&rsquo;t stay at agencies: the model keeps most of what they earn. Going direct gets you the more senior person <span class="font-semibold text-gh-fg">and</span> the lower rate at once &mdash; the two things an agency&rsquo;s structure is built to keep apart.
+      </p>
+    </div>
+
+    <p class="animate-on-scroll mt-10 max-w-3xl text-base font-semibold text-gh-fg" style="transition-delay: 160ms;">
+      And the track record behind it:
+    </p>
+    <ul class="animate-on-scroll mt-4 max-w-3xl space-y-3 text-base leading-relaxed text-gh-fg-muted" style="transition-delay: 240ms;">
+      {trackRecord.map(item => (
+        <li class="flex gap-3">
+          <span class="text-gh-fg-muted">&minus;</span>
+          <span><span class="font-semibold text-gh-fg">{item.lead}</span> &mdash; {item.body}</span>
+        </li>
+      ))}
+    </ul>
+
+    <p class="animate-on-scroll mt-8 max-w-3xl text-sm leading-relaxed text-gh-fg-muted" style="transition-delay: 320ms;">
+      <span class="font-semibold text-gh-fg">Built on:</span> Anthropic Claude &middot; Google Gemini &middot; Python &middot; FastAPI &middot; Pydantic AI &middot; RAG &middot; MCP &middot; Google Cloud / Azure &middot; Terraform &middot; Kubernetes &middot; OpenTelemetry
+    </p>
+  </section>
+
+  <!-- (h) closing CTA -->
+  <section class="mx-auto max-w-5xl px-6 pb-16 sm:pb-20 font-mono">
+    <h2 class="section-kicker animate-on-scroll text-base font-bold uppercase tracking-[0.2em] text-gh-blue" style="transition-delay: 0ms;">
+      closing
+    </h2>
+    <div class="animate-on-scroll mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-gh-fg-muted" style="transition-delay: 80ms;">
+      <p>
+        If you&rsquo;re evaluating whether AI can do real work in your business without becoming a money pit &mdash; that&rsquo;s precisely the question I build for, and measure.
+      </p>
+      <p>Want the cost-per-outcome math on a workflow in your own operation?</p>
+    </div>
+    <div class="animate-on-scroll mt-6" style="transition-delay: 160ms;">
+      <a href={bookCallHref} target="_blank" rel="noopener noreferrer" class={primaryCtaClass}>
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7v-5z"/></svg>
+        Book a 30-minute call
+      </a>
+    </div>
   </section>
 
 </Layout>
