@@ -234,7 +234,7 @@ single query I learned:
 
 - The Drive search returned two near-duplicate files about the same
   product line.
-- The model chose to read **both** files in parallel.
+- The model chose to read both files in parallel.
 - The fast call &mdash; 1.12s &mdash; contained the full markdown including
   the answer the user was asking about.
 - The hung call &mdash; 60.83s, timeout &mdash; contained a near-duplicate

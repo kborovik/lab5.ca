@@ -15,8 +15,8 @@ consume as many AI tokens as possible on the theory that more usage means more
 productivity. And the most-cited research of the year found that roughly 95% of
 enterprise AI pilots showed no measurable financial return.
 
-So the question on the table for any CIO or CFO is fair and blunt: **is this a money
-pit?**
+So the question on the table for any CIO or CFO is fair and blunt: **is AI in
+production a money pit?**
 
 Here is the thing the horror stories miss. Token volume was never the metric. A
 company can burn a fortune in tokens and get nothing, or spend almost nothing and
