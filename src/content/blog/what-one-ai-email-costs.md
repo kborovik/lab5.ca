@@ -85,12 +85,13 @@ MailPilot is built to ground every answer in a source document and to **cite the
 it used**, so any answer can be checked against the original. When a question falls
 outside its knowledge base, it is built to decline rather than improvise.
 
-That behavior is measured, not asserted. In a recent test run of 29 inbound emails,
-every one of the 5 out-of-scope questions was correctly declined — none produced a
-fabricated specification. The answered questions each cited their source document.
-Under a burst of concurrent traffic the system hit 2 transient tool errors, both
-contained — the emails still went out, and nothing crashed. I am not going to claim
-an AI is never wrong. I am going to claim this one refuses to invent facts when it
+That behavior is measured, not asserted. Over the last 4 days of production traffic
+MailPilot answered 131 inbound product questions: every reply cited a source
+document, none was sent without one, and all 131 runs completed cleanly. Under
+bursts of concurrent traffic the agent hit 30 transient tool errors across 658 tool
+calls (~4.6% per-call), and every one of the 131 replies still went out — the
+system retried through the errors and nothing crashed. I am not going to claim an
+AI is never wrong. I am going to claim this one refuses to invent facts when it
 lacks a source, and that the claim is checkable in the logs.
 
 ## Why most AI spend fails, and what makes the difference
@@ -119,9 +120,10 @@ for.
 
 So you can weigh this properly: the $0.03 figure is the cost of a fresh question;
 an ongoing back-and-forth thread costs more, because the conversation history is
-re-sent each turn. The $5 human figure is my assumption, laid out above so
-you can substitute your own. And the accuracy numbers are from an initial test run —
-I am compiling 2 weeks of data for a fuller picture and will update this post.
+re-sent each turn. Across 131 production replies over the last 4 days the median
+per-email cost was ~$0.15 and the p90 was ~$0.24, because most of that traffic is
+mid-thread, not fresh. The $5 human figure is my assumption, laid out above so you
+can substitute your own.
 
 If you are evaluating whether AI can do real work in your business without becoming a
 money pit, that is precisely the question I build for, and measure. If you want to
@@ -141,11 +143,14 @@ tool definitions, and the retrieved source document, with about half served from
 prompt cache — and a few hundred output tokens.
 
 The per-email cost scales with thread length: as a conversation accumulates history,
-each turn re-sends it, so input tokens (and cost) climb. In a stress test that fired
-25+ emails into one mailbox, per-email cost ramped from ~$0.027 on a fresh thread to
-~$0.17 once the history grew to 50-plus messages. The representative figure for the
-"customer asks a question, gets an answer" scenario is the fresh-thread cost; the
-ramp is a lever (history truncation and summarization) rather than a fixed cost.
+each turn re-sends it, so input tokens (and cost) climb. Across 131 production runs
+in the last 4 days, per-email cost ranged from ~$0.016 on the cheapest fresh
+question to ~$0.37 at the heaviest observed thread (~278K input tokens, deep
+conversation history, 29 tool calls). The fresh-thread average held at ~$0.03; the
+median across all threads, including long ones, was ~$0.15. The representative
+figure for the "customer asks a question, gets an answer" scenario is the
+fresh-thread cost; the ramp is a lever (history truncation and summarization)
+rather than a fixed cost.
 
 The agent, the smoke-test harness, and the grounding logic are on GitHub:
 [github.com/kborovik/mailpilot](https://github.com/kborovik/mailpilot).
