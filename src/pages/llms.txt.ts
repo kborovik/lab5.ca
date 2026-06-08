@@ -15,7 +15,7 @@ export const GET: APIRoute = async () => {
 
   const body = `# Konstantin Borovik
 
-> AI & LLM Engineering — production agentic systems on Anthropic Claude and Google Gemini, Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), structured extraction. Software Engineer in Toronto; 20+ years shipping software, cloud infrastructure, and DevOps across Google Cloud and Azure. MailPilot is the live AI-agent reference.
+> LLM systems that do real work — without becoming a money pit. I build and optimize business processes with AI agents, then measure the cost per outcome so you can see the return before you scale it. Software Engineer in Toronto; 20+ years shipping production software, AI agents running in production today. MailPilot is the live reference.
 
 ## Pages
 
