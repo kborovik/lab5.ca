@@ -33,3 +33,28 @@ Per V92 (lab5.ca SPEC.md): ∀ URL-accessible surface ! enumerated ∈ §I `asse
    - code − §I → EXTRA (built but undeclared → V92 violation, recurrence class of B15/B16/B19).
 4. Carrier-pairing check: closed §T touching `public/` ∨ `astro.config.mjs integrations[]` ∨ `src/pages/*.{ts,js}` ! pair w/ §I admission ∈ same commit ∨ §B record ∀ intentional deferral.
 5. Internal config refs ∈ {`public/_headers` cache-rule blocks, `src/layouts/Layout.astro` route-label maps} ! reference only §I-enumerated live surfaces — dead-route ∨ dead-build-output refs ≡ V92 violation (same surface-completeness class as B15/B16/B19).
+
+## parity audit — V72(d) recipe extension
+
+Per V72(d)(∆): narrative wording ∈ `src/pages/llms-full.txt.ts` ≡ §V drift target — /sdd:check audits llms-full.txt narrative blocks against corresponding human-facing primary-page source.
+
+**Authoring discipline**: hand-tuned voice retained — author rewrites llms-full.txt narrative TS strings to match human-page intent ∧ register; ⊥ word-for-word HTML strip ∴ mechanical, ⊥ model-generated mirroring.
+
+Per-page mirror pairs → see V72(d)(∆) SPEC.md body (normative source for which page ↔ which blocks).
+
+## bold-self-sufficiency audit — V93 recipe extension
+
+Per V93: ∀ bold-rendered phrase ! ≡ complete self-sufficient claim.
+
+**Banned forms** (with examples):
+- (a) leading-pronoun bold — `This is...`, `It's...`, `That's...`, `They are...`, `Here's...`, `Here is...` — anaphor requires antecedent ∴ ⊥ standalone
+- (b) single-token emphasis on conjunction ∨ preposition — e.g. bolded `and`, `but`, `or`, `for` — emphasis-without-claim, ⊥ standalone meaning
+- (c) label-only bold without labeled value — e.g. `Built on:` w/o tech-stack list bolded — label phrase ⊥ standalone; must extend bold to full clause ∨ drop bold on label
+
+**Admitted forms** (with examples):
+- (i) declarative claim w/ explicit subject + verb — e.g. `MailPilot grounds every answer in a source document.`
+- (ii) brand-noun ∨ proper-noun standalone reference — e.g. `MailPilot`
+- (iii) imperative action-rule short phrase — e.g. `Measure cost per outcome`, `Cap usage`, `Scale to zero when idle` (imperative verb + object)
+- (iv) self-descriptive credentials phrase — e.g. `20+ years shipping production software` (implicit-`I` admitted ∀ self-descriptive credentials ∵ first-person voice context site-wide)
+
+**Orthogonal** to V11 (vocabulary register ≡ separate concern) ∧ V60 (blog heading spine ≡ separate reader pass).
