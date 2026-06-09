@@ -30,9 +30,9 @@ Repetitive, lookup-heavy work is what LLM systems are genuinely good at — high
 
 ## What I do
 
-Build. A new business process, powered by an LLM agent and built to be measured from day one. High-volume, lookup-heavy, repetitive work — pre-sales questions, RFP responses, document processing, tier-one support — answered instantly and consistently, with the cost per outcome traced before you scale it.
+Build Business Processes with AI. A new business process, powered by an LLM agent and built to be measured from day one. High-volume, lookup-heavy, repetitive work — pre-sales questions, RFP responses, document processing, tier-one support — answered instantly and consistently, with the cost per outcome traced before you scale it.
 
-Optimize / Rescue. An AI initiative that's stalled or running up a bill nobody can explain. I instrument what it's actually doing, find where the money goes, cap the runaway paths, and add the grounding and guardrails that should have been there first — so it earns its keep instead of becoming the budget line you regret.
+Rescue a Runaway AI Project. An AI initiative that's stalled or running up a bill nobody can explain. I instrument what it's actually doing, find where the money goes, cap the runaway paths, and add the grounding and guardrails that should have been there first — so it earns its keep instead of becoming the budget line you regret.
 
 Either way you get one senior owner end to end: the retrieval, the guardrails, the observability, the deployment. No layer of account managers between you and the person building it.
 
