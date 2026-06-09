@@ -174,6 +174,9 @@ const costTable = [
 
     <div class="animate-on-scroll mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-gh-fg-muted" style="transition-delay: 80ms;">
       <p>
+        Fair thing to ask first: this is self-reported, it&rsquo;s one project, and the numbers are early. So here is what makes it checkable rather than something you take on my word &mdash; the code is open on GitHub, every model call is traced, and you can email the agent yourself and watch what it does. A claim you can verify beats a testimonial you can&rsquo;t.
+      </p>
+      <p>
         <span class="font-semibold text-gh-fg">I built MailPilot to solve a business problem of my own</span> (not a product I sell) &mdash; a production AI agent running on my company&rsquo;s inbox. It reads an incoming business email, searches a knowledge base, and replies with a sourced answer in under a minute. If the question is outside its knowledge base, it declines and says so rather than guessing.
       </p>
       <p>
@@ -207,7 +210,7 @@ const costTable = [
 
     <div class="animate-on-scroll mt-8 max-w-3xl space-y-4 text-base leading-relaxed text-gh-fg-muted" style="transition-delay: 240ms;">
       <p>
-        More than a 100&times; difference in cost, hours-to-seconds in speed. The point isn&rsquo;t to replace people &mdash; you can&rsquo;t fire 1/100th of an employee. It&rsquo;s that a category of repetitive work stops consuming thousands of dollars of skilled time and frees that person for work that needs them.
+        More than a 100&times; difference in cost, hours-to-seconds in speed. The $5 is my assumption, labeled as one &mdash; swap in your own loaded cost per reply and the ratio shifts, but the order of magnitude doesn&rsquo;t. The point isn&rsquo;t to replace people &mdash; you can&rsquo;t fire 1/100th of an employee. It&rsquo;s that a category of repetitive work stops consuming thousands of dollars of skilled time and frees that person for work that needs them.
       </p>
       <p>
         <span class="font-semibold text-gh-fg">The cost is not the only risk &mdash; it&rsquo;s an agent confidently inventing a price or a spec and sending it over your name.</span> MailPilot grounds every answer in a source document and cites the file it used, so any reply is checkable. Out-of-scope detection and fabrication checks run as mechanical tests in every build cycle &mdash; behavior measured in the logs, not asserted in a slide.
@@ -252,13 +255,25 @@ const costTable = [
         <span class="font-semibold text-gh-fg">You pay wholesale, not retail.</span>
       </p>
       <p>
-        When you hire a software agency, most of your bill never reaches the people writing your software. It pays for the sales team that closed the deal, the account manager who forwards your emails, the project manager who runs the standups, and the margin stacked on top of all of it. The engineer doing the actual work often sees only a fraction of the rate you&rsquo;re billed &mdash; by common estimates as little as a quarter of it. Put the other way: the rate an agency charges is frequently three to four times what reaches the person who writes your code.
+        When you hire a software agency, most of your bill never reaches the people writing your software. It pays for the sales team that closed the deal, the account manager who forwards your emails, the project manager who runs the standups, and the margin stacked on top of all of it. The engineer doing the actual work often sees only a fraction of the rate you&rsquo;re billed. Put the other way: the rate an agency charges is frequently three to four times what reaches the person who writes your code.
       </p>
       <p>
         Working with me, that overhead doesn&rsquo;t exist. No sales layer, no management tier, no markup on a subcontractor. You pay the person building the system directly &mdash; and you get that senior person on every call, not a junior assigned after the pitch.
       </p>
       <p>
         It&rsquo;s also why the strongest engineers don&rsquo;t stay at agencies: the model keeps most of what they earn. Going direct gets you both the more senior person and the lower rate at once &mdash; the two things an agency&rsquo;s structure is built to keep apart.
+      </p>
+    </div>
+
+    <div class="animate-on-scroll mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-gh-fg-muted" style="transition-delay: 120ms;">
+      <p>
+        The quieter worry with one person: what if I get hit by a bus? Worth saying plainly &mdash; every employee is a bus-factor too, and usually a worse one, because the knowledge that walks out with them was never written down.
+      </p>
+      <p>
+        You don&rsquo;t carry that exposure here. You hold the whole system: the code lives in your repository, it runs in your cloud account, and the retrieval, guardrails, and observability come documented in plain language &mdash; not locked in my head. Any competent engineer can pick it up and keep going, which makes the bus-factor lower than most hires give you. It&rsquo;s the inverse of the lock-in an agency sells: handover is a git clone, not a renegotiation.
+      </p>
+      <p>
+        The honest boundary: if the work genuinely needs a full standing team, that&rsquo;s work for a team &mdash; not what I&rsquo;m pitching here.
       </p>
     </div>
 

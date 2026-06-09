@@ -38,6 +38,8 @@ Either way you get one senior owner end to end: the retrieval, the guardrails, t
 
 ## Proof
 
+Fair thing to ask first: this is self-reported, it's one project, and the numbers are early. So here is what makes it checkable rather than something you take on my word — the code is open on GitHub, every model call is traced, and you can email the agent yourself and watch what it does. A claim you can verify beats a testimonial you can't.
+
 I built MailPilot to solve a business problem of my own (not a product I sell) — a production AI agent running on my company's inbox. It reads an incoming business email, searches a knowledge base, and replies with a sourced answer in under a minute. If the question is outside its knowledge base, it declines and says so rather than guessing. You can email it yourself at hello@lab5.ca.
 
 Every model call is traced, so the economics aren't a guess:
@@ -47,7 +49,7 @@ Every model call is traced, so the economics aren't a guess:
 - Out-of-scope questions: MailPilot declines, no guessing vs A person varies
 - At 1,000 emails / month: MailPilot ~$30 vs A person ~$5,000
 
-More than a 100× difference in cost, hours-to-seconds in speed. The point isn't to replace people — you can't fire 1/100th of an employee. It's that a category of repetitive work stops consuming thousands of dollars of skilled time and frees that person for work that needs them.
+More than a 100× difference in cost, hours-to-seconds in speed. The $5 is my assumption, labeled as one — swap in your own loaded cost per reply and the ratio shifts, but the order of magnitude doesn't. The point isn't to replace people — you can't fire 1/100th of an employee. It's that a category of repetitive work stops consuming thousands of dollars of skilled time and frees that person for work that needs them.
 
 The cost is not the only risk — it's an agent confidently inventing a price or a spec and sending it over your name. MailPilot grounds every answer in a source document and cites the file it used, so any reply is checkable. Out-of-scope detection and fabrication checks run as mechanical tests in every build cycle — behavior measured in the logs, not asserted in a slide.
 
@@ -69,11 +71,13 @@ That's the difference between the 5% and the 95%, and it's mostly a question of 
 
 You pay wholesale, not retail.
 
-When you hire a software agency, most of your bill never reaches the people writing your software. It pays for the sales team that closed the deal, the account manager who forwards your emails, the project manager who runs the standups, and the margin stacked on top of all of it. The engineer doing the actual work often sees only a fraction of the rate you're billed — by common estimates as little as a quarter of it. Put the other way: the rate an agency charges is frequently three to four times what reaches the person who writes your code.
+When you hire a software agency, most of your bill never reaches the people writing your software. It pays for the sales team that closed the deal, the account manager who forwards your emails, the project manager who runs the standups, and the margin stacked on top of all of it. The engineer doing the actual work often sees only a fraction of the rate you're billed. Put the other way: the rate an agency charges is frequently three to four times what reaches the person who writes your code.
 
 Working with me, that overhead doesn't exist. No sales layer, no management tier, no markup on a subcontractor. You pay the person building the system directly — and you get that senior person on every call, not a junior assigned after the pitch.
 
 It's also why the strongest engineers don't stay at agencies: the model keeps most of what they earn. Going direct gets you both the more senior person and the lower rate at once — the two things an agency's structure is built to keep apart.
+
+The quieter worry with one person: what if I get hit by a bus? Worth saying plainly — every employee is a bus-factor too, and usually a worse one, because the knowledge that walks out with them was never written down. You don't carry that exposure here. You hold the whole system: the code lives in your repository, it runs in your cloud account, and the retrieval, guardrails, and observability come documented in plain language — not locked in my head. Any competent engineer can pick it up and keep going, which makes the bus-factor lower than most hires give you. It's the inverse of the lock-in an agency sells: handover is a git clone, not a renegotiation. The honest boundary: if the work genuinely needs a full standing team, that's work for a team — not what I'm pitching here.
 
 The credentials behind that:
 
