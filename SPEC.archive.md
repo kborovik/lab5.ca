@@ -2,6 +2,12 @@
 
 archived 2026-05-29 per SPEC.md slim (phases 1-3 dedup). full task text preserved verbatim. open §T live in SPEC.md @ repo root.
 
+## §V.retired
+
+retired §V rows migrated verbatim via `/sdd:reorganize` ARCHIVE-RETIRED phase; leading `V<orig-n>:` prefix ∧ `retired YYYY-MM-DD — ...` body preserved. live §V invariants live in SPEC.md @ repo root; rows sorted by `<orig-n>` ascending.
+
+V3: retired 2026-05-21 — `/expertise` route deleted per website redesign; capability folded → `/` `// what I do` 3-tile section per V2
+
 ## §T TASKS
 
 id|status|task|cites

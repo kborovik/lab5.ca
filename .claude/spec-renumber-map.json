@@ -364,5 +364,11 @@
     "topic": "audit-and-surface-completeness",
     "old": "V55",
     "new": "V92"
+  },
+  {
+    "run": "2026-06-10",
+    "topic": "retired",
+    "old": "V3",
+    "new": "archive"
   }
 ]
