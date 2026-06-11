@@ -33,7 +33,6 @@ aesthetic ≡ framework-docs (GitHub-light), ⊥ SaaS marketing.
 - endpoint: `/llms.txt` → terse pages+posts+contact map (markdown)
 - endpoint: `/llms-full.txt` → full landing-copy mirror (markdown)
 - endpoint: `/sitemap-index.xml` + `/sitemap-0.xml` → @astrojs/sitemap
-- redirect: `/demo`→`/mailpilot` 301, `/proof`→`/mailpilot` 301 (public/_redirects)
 - static: public/{_headers, robots.txt, favicon.{svg,ico}, og.png 1200×630, kb-headshot.jpg, logo-linkedin.{svg,png}, banner-linkedin.png}
 - blog_schema: {title:str, description:str, pubDate:coerce-date, updatedDate?:coerce-date, draft:bool=false, tags:str[]=[]} (content.config.ts; strict — undeclared key → check ✗)
 - cta: book-call ≡ calendar.app.google/cYM3H3TsHsequR587 · mailpilot-email ≡ hello@lab5.ca · cost-post ≡ /blog/what-one-ai-email-costs · KB-drive ≡ drive folder · github ≡ github.com/kborovik · linkedin ≡ linkedin.com/in/kborovik · resume ≡ github.com/kborovik/resume · mailpilot-src ≡ github.com/kborovik/mailpilot
