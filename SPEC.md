@@ -36,7 +36,6 @@ marketing.
 - endpoint: `/llms.txt` — terse map of pages, posts, and contact (markdown)
 - endpoint: `/llms-full.txt` — full landing-copy mirror (markdown)
 - endpoint: `/sitemap-index.xml` and `/sitemap-0.xml` — @astrojs/sitemap
-- redirect: `/demo` to `/mailpilot` (301) and `/proof` to `/mailpilot` (301), in public/_redirects
 - static: public/ holds _headers, robots.txt, favicon.svg and favicon.ico, og.png (1200x630), kb-headshot.jpg, logo-linkedin.svg and .png, banner-linkedin.png
 - blog_schema: title (string), description (string), pubDate (coerced date), updatedDate (optional coerced date), draft (boolean, default false), tags (string array, default empty), in content.config.ts; the schema is strict, so an undeclared key fails astro check
 - cta: book-call is calendar.app.google/cYM3H3TsHsequR587; mailpilot-email is hello@lab5.ca; cost-post is /blog/what-one-ai-email-costs; KB-drive is the Google Drive knowledge-base folder; github is github.com/kborovik; linkedin is linkedin.com/in/kborovik; resume is github.com/kborovik/resume; mailpilot-src is github.com/kborovik/mailpilot
