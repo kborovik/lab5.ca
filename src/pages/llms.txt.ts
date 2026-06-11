@@ -19,7 +19,7 @@ export const GET: APIRoute = async () => {
 
 ## Pages
 
-- [Projects](https://lab5.ca/projects): skill → GitHub-repo card grid (gcp-devops, MailPilot, Pilot Skills, lab5.ca)
+- [Projects](https://lab5.ca/projects): skill-to-GitHub-repo card grid (gcp-devops, MailPilot, spec-driven-dev, lab5.ca)
 - [MailPilot](https://lab5.ca/mailpilot): production AI agent for business email, evidence of capability
 - [Blog](https://lab5.ca/blog): notes on cloud infrastructure, AI agents, spec-driven development, and Claude Code
 
@@ -37,7 +37,7 @@ ${postsSection}
 
 ## Notes
 
-- LinkedIn (linkedin.com/in/kborovik) requires login; canonical identity ∧ writing @ lab5.ca
+- LinkedIn (linkedin.com/in/kborovik) requires login; canonical identity and writing at lab5.ca
 `;
 
   return new Response(body, {

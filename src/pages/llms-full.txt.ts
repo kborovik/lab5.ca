@@ -98,7 +98,7 @@ Book a 30-minute call: https://calendar.app.google/cYM3H3TsHsequR587
 
 - MailPilot — Production AI agent for business email; Pydantic AI on a Google Cloud backend; live at hello@lab5.ca. https://github.com/kborovik/mailpilot
 - gcp-devops — Reference Terraform / Ansible / IaC patterns for Google Cloud. https://github.com/kborovik/gcp-devops
-- Pilot Skills — Claude Code skills SDK plugins for spec-driven development and agentic workflows. https://github.com/kborovik/pilot-skills
+- spec-driven-dev — Claude Code skills SDK plugins for spec-driven development and agentic workflows. https://github.com/kborovik/spec-driven-dev
 - lab5.ca — This site; Astro 6, Tailwind v4, TypeScript, Cloudflare Workers. https://github.com/kborovik/lab5.ca
 
 ## Blog posts
@@ -115,7 +115,7 @@ ${blogSection}
 
 ## Notes
 
-- LinkedIn (linkedin.com/in/kborovik) requires login; canonical identity ∧ writing @ lab5.ca
+- LinkedIn (linkedin.com/in/kborovik) requires login; canonical identity and writing at lab5.ca
 `;
 
   return new Response(body, {
