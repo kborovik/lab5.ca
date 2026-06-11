@@ -199,7 +199,8 @@ A few results from the run worth flagging:
 
 Per row, the pipeline is five steps:
 
-1. Count tokens of the row body via Anthropic's `/v1/messages/count_tokens` endpoint, model `claude-opus-4-7`.
+1. Count tokens of the row body via Anthropic's
+   `/v1/messages/count_tokens` endpoint, model `claude-opus-4-7`.
 2. Decode via the minimal-decoder system prompt; capture prose output.
 3. Decode via the canonical decoder &mdash; the `/sdd:explain` skill
    body verbatim as system prompt, with the full `SPEC.md` attached

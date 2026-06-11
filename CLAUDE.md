@@ -31,7 +31,7 @@ src/
 ├── pages/{llms.txt.ts,llms-full.txt.ts,rss.xml.ts}   # markdown + RSS endpoints (§I)
 ├── assets/konstantin-borovik-headshot.jpg   # astro:assets on /
 └── styles/global.css               # Tailwind v4 @theme (§V.21): tokens, keyframes, .prose
-public/{_headers,_redirects,og.png,banner-linkedin.png,favicon.{ico,svg},logo-linkedin.{svg,png},kb-headshot.jpg,robots.txt}
+public/{_headers,og.png,banner-linkedin.png,favicon.{ico,svg},logo-linkedin.{svg,png},kb-headshot.jpg,robots.txt}
 makefile, wrangler.jsonc, astro.config.mjs; assets-src/{og.html,linkedin-banner.html}
 ```
 
