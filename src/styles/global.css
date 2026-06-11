@@ -9,7 +9,7 @@ body {
 }
 
 @theme {
-  /* Typography — dual-family per §V.31(∆): Space Grotesk prose default site-wide (token name `--font-mono` retained ∵ Tailwind `font-mono` class ≡ body default ∴ rename ! class-sweep); code surface family override declared on `.prose code` ∧ `.prose pre` rules below */
+  /* Typography — dual-family: Space Grotesk prose default site-wide (token name `--font-mono` retained ∵ Tailwind `font-mono` class ≡ body default ∴ rename ! class-sweep); code surface family override declared on `.prose code` ∧ `.prose pre` rules below */
   --font-mono: 'Space Grotesk', system-ui, -apple-system, sans-serif;
 
   /* Canvas / Backgrounds */
@@ -33,7 +33,7 @@ body {
   --color-gh-blue-hover: #0550ae;
 }
 
-/* ===== Section kicker — semantic-text + decorative-prefix split (V14) ===== */
+/* ===== Section kicker — semantic-text + decorative-prefix split ===== */
 
 /* DOM text content of `.section-kicker` ≡ section name only (e.g. `what I do`),
    without literal `// ` prefix. Pseudo-element renders the visual `// ` marker so

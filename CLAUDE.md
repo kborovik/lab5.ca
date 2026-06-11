@@ -16,29 +16,30 @@ Operational guide ∀ K. Borovik portfolio (AI Automation Engineer). `SPEC.md` �
 | `make status` | CF Workers status |
 | `make wrangler` \| `playwright` | install wrangler global \| Playwright Chrome bin |
 
-Pre-commit ! `make check` ∧ `make build` (§V.45). Stack/host/PM/Node → §C.
+Pre-commit ! `make check` ∧ `make build` (§V.24). Stack/host/PM/Node → §C.
 
 ## repo map
 
 ```
 src/
-├── layouts/Layout.astro            # SEO props, scroll-reveal IO
+├── layouts/Layout.astro            # SEO props, JSON-LD @graph, scroll-reveal IO
 ├── components/{Nav,Footer}.astro
 ├── content.config.ts               # blog collection: src/content/blog/**/*.md
-├── content/blog/<slug>.md          # flat; filename ≡ URL slug (§V.51,53)
-├── pages/{index,expertise,proof,about}.astro
-├── pages/blog/{index,[...slug]}.astro
-├── assets/konstantin-borovik-headshot.jpg   # astro:assets on /about
-└── styles/global.css               # Tailwind v4 @theme (§V.37): tokens, keyframes, .prose
-public/{_headers,og.png,banner-linkedin.png,favicon.{ico,svg},logo-linkedin.{svg,png},robots.txt}
-makefile, og.html, linkedin-banner.html, wrangler.jsonc
+├── content/blog/<slug>.md          # flat; filename ≡ URL slug (§V.16)
+├── pages/{index,projects,mailpilot}.astro
+├── pages/blog/{index.astro,[...slug].astro,[...slug].md.ts}
+├── pages/{llms.txt.ts,llms-full.txt.ts,rss.xml.ts}   # markdown + RSS endpoints (§I)
+├── assets/konstantin-borovik-headshot.jpg   # astro:assets on /
+└── styles/global.css               # Tailwind v4 @theme (§V.21): tokens, keyframes, .prose
+public/{_headers,_redirects,og.png,banner-linkedin.png,favicon.{ico,svg},logo-linkedin.{svg,png},kb-headshot.jpg,robots.txt}
+makefile, wrangler.jsonc, astro.config.mjs; assets-src/{og.html,linkedin-banner.html}
 ```
 
-Routes/domains/palette/typeface/asset list/blog schema/CTA URLs → §I. Tailwind v4 ∈ `@theme` ∈ `global.css` (§V.37); ⊥ `tailwind.config.js`.
+Routes/domains/palette/typeface/asset list/blog schema/CTA URLs → §I. Tailwind v4 ∈ `@theme` ∈ `global.css` (§V.21); ⊥ `tailwind.config.js`.
 
 Typeface (§C): Space Grotesk for body/headings/nav + IBM Plex Mono for code/pre across site + social assets.
 
-## voice (§V.11 anti-examples)
+## voice (§V.1 anti-examples)
 
 - ⊥ aspirational verbs: "move faster", "transform", "unlock", "empower"
 - ⊥ biz-benefit framing: "ship more w/ same headcount"
@@ -47,22 +48,22 @@ Typeface (§C): Space Grotesk for body/headings/nav + IBM Plex Mono for code/pre
 - ∋ tech vocab: LLM, retrieval, structured extraction, system of record, idempotent state machine
 - ref aesthetic: openspec.dev, Stripe docs (framework-docs, ⊥ SaaS marketing)
 
-## casing (§V.12–14 examples)
+## casing (§V.6 examples)
 
-- page H1 ∧ blog title ≡ sentence → `What I build`
-- tile ∧ step title ≡ lowercase → `email & communication`
-- `/expertise` H2 ≡ Title Case → `ERP Integration`
-- entity ≡ `&mdash;` / `&middot;`; literal `—` ! space-padded
+- page H1 ∧ blog title ≡ sentence → `LLM systems that do real work…`
+- section-kicker (H2) ≡ lowercase → `what I do`
+- tile ∧ step H3 title ≡ Title Case → `Build Business Processes with AI`
+- entity (§V.7) ≡ `&mdash;` / `&middot;` / `&minus;` in `.astro`; blog `.md` em-dash space-padded
 
-## blog (rules §V.54–57; schema §I)
+## blog (rules §V.16–20; schema §I)
 
 Path ≡ `src/content/blog/<slug>.md`; filename ≡ URL slug.
 
 - `[...slug].astro` renders H1 + date/tags + `← all posts` → ⊥ `# Title`, ⊥ byline, ⊥ footer
 - hard-wrap ~78 col; UTF-8, LF, ⊥ BOM
-- ⊥ non-post `.md` ∈ blog dir → glob fails build (§V.53)
-- undeclared frontmatter (`author`, `image`, `canonical`) → `astro check` ✗ (§V.52)
-- `.prose` ∋ {bold, italic, inline+fenced code, ul/ol, blockquote, `---`, inline link, image (`![alt](src)` form, src ∈ `public/blog/<slug>/`, alt mandatory), table (pipe-syntax)}; ⊥ {raw HTML beyond `<br>`+entities, footnote} (§V.57)
+- ⊥ non-post `.md` ∈ blog dir → glob fails build (§V.16)
+- undeclared frontmatter (`author`, `image`, `canonical`) → `astro check` ✗ (§V.18)
+- `.prose` ∋ {bold, italic, inline+fenced code, ul/ol, blockquote, `---`, inline link, image (`![alt](src)` form, src ∈ `public/blog/<slug>/`, alt mandatory), table (pipe-syntax)}; ⊥ {raw HTML beyond `<br>`+entities, footnote} (§V.19)
 
 Verify: `make check` → `make build`; optional Playwright @ `localhost:4321/blog/<slug>`.
 
@@ -70,7 +71,7 @@ Verify: `make check` → `make build`; optional Playwright @ `localhost:4321/blo
 
 `.mcp.json` → `npx @playwright/mcp@latest --browser chrome --user-data-dir .playwright-mcp/chrome-profile`. ⊥ project dep; on-demand. Profile persists logins. Enabled via `.claude/settings.json` → `enableAllProjectMcpServers: true`. Out ∈ `.playwright-mcp/` (gitignored).
 
-Flow: `make dev` → `browser_navigate` → `browser_snapshot` (a11y, preferred) ∨ `browser_take_screenshot`; also `browser_{click,type,console_messages,network_requests}`. ⊥ screenshot SVG @ `file://` → timeout (§V.49).
+Flow: `make dev` → `browser_navigate` → `browser_snapshot` (a11y, preferred) ∨ `browser_take_screenshot`; also `browser_{click,type,console_messages,network_requests}`. ⊥ screenshot SVG @ `file://` → timeout.
 
 ## gotchas
 
