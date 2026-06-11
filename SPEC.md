@@ -68,7 +68,7 @@ V21: tailwind-v4 — tokens, keyframes, and .prose live in @theme in global.css;
 V22: headers — public/_headers sets X-Frame-Options DENY, X-Content-Type-Options nosniff, Referrer-Policy strict-origin-when-cross-origin, and Permissions-Policy with camera, microphone, geolocation, and payment disabled; caching is _astro immutable for one year, favicon one day, og seven days, sitemap one hour; llms*.txt are served as text/markdown.
 V23: dual-surface — mailpilot.ca is a Cloudflare alias for lab5.ca; both are routes in wrangler.jsonc, so an edit affects both surfaces.
 V24: build-gate — before committing, run make check and make build (astro check includes blog frontmatter against the schema).
-V25: nav-footer — the nav links Home (/), Projects (/projects), and Blog (/blog) plus a persistent Book-a-Call CTA, with the active link shown in green by path match. The footer mirrors Home, Projects, Blog plus the copyright year. The /expertise, /about, and /resume routes are retired.
+V25: nav-footer — the nav links Home (/), Projects (/projects), and Blog (/blog) plus a persistent Book-a-Call CTA, with the active link shown in green by path match. The footer mirrors Home, Projects, Blog plus the copyright year.
 
 ## §T TASKS
 
