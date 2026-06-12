@@ -1,6 +1,6 @@
 Blog: The 90/10 software rule small businesses can use
 
-There's a rule going around among AI-native operators, cleanest version from SaaStr (a media company reportedly run by about three people and a couple dozen AI agents): buy 90% of your business software off the shelf, and build only the 10% where no tool fits. Don't try to out-build Salesforce in a weekend. But the slice that's genuinely yours — the workflow that drives your business, the one no vendor sells — build that.
+A rule from AI-native operators, cleanest from SaaStr (a media company reportedly run by about three people and a couple dozen AI agents): buy 90% of your software off the shelf, and build only the 10% no vendor fits. That custom 10% used to cost a team months and six figures, so small businesses bought 100% and bent themselves to fit. AI collapsed that cost by roughly an order of magnitude — so one developer can now build the slice that sets you apart, while you keep buying the rest.
 
 The split isn't new. Good engineering leaders have always bought commodity software and built only their differentiators. What's new is who gets to follow it. For decades the custom 10% was a luxury good — months of work from six-figure engineers, hundreds of thousands of dollars before anything shipped. Big companies funded it; a 40-person distributor or a regional clinic couldn't. So small businesses bought 100% off the shelf and bent the business to fit a tool optimized for the average customer, which is nobody's actual case.
 

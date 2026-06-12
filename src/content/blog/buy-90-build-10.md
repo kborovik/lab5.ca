@@ -12,17 +12,12 @@ tags:
 
 ## TLDR
 
-A rule is going around among AI-native operators:
-buy 90% of your business software off the shelf,
-and build only the 10% where no tool fits.
-For decades that custom 10% cost a team months and six figures,
-so small businesses bought 100% off the shelf and bent themselves to fit.
-AI collapsed the cost of that 10% by roughly an order of magnitude —
-one AI-fluent developer now covers what used to take a small team.
-So a small business can finally afford to build its differentiated slice
-and keep buying the commodity rest.
-The trap is building the *wrong* 90%:
-the projects that fail are the ones that rebuild what a real vendor already sells.
+A rule from AI-native operators:
+buy 90% of your software off the shelf, and build only the 10% no vendor fits.
+That custom 10% used to cost a team months and six figures,
+so small businesses bought 100% and bent themselves to fit.
+AI collapsed that cost by roughly an order of magnitude —
+so one developer can now build the slice that sets you apart, while you keep buying the rest.
 
 There's a rule going around among AI-native operators,
 and the cleanest version of it comes from SaaStr —
@@ -69,6 +64,9 @@ The rest of this post is why each one holds up.
 
 ## The old math: small businesses were stuck buying 100%
 
+**Small businesses didn't build their 10% —
+they bought 100% off the shelf and bent the business to fit.**
+
 The 90/10 split isn't new.
 Good engineering leaders have always known
 you buy commodity software and build only your differentiators.
@@ -85,9 +83,7 @@ All-in, that ran well into the hundreds of thousands of dollars before anything 
 
 A big company could fund that without blinking; the operational edge was worth it.
 A 40-person distributor or a regional clinic could not.
-**So small businesses didn't build their 10% —
-they bought 100% off the shelf and bent the business to fit.**
-And off-the-shelf software, by design, optimizes for the average customer.
+Off-the-shelf software, by design, optimizes for the average customer.
 A purchased workflow tool has to serve thousands of companies,
 so it optimizes for the average case — and the average case is nobody's actual case.
 Buying generic meant permanently accepting a poor fit
@@ -99,12 +95,13 @@ Small businesses ran 100/0.
 
 ## What AI actually changed
 
+**One capable, AI-fluent developer now reaches across what used to need a small team.**
+
 The shift isn't that AI writes flawless software.
 It doesn't.
 It's that AI removed most of the grunt work —
 scaffolding, boilerplate, glue code, first drafts, test stubs, documentation —
 that made building the 10% headcount-intensive.
-**One capable, AI-fluent developer now reaches across what used to need a small team.**
 
 The research supports the direction, even where it argues about the size.
 A large study run with Microsoft, Accenture, and a Fortune 100 manufacturer,
@@ -186,9 +183,9 @@ and you can email the agent yourself and watch what it does.
 
 ## Why the 90 stays 90
 
-The rule only works because both numbers are real.
 **Building the wrong 90% is how these projects fail — and they fail often.**
 
+The rule only works because both numbers are real.
 An MIT study found roughly 95% of attempts to put generative AI into business processes
 show no measurable return.
 Gartner expects only about 35% of point-product SaaS tools to be replaced by AI agents by 2030 —
@@ -229,13 +226,14 @@ not which model it uses.
 
 ## The bottom line
 
+**AI collapsed the cost of that 10% to where one developer can deliver it —
+and one developer is something a small business can afford.**
+
 The 90/10 rule was always the right way to think about software.
 What changed is who gets to follow it.
 For decades, only companies large enough to fund an engineering team
 could afford to build their differentiated 10%;
 everyone else bought 100% off the shelf and accepted a poor fit on the things that mattered most.
-**AI collapsed the cost of that 10% to where one developer can deliver it —
-and one developer is something a small business can afford.**
 
 So the question isn't "can we build like the big players now?"
 You shouldn't want to.
