@@ -78,7 +78,7 @@ T2|x|drop blog post: delete src/content/blog/measuring-glyph-compression.md (no 
 T3|x|publish blog post: move buy-90-build-10.md → src/content/blog/buy-90-build-10.md (filename = slug); re-wrap body to semantic line breaks; frontmatter already schema-clean; blog index, rss, sitemap, llms.txt regenerate at build|V16,V18,V20,V24
 T4|x|drop blog post: delete src/content/blog/spec-driven-development.md and linkedin/spec-driven-development.txt (pairing per V16; no public/blog/ asset dir; the published LinkedIn post links the live URL, which 404s after removal; blog index, rss, sitemap, llms.txt regenerate at build)|V16,V24
 T5|x|sweep blog↔linkedin pairing: scope = slug-set diff of src/content/blog/*.md (basename minus .md) vs linkedin/*.txt (basename minus .txt); author linkedin/<slug>.txt for each unpaired post; delete each orphan linkedin/<slug>.txt (current diff: buy-90-build-10 lacks copy; measuring-glyph-compression.txt is orphan)|V16,V24
-T6|.|publish blog post: move code-consistency-and-agent-velocity.md → src/content/blog/code-consistency-and-agent-velocity.md (filename = slug); re-wrap body to semantic line breaks; author linkedin/code-consistency-and-agent-velocity.txt (pairing per V16); frontmatter already schema-clean; blog index, rss, sitemap, llms.txt regenerate at build|V16,V18,V20,V24
+T6|x|publish blog post: move code-consistency-and-agent-velocity.md → src/content/blog/code-consistency-and-agent-velocity.md (filename = slug); re-wrap body to semantic line breaks; author linkedin/code-consistency-and-agent-velocity.txt (pairing per V16); frontmatter already schema-clean; blog index, rss, sitemap, llms.txt regenerate at build|V16,V18,V20,V24
 
 ## §B BUGS
 

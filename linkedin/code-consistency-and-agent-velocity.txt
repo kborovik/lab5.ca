@@ -1,0 +1,15 @@
+Blog: Code consistency is the casualty of agent velocity
+
+The thing that bit me wasn't an AI agent writing bad code. It was the agent writing inconsistent code. Task one establishes a pattern. By task ten it has invented three more — a second error-handling convention here, a third way to shape a response there. Nobody decided that. It drifts one reasonable-looking diff at a time, and you don't see it until the codebase has three dialects.
+
+Consistency is the expensive casualty. Bad code gets caught by tests. Inconsistent code passes every test and still rots the project, because the next agent reads the same files and amplifies the drift.
+
+My fix is unglamorous: one SPEC.md at the repo root, small and dense enough to sit in context, that the agent re-reads on every command. Six fixed sections — goal, constraints, interfaces, invariants, tasks, bugs — and every row carries a stable address: §V.3 for an invariant, §T.7 for a task, §B.2 for a bug. Code comments link the invariant they uphold; commits cite the task they close. When the agent comes back cold after a /clear, it isn't reconstructing intent from chat history it no longer has — it's reading the contract.
+
+"Small enough to sit in context" is the load-bearing claim, so I benchmarked the encoding. The spec is written in telegraph — dropped articles, fragments, unpadded tables, a tiny symbol set. Across 30 rows of this repo's own SPEC.md run through Claude's tokenizer against a prose rewrite of each row, telegraph lands a 41% mean token cut. Flip it around: a prose spec pays about 1.7x the tokens for identical content, and you pay that on every turn the agent re-reads it.
+
+The mechanic I lean on hardest is backprop. When a build fails in a way that smells under-specified, it records a bug row and, where the failure is a class of mistake, tightens an invariant that catches it — then writes the failing test first and ships the fix. Every incident becomes a permanent guard rail. Drift I've hit once can't quietly come back.
+
+It's single-thread and slower than fanning work out to parallel agents. I'm the bottleneck, and that's the point. I'm not optimizing for throughput — I'm optimizing for being the only reviewer of code that has to still make sense in six months.
+
+Read the full post: https://lab5.ca/blog/code-consistency-and-agent-velocity/
