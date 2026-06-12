@@ -59,7 +59,7 @@ V12: motion — animate-hero (fadeUp stagger via an inline animation-delay), ani
 V13: seo-graph — JSON-LD @graph is [Person (#person), WebSite (#website), the page node (WebPage, CollectionPage, or BlogPosting), and a BreadcrumbList on non-root pages]; Person.knowsAbout is the skill list; Person.potentialAction is an AskAction to mailto:hello@lab5.ca (reply under 60 seconds). A BlogPosting node carries headline, description, datePublished, optional dateModified, optional keywords, author, and image.
 V14: head-meta — canonical URL (derived from Astro.site, trailing slash stripped) plus hreflang en-ca and x-default; RSS alternate at /rss.xml; markdown alternate (blog only) at /blog/<slug>.md; Open Graph (type, url, title, description, site_name, locale en_CA, and image og.png 1200x630) plus Twitter summary_large_image. The title is "<title> | Konstantin Borovik", or the default landing string.
 V15: llms-endpoints — /llms.txt (terse map) and /llms-full.txt (full landing-copy mirror) are text/markdown; their copy mirrors the landing manually, so editing the landing risks drift.
-V16: blog-path — src/content/blog/<slug>.md is flat; the filename is the URL slug and the post id; a non-post .md in the directory breaks the build (glob failure).
+V16: blog-path — src/content/blog/<slug>.md is flat; the filename is the URL slug and the post id; a non-post .md in the directory breaks the build (glob failure); every post pairs with LinkedIn copy linkedin/<slug>.txt, and dropping a post deletes its linkedin/<slug>.txt in the same change.
 V17: blog-render — the route owns the chrome: H1, date and tags, and the "all posts" link; the markdown body has no `# Title`, no byline, and no footer.
 V18: blog-frontmatter — the schema is strict per §I.blog_schema; an undeclared key (author, image, canonical) fails astro check.
 V19: prose-subset — .prose supports bold, italic, inline and fenced code, ul/ol, blockquote, horizontal rule, inline links, images (`![alt](src)` with src in public/blog/<slug>/ and a mandatory alt), and pipe tables; it does not support raw HTML beyond `<br>` and entities, or footnotes. Images open in a click-to-zoom `<dialog>` viewer.
@@ -76,7 +76,8 @@ id|status|task|cites
 T1|x|re-wrap src/content/blog/*.md to semantic line breaks|V20
 T2|x|drop blog post: delete src/content/blog/measuring-glyph-compression.md (no inbound links, no public/blog/ asset dir; blog index, rss, sitemap, llms.txt regenerate at build)|V16,V24
 T3|x|publish blog post: move buy-90-build-10.md → src/content/blog/buy-90-build-10.md (filename = slug); re-wrap body to semantic line breaks; frontmatter already schema-clean; blog index, rss, sitemap, llms.txt regenerate at build|V16,V18,V20,V24
-T4|.|drop blog post: delete src/content/blog/spec-driven-development.md (no public/blog/ asset dir; published LinkedIn copy linkedin/spec-driven-development.txt links the live URL, which 404s after removal; blog index, rss, sitemap, llms.txt regenerate at build)|V16,V24
+T4|.|drop blog post: delete src/content/blog/spec-driven-development.md and linkedin/spec-driven-development.txt (pairing per V16; no public/blog/ asset dir; the published LinkedIn post links the live URL, which 404s after removal; blog index, rss, sitemap, llms.txt regenerate at build)|V16,V24
+T5|.|sweep blog↔linkedin pairing: scope = slug-set diff of src/content/blog/*.md (basename minus .md) vs linkedin/*.txt (basename minus .txt); author linkedin/<slug>.txt for each unpaired post; delete each orphan linkedin/<slug>.txt (current diff: buy-90-build-10 lacks copy; measuring-glyph-compression.txt is orphan)|V16,V24
 
 ## §B BUGS
 
