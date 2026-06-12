@@ -63,7 +63,7 @@ V16: blog-path — src/content/blog/<slug>.md is flat; the filename is the URL s
 V17: blog-render — the route owns the chrome: H1, date and tags, and the "all posts" link; the markdown body has no `# Title`, no byline, and no footer.
 V18: blog-frontmatter — the schema is strict per §I.blog_schema; an undeclared key (author, image, canonical) fails astro check.
 V19: prose-subset — .prose supports bold, italic, inline and fenced code, ul/ol, blockquote, horizontal rule, inline links, images (`![alt](src)` with src in public/blog/<slug>/ and a mandatory alt), and pipe tables; it does not support raw HTML beyond `<br>` and entities, or footnotes. Images open in a click-to-zoom `<dialog>` viewer.
-V20: blog-hygiene — hard-wrap around 78 columns; UTF-8, LF line endings, no BOM; external links go through rehype-external-links with target _blank and rel noopener,noreferrer.
+V20: blog-hygiene — semantic line breaks: one sentence per line, long sentences break at clause boundaries, no line over ~100 columns; UTF-8, LF line endings, no BOM; external links go through rehype-external-links with target _blank and rel noopener,noreferrer.
 V21: tailwind-v4 — tokens, keyframes, and .prose live in @theme in global.css; there is no tailwind.config.js.
 V22: headers — public/_headers sets X-Frame-Options DENY, X-Content-Type-Options nosniff, Referrer-Policy strict-origin-when-cross-origin, and Permissions-Policy with camera, microphone, geolocation, and payment disabled; caching is _astro immutable for one year, favicon one day, og seven days, sitemap one hour; llms*.txt are served as text/markdown.
 V23: dual-surface — mailpilot.ca is a Cloudflare alias for lab5.ca; both are routes in wrangler.jsonc, so an edit affects both surfaces.
@@ -73,6 +73,7 @@ V25: nav-footer — the nav links Home (/), Projects (/projects), and Blog (/blo
 ## §T TASKS
 
 id|status|task|cites
+T1|.|re-wrap src/content/blog/*.md to semantic line breaks|V20
 
 ## §B BUGS
 
