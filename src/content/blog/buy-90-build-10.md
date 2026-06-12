@@ -10,6 +10,20 @@ tags:
   - cost
 ---
 
+## TLDR
+
+A rule is going around among AI-native operators:
+buy 90% of your business software off the shelf,
+and build only the 10% where no tool fits.
+For decades that custom 10% cost a team months and six figures,
+so small businesses bought 100% off the shelf and bent themselves to fit.
+AI collapsed the cost of that 10% by roughly an order of magnitude —
+one AI-fluent developer now covers what used to take a small team.
+So a small business can finally afford to build its differentiated slice
+and keep buying the commodity rest.
+The trap is building the *wrong* 90%:
+the projects that fail are the ones that rebuild what a real vendor already sells.
+
 There's a rule going around among AI-native operators,
 and the cleanest version of it comes from SaaStr —
 a media company that reportedly runs on about three people and a couple dozen AI agents:
@@ -39,7 +53,7 @@ The rest of this post is why each one holds up.
    Ask of each tool: is running this someone else's full-time job?
    If yes — CRM core, payments, email, auth, accounting — keep buying.
    Don't rebuild a category that has a real vendor behind it.
-3. **Get one strong, AI-fluent developer** instead of waiting for a team you can't afford.
+3. **Get one strong, AI-fluent developer instead of waiting for a team you can't afford.**
    The leverage now lives in one capable generalist
    who directs the AI tools *and* reviews their output.
    This is the part I do — and the honest boundary holds:
@@ -71,8 +85,8 @@ All-in, that ran well into the hundreds of thousands of dollars before anything 
 
 A big company could fund that without blinking; the operational edge was worth it.
 A 40-person distributor or a regional clinic could not.
-So small businesses didn't build their 10% —
-they bought 100% off the shelf and bent the business to fit.
+**So small businesses didn't build their 10% —
+they bought 100% off the shelf and bent the business to fit.**
 And off-the-shelf software, by design, optimizes for the average customer.
 A purchased workflow tool has to serve thousands of companies,
 so it optimizes for the average case — and the average case is nobody's actual case.
@@ -90,7 +104,7 @@ It doesn't.
 It's that AI removed most of the grunt work —
 scaffolding, boilerplate, glue code, first drafts, test stubs, documentation —
 that made building the 10% headcount-intensive.
-One capable, AI-fluent developer now reaches across what used to need a small team.
+**One capable, AI-fluent developer now reaches across what used to need a small team.**
 
 The research supports the direction, even where it argues about the size.
 A large study run with Microsoft, Accenture, and a Fortune 100 manufacturer,
@@ -120,10 +134,10 @@ So a small business can finally afford its 10%.
 
 ## The receipts: this is the 10% being built
 
-The clearest proof is companies building exactly the slice the rule points to —
-and leaving the rest alone.
+**The clearest proof is companies building exactly the slice the rule points to —
+and leaving the rest alone.**
 
-**SaaStr** built two internal tools with AI that now run core operations.
+*SaaStr* built two internal tools with AI that now run core operations.
 One took over almost its entire marketing stack,
 replacing some combination of HubSpot, Mailchimp, dashboards, and scheduling tools.
 The other runs the sponsor relationships behind an eight-figure business —
@@ -132,13 +146,13 @@ Both would have taken a traditional team months and real budget.
 And the same company that built them also preaches the 90/10 rule:
 it isn't rebuilding Salesforce, it's building the operational glue no vendor sells.
 
-**Harmonic**, a startup-discovery platform,
+*Harmonic*, a startup-discovery platform,
 hit a wall with a $20,000-a-year third-party tool and rebuilt the functionality in-house.
-**TrexoGlobal** built a custom document-generation engine that replaced three separate SaaS tools,
+*TrexoGlobal* built a custom document-generation engine that replaced three separate SaaS tools,
 reporting 67% faster processing and a single source of truth instead of three competing databases.
 A logistics firm documented in McKinsey's work
-replaced a **$2.1M** warehouse management system with an AI-built platform
-in **11 weeks for about $180,000** — roughly a tenth of the cost.
+replaced a *$2.1M* warehouse management system with an AI-built platform
+in *11 weeks for about $180,000* — roughly a tenth of the cost.
 
 And the trend is broad, not anecdotal.
 Retool's 2026 *Build vs. Buy* report, surveying 817 builders,
@@ -150,7 +164,7 @@ The categories most often replaced are exactly the high-fit-sensitivity ones:
 workflow automations, internal admin tools, CRMs, BI, and customer support.
 
 The biggest cautionary tale is also the most cited, and it's worth getting right.
-**Klarna** announced it shut down Salesforce and Workday amid an AI overhaul,
+*Klarna* announced it shut down Salesforce and Workday amid an AI overhaul,
 and its revenue per employee jumped from about $400K to $700K in a year.
 But it didn't replace those platforms with purely AI-built software —
 it adopted Deel for HR, blended in other third-party tools,
@@ -173,7 +187,7 @@ and you can email the agent yourself and watch what it does.
 ## Why the 90 stays 90
 
 The rule only works because both numbers are real.
-Building the wrong 90% is how these projects fail — and they fail often.
+**Building the wrong 90% is how these projects fail — and they fail often.**
 
 An MIT study found roughly 95% of attempts to put generative AI into business processes
 show no measurable return.
@@ -196,7 +210,7 @@ Which is why Retool's finding that most builds happen outside any IT oversight
 is a warning as much as a milestone.
 
 This is where the someone-else's-full-time-job test from step 2 earns its keep.
-Ask it of each tool: **is this product someone else's full-time job?**
+Ask it of each tool: *is this product someone else's full-time job?*
 If yes —
 if it touches customer data, handles payments, needs SOC 2,
 or has to run at scale without babysitting —
@@ -220,8 +234,8 @@ What changed is who gets to follow it.
 For decades, only companies large enough to fund an engineering team
 could afford to build their differentiated 10%;
 everyone else bought 100% off the shelf and accepted a poor fit on the things that mattered most.
-AI collapsed the cost of that 10% to where one developer can deliver it —
-and one developer is something a small business can afford.
+**AI collapsed the cost of that 10% to where one developer can deliver it —
+and one developer is something a small business can afford.**
 
 So the question isn't "can we build like the big players now?"
 You shouldn't want to.
