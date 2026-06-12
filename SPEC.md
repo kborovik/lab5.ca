@@ -74,6 +74,7 @@ V25: nav-footer — the nav links Home (/), Projects (/projects), and Blog (/blo
 
 id|status|task|cites
 T1|.|re-wrap src/content/blog/*.md to semantic line breaks|V20
+T2|.|drop blog post: delete src/content/blog/measuring-glyph-compression.md (no inbound links, no public/blog/ asset dir; blog index, rss, sitemap, llms.txt regenerate at build)|V16,V24
 
 ## §B BUGS
 
