@@ -1,6 +1,6 @@
 Blog: What one AI email actually costs
 
-Most AI ROI talk is hand-waving. So I wrote up a traced, per-email cost from a production agent.
+Most AI ROI talk is hand-waving, so here is a traced number from a production agent: one sourced reply to a product email costs about $0.03 in roughly 20 seconds, against roughly $5 and an hours-long wait for a person. Token volume was never the metric — cost per useful outcome is, and almost nobody publishes that from a real system because measuring it means instrumenting the system properly first. The gap between the 95% of AI pilots that show no return and the 5% that work is mostly discipline: measure cost per outcome, cap usage, ground every answer, decline when uncertain.
 
 The number, end to end: about $0.03 per email, in roughly 20 seconds, for a sourced reply grounded in product documentation. Versus a knowledgeable person at a $40/hour loaded rate, the same lookup-and-reply task is around $5 and the customer waits hours. At 1,000 emails a month, that is ~$30 vs ~$5,000 — more than a 100x difference, and hours-to-seconds in speed.
 

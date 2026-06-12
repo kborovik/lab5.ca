@@ -1,6 +1,6 @@
 Blog: Smoke-testing an LLM agent with a Claude Code skill
 
-Standard tests cover the wiring. The agent is the business logic.
+MailPilot is an agent-driven CRM where the business logic lives inside a Pydantic AI agent, so I test it in three layers: ruff + basedpyright and pytest verify the machinery, and a Claude Code smoke-test skill verifies the agent against real Gmail and a real knowledge base. Claude Code is the runner, the assertions live in deterministic gates plus one structured-JSON LLM judgment, and every recurrence-class failure auto-files into SPEC.md via /sdd:spec.
 
 The standard testing pyramid inverts when an LLM sits at the core: the agent can pass every mocked test and still fabricate vendor specs that don't exist. So I run three layers, each catching what the layer below cannot.
 

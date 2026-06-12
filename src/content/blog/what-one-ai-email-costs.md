@@ -5,7 +5,21 @@ pubDate: 2026-06-06
 tags: [ai-agents, llm-engineering, roi, cost, observability, pydantic-ai]
 ---
 
+## TLDR
+
+Most AI ROI talk is hand-waving, so here is a traced number from a production agent:
+one sourced reply to a product email costs about $0.03 in roughly 20 seconds,
+against roughly $5 and an hours-long wait for a person.
+Token volume was never the metric — cost per useful outcome is,
+and almost nobody publishes that from a real system because measuring it
+means instrumenting the system properly first.
+The gap between the 95% of AI pilots that show no return and the 5% that work
+is mostly discipline: measure cost per outcome, cap usage, ground every answer, decline when uncertain.
+
 ## The question behind the headlines
+
+**The horror stories ask whether AI in production is a money pit, but they measure the wrong thing:
+token volume was never the metric — cost per useful outcome is, and this post publishes one.**
 
 If you run a business, the AI story you have been reading lately is a horror story.
 One company reportedly burned through hundreds of millions of dollars in a single month
@@ -17,13 +31,13 @@ And the most-cited research of the year found that roughly 95% of enterprise AI 
 showed no measurable financial return.
 
 So the question on the table for any CIO or CFO is fair and blunt:
-**is AI in production a money pit?**
+*is AI in production a money pit?*
 
 Here is the thing the horror stories miss.
 Token volume was never the metric.
 A company can burn a fortune in tokens and get nothing,
 or spend almost nothing and get real work done.
-What matters is **cost per useful outcome** —
+What matters is *cost per useful outcome* —
 cost per ticket resolved, per document processed, per email answered.
 Almost nobody publishes that number from a real production system,
 because measuring it requires instrumenting the system properly in the first place.
@@ -31,6 +45,9 @@ because measuring it requires instrumenting the system properly in the first pla
 This post publishes one.
 
 ## The system
+
+**MailPilot is a live production agent: it reads an incoming product email, searches a knowledge base,
+and replies with a sourced answer in under a minute — or declines rather than guess.**
 
 [MailPilot](https://lab5.ca/mailpilot/) is a production AI agent I built end to end.
 It reads an incoming business email, searches a knowledge base of product documentation,
@@ -49,22 +66,28 @@ but the numbers here are measured on this one.
 
 ## The number
 
+**Every model call is traced, and answering one fresh, sourced product question
+costs about $0.03 in roughly 20 seconds — operating cost, not build cost.**
+
 Every model call MailPilot makes is traced.
 The cost of answering one fresh product question,
 grounded in the documentation and sent back to the customer,
-is **about $0.03**, in **roughly 20 seconds**.
+is *about $0.03*, in *roughly 20 seconds*.
 
 That is the operating cost — the cost to run one email through the system.
 It is not the cost to build the system; more on that below.
 
 ## The risk/reward, in numbers you can check
 
+**Against a knowledgeable person at a $40/hour loaded rate, the same sourced reply runs about $5 and takes hours —
+more than a 100× difference in cost, and hours-to-seconds in speed.**
+
 The honest comparison is against what answering that same email costs today.
 Assume a knowledgeable person at a loaded rate of $40/hour.
 Answering one sourced spec question means reading it,
 finding the right model in the documentation, and writing the reply —
 call it 7 minutes once you account for lookup time and the occasional correction.
-That is around **$5 per email**, and the customer waits hours for it.
+That is around *$5 per email*, and the customer waits hours for it.
 
 | | MailPilot (measured) | A person (assumption) |
 |---|---|---|
@@ -84,6 +107,9 @@ freeing that person for work that actually needs them.
 
 ## The risk side
 
+**The real exposure is brand and liability, not budget: an agent confidently inventing a spec
+and sending it over your name — so every answer is grounded in a cited source, declined when out of scope, and measured rather than asserted.**
+
 The real risk with AI email is not cost.
 It is an agent confidently inventing a spec, a price, or a model number
 and sending it to a customer over your name.
@@ -91,7 +117,7 @@ That is a brand and liability problem, not a budget line.
 
 This is the part most pilots skip, and it is where the engineering discipline lives.
 MailPilot is built to ground every answer in a source document
-and to **cite the file it used**, so any answer can be checked against the original.
+and to *cite the file it used*, so any answer can be checked against the original.
 When a question falls outside its knowledge base, it is built to decline rather than improvise.
 
 That behavior is measured, not asserted.
@@ -107,6 +133,9 @@ I am going to claim this one refuses to invent facts when it lacks a source,
 and that the claim is checkable in the logs.
 
 ## Why most AI spend fails, and what makes the difference
+
+**What separates the 5% that work from the 95% that don't is discipline, not the model:
+measure cost per outcome, cap usage, instrument every call, and ground answers so the system fails safely.**
 
 The 95% of pilots that show no return tend to share a pattern:
 nobody measured the cost per outcome, nobody capped usage,
@@ -124,6 +153,9 @@ and it is mostly a question of how the system is built, not which model it uses.
 
 ## What this costs to build
 
+**Operating cost and build cost are different lines: the $0.03 runs one email, while the retrieval,
+grounding, guardrails, and scale-to-zero deploy are the one-time investment — hiding that is the kind of ROI claim the hype cycle earned its skepticism for.**
+
 The $0.03 is operating cost.
 Building a production agent —
 the retrieval, the grounding, the guardrails, the observability,
@@ -135,6 +167,9 @@ because an ROI number that hides the build cost is exactly the kind of claim
 the AI hype cycle has earned its skepticism for.
 
 ## The honest boundaries
+
+**The honest caveats: $0.03 is a fresh question, mid-thread replies cost more because history is re-sent
+(median ~$0.15, p90 ~$0.24 across 131 production replies), and the $5 human figure is my assumption for you to substitute your own.**
 
 So you can weigh this properly:
 the $0.03 figure is the cost of a fresh question;

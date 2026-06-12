@@ -7,30 +7,32 @@ tags: [testing, claude-code, ai-coding, smoke-test]
 
 ## TLDR
 
-I built [MailPilot](https://github.com/kborovik/mailpilot),
-an agent-driven CRM where the business logic lives inside a Pydantic AI agent.
-To test it I run three layers:
-`ruff` + `basedpyright`, `pytest`, and a Claude Code
-[smoke-test skill](https://github.com/kborovik/mailpilot/blob/main/.claude/skills/smoke-test/SKILL.md).
-The first two verify the *machinery*.
-The third verifies that the *agent* works against real Gmail and a real knowledge base.
-Claude Code is the runner,
-the assertions live in deterministic gates plus one structured-JSON LLM judgment,
+[MailPilot](https://github.com/kborovik/mailpilot) is an agent-driven CRM
+where the business logic lives inside a Pydantic AI agent,
+so I test it in three layers: `ruff` + `basedpyright` and `pytest` verify the *machinery*,
+and a Claude Code [smoke-test skill](https://github.com/kborovik/mailpilot/blob/main/.claude/skills/smoke-test/SKILL.md)
+verifies the *agent* against real Gmail and a real knowledge base.
+Claude Code is the runner, the assertions live in deterministic gates plus one structured-JSON LLM judgment,
 and every recurrence-class failure auto-files into `SPEC.md` via `/sdd:spec`.
 
 ## Why the pyramid is wrong here
+
+**With an LLM at the core, the testing pyramid inverts &mdash; mocking the model out
+is mocking the system under test out.**
 
 The standard testing pyramid puts unit tests at the bottom
 because they're fast and deterministic, integration in the middle, and end-to-end at the tip.
 With an LLM at the core of the system, that shape inverts.
 The agent can pass every mocked test
 and still write a confidently fabricated reply citing a vendor that doesn't exist.
-**Mocking the model out is mocking the system under test out.**
 
 So the layers I actually run aren't a pyramid.
 They're three different jobs, each catching what the layer below cannot.
 
 ## Layer 1: ruff + basedpyright
+
+**Layer 1 is ruff and basedpyright in strict mode &mdash; type errors, import cycles, and shape drift
+surface in under three seconds, but it catches nothing the agent decides.**
 
 `make lint` runs `ruff format`, `ruff check --fix`, and `basedpyright` in strict mode.
 This is the layer pytest cannot replace &mdash;
@@ -50,6 +52,9 @@ What this layer catches:
 What this layer cannot catch: anything the agent decides.
 
 ## Layer 2: pytest
+
+**Layer 2 is pytest against a real Postgres with mocked HTTP boundaries &mdash; it verifies the wiring,
+but mocking the model returns whatever I tell it to, which is no test of the model.**
 
 `make py-test` runs 31 test files against `postgresql://localhost/mailpilot_test`.
 The database is real (truncated before each test, not mocked);
@@ -73,6 +78,9 @@ produces a reply grounded in the source document.
 Mocking the model returns whatever I tell it to return, which is not a test of the model.
 
 ## Layer 3: the smoke-test skill
+
+**The third layer runs the agent end-to-end against real Gmail, real Drive, and the real model &mdash;
+two mandatory scenarios that stage the concurrent cross-talk no unit test can reproduce.**
 
 > The runner is Claude Code.
 > The system under test is everything else.
@@ -154,7 +162,7 @@ the exact `/sdd:spec` invocation that would file it.
 Critical and High bugs auto-invoke `/sdd:spec` from the same Claude Code session.
 Bugs become `§B` rows; recurrence-class bugs become new `§V` invariants.
 The next `/sdd:build` plan respects the new invariant.
-**The loop closes inside one chat session**, with no copy-paste between tools.
+*The loop closes inside one chat session*, with no copy-paste between tools.
 
 ## Why a skill instead of a shell script
 
@@ -189,6 +197,9 @@ when the diff justifies it, not on every push.
 
 ## What it caught
 
+**Only the real model, on the real prompt against an empty search result, has to choose between
+declining and inventing &mdash; so the smoke test caught the fabricated-spec regression that pytest-httpx can never stage.**
+
 The failure mode I hit most often was the agent fabricating specs on out-of-scope questions.
 The Drive search returned no hits,
 but the agent answered anyway with plausible-sounding vendor part numbers.
@@ -202,6 +213,9 @@ then re-running and watching `qa.py check` reject the invented spec by regex &md
 that loop is the actual product.
 
 ## When to add a skill instead of a test
+
+**Reach for a smoke-test skill, not a pytest test, when the model call can't be credibly mocked,
+the output is natural language a human would have to grade, or a failure should produce a spec entry rather than a ticket.**
 
 A pytest test is right when the input space is small and the expected output is exact.
 A smoke-test skill is right when:

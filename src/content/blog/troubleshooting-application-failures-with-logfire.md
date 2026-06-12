@@ -7,18 +7,19 @@ tags: [logfire, opentelemetry, observability, debugging, pydantic-ai]
 
 ## TLDR
 
-Most application failures arrive as a single sentence wrapped in a retry counter.
-*The read operation timed out. Attempt 4 of 4.*
-That sentence is the worst possible starting point:
-the underlying signal has already been collapsed into a string,
-and the retry loop has erased the shape of the failure.
-This post is a workflow for using [Logfire](https://logfire.pydantic.dev)
-to recover that shape &mdash; five SQL queries against your traces, in a fixed order,
+Most application failures arrive as a single sentence wrapped in a retry counter &mdash;
+*the read operation timed out, attempt 4 of 4* &mdash;
+which collapses the signal into a string and erases the shape of the failure.
+This post is a workflow for using [Logfire](https://logfire.pydantic.dev) to recover that shape:
+five SQL queries against your traces, in a fixed order,
 that take you from "something failed" to "here is the line of code."
 The queries work against any OpenTelemetry-instrumented system;
 the example is a real production bug in an LLM agent, diagnosed in under thirty minutes.
 
 ## The trap a flat log stream sets
+
+**A flat log stream collapses four attempts into one terminal counter and throws away
+the relationship between events &mdash; which is exactly the part that names the bug.**
 
 A failure surfaces.
 You go to look.
@@ -84,6 +85,9 @@ filtering by environment becomes the difference between a clean trace view and a
 
 ## Query 1 &mdash; find any span tied to the failure
 
+**Query 1 filters on your domain ID to surface a trace ID &mdash;
+you are not understanding the failure yet, just making it addressable.**
+
 You have an ID for the thing that failed.
 A task ID, a request ID, an email ID &mdash; whatever your domain uses.
 The first query is always the same shape:
@@ -113,6 +117,10 @@ but it also gave me the one thing the application logs could not.
 and the full Python traceback &mdash; columns, not substrings of a log line.*
 
 ## Query 2 &mdash; pull the full trace tree
+
+**Two sibling tool calls dispatched 403 microseconds apart &mdash; one returning in a second,
+one hanging for the full socket timeout &mdash; name a concurrency bug
+that a flat log stream physically cannot show.**
 
 This is the query that pivots most investigations from blind to obvious.
 
@@ -148,13 +156,13 @@ sync.loop.iteration                                            66.49s
 Look at the last two leaves.
 Two sibling tool spans, both named `read_drive_markdown`, dispatched under the same LLM turn.
 One returned in 1.12 seconds.
-The other took **60.83 seconds** to raise `TimeoutError`.
+The other took *60.83 seconds* to raise `TimeoutError`.
 Their raw start timestamps were:
 
 - `2026-05-27T21:31:29.384849Z`
 - `2026-05-27T21:31:29.385252Z`
 
-The two calls began **403 microseconds apart**.
+The two calls began *403 microseconds apart*.
 That is the smoking gun.
 The model was not slow.
 The file was not corrupt.
@@ -186,6 +194,9 @@ everything above it is just unwind path.
 
 ## Query 3 &mdash; confirm it is deterministic
 
+**All four attempts ran ~66 seconds and landed in the same classifier branch &mdash;
+two minutes of SQL proves a deterministic bug, not a flake, before you waste an hour on it.**
+
 Before chasing the concurrency bug, you have to rule out coincidence.
 The retry counter says four attempts.
 Did they all fail the same way, or did one of them have a different shape?
@@ -206,7 +217,7 @@ For the example bug, every attempt was ~66 seconds long.
 Every retry landed in the same classifier branch.
 The first three waited the configured backoff &mdash; 30s, 120s, 300s &mdash;
 and the loop ran again with the same shape.
-The failure was **deterministic and reproducible across attempts**, not a flake.
+The failure was *deterministic and reproducible across attempts*, not a flake.
 
 This is the cheapest possible flake-vs-bug discriminator.
 Two minutes of SQL, no code changes, no re-running anything.
@@ -219,6 +230,10 @@ The `attempt` and `backoff_seconds` attributes on each retry row turn "it failed
 into "it failed the same way four times" &mdash; the difference between a flake and a bug.*
 
 ## Query 4 &mdash; extract the structured I/O
+
+**The structured arguments and responses are already on the spans &mdash;
+reading them showed the agent already had its answer from the fast call,
+so the bug was the harness, not the model's reasoning.**
 
 Now you want the arguments and the responses.
 The OTel `gen_ai.*` conventions put them on spans as structured attributes.
@@ -255,6 +270,10 @@ The same shape works against any Pydantic AI deployment &mdash;
 or any framework following the `gen_ai.*` conventions.
 
 ## Bridging back to the source
+
+**The bridge from trace to source is one short move when the trace is this specific:
+open the failing span's file, find the timeout constant, and read the surrounding code &mdash;
+here, a shared HTTP client that httplib2 documents as not thread-safe.**
 
 Logfire told me *what* was hanging.
 It did not, and cannot, tell me *why*.

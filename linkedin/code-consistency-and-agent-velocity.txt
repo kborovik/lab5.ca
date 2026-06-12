@@ -1,6 +1,6 @@
 Blog: Code consistency is the casualty of agent velocity
 
-The thing that bit me wasn't an AI agent writing bad code. It was the agent writing inconsistent code. Task one establishes a pattern. By task ten it has invented three more — a second error-handling convention here, a third way to shape a response there. Nobody decided that. It drifts one reasonable-looking diff at a time, and you don't see it until the codebase has three dialects.
+spec-driven-dev keeps a single Claude Code agent coherent with itself across a long session: one SPEC.md at the repo root, telegraph-encoded to stay small, that the agent re-reads every turn — so task ten is built against the same constraints as task one. The encoding benchmarks at a 41% mean token cut versus prose. One file, one thread, no subagents.
 
 Consistency is the expensive casualty. Bad code gets caught by tests. Inconsistent code passes every test and still rots the project, because the next agent reads the same files and amplifies the drift.
 

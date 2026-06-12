@@ -8,14 +8,18 @@ tags: ["spec-driven-development", "claude-code", "ai-coding", "benchmarks"]
 ## TLDR
 
 [spec-driven-dev](https://github.com/kborovik/spec-driven-dev)
-keeps a single Claude Code agent coherent with itself across a long session.
-One `SPEC.md` at the repo root, telegraph-encoded to stay small,
+keeps a single Claude Code agent coherent with itself across a long session:
+one `SPEC.md` at the repo root, telegraph-encoded to stay small,
 that the agent re-reads every turn —
 so task ten is built against the same constraints as task one.
-The encoding benchmarks at a **41% mean token cut** versus prose.
+The encoding benchmarks at a *41% mean token cut* versus prose.
 One file, one thread, no subagents.
 
 ## The drift nobody decides on
+
+**Consistency, not correctness, is the first casualty of agent velocity —
+the expensive one, because inconsistent code passes every test
+and still rots the project.**
 
 The thing that bit me wasn't the agent writing bad code.
 It was the agent writing *inconsistent* code.
@@ -37,6 +41,10 @@ because the next agent, reading the same files,
 learns the drift and amplifies it.
 
 ## One small spec, re-read every turn
+
+**The defense is a single small spec the agent re-parses every command,
+with a stable cite on every row — so a cold agent reads the contract
+instead of reconstructing intent from chat it no longer has.**
 
 The fix is unglamorous:
 keep a single `SPEC.md` at the repo root,
@@ -66,6 +74,10 @@ it's reading the contract.
 > Everything else has to save more tokens later, or get cut.
 
 ## The loop
+
+**One command alone mutates the spec, build routes every failure through backprop,
+and two operator-triggered housekeeping passes keep a long-lived spec from going stale —
+each landing as a single atomic commit.**
 
 The plugin is a handful of slash commands
 that map onto the loop I actually want:
@@ -98,6 +110,9 @@ a rollback is one `git revert`, never a background process I have to trust.
 
 ## Telegraph: the compression, benchmarked
 
+**Telegraph encoding benchmarks at a 41% mean token cut across 30 rows —
+which means a prose spec pays 1.7× the tokens, on every turn the agent re-reads it.**
+
 "Small enough to sit in context" is the load-bearing claim,
 so the encoding has to pull its weight.
 `SPEC.md` is written in telegraph:
@@ -120,13 +135,13 @@ V12: every req → auth check before handler
 I measured it the way I measure everything else:
 30 rows of this repo's own `SPEC.md`,
 each run through Claude's tokenizer against a prose rewrite of the same row.
-Telegraph lands a **41% mean reduction** (median 39%, n=30).
+Telegraph lands a *41% mean reduction* (median 39%, n=30).
 It's reproducible —
 `benchmarks/telegraph/telegraph-bench.py` runs it row by row,
 with full methodology and per-row numbers in the benchmark write-up, not a slide.
 
 Flip the number around and it's the real argument.
-A prose spec pays roughly **1.7× the tokens** for identical content —
+A prose spec pays roughly *1.7× the tokens* for identical content —
 and you don't pay that once,
 you pay it on every turn the agent re-reads the spec.
 Over a long session that compounds straight into the context budget
@@ -139,6 +154,9 @@ The spec stays lean for the model;
 I never have to read the compressed form unless I want to.
 
 ## Every failure tightens the spec
+
+**Backprop turns every under-specified failure into a permanent guard rail —
+a recorded bug, often a tightened invariant, and a failing test written before the fix.**
 
 The mechanic I lean on hardest is backprop,
 and it's what defends consistency over time.
@@ -156,6 +174,10 @@ the build refuses to ship code that violates it,
 and drift I've already hit once can't quietly come back.
 
 ## What I gave up
+
+**The tradeoffs are deliberate: single-thread and slower, Claude Code only,
+telegraph hostile to read at first — because I'm optimizing to still understand
+this code in six months, not for agent throughput.**
 
 It's single-thread and slower than fanning work out to parallel agents —
 I'm the bottleneck, and that's the point.

@@ -1,8 +1,6 @@
 Blog: Troubleshooting application failures with Logfire
 
-Most application failures arrive as a single sentence wrapped in a retry counter. "The read operation timed out. Attempt 4 of 4." That sentence is the worst possible starting point — the signal has been collapsed into a string and the retry loop has erased the shape of the failure.
-
-So I wrote up the workflow I use to recover that shape: five SQL queries against Logfire traces, in a fixed order, that take an investigation from "something failed" to "here is the line of code." The example is a real production bug in an LLM agent, diagnosed in under thirty minutes.
+Most application failures arrive as a single sentence wrapped in a retry counter — the read operation timed out, attempt 4 of 4 — which collapses the signal into a string and erases the shape of the failure. This post is a workflow for using Logfire to recover that shape: five SQL queries against your traces, in a fixed order, that take you from "something failed" to "here is the line of code." The queries work against any OpenTelemetry-instrumented system; the example is a real production bug in an LLM agent, diagnosed in under thirty minutes.
 
 The sequence:
 
