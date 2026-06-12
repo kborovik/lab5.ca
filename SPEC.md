@@ -75,7 +75,7 @@ V25: nav-footer — the nav links Home (/), Projects (/projects), and Blog (/blo
 id|status|task|cites
 T1|x|re-wrap src/content/blog/*.md to semantic line breaks|V20
 T2|x|drop blog post: delete src/content/blog/measuring-glyph-compression.md (no inbound links, no public/blog/ asset dir; blog index, rss, sitemap, llms.txt regenerate at build)|V16,V24
-T3|.|publish blog post: move buy-90-build-10.md → src/content/blog/buy-90-build-10.md (filename = slug); re-wrap body to semantic line breaks; frontmatter already schema-clean; blog index, rss, sitemap, llms.txt regenerate at build|V16,V18,V20,V24
+T3|x|publish blog post: move buy-90-build-10.md → src/content/blog/buy-90-build-10.md (filename = slug); re-wrap body to semantic line breaks; frontmatter already schema-clean; blog index, rss, sitemap, llms.txt regenerate at build|V16,V18,V20,V24
 
 ## §B BUGS
 
