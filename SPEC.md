@@ -79,6 +79,7 @@ T3|x|publish blog post: move buy-90-build-10.md → src/content/blog/buy-90-buil
 T4|x|drop blog post: delete src/content/blog/spec-driven-development.md and linkedin/spec-driven-development.txt (pairing per V16; no public/blog/ asset dir; the published LinkedIn post links the live URL, which 404s after removal; blog index, rss, sitemap, llms.txt regenerate at build)|V16,V24
 T5|x|sweep blog↔linkedin pairing: scope = slug-set diff of src/content/blog/*.md (basename minus .md) vs linkedin/*.txt (basename minus .txt); author linkedin/<slug>.txt for each unpaired post; delete each orphan linkedin/<slug>.txt (current diff: buy-90-build-10 lacks copy; measuring-glyph-compression.txt is orphan)|V16,V24
 T6|x|publish blog post: move code-consistency-and-agent-velocity.md → src/content/blog/code-consistency-and-agent-velocity.md (filename = slug); re-wrap body to semantic line breaks; author linkedin/code-consistency-and-agent-velocity.txt (pairing per V16); frontmatter already schema-clean; blog index, rss, sitemap, llms.txt regenerate at build|V16,V18,V20,V24
+T7|.|prototype blog skim-spine on src/content/blog/buy-90-build-10.md: add ## TLDR section (the argument compressed, ≤5 sentences); restrict bold to full-sentence skim-spine theses — reading the bolds alone yields the post's argument, ≤1 per section; demote entity/number emphasis (SaaStr, Harmonic, TrexoGlobal, Klarna, $2.1M) from bold to italic or plain; operator reviews rendered post at /blog/buy-90-build-10 before any §V encoding|V1,V19,V20,V24
 
 ## §B BUGS
 
