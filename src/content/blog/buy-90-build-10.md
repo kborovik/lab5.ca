@@ -1,5 +1,5 @@
 ---
-title: "Buy 90%, build 10%: the rule small businesses can finally follow"
+title: "The 90/10 software rule small businesses can use"
 description: "For decades only big companies could afford to build their differentiated software. AI collapsed the cost of that slice to where one developer can deliver it — which is exactly what a small business can now afford."
 pubDate: 2026-06-11
 tags:
@@ -13,7 +13,7 @@ tags:
 There's a rule going around among AI-native operators,
 and the cleanest version of it comes from SaaStr —
 a media company that reportedly runs on about three people and a couple dozen AI agents:
-**buy 90% of what you need off the shelf, and build only the 10% where no good solution exists.**
+**buy 90% of your business software off the shelf, and build only the 10% where no tool fits.**
 
 Don't try to out-build Salesforce or HubSpot in a weekend.
 You'll ship a worse version and then spend six months maintaining it
@@ -31,7 +31,7 @@ Because, for the first time, they can afford to build the 10% that matters.
 Here's the practical version — five steps, in order.
 The rest of this post is why each one holds up.
 
-1. **Find your 10% first.**
+1. **Find the 10% worth building first.**
    It's the workflow your team holds together with spreadsheets, tabs, and Slack messages
    because no tool fits — the friction that sits *inside* your core process.
    That's the build candidate.
