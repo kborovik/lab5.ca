@@ -14,7 +14,7 @@ export const GET: APIRoute = async () => {
     )
     .join('\n\n');
 
-  const body = `# Build and optimize business processes with AI.
+  const body = `# Build and optimize business processes with AI
 
 LLM systems that do real work — without becoming a money pit. I measure the cost per outcome so you can see the return before you scale it. Production systems, traced to the dollar — not pilots that quietly bleed.
 
