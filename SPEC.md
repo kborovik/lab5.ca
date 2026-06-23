@@ -34,8 +34,9 @@ marketing.
 - route: `/blog` — post index, newest first by pubDate, drafts filtered out
 - route: `/blog/<slug>` — post render (H1, date and tags, "all posts" back-link)
 - endpoint: `/blog/<slug>.md` — raw markdown alternate (yaml frontmatter plus body)
+- endpoint: `/mailpilot.md` and `/projects.md` — raw markdown alternates mirroring the rendered content pages (no frontmatter), linked via rel=alternate
 - endpoint: `/rss.xml` — @astrojs/rss feed
-- endpoint: `/llms.txt` — terse map of pages, posts, and contact (markdown)
+- endpoint: `/llms.txt` — terse map of pages, posts, and contact (markdown); page and post links point at the .md alternates
 - endpoint: `/llms-full.txt` — full landing-copy mirror (markdown)
 - endpoint: `/sitemap-index.xml` and `/sitemap-0.xml` — @astrojs/sitemap
 - static: public/ holds _headers, robots.txt, favicon.svg and favicon.ico, og.png (1200x630), kb-headshot.jpg, logo-linkedin.svg and .png, banner-linkedin.png
@@ -59,8 +60,8 @@ V10: typeface — `--font-mono` token is Space Grotesk (body default, Tailwind `
 V11: base-type — html font-size is 18px; body weight is 400.
 V12: motion — animate-hero (fadeUp stagger via an inline animation-delay), animate-on-scroll (IntersectionObserver adds .is-visible at threshold 0.1), and cta-pulse (pulseGlow). Under prefers-reduced-motion: reduce, opacity is forced to 1, transform/animation/transition are none, and the observer is skipped.
 V13: seo-graph — JSON-LD @graph: Person + WebSite + page node (WebPage/CollectionPage/BlogPosting) + BreadcrumbList (non-root); BlogPosting carries dates, author, image; detail: check-extras §V13
-V14: head-meta — canonical URL, hreflang en-ca+x-default, RSS alt, OG+Twitter summary_large_image; blog adds markdown alt; title "<title> | Konstantin Borovik"; detail: check-extras §V14
-V15: llms-endpoints — /llms.txt (terse map) and /llms-full.txt (full landing-copy mirror) are text/markdown; copy mirrors landing manually; editing landing risks drift
+V14: head-meta — canonical URL, hreflang en-ca+x-default, RSS alt, OG+Twitter summary_large_image; pages with a .md alternate (blog posts, /mailpilot, /projects) add a text/markdown rel=alternate; title "<title> | Konstantin Borovik"; detail: check-extras §V14
+V15: llms-endpoints — /llms.txt (terse map; page and post links target the .md alternates) and /llms-full.txt (full landing mirror) are text/markdown; llms-full body is generated from one shared landing-copy module imported by both the landing page and the endpoint — never hand-mirrored, so the rendered page and llms-full cannot drift
 V16: blog-path — src/content/blog/<slug>.md flat; filename is URL slug and post id; every post pairs with linkedin/<slug>.txt (drop → delete paired txt same change); TLDR mirrors to linkedin txt lead; detail: check-extras §V16
 V17: blog-render — the route owns the chrome: H1, date and tags, and the "all posts" link; the markdown body has no `# Title`, no byline, and no footer.
 V18: blog-frontmatter — the schema is strict per §I.blog_schema; an undeclared key (author, image, canonical) fails astro check.
@@ -85,6 +86,8 @@ T6|x|publish blog post: code-consistency-and-agent-velocity.md|V16,V18,V20,V24
 T7|x|prototype blog skim-spine on buy-90-build-10.md|V1,V19,V20,V24
 T8|x|conform blog posts to blog-skim invariant|V16,V19,V20,V24,V26
 T9|x|redesign home hero + what-i-do for build/optimize campaign|V1,V6,V15,V24
+T10|.|extract shared landing-copy module; generate llms-full.txt from it + re-sync the current drift; point llms.txt links at the .md alternates|V15,V24
+T11|.|add /mailpilot.md + /projects.md markdown-alternate endpoints + rel=alternate head links|V14,V24
 
 ## §B BUGS
 
