@@ -7,9 +7,11 @@ docs rather than restating them.
 ## §G GOAL
 
 Lead-generation portfolio for Konstantin Borovik (Software Engineer, AI & LLM
-Engineering, Toronto). Thesis: "LLM systems that do real work — without becoming
-a money pit" — build or rescue AI business processes, with cost per outcome
-traced to the dollar. MailPilot is the live proof of capability, not a product.
+Engineering, Toronto). Headline: "Build and optimize business processes with AI"
+(sentence case per the casing invariant); supporting thesis unchanged — LLM
+systems that do real work without becoming a money pit, cost per outcome traced
+to the dollar. Two offers: build a new AI business process, or optimize an
+existing one. MailPilot is the live proof of capability, not a product.
 Primary conversion is booking a 30-minute call. Static site, owner-operated,
 deploy on push; the aesthetic is framework-docs (GitHub-light), not SaaS
 marketing.
@@ -82,6 +84,7 @@ T5|x|sweep blog↔linkedin pairing: scope = slug-set diff of src/content/blog/*.
 T6|x|publish blog post: move code-consistency-and-agent-velocity.md → src/content/blog/code-consistency-and-agent-velocity.md (filename = slug); re-wrap body to semantic line breaks; author linkedin/code-consistency-and-agent-velocity.txt (pairing per V16); frontmatter already schema-clean; blog index, rss, sitemap, llms.txt regenerate at build|V16,V18,V20,V24
 T7|x|prototype blog skim-spine on src/content/blog/buy-90-build-10.md: add ## TLDR section (the argument compressed, ≤5 sentences); restrict bold to full-sentence skim-spine theses — reading the bolds alone yields the post's argument, ≤1 per section; demote entity/number emphasis (SaaStr, Harmonic, TrexoGlobal, Klarna, $2.1M) from bold to italic or plain; operator reviews rendered post at /blog/buy-90-build-10 before any §V encoding|V1,V19,V20,V24
 T8|x|conform blog posts to blog-skim: scope = src/content/blog/*.md; ensure each has a ## TLDR (≤3 sentences) mirrored to linkedin/<slug>.txt as lead; one standalone bold subtitle per H2 prose section (lists exempt; lede keeps one bold thesis); demote term/number/entity bold to italic; rewrap touched lines to semantic line breaks (buy-90-build-10.md already conforms)|V16,V19,V20,V24,V26
+T9|.|redesign home hero + what-i-do for the build/optimize campaign: hero H1 → "Build and optimize business processes with AI" (sentence case per casing invariant); rework the hero subhead to carry the money-pit / cost-per-outcome thesis without repeating the H1; rename what-i-do offer 02 "Rescue a Runaway AI Project" → "Optimize an AI Process", reframing copy to improving working systems (cost, quality, speed) and dropping the rescue/runaway hook; keep one section, two columns (01 Build, 02 Optimize); mirror new hero + offer copy to /llms.txt and /llms-full.txt per the llms-endpoints invariant; make check + make build|V1,V6,V15,V24
 
 ## §B BUGS
 
