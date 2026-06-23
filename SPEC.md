@@ -86,7 +86,7 @@ T6|x|publish blog post: code-consistency-and-agent-velocity.md|V16,V18,V20,V24
 T7|x|prototype blog skim-spine on buy-90-build-10.md|V1,V19,V20,V24
 T8|x|conform blog posts to blog-skim invariant|V16,V19,V20,V24,V26
 T9|x|redesign home hero + what-i-do for build/optimize campaign|V1,V6,V15,V24
-T10|.|extract shared landing-copy module; generate llms-full.txt from it + re-sync the current drift; point llms.txt links at the .md alternates|V15,V24
+T10|x|extract shared landing-copy module; generate llms-full.txt from it + re-sync the current drift; point llms.txt links at the .md alternates|V15,V24
 T11|.|add /mailpilot.md + /projects.md markdown-alternate endpoints + rel=alternate head links|V14,V24
 
 ## §B BUGS

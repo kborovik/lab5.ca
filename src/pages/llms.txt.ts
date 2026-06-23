@@ -9,7 +9,7 @@ export const GET: APIRoute = async () => {
   const postsSection = posts
     .map(
       p =>
-        `- [${p.data.title}](https://lab5.ca/blog/${p.id}/): ${p.data.description}`,
+        `- [${p.data.title}](https://lab5.ca/blog/${p.id}.md): ${p.data.description}`,
     )
     .join('\n');
 
@@ -19,8 +19,8 @@ export const GET: APIRoute = async () => {
 
 ## Pages
 
-- [Projects](https://lab5.ca/projects): skill-to-GitHub-repo card grid (gcp-devops, MailPilot, spec-driven-dev, lab5.ca)
-- [MailPilot](https://lab5.ca/mailpilot): production AI agent for business email, evidence of capability
+- [Projects](https://lab5.ca/projects.md): skill-to-GitHub-repo card grid (gcp-devops, MailPilot, spec-driven-dev, lab5.ca)
+- [MailPilot](https://lab5.ca/mailpilot.md): production AI agent for business email, evidence of capability
 - [Blog](https://lab5.ca/blog): notes on cloud infrastructure, AI agents, spec-driven development, and Claude Code
 
 ## Posts
