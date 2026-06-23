@@ -117,7 +117,7 @@ exactly the cross-talk failure mode no unit test can stage.
 
 ## What Claude Code as the runner buys
 
-Three things a CI runner cannot do.
+**Claude Code as the runner buys three things a CI pipeline cannot: LLM judgment at the leaves with determinism at the joints, real APIs instead of fakes, and a report that files its own spec actions.**
 
 **1. Judgment at the leaves, determinism at the joints.**
 Most gates are deterministic:
@@ -165,6 +165,8 @@ The next `/sdd:build` plan respects the new invariant.
 *The loop closes inside one chat session*, with no copy-paste between tools.
 
 ## Why a skill instead of a shell script
+
+**A markdown skill beats a shell script because branching reads as natural language, variables stay conversational, and the agent that runs the test files the bug in the same session.**
 
 The skill is markdown.
 It calls out to `bash`, `python3`, `mailpilot`, and Logfire SQL &mdash;
