@@ -1,72 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-const steps = [
-  {
-    num: '01',
-    title: 'Send a Product Question',
-    body: 'Email hello@lab5.ca with a question about the product specs in the knowledge base. Out-of-kb questions get a reply explaining how the demo works.',
-  },
-  {
-    num: '02',
-    title: 'Agent Searches the Knowledge Base',
-    body: 'The agent searches product documentation stored in Google Drive, running retrieval over indexed specs to find relevant passages.',
-  },
-  {
-    num: '03',
-    title: 'You Get a Sourced Reply',
-    body: 'Within 60 seconds the agent replies with an answer grounded in the source documents. End-to-end automated: Gmail push → retrieval → llm → reply.',
-  },
-];
-
-const stack = [
-  {
-    num: '01',
-    title: 'Backend',
-    body: 'Python, serverless functions, event-driven. Triggered by Gmail push notifications via Pub/Sub. Scale-to-zero costs.',
-  },
-  {
-    num: '02',
-    title: 'AI Layer',
-    body: 'LLM with retrieval over Google Drive. Structured prompts guide answer format. Out-of-kb detection prevents hallucination.',
-  },
-];
-
-const canAnswer = [
-  'What is the permeate flow rate in GPD for the TW-12.0K-840 model, and what is the motor horsepower required at 60Hz?',
-  'What is the continuous flow rate in GPM and peak flow rate in GPM for the WS36-600-2 softener?',
-  'What is the maximum flow rate of the C403 UV-COM model, and what is its UV dose range?',
-  'What is the permeate flow rate and active area of the FilmTec ECO-440i RO membrane?',
-  'What percentage of free chlorine can KDF 55 medium remove, and what is the heavy metal removal efficiency of KDF 55, KDF 85, and KDF-C media?',
-  'What is the capacity in GPD of the RO-500 Series model TW-270K-8580 installed in Nicaragua, and how many 8" TFC spiral wound membranes does this system contain?',
-];
-
-const willDecline = [
-  'Which Pentair commercial reverse osmosis system would you recommend for a 300 GPM brewery feedwater application?',
-  'Can you spec a Grundfos CRN dosing pump for chlorine injection at 25 GPH?',
-  'Which Veolia OPUS II system handles produced water with 50,000 ppm TDS for oil and gas?',
-];
+import {
+  kicker,
+  intro,
+  email,
+  emailNote,
+  sections,
+  steps,
+  knowledgeBase,
+  tryThese,
+  underTheHood,
+} from '../copy/mailpilot';
 ---
 
 <Layout
   title="MailPilot"
   description="AI agent for business email — MailPilot, a production Pydantic AI agent I built end-to-end on Google Cloud. Email it a question; the reply is evidence of the work."
+  markdownAlternate="/mailpilot.md"
 >
   <!-- Header -->
   <section class="mx-auto max-w-3xl px-6 pt-16 pb-8 sm:pt-20 sm:pb-10 text-center">
     <p class="section-kicker text-base font-bold uppercase tracking-[0.2em] text-gh-blue">
-      proof of capability
+      {kicker}
     </p>
     <h1 class="mt-4 text-3xl font-bold tracking-tight text-gh-fg sm:text-4xl">
       MailPilot
     </h1>
     <p class="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-gh-fg-muted sm:text-base">
-      A production AI agent I built end-to-end. Reads email, retrieves from a knowledge base, replies in under 60 seconds. Evidence of the work, not a sandbox.
+      {intro}
     </p>
 
     <div class="mt-10 inline-flex items-center gap-3 rounded-lg border border-gh-border bg-gh-canvas-subtle px-5 py-3 text-sm text-gh-fg">
       <span class="text-gh-fg-muted">$</span>
-      <span>mail hello@lab5.ca</span>
+      <span>mail {email}</span>
       <button
         id="copy-email-btn"
         aria-label="Copy email address"
@@ -80,7 +46,7 @@ const willDecline = [
     </div>
 
     <p class="mt-4 text-xs text-gh-fg-muted">
-      replies in &lt;60s · no signup · real production agent
+      {emailNote}
     </p>
   </section>
 
@@ -88,7 +54,7 @@ const willDecline = [
   <section class="border-t border-gh-border py-12 sm:py-14">
     <div class="mx-auto max-w-3xl px-6">
       <h2 class="section-kicker text-base font-bold uppercase tracking-[0.2em] text-gh-blue">
-        how it works
+        {sections.howItWorks}
       </h2>
       <div class="mt-10 grid gap-10 sm:grid-cols-3 sm:gap-8">
         {steps.map(step => (
@@ -109,13 +75,13 @@ const willDecline = [
   <section class="border-t border-gh-border py-12 sm:py-14">
     <div class="mx-auto max-w-3xl px-6">
       <p class="text-base font-bold uppercase tracking-[0.2em] text-gh-blue">
-        // knowledge base
+        // {sections.knowledgeBase}
       </p>
       <p class="mt-6 max-w-2xl text-sm leading-relaxed text-gh-fg-muted">
-        Sample questions are based on real product specification sheets. Cross-check the agent&rsquo;s answers against the source documents.
+        {knowledgeBase.body}
       </p>
       <a
-        href="https://drive.google.com/drive/folders/1IUuPinOopUv_YWOZyFpt2ZX8Hd8bpZat"
+        href={knowledgeBase.driveUrl}
         target="_blank"
         rel="noopener noreferrer"
         class="mt-6 inline-flex items-center gap-2 rounded-lg border border-gh-border bg-white px-4 py-2 text-sm font-bold text-gh-fg transition-colors hover:bg-gh-canvas-subtle"
@@ -137,18 +103,18 @@ const willDecline = [
   <section class="border-t border-gh-border py-12 sm:py-14">
     <div class="mx-auto max-w-3xl px-6">
       <p class="text-base font-bold uppercase tracking-[0.2em] text-gh-blue">
-        // try these questions
+        // {sections.tryThese}
       </p>
 
       <div class="mt-10">
         <p class="text-sm font-bold text-gh-fg">
-          <span class="text-gh-green">[ok]</span> the agent will answer
+          <span class="text-gh-green">[ok]</span> {tryThese.answer.heading}
         </p>
         <p class="mt-1 text-xs text-gh-fg-muted">
-          questions matching products in the knowledge base &mdash; expect a sourced reply.
+          {tryThese.answer.hint}
         </p>
         <ul class="mt-4 space-y-2">
-          {canAnswer.map(q => (
+          {tryThese.answer.questions.map(q => (
             <li class="flex items-start justify-between gap-3 border-b border-gh-border py-2 last:border-b-0">
               <span class="text-sm leading-relaxed text-gh-fg-muted">{q}</span>
               <button
@@ -166,13 +132,13 @@ const willDecline = [
 
       <div class="mt-12">
         <p class="text-sm font-bold text-gh-fg">
-          <span class="text-gh-fg-muted">[skip]</span> the agent will decline
+          <span class="text-gh-fg-muted">[skip]</span> {tryThese.decline.heading}
         </p>
         <p class="mt-1 text-xs text-gh-fg-muted">
-          products not in the knowledge base &mdash; expect a polite refusal, not a guess.
+          {tryThese.decline.hint}
         </p>
         <ul class="mt-4 space-y-2">
-          {willDecline.map(q => (
+          {tryThese.decline.questions.map(q => (
             <li class="flex items-start justify-between gap-3 border-b border-gh-border py-2 last:border-b-0">
               <span class="text-sm leading-relaxed text-gh-fg-muted">{q}</span>
               <button
@@ -194,14 +160,14 @@ const willDecline = [
   <section class="border-t border-gh-border py-12 sm:py-14">
     <div class="mx-auto max-w-5xl px-6">
       <h2 class="section-kicker text-base font-bold uppercase tracking-[0.2em] text-gh-blue">
-        under the hood
+        {sections.underTheHood}
       </h2>
       <p class="mt-6 max-w-2xl text-sm leading-relaxed text-gh-fg-muted">
-        For technical reviewers &mdash; the stack and the reasoning.
+        {underTheHood.body}
       </p>
 
       <div class="mt-10 grid gap-10 sm:grid-cols-2 sm:gap-8">
-        {stack.map(layer => (
+        {underTheHood.stack.map(layer => (
           <div class="animate-on-scroll">
             <div class="flex items-baseline gap-2 text-xs text-gh-fg-muted">
               <span>{layer.num}</span>
@@ -214,7 +180,7 @@ const willDecline = [
       </div>
 
       <a
-        href="https://github.com/kborovik/mailpilot"
+        href={underTheHood.repoUrl}
         target="_blank"
         rel="noopener noreferrer"
         class="mt-10 inline-flex items-center gap-2 rounded-lg border border-gh-border bg-white px-4 py-2 text-sm font-bold text-gh-fg transition-colors hover:bg-gh-canvas-subtle"

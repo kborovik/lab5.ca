@@ -1,44 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-const projects = [
-  {
-    id: 'mailpilot',
-    repo: 'mailpilot',
-    label: 'Python',
-    context: 'Production AI agent handling real business email — Pydantic AI on a Google Cloud backend; live at hello@lab5.ca.',
-    stack: 'Pydantic AI · LLM workflows · GCP · Cloud Run',
-    href: 'https://github.com/kborovik/mailpilot',
-  },
-  {
-    id: 'gcp-devops',
-    repo: 'gcp-devops',
-    label: 'Google Cloud',
-    context: 'Reference Terraform and Ansible patterns for Google Cloud — Cloud Run services, Pub/Sub topologies, IAM, observability.',
-    stack: 'Terraform · Ansible · Cloud Run · Pub/Sub · IaC',
-    href: 'https://github.com/kborovik/gcp-devops',
-  },
-  {
-    id: 'spec-driven-dev',
-    repo: 'spec-driven-dev',
-    label: 'AI agent tooling',
-    context: 'Claude Code skill plugins for spec-driven development and agent workflows — one root SPEC.md, build/check loops, MCP integration.',
-    stack: 'Claude Code skills SDK · agentic workflows · MCP',
-    href: 'https://github.com/kborovik/spec-driven-dev',
-  },
-  {
-    id: 'lab5',
-    repo: 'lab5.ca',
-    label: 'Web development',
-    context: 'This site — Astro 6 static build on Cloudflare Workers; spec-driven, deploy on push to main.',
-    stack: 'Astro 6 · Tailwind v4 · TypeScript · Cloudflare Workers',
-    href: 'https://github.com/kborovik/lab5.ca',
-  },
-];
+import { projects, projectsIntro } from '../copy/projects';
 ---
 
 <Layout
   description="AI agents and platform engineering — Konstantin Borovik's GitHub-repo proof grid: mailpilot (production Python AI agent on Pydantic AI + Google Cloud), spec-driven-dev (Claude Code AI agent tooling), gcp-devops (Google Cloud / Terraform / IaC), lab5.ca (Astro + Cloudflare Workers)."
+  markdownAlternate="/projects.md"
 >
   <!-- Header -->
   <section class="mx-auto max-w-5xl px-6 pt-16 pb-10 sm:pt-20 sm:pb-12 font-mono">
@@ -46,7 +13,7 @@ const projects = [
       Projects
     </h1>
     <p class="animate-hero mt-4 max-w-2xl text-sm leading-relaxed text-gh-fg-muted sm:text-base" style="animation-delay: 80ms;">
-      Each card maps a skill to a public GitHub repository &mdash; what I&rsquo;ve actually shipped, not what I claim.
+      {projectsIntro}
     </p>
   </section>
 
