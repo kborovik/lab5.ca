@@ -14,9 +14,9 @@ export const GET: APIRoute = async () => {
     )
     .join('\n\n');
 
-  const body = `# LLM systems that do real work — without becoming a money pit.
+  const body = `# Build and optimize business processes with AI.
 
-I build and optimize business processes with AI agents, then measure the cost per outcome so you can see the return before you scale it. Production systems, traced to the dollar — not pilots that quietly bleed.
+LLM systems that do real work — without becoming a money pit. I measure the cost per outcome so you can see the return before you scale it. Production systems, traced to the dollar — not pilots that quietly bleed.
 
 20+ years shipping production software · AI agents running in production today · Toronto-based.
 
@@ -32,7 +32,7 @@ Repetitive, lookup-heavy work is what LLM systems are genuinely good at — high
 
 Build Business Processes with AI. A new business process, powered by an LLM agent and built to be measured from day one. High-volume, lookup-heavy, repetitive work — pre-sales questions, RFP responses, document processing, tier-one support — answered instantly and consistently, with the cost per outcome traced before you scale it.
 
-Rescue a Runaway AI Project. An AI initiative that's stalled or running up a bill nobody can explain. I instrument what it's actually doing, find where the money goes, cap the runaway paths, and add the grounding and guardrails that should have been there first — so it earns its keep instead of becoming the budget line you regret.
+Optimize an AI Process. An AI process that already runs but costs more than it should, or answers less reliably than it needs to. I instrument what it's actually doing, find where the money and the errors go, and tune it — lower cost per outcome, tighter grounding, faster replies — with every change traced, so the gains are measured rather than assumed.
 
 Either way you get one senior owner end to end: the retrieval, the guardrails, the observability, the deployment. No layer of account managers between you and the person building it.
 
