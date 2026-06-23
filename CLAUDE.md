@@ -1,6 +1,8 @@
 # lab5.ca
 
+<!-- sdd:direct-instruction:begin -->
 Operational guide for the K. Borovik portfolio. `SPEC.md` is the source of truth — goal §G, constraints §C, interfaces §I (routes, blog schema, cmd surface, CTA), invariants §V, tasks §T; cite sections rather than restating them. Pre-commit gate: §V.24 (`make check`, `make build`).
+<!-- sdd:direct-instruction:end -->
 
 ## repo map
 

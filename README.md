@@ -10,7 +10,7 @@ Live at <https://lab5.ca>
 Static site built with Astro 6, deployed to Cloudflare Workers. Surfaces:
 
 - `/` — hero, capabilities, claims, proof
-- `/projects` — skills→GitHub-repo proof grid
+- `/projects` — skill-to-GitHub-repo proof grid
 - `/mailpilot` — MailPilot demo (proof-of-capability for LLM agent work)
 - `/blog` — long-form writing
 
@@ -18,7 +18,7 @@ Static site built with Astro 6, deployed to Cloudflare Workers. Surfaces:
 
 - [Astro 6](https://astro.build) static (no SSR adapter)
 - [Tailwind v4](https://tailwindcss.com) via `@theme` in `src/styles/global.css`
-- TypeScript 6, pnpm 10, Node ≥22
+- TypeScript 6, pnpm 10, Node 22 or newer
 - [Cloudflare Workers](https://workers.cloudflare.com) static assets +
   Cloudflare Web Analytics
 - Typeface: IBM Plex Mono (400/500/600/700) via Google Fonts

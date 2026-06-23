@@ -362,9 +362,9 @@ because they are the things to look for in any tracing tool, not just Logfire:
 
 ## The workflow, generalized
 
-Strip the specifics off and the workflow is a fixed sequence.
-It works for any application failure where you have a domain identifier
-and a trace store that respects OTel.
+**Strip the specifics off and the same five steps work for any application failure where you have a domain identifier and a trace store that respects OTel.**
+
+The trace, not the message, is the index.
 
 1. **Filter by domain identifier.**
    Get a `trace_id`.

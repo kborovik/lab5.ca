@@ -7,9 +7,11 @@ docs rather than restating them.
 ## §G GOAL
 
 Lead-generation portfolio for Konstantin Borovik (Software Engineer, AI & LLM
-Engineering, Toronto). Thesis: "LLM systems that do real work — without becoming
-a money pit" — build or rescue AI business processes, with cost per outcome
-traced to the dollar. MailPilot is the live proof of capability, not a product.
+Engineering, Toronto). Headline: "Build and optimize business processes with AI"
+(sentence case per the casing invariant); supporting thesis unchanged — LLM
+systems that do real work without becoming a money pit, cost per outcome traced
+to the dollar. Two offers: build a new AI business process, or optimize an
+existing one. MailPilot is the live proof of capability, not a product.
 Primary conversion is booking a 30-minute call. Static site, owner-operated,
 deploy on push; the aesthetic is framework-docs (GitHub-light), not SaaS
 marketing.
@@ -39,49 +41,50 @@ marketing.
 - static: public/ holds _headers, robots.txt, favicon.svg and favicon.ico, og.png (1200x630), kb-headshot.jpg, logo-linkedin.svg and .png, banner-linkedin.png
 - blog_schema: title (string), description (string), pubDate (coerced date), updatedDate (optional coerced date), draft (boolean, default false), tags (string array, default empty), in content.config.ts; the schema is strict, so an undeclared key fails astro check
 - cta: book-call is calendar.app.google/cYM3H3TsHsequR587 (the only canonical interface; all other links are dropped from the spec)
-- cmd: make targets are install, dev, build, preview, check, clean, clean-all, deploy, status, wrangler, playwright (makefile; build runs clean, then check, then astro build into dist/)
+- cmd: make targets are install, dev, build, preview, check, clean, clean-all, deploy, status, wrangler, playwright, help (makefile; build runs clean, then check, then astro build into dist/)
 - asset_gen: assets-src/og.html (1200x630) and assets-src/linkedin-banner.html (1584x396) are rendered to public/*.png via headless-Chrome --screenshot
 
 ## §V INVARIANTS
 
-V1: voice — no aspirational verbs (move faster, transform, unlock, empower), no business-benefit framing, no persona breakouts (Owner / CTO / COO), no marketing decoration (pill badges, stacked hero CTAs, colored icon boxes, "Learn more"); do use tech vocabulary (LLM, retrieval, RAG, structured extraction, grounding, traced). Reference aesthetic is openspec.dev and Stripe docs.
+V1: voice — omit aspirational verbs, persona breakouts, marketing decoration; use tech vocabulary; detail: check-extras §V1
 V2: positioning — solo senior owner, end to end (back-end, infra, CI/CD, deploy, observability); wholesale not retail (no agency sales, PM, or markup tier); bus-factor rebuttal (code in the client repo, runs in the client cloud, documented in plain language); honest boundary (a full standing team is out of scope).
 V3: dev-not-SRE — claims, tiles, and copy omit on-call, pager, incident-response, and SRE vocabulary; deploy and observability are in bounds.
 V4: mailpilot-framing — MailPilot is proof of capability for KB's skills, not a product or SaaS, and not funnel-framed; self-reported evidence is kept honest (one project, early numbers, checkable via open source, traced calls, and emailing the agent yourself).
 V5: cost-thesis — measure cost per outcome (per email, doc, ticket) rather than token volume; cap usage; instrument every call; ground answers and decline when uncertain; scale to zero when idle. Dollar claims are labeled measured versus assumption.
 V6: casing — page H1 and blog title are sentence case; the section kicker (H2) is lowercase; tile and step H3 titles are Title Case (Build Business Processes with AI, Send a Product Question).
-V7: entities — static .astro markup and static HTML attributes use HTML entities (&mdash;, &middot;, &minus;, &rarr;, &larr;, &rsquo;, &times;) and carry no literal em-dash; values emitted through `{}` interpolation — data-array fields (e.g. `{p.context}`, `{item.body}`) and prop strings the component re-emits via `{}` (e.g. `description`, `title`) — require a literal — because Astro HTML-escapes `&` in expression output (`&mdash;` double-escapes to `&amp;mdash;`); blog markdown em-dashes are space-padded, and both literal "—" and &mdash; are in use.
-V8: section-kicker — the `.section-kicker` DOM text is the clean section name with no literal "// " prefix; the `::before { content: '// ' }` rule renders the visual marker, so a parser sees a clean heading while a reader sees "// what I do". The MailPilot literal "// knowledge base" and "// try these questions" are plain markup, not kickers.
+V7: entities — static markup uses HTML entities; `{}` expressions use literal em-dash; blog markdown space-padded; detail: check-extras §V7
+V8: section-kicker — `.section-kicker` DOM text is clean name (no `// ` prefix); `::before { content: '// ' }` renders marker; detail: check-extras §V8
 V9: palette — only the gh-* tokens (canvas #fafbfc, canvas-subtle #f6f8fa, fg #1f2328, fg-muted #424a53, fg-subtle #818b98, border #d1d9e0, green #1f883d and hover #1a7f37, blue #0969da and hover #0550ae); raised surfaces are white. Defined in @theme.
-V10: typeface — the --font-mono token is Space Grotesk (the site-wide body default, applied through the Tailwind `font-mono` class); the code surfaces `.prose code` and `.prose pre` override it to IBM Plex Mono. The token name is kept because renaming it would force a class sweep.
+V10: typeface — `--font-mono` token is Space Grotesk (body default, Tailwind `font-mono` class); `.prose code` and `.prose pre` override to IBM Plex Mono; token name kept; rename forces class sweep
 V11: base-type — html font-size is 18px; body weight is 400.
 V12: motion — animate-hero (fadeUp stagger via an inline animation-delay), animate-on-scroll (IntersectionObserver adds .is-visible at threshold 0.1), and cta-pulse (pulseGlow). Under prefers-reduced-motion: reduce, opacity is forced to 1, transform/animation/transition are none, and the observer is skipped.
-V13: seo-graph — JSON-LD @graph is [Person (#person), WebSite (#website), the page node (WebPage, CollectionPage, or BlogPosting), and a BreadcrumbList on non-root pages]; Person.knowsAbout is the skill list; Person.potentialAction is an AskAction to mailto:hello@lab5.ca (reply under 60 seconds). A BlogPosting node carries headline, description, datePublished, optional dateModified, optional keywords, author, and image.
-V14: head-meta — canonical URL (derived from Astro.site, trailing slash stripped) plus hreflang en-ca and x-default; RSS alternate at /rss.xml; markdown alternate (blog only) at /blog/<slug>.md; Open Graph (type, url, title, description, site_name, locale en_CA, and image og.png 1200x630) plus Twitter summary_large_image. The title is "<title> | Konstantin Borovik", or the default landing string.
-V15: llms-endpoints — /llms.txt (terse map) and /llms-full.txt (full landing-copy mirror) are text/markdown; their copy mirrors the landing manually, so editing the landing risks drift.
-V16: blog-path — src/content/blog/<slug>.md is flat; the filename is the URL slug and the post id; a non-post .md in the directory breaks the build (glob failure); every post pairs with LinkedIn copy linkedin/<slug>.txt, and dropping a post deletes its linkedin/<slug>.txt in the same change; the post's ## TLDR mirrors to linkedin/<slug>.txt as its lead paragraph.
+V13: seo-graph — JSON-LD @graph: Person + WebSite + page node (WebPage/CollectionPage/BlogPosting) + BreadcrumbList (non-root); BlogPosting carries dates, author, image; detail: check-extras §V13
+V14: head-meta — canonical URL, hreflang en-ca+x-default, RSS alt, OG+Twitter summary_large_image; blog adds markdown alt; title "<title> | Konstantin Borovik"; detail: check-extras §V14
+V15: llms-endpoints — /llms.txt (terse map) and /llms-full.txt (full landing-copy mirror) are text/markdown; copy mirrors landing manually; editing landing risks drift
+V16: blog-path — src/content/blog/<slug>.md flat; filename is URL slug and post id; every post pairs with linkedin/<slug>.txt (drop → delete paired txt same change); TLDR mirrors to linkedin txt lead; detail: check-extras §V16
 V17: blog-render — the route owns the chrome: H1, date and tags, and the "all posts" link; the markdown body has no `# Title`, no byline, and no footer.
 V18: blog-frontmatter — the schema is strict per §I.blog_schema; an undeclared key (author, image, canonical) fails astro check.
-V19: prose-subset — .prose supports bold, italic, inline and fenced code, ul/ol, blockquote, horizontal rule, inline links, images (`![alt](src)` with src in public/blog/<slug>/ and a mandatory alt), and pipe tables; it does not support raw HTML beyond `<br>` and entities, or footnotes. Images open in a click-to-zoom `<dialog>` viewer.
+V19: prose-subset — .prose: bold, italic, code, ul/ol, blockquote, hr, links, images (public/blog/<slug>/, mandatory alt, click-to-zoom dialog), pipe tables; no raw HTML beyond `<br>`, no footnotes; detail: check-extras §V19
 V20: blog-hygiene — semantic line breaks: one sentence per line, long sentences break at clause boundaries, no line over ~100 columns; UTF-8, LF line endings, no BOM; external links go through rehype-external-links with target _blank and rel noopener,noreferrer.
 V21: tailwind-v4 — tokens, keyframes, and .prose live in @theme in global.css; there is no tailwind.config.js.
-V22: headers — public/_headers sets X-Frame-Options DENY, X-Content-Type-Options nosniff, Referrer-Policy strict-origin-when-cross-origin, and Permissions-Policy with camera, microphone, geolocation, and payment disabled; caching is _astro immutable for one year, favicon one day, og seven days, sitemap one hour; llms*.txt are served as text/markdown.
-V23: dual-surface — mailpilot.ca is a Cloudflare alias for lab5.ca; both are routes in wrangler.jsonc, so an edit affects both surfaces.
+V22: headers — public/_headers: X-Frame-Options DENY, nosniff, strict-origin-when-cross-origin, Permissions-Policy (cam/mic/geo/payment off); cache: _astro 1y, favicon 1d, og 7d, sitemap 1h; llms*.txt text/markdown; detail: check-extras §V22
+V23: dual-surface — mailpilot.ca is a Cloudflare alias for lab5.ca; both routes in wrangler.jsonc; edit affects both surfaces
 V24: build-gate — before committing, run make check and make build (astro check includes blog frontmatter against the schema).
 V25: nav-footer — the nav links Home (/), Projects (/projects), and Blog (/blog) plus a persistent Book-a-Call CTA, with the active link shown in green by path match. The footer mirrors Home, Projects, Blog plus the copyright year.
-V26: blog-skim — every post opens with a ## TLDR section (≤3 sentences) compressing the whole argument; progressive disclosure means each H2 prose section opens with a standalone bold one-sentence subtitle summarizing it, so the TLDR plus the section subtitles read as the entire argument on their own; lists are exempt (their bold item-leads are the disclosure); the pre-heading lede carries one bold thesis statement and no subtitle; bold is reserved for these skim-spine sentences, and term/number/entity emphasis uses italic, not bold.
+V26: blog-skim — every post: ## TLDR (≤3 sentences); each H2 prose section: bold 1-sentence subtitle; TLDR + subtitles read as full argument; lists exempt; lede: one bold thesis; bold reserved for skim-spine; term/number/entity emphasis = italic; detail: check-extras §V26
 
 ## §T TASKS
 
 id|status|task|cites
 T1|x|re-wrap src/content/blog/*.md to semantic line breaks|V20
-T2|x|drop blog post: delete src/content/blog/measuring-glyph-compression.md (no inbound links, no public/blog/ asset dir; blog index, rss, sitemap, llms.txt regenerate at build)|V16,V24
-T3|x|publish blog post: move buy-90-build-10.md → src/content/blog/buy-90-build-10.md (filename = slug); re-wrap body to semantic line breaks; frontmatter already schema-clean; blog index, rss, sitemap, llms.txt regenerate at build|V16,V18,V20,V24
-T4|x|drop blog post: delete src/content/blog/spec-driven-development.md and linkedin/spec-driven-development.txt (pairing per V16; no public/blog/ asset dir; the published LinkedIn post links the live URL, which 404s after removal; blog index, rss, sitemap, llms.txt regenerate at build)|V16,V24
-T5|x|sweep blog↔linkedin pairing: scope = slug-set diff of src/content/blog/*.md (basename minus .md) vs linkedin/*.txt (basename minus .txt); author linkedin/<slug>.txt for each unpaired post; delete each orphan linkedin/<slug>.txt (current diff: buy-90-build-10 lacks copy; measuring-glyph-compression.txt is orphan)|V16,V24
-T6|x|publish blog post: move code-consistency-and-agent-velocity.md → src/content/blog/code-consistency-and-agent-velocity.md (filename = slug); re-wrap body to semantic line breaks; author linkedin/code-consistency-and-agent-velocity.txt (pairing per V16); frontmatter already schema-clean; blog index, rss, sitemap, llms.txt regenerate at build|V16,V18,V20,V24
-T7|x|prototype blog skim-spine on src/content/blog/buy-90-build-10.md: add ## TLDR section (the argument compressed, ≤5 sentences); restrict bold to full-sentence skim-spine theses — reading the bolds alone yields the post's argument, ≤1 per section; demote entity/number emphasis (SaaStr, Harmonic, TrexoGlobal, Klarna, $2.1M) from bold to italic or plain; operator reviews rendered post at /blog/buy-90-build-10 before any §V encoding|V1,V19,V20,V24
-T8|x|conform blog posts to blog-skim: scope = src/content/blog/*.md; ensure each has a ## TLDR (≤3 sentences) mirrored to linkedin/<slug>.txt as lead; one standalone bold subtitle per H2 prose section (lists exempt; lede keeps one bold thesis); demote term/number/entity bold to italic; rewrap touched lines to semantic line breaks (buy-90-build-10.md already conforms)|V16,V19,V20,V24,V26
+T2|x|drop blog post: measuring-glyph-compression.md|V16,V24
+T3|x|publish blog post: buy-90-build-10.md|V16,V18,V20,V24
+T4|x|drop blog post: spec-driven-development.md + paired linkedin txt|V16,V24
+T5|x|sweep blog↔linkedin pairing: author unpaired txt, delete orphan txt|V16,V24
+T6|x|publish blog post: code-consistency-and-agent-velocity.md|V16,V18,V20,V24
+T7|x|prototype blog skim-spine on buy-90-build-10.md|V1,V19,V20,V24
+T8|x|conform blog posts to blog-skim invariant|V16,V19,V20,V24,V26
+T9|x|redesign home hero + what-i-do for build/optimize campaign|V1,V6,V15,V24
 
 ## §B BUGS
 
