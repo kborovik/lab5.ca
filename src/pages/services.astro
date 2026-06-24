@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { services, servicesIntro } from '../copy/services';
+---
+
+<Layout
+  title="Services"
+  description="AI agents built around the systems you already run on — ERP and accounting data entry, CRM-system processes, and email reply and outreach automation. Measured cost per outcome, grounded in real sources."
+  markdownAlternate="/services.md"
+>
+  <!-- Header -->
+  <section class="mx-auto max-w-5xl px-6 pt-16 pb-10 sm:pt-20 sm:pb-12 font-mono">
+    <h1 class="animate-hero text-3xl font-bold tracking-tight text-gh-fg sm:text-4xl" style="animation-delay: 0ms;">
+      Services
+    </h1>
+    <p class="animate-hero mt-4 max-w-2xl text-sm leading-relaxed text-gh-fg-muted sm:text-base" style="animation-delay: 80ms;">
+      {servicesIntro}
+    </p>
+  </section>
+
+  <!-- Services -->
+  <section class="mx-auto max-w-5xl px-6 pb-20 sm:pb-24 font-mono">
+    <h2 class="section-kicker animate-on-scroll text-base font-bold uppercase tracking-[0.2em] text-gh-blue" style="transition-delay: 0ms;">
+      services
+    </h2>
+
+    <div class="mt-10 max-w-3xl space-y-12">
+      {services.map((s, i) => (
+        <article id={s.id} class="animate-on-scroll" style={`transition-delay: ${i * 80}ms;`}>
+          <div class="flex items-baseline gap-2 text-xs text-gh-fg-muted">
+            <span>{s.num}</span>
+            <span class="h-px flex-1 bg-gh-border"></span>
+          </div>
+          <h3 class="mt-3 text-base font-semibold text-gh-fg">
+            {s.title}
+          </h3>
+          <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted">
+            {s.body}
+          </p>
+          <p class="mt-3 text-sm text-gh-fg-muted">
+            <span class="text-gh-fg">Example:</span> {s.example}
+          </p>
+          {s.proof && (
+            <div class="mt-4">
+              <a
+                href={s.proof.href}
+                class="inline-flex items-center gap-2 text-sm font-bold text-gh-green underline underline-offset-[3px] transition-colors hover:text-gh-green-hover"
+              >
+                See {s.proof.label} &rarr;
+              </a>
+            </div>
+          )}
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>
