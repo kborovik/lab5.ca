@@ -35,8 +35,6 @@ ${paras(l.problem.paras)}
 
 ${l.whatIDo.title}. ${l.whatIDo.body}
 
-${l.whatIDo.closing}
-
 ## Proof
 
 ${paras(l.proof.before)}

@@ -32,7 +32,6 @@ export const landing = {
         { b: 'Repetitive, lookup-heavy work is what LLM systems are genuinely good at' },
         ' — high-volume, rule-following tasks, done instantly and consistently. The promise is simple: take that repetitive load off your team, answer it in seconds instead of hours, and free your skilled people for the work that actually needs a human.',
       ],
-      'The catch is that it has to be built so you can trust it and afford it — grounded in real sources, designed to decline rather than guess, and measured to the dollar. To show what that looks like in practice, here’s a real one I built and the math behind it.',
     ] as Block[],
   },
 
@@ -40,8 +39,6 @@ export const landing = {
     kicker: 'what I do',
     title: 'Build an AI Process Around Your ERP and CRM',
     body: 'I build a new business process around the systems you already run on — your ERP and your CRM. An LLM agent that reads from and writes to those systems: answering high-volume, lookup-heavy questions from your product and order data, drafting personalized CRM outreach grounded in real records, and processing the documents that flow through both. Built to be measured from day one, with the cost per outcome traced before you scale it.',
-    closing:
-      'You get one senior owner end to end: the retrieval, the guardrails, the observability, the deployment. No layer of account managers between you and the person building it.',
   },
 
   proof: {
@@ -93,6 +90,7 @@ export const landing = {
       'When you hire a software agency, most of your bill never reaches the people writing your software. It pays for the sales team that closed the deal, the account manager who forwards your emails, the project manager who runs the standups, and the margin stacked on top of all of it. The engineer doing the actual work often sees only a fraction of the rate you’re billed. Put the other way: the rate an agency charges is frequently three to four times what reaches the person who writes your code.',
       'Working with me, that overhead doesn’t exist. No sales layer, no management tier, no markup on a subcontractor. You pay the person building the system directly — and you get that senior person on every call, not a junior assigned after the pitch.',
       'It’s also why the strongest engineers don’t stay at agencies: the model keeps most of what they earn. Going direct gets you both the more senior person and the lower rate at once — the two things an agency’s structure is built to keep apart.',
+      'You get one senior owner end to end: the retrieval, the guardrails, the observability, the deployment. No layer of account managers between you and the person building it.',
     ] as Block[],
     busFactor: [
       'The quieter worry with one person: what if I get hit by a bus? Worth saying plainly — every employee is a bus-factor too, and usually a worse one, because the knowledge that walks out with them was never written down.',
