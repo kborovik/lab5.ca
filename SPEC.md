@@ -89,7 +89,7 @@ T8|x|conform blog posts to blog-skim invariant|V16,V19,V20,V24,V26
 T9|x|redesign home hero + what-i-do for build/optimize campaign|V1,V6,V15,V24
 T10|x|extract shared landing-copy module; generate llms-full.txt from it + re-sync the current drift; point llms.txt links at the .md alternates|V15,V24
 T11|x|add /mailpilot.md + /projects.md markdown-alternate endpoints + rel=alternate head links|V14,V24
-T12|.|rework home what-i-do to a single build offer framed on ERP + CRM, drop the optimize tile + set hero h1 to "Build business processes with AI"; reposition MailPilot proof as inbound reply + outbound CRM outreach; re-sync landing-copy module + llms-full + llms.txt|V1,V4,V6,V15,V24
+T12|x|rework home what-i-do to a single build offer framed on ERP + CRM, drop the optimize tile + set hero h1 to "Build business processes with AI"; reposition MailPilot proof as inbound reply + outbound CRM outreach; re-sync landing-copy module + llms-full + llms.txt|V1,V4,V6,V15,V24
 
 ## §B BUGS
 

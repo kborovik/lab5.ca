@@ -99,17 +99,10 @@ const runs = (b: Block): Run[] => (typeof b === 'string' ? [b] : b);
       {landing.whatIDo.kicker}
     </h2>
 
-    <div class="mt-10 grid gap-10 sm:grid-cols-2 sm:gap-x-12">
-      {landing.whatIDo.offers.map((offer, i) => (
-        <div class="animate-on-scroll" style={`transition-delay: ${i * 80}ms;`}>
-          <div class="flex items-baseline gap-2 text-xs text-gh-fg-muted">
-            <span>{String(i + 1).padStart(2, '0')}</span>
-            <span class="h-px flex-1 bg-gh-border"></span>
-          </div>
-          <h3 class="mt-3 text-base font-semibold text-gh-fg">{offer.title}</h3>
-          <p class="mt-3 text-sm leading-relaxed text-gh-fg-muted sm:text-base">{offer.body}</p>
-        </div>
-      ))}
+    <div class="animate-on-scroll mt-10 max-w-3xl" style="transition-delay: 0ms;">
+      <div class="h-px w-full bg-gh-border"></div>
+      <h3 class="mt-5 text-base font-semibold text-gh-fg">{landing.whatIDo.title}</h3>
+      <p class="mt-3 text-sm leading-relaxed text-gh-fg-muted sm:text-base">{landing.whatIDo.body}</p>
     </div>
 
     <p class="animate-on-scroll mt-10 max-w-3xl text-sm leading-relaxed text-gh-fg-muted sm:text-base" style="transition-delay: 160ms;">

@@ -16,7 +16,7 @@ export interface LeadBody {
 
 export const landing = {
   hero: {
-    h1: 'Build and optimize business processes with AI',
+    h1: 'Build business processes with AI',
     sub: 'LLM systems that do real work — without becoming a money pit. I measure the cost per outcome so you can see the return before you scale it. Production systems, traced to the dollar — not pilots that quietly bleed.',
     credentials:
       '20+ years shipping production software · AI agents running in production today · Toronto-based',
@@ -37,18 +37,10 @@ export const landing = {
 
   whatIDo: {
     kicker: 'what I do',
-    offers: [
-      {
-        title: 'Build Business Processes with AI',
-        body: 'A new business process, powered by an LLM agent and built to be measured from day one. High-volume, lookup-heavy, repetitive work — pre-sales questions, RFP responses, document processing, tier-one support — answered instantly and consistently, with the cost per outcome traced before you scale it.',
-      },
-      {
-        title: 'Optimize an AI Process',
-        body: 'An AI process that already runs but costs more than it should, or answers less reliably than it needs to. I instrument what it’s actually doing, find where the money and the errors go, and tune it — lower cost per outcome, tighter grounding, faster replies — with every change traced, so the gains are measured rather than assumed.',
-      },
-    ],
+    title: 'Build an AI Process Around Your ERP and CRM',
+    body: 'I build a new business process around the systems you already run on — your ERP and your CRM. An LLM agent that reads from and writes to those systems: answering high-volume, lookup-heavy questions from your product and order data, drafting personalized CRM outreach grounded in real records, and processing the documents that flow through both. Built to be measured from day one, with the cost per outcome traced before you scale it.',
     closing:
-      'Either way you get one senior owner end to end: the retrieval, the guardrails, the observability, the deployment. No layer of account managers between you and the person building it.',
+      'You get one senior owner end to end: the retrieval, the guardrails, the observability, the deployment. No layer of account managers between you and the person building it.',
   },
 
   proof: {
@@ -57,7 +49,7 @@ export const landing = {
       'Fair thing to ask first: this is self-reported, it’s one project, and the numbers are early. So here is what makes it checkable rather than something you take on my word — the code is open on GitHub, every model call is traced, and you can email the agent yourself and watch what it does. A claim you can verify beats a testimonial you can’t.',
       [
         { b: 'I built MailPilot to solve a business problem of my own' },
-        ' (not a product I sell) — a production AI agent running on my company’s inbox. It reads an incoming business email, searches a knowledge base, and replies with a sourced answer in under a minute. If the question is outside its knowledge base, it declines and says so rather than guessing.',
+        ' (not a product I sell) — a production AI agent running on my company’s inbox, working in both directions. Inbound: it reads an incoming business email, searches a knowledge base, and replies with a sourced answer in under a minute — and if the question is outside that knowledge base, it declines and says so rather than guessing. Outbound: it drafts personalized CRM outreach from those same grounded sources, so the messages going out are as checkable as the replies coming back.',
       ],
     ] as Block[],
     tableLead: 'Every model call is traced, so the economics aren’t a guess:',

@@ -35,7 +35,7 @@ ${paras(l.problem.paras)}
 
 ## What I do
 
-${l.whatIDo.offers.map(o => `${o.title}. ${o.body}`).join('\n\n')}
+${l.whatIDo.title}. ${l.whatIDo.body}
 
 ${l.whatIDo.closing}
 
