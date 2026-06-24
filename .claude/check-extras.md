@@ -50,7 +50,7 @@ Twitter summary_large_image.
 Title format: "<title> | Konstantin Borovik", or the default landing string.
 Markdown-alternate pages add a text/markdown rel=alternate link to their .md
 counterpart: blog posts at /blog/<slug>.md, /mailpilot at /mailpilot.md,
-/projects at /projects.md.
+/services at /services.md.
 
 ## §V16: blog-path
 
