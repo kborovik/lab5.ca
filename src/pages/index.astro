@@ -164,7 +164,7 @@ const runs = (b: Block): Run[] => (typeof b === 'string' ? [b] : b);
   </section>
 
   <!-- (g) why me — wholesale-vs-retail + track record -->
-  <section class="mx-auto max-w-5xl px-6 pb-12 sm:pb-14 font-mono">
+  <section class="mx-auto max-w-5xl px-6 pb-16 sm:pb-20 font-mono">
     <h2 class="section-kicker animate-on-scroll text-base font-bold uppercase tracking-[0.2em] text-gh-blue" style="transition-delay: 0ms;">
       {landing.whyMe.kicker}
     </h2>
@@ -196,30 +196,6 @@ const runs = (b: Block): Run[] => (typeof b === 'string' ? [b] : b);
       ))}
     </ul>
 
-    <p class="animate-on-scroll mt-8 max-w-3xl text-sm leading-relaxed text-gh-fg-muted" style="transition-delay: 320ms;">
-      Built on: {landing.whyMe.builtOn}
-    </p>
-  </section>
-
-  <!-- (h) closing CTA -->
-  <section class="mx-auto max-w-5xl px-6 pb-16 sm:pb-20 font-mono">
-    <h2 class="section-kicker animate-on-scroll text-base font-bold uppercase tracking-[0.2em] text-gh-blue" style="transition-delay: 0ms;">
-      {landing.closing.kicker}
-    </h2>
-    <h3 class="animate-on-scroll mt-4 max-w-3xl text-lg font-semibold text-gh-fg" style="transition-delay: 40ms;">
-      {landing.closing.subhead}
-    </h3>
-    <div class="animate-on-scroll mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-gh-fg-muted" style="transition-delay: 80ms;">
-      {landing.closing.paras.map(b => (
-        <p>{runs(b).map(r => (typeof r === 'string' ? r : <span class="font-semibold text-gh-fg">{r.b}</span>))}</p>
-      ))}
-    </div>
-    <div class="animate-on-scroll mt-6" style="transition-delay: 160ms;">
-      <a href={bookCallHref} target="_blank" rel="noopener noreferrer" class={primaryCtaClass}>
-        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7v-5z"/></svg>
-        Book a 30-minute call
-      </a>
-    </div>
   </section>
 
 </Layout>

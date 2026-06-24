@@ -77,16 +77,6 @@ ${l.whyMe.creditsIntro}
 
 ${l.whyMe.credits.map(c => `- ${c.lead} — ${c.body}`).join('\n')}
 
-Built on: ${l.whyMe.builtOn}
-
-## Closing
-
-${l.closing.subhead}
-
-${paras(l.closing.paras)}
-
-Book a 30-minute call: https://calendar.app.google/cYM3H3TsHsequR587
-
 ## Projects
 
 - MailPilot — Production AI agent for business email; Pydantic AI on a Google Cloud backend; live at hello@lab5.ca. https://github.com/kborovik/mailpilot

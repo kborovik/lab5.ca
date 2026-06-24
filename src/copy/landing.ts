@@ -104,15 +104,5 @@ export const landing = {
       { lead: 'AI agents in production today', body: 'LLMs, retrieval (RAG), structured extraction, with the guardrails and tracing that make them safe to put in front of customers.' },
       { lead: 'Toronto-based, long-term contract', body: 'embedded with your team, not a drive-by engagement.' },
     ] as LeadBody[],
-    builtOn:
-      'Anthropic Claude · Google Gemini · Python · FastAPI · Pydantic AI · RAG · MCP · Google Cloud / Azure · Terraform · Kubernetes · OpenTelemetry',
-  },
-
-  closing: {
-    kicker: 'closing',
-    subhead: 'If you’re weighing whether AI can do real work without becoming a money pit, that’s the question I build for — and measure.',
-    paras: [
-      'Want the cost-per-outcome math on a workflow in your own operation?',
-    ] as Block[],
   },
 };
