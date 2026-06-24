@@ -74,6 +74,7 @@ V23: dual-surface — mailpilot.ca is a Cloudflare alias for lab5.ca; both route
 V24: build-gate — before committing, run make check and make build (astro check includes blog frontmatter against the schema).
 V25: nav-footer — the nav links Home (/), Projects (/projects), and Blog (/blog) plus a persistent Book-a-Call CTA, with the active link shown in green by path match. The footer mirrors Home, Projects, Blog plus the copyright year.
 V26: blog-skim — every post: ## TLDR (≤3 sentences); each H2 prose section: bold 1-sentence subtitle; TLDR + subtitles read as full argument; lists exempt; lede: one bold thesis; bold reserved for skim-spine; term/number/entity emphasis = italic; detail: check-extras §V26
+V27: section-subhead — each landing kicker section (the problem, what I do, proof, how the money stays under control, why me, closing) opens with a one-line H3 sub-header stating its main idea, above the detail body and held in the shared landing-copy module (page + llms-full both render it); casing per-section natural — Title Case for offer/title names (Build an AI Process Around Your ERP and CRM), sentence case for thesis lines (Every business runs on a layer of repetitive, lookup-heavy work that quietly consumes skilled time).
 
 ## §T TASKS
 
@@ -90,6 +91,7 @@ T9|x|redesign home hero + what-i-do for build/optimize campaign|V1,V6,V15,V24
 T10|x|extract shared landing-copy module; generate llms-full.txt from it + re-sync the current drift; point llms.txt links at the .md alternates|V15,V24
 T11|x|add /mailpilot.md + /projects.md markdown-alternate endpoints + rel=alternate head links|V14,V24
 T12|x|rework home what-i-do to a single build offer framed on ERP + CRM, drop the optimize tile + set hero h1 to "Build business processes with AI"; reposition MailPilot proof as inbound reply + outbound CRM outreach; re-sync landing-copy module + llms-full + llms.txt|V1,V4,V6,V15,V24
+T13|.|add a one-line sub-header to each landing kicker section: new field per section in the landing-copy module, render as H3 in index.astro + mirror in llms-full, rewrite each section to lead with the sub-header|V1,V6,V15,V24,V27
 
 ## §B BUGS
 
