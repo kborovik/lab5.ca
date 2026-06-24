@@ -91,7 +91,7 @@ const runs = (b: Block): Run[] => (typeof b === 'string' ? [b] : b);
       {landing.proof.kicker}
     </h2>
     <h3 class="animate-on-scroll mt-4 max-w-3xl text-lg font-semibold text-gh-fg" style="transition-delay: 40ms;">
-      {landing.proof.subhead}
+      <a href="/mailpilot" class={secondaryLinkClass}>MailPilot</a>{landing.proof.subhead.slice('MailPilot'.length)}
     </h3>
 
     <div class="animate-on-scroll mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-gh-fg-muted" style="transition-delay: 80ms;">
