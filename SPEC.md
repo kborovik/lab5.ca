@@ -7,11 +7,12 @@ docs rather than restating them.
 ## §G GOAL
 
 Lead-generation portfolio for Konstantin Borovik (Software Engineer, AI & LLM
-Engineering, Toronto). Headline: "Build and optimize business processes with AI"
+Engineering, Toronto). Headline: "Build business processes with AI"
 (sentence case per the casing invariant); supporting thesis unchanged — LLM
 systems that do real work without becoming a money pit, cost per outcome traced
-to the dollar. Two offers: build a new AI business process, or optimize an
-existing one. MailPilot is the live proof of capability, not a product.
+to the dollar. One offer: build an AI business process around the systems a
+company already runs on — ERP and CRM. MailPilot is the live proof of
+capability, not a product.
 Primary conversion is booking a 30-minute call. Static site, owner-operated,
 deploy on push; the aesthetic is framework-docs (GitHub-light), not SaaS
 marketing.
@@ -50,7 +51,7 @@ marketing.
 V1: voice — omit aspirational verbs, persona breakouts, marketing decoration; use tech vocabulary; detail: check-extras §V1
 V2: positioning — solo senior owner, end to end (back-end, infra, CI/CD, deploy, observability); wholesale not retail (no agency sales, PM, or markup tier); bus-factor rebuttal (code in the client repo, runs in the client cloud, documented in plain language); honest boundary (a full standing team is out of scope).
 V3: dev-not-SRE — claims, tiles, and copy omit on-call, pager, incident-response, and SRE vocabulary; deploy and observability are in bounds.
-V4: mailpilot-framing — MailPilot is proof of capability for KB's skills, not a product or SaaS, and not funnel-framed; self-reported evidence is kept honest (one project, early numbers, checkable via open source, traced calls, and emailing the agent yourself).
+V4: mailpilot-framing — MailPilot is proof of capability for KB's skills, not a product or SaaS, and not funnel-framed; it proves both directions of the build offer — inbound lookup-heavy reply (reads an email, searches the KB, replies with a sourced answer) and outbound CRM improvement (crafts personalized outreach-campaign messages from the same grounded sources); self-reported evidence is kept honest (one project, early numbers, checkable via open source, traced calls, and emailing the agent yourself).
 V5: cost-thesis — measure cost per outcome (per email, doc, ticket) rather than token volume; cap usage; instrument every call; ground answers and decline when uncertain; scale to zero when idle. Dollar claims are labeled measured versus assumption.
 V6: casing — page H1 and blog title are sentence case; the section kicker (H2) is lowercase; tile and step H3 titles are Title Case (Build Business Processes with AI, Send a Product Question).
 V7: entities — static markup uses HTML entities; `{}` expressions use literal em-dash; blog markdown space-padded; detail: check-extras §V7
@@ -88,6 +89,7 @@ T8|x|conform blog posts to blog-skim invariant|V16,V19,V20,V24,V26
 T9|x|redesign home hero + what-i-do for build/optimize campaign|V1,V6,V15,V24
 T10|x|extract shared landing-copy module; generate llms-full.txt from it + re-sync the current drift; point llms.txt links at the .md alternates|V15,V24
 T11|x|add /mailpilot.md + /projects.md markdown-alternate endpoints + rel=alternate head links|V14,V24
+T12|.|rework home what-i-do to a single build offer framed on ERP + CRM, drop the optimize tile + set hero h1 to "Build business processes with AI"; reposition MailPilot proof as inbound reply + outbound CRM outreach; re-sync landing-copy module + llms-full + llms.txt|V1,V4,V6,V15,V24
 
 ## §B BUGS
 
