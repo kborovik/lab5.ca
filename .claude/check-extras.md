@@ -48,7 +48,9 @@ stripped), hreflang en-ca and x-default, RSS alternate at /rss.xml, Open Graph
 (type, url, title, description, site_name, locale en_CA, image og.png 1200x630),
 Twitter summary_large_image.
 Title format: "<title> | Konstantin Borovik", or the default landing string.
-Blog-only additional: markdown alternate link at /blog/<slug>.md.
+Markdown-alternate pages add a text/markdown rel=alternate link to their .md
+counterpart: blog posts at /blog/<slug>.md, /mailpilot at /mailpilot.md,
+/projects at /projects.md.
 
 ## §V16: blog-path
 
