@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { services, servicesIntro } from '../copy/services';
+import { services } from '../copy/services';
 
 // §I: raw markdown alternate mirroring /services (no frontmatter), generated from the shared
 // services copy so the page and this mirror cannot drift.
@@ -12,8 +12,6 @@ export const GET: APIRoute = async () => {
     .join('\n\n');
 
   const body = `# Services
-
-${servicesIntro}
 
 ${sections}
 `;

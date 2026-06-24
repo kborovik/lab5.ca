@@ -3,9 +3,6 @@
 // §V7: literal Unicode (em-dash —, right-quote ’, →); both consumers emit via `{}` / template literals.
 // §I: skeleton — three service sections, one per offer; content pending revision.
 
-export const servicesIntro =
-  'I build AI agents that read from a system you already use and write back to it, so you can see the cost per result before you scale up.';
-
 export interface Service {
   id: string;
   num: string;
