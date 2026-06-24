@@ -4,7 +4,7 @@
 // §I: skeleton — three service sections, one per offer; content pending revision.
 
 export const servicesIntro =
-  'One build offer, three systems it applies to. Each is an AI agent built around something you already run on — reading from it and writing back to it — measured from day one, with the cost per outcome traced before you scale it.';
+  'I build AI agents that read from a system you already use and write back to it, so you can see the cost per result before you scale up.';
 
 export interface Service {
   id: string;
