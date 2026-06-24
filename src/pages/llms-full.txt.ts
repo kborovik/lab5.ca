@@ -27,8 +27,6 @@ export const GET: APIRoute = async () => {
 
 ${l.hero.sub}
 
-${l.hero.credentials}
-
 ## The problem
 
 ${paras(l.problem.paras)}

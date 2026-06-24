@@ -17,9 +17,7 @@ export interface LeadBody {
 export const landing = {
   hero: {
     h1: 'Build business processes with AI',
-    sub: 'LLM systems that do real work — without becoming a money pit. I measure the cost per outcome so you can see the return before you scale it. Production systems, traced to the dollar — not pilots that quietly bleed.',
-    credentials:
-      '20+ years shipping production software · AI agents running in production today · Toronto-based',
+    sub: 'I build AI-driven business processes for your company — LLM systems doing real, repetitive work without becoming a money pit. You see the cost per outcome before you scale it, traced to the dollar: production systems, not pilots that quietly bleed.',
   },
 
   problem: {
