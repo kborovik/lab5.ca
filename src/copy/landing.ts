@@ -100,7 +100,7 @@ export const landing = {
     creditsIntro: 'The credentials behind that:',
     credits: [
       { lead: '20+ years shipping production software', body: 'data centers, payments, real estate. This isn’t my first system that has to work on Monday.' },
-      { lead: 'Solo, end-to-end delivery', body: 'back-end, infrastructure, CI/CD, deployment, observability. One accountable owner, full product-cycle ownership.' },
+      { lead: 'End-to-end delivery', body: 'back-end, infrastructure, CI/CD, deployment, observability. One accountable owner, full product-cycle ownership.' },
       { lead: 'AI agents in production today', body: 'LLMs, retrieval (RAG), structured extraction, with the guardrails and tracing that make them safe to put in front of customers.' },
       { lead: 'Toronto-based, long-term contract', body: 'embedded with your team, not a drive-by engagement.' },
     ] as LeadBody[],
