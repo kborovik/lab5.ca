@@ -29,13 +29,19 @@ ${l.hero.sub}
 
 ## The problem
 
+${l.problem.subhead}
+
 ${paras(l.problem.paras)}
 
 ## What I do
 
-${l.whatIDo.title}. ${l.whatIDo.body}
+${l.whatIDo.subhead}
+
+${l.whatIDo.body}
 
 ## Proof
+
+${l.proof.subhead}
 
 ${paras(l.proof.before)}
 
@@ -51,6 +57,8 @@ Read the full cost-per-outcome breakdown: https://lab5.ca/blog/what-one-ai-email
 
 ## ${l.money.kicker.charAt(0).toUpperCase()}${l.money.kicker.slice(1)}
 
+${l.money.subhead}
+
 ${l.money.intro}
 
 ${l.money.items.map(i => `- ${i.lead} — ${i.body}`).join('\n')}
@@ -58,6 +66,8 @@ ${l.money.items.map(i => `- ${i.lead} — ${i.body}`).join('\n')}
 ${l.money.outro}
 
 ## Why me
+
+${l.whyMe.subhead}
 
 ${paras(l.whyMe.wholesale)}
 
@@ -70,6 +80,8 @@ ${l.whyMe.credits.map(c => `- ${c.lead} — ${c.body}`).join('\n')}
 Built on: ${l.whyMe.builtOn}
 
 ## Closing
+
+${l.closing.subhead}
 
 ${paras(l.closing.paras)}
 

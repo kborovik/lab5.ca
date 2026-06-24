@@ -22,11 +22,9 @@ export const landing = {
 
   problem: {
     kicker: 'the problem',
+    subhead: 'Every business runs on a layer of repetitive, lookup-heavy work that quietly consumes skilled time.',
     paras: [
-      [
-        { b: 'Every business runs on a layer of repetitive, lookup-heavy work that quietly consumes skilled time.' },
-        ' Answering the same product questions over and over. Pulling a number out of a document and writing it into a reply. Triaging inbound email. Filling the same fields from the same forms. None of it is hard — that’s exactly why it’s expensive. It’s a knowledgeable person, on a loaded salary, spending hours a week on tasks that follow a pattern.',
-      ],
+      'Answering the same product questions over and over. Pulling a number out of a document and writing it into a reply. Triaging inbound email. Filling the same fields from the same forms. None of it is hard — that’s exactly why it’s expensive. It’s a knowledgeable person, on a loaded salary, spending hours a week on tasks that follow a pattern.',
       'The cost is hidden because it never shows up as a line item. It’s spread across people who could be doing higher-value work, and across customers who wait hours for an answer that could take seconds.',
       [
         { b: 'Repetitive, lookup-heavy work is what LLM systems are genuinely good at' },
@@ -37,12 +35,13 @@ export const landing = {
 
   whatIDo: {
     kicker: 'what I do',
-    title: 'Build an AI Process Around Your ERP and CRM',
+    subhead: 'Build an AI Process Around Your ERP and CRM',
     body: 'I build a new business process around the systems you already run on — your ERP and your CRM. An LLM agent that reads from and writes to those systems: answering high-volume, lookup-heavy questions from your product and order data, drafting personalized CRM outreach grounded in real records, and processing the documents that flow through both. Built to be measured from day one, with the cost per outcome traced before you scale it.',
   },
 
   proof: {
     kicker: 'proof',
+    subhead: 'MailPilot is a real production agent on my own inbox — open-source, traced, and measured to the dollar.',
     before: [
       'Fair thing to ask first: this is self-reported, it’s one project, and the numbers are early. So here is what makes it checkable rather than something you take on my word — the code is open on GitHub, every model call is traced, and you can email the agent yourself and watch what it does. A claim you can verify beats a testimonial you can’t.',
       [
@@ -71,7 +70,8 @@ export const landing = {
 
   money: {
     kicker: 'how the money stays under control',
-    intro: 'None of this is exotic — it’s just the discipline most pilots skip:',
+    subhead: 'The cost stays predictable because of a few build disciplines most pilots skip.',
+    intro: 'None of it is exotic:',
     items: [
       { lead: 'Measure cost per outcome', body: 'per email, per document, per ticket — not token volume.' },
       { lead: 'Cap usage', body: 'so a bug can’t run up a fortune overnight.' },
@@ -85,8 +85,8 @@ export const landing = {
 
   whyMe: {
     kicker: 'why me',
+    subhead: 'You pay wholesale, not retail — the senior person building it, with no agency markup in between.',
     wholesale: [
-      [{ b: 'You pay wholesale, not retail.' }],
       'When you hire a software agency, most of your bill never reaches the people writing your software. It pays for the sales team that closed the deal, the account manager who forwards your emails, the project manager who runs the standups, and the margin stacked on top of all of it. The engineer doing the actual work often sees only a fraction of the rate you’re billed. Put the other way: the rate an agency charges is frequently three to four times what reaches the person who writes your code.',
       'Working with me, that overhead doesn’t exist. No sales layer, no management tier, no markup on a subcontractor. You pay the person building the system directly — and you get that senior person on every call, not a junior assigned after the pitch.',
       'It’s also why the strongest engineers don’t stay at agencies: the model keeps most of what they earn. Going direct gets you both the more senior person and the lower rate at once — the two things an agency’s structure is built to keep apart.',
@@ -110,8 +110,8 @@ export const landing = {
 
   closing: {
     kicker: 'closing',
+    subhead: 'If you’re weighing whether AI can do real work without becoming a money pit, that’s the question I build for — and measure.',
     paras: [
-      'If you’re evaluating whether AI can do real work in your business without becoming a money pit — that’s precisely the question I build for, and measure.',
       'Want the cost-per-outcome math on a workflow in your own operation?',
     ] as Block[],
   },

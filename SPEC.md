@@ -91,7 +91,7 @@ T9|x|redesign home hero + what-i-do for build/optimize campaign|V1,V6,V15,V24
 T10|x|extract shared landing-copy module; generate llms-full.txt from it + re-sync the current drift; point llms.txt links at the .md alternates|V15,V24
 T11|x|add /mailpilot.md + /projects.md markdown-alternate endpoints + rel=alternate head links|V14,V24
 T12|x|rework home what-i-do to a single build offer framed on ERP + CRM, drop the optimize tile + set hero h1 to "Build business processes with AI"; reposition MailPilot proof as inbound reply + outbound CRM outreach; re-sync landing-copy module + llms-full + llms.txt|V1,V4,V6,V15,V24
-T13|.|add a one-line sub-header to each landing kicker section: new field per section in the landing-copy module, render as H3 in index.astro + mirror in llms-full, rewrite each section to lead with the sub-header|V1,V6,V15,V24,V27
+T13|x|add a one-line sub-header to each landing kicker section: new field per section in the landing-copy module, render as H3 in index.astro + mirror in llms-full, rewrite each section to lead with the sub-header|V1,V6,V15,V24,V27
 
 ## §B BUGS
 
