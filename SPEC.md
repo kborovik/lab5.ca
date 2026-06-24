@@ -30,12 +30,12 @@ marketing.
 ## §I INTERFACES
 
 - route: `/` — landing (hero, the problem, what I do, proof, how the money stays under control, why me)
-- route: `/projects` — skill-to-GitHub-repo card grid (mailpilot, gcp-devops, spec-driven-dev, lab5.ca)
+- route: `/services` — three service sections, one per offer: (1) ERP/accounting data-input automation (e.g. email invoice → AP draft), (2) CRM-system processes, (3) email reply + outreach automation (MailPilot as example); skeleton, content pending revision
 - route: `/mailpilot` — MailPilot proof page (how it works, knowledge base, try these questions, under the hood); also served at mailpilot.ca
 - route: `/blog` — post index, newest first by pubDate, drafts filtered out
 - route: `/blog/<slug>` — post render (H1, date and tags, "all posts" back-link)
 - endpoint: `/blog/<slug>.md` — raw markdown alternate (yaml frontmatter plus body)
-- endpoint: `/mailpilot.md` and `/projects.md` — raw markdown alternates mirroring the rendered content pages (no frontmatter), linked via rel=alternate
+- endpoint: `/mailpilot.md` and `/services.md` — raw markdown alternates mirroring the rendered content pages (no frontmatter), linked via rel=alternate
 - endpoint: `/rss.xml` — @astrojs/rss feed
 - endpoint: `/llms.txt` — terse map of pages, posts, and contact (markdown); page and post links point at the .md alternates
 - endpoint: `/llms-full.txt` — full landing-copy mirror (markdown)
@@ -72,7 +72,7 @@ V21: tailwind-v4 — tokens, keyframes, and .prose live in @theme in global.css;
 V22: headers — public/_headers: X-Frame-Options DENY, nosniff, strict-origin-when-cross-origin, Permissions-Policy (cam/mic/geo/payment off); cache: _astro 1y, favicon 1d, og 7d, sitemap 1h; llms*.txt text/markdown; detail: check-extras §V22
 V23: dual-surface — mailpilot.ca is a Cloudflare alias for lab5.ca; both routes in wrangler.jsonc; edit affects both surfaces
 V24: build-gate — before committing, run make check and make build (astro check includes blog frontmatter against the schema).
-V25: nav-footer — the nav links Home (/), Projects (/projects), and Blog (/blog) plus a persistent Book-a-Call CTA, with the active link shown in green by path match. The footer mirrors Home, Projects, Blog plus the copyright year.
+V25: nav-footer — the nav links Home (/), Services (/services), and Blog (/blog) plus a persistent Book-a-Call CTA, with the active link shown in green by path match. The footer mirrors Home, Services, Blog plus the copyright year.
 V26: blog-skim — every post: ## TLDR (≤3 sentences); each H2 prose section: bold 1-sentence subtitle; TLDR + subtitles read as full argument; lists exempt; lede: one bold thesis; bold reserved for skim-spine; term/number/entity emphasis = italic; detail: check-extras §V26
 V27: section-subhead — each landing kicker section (the problem, what I do, proof, how the money stays under control, why me) opens with a one-line H3 sub-header stating its main idea, above the detail body and held in the shared landing-copy module (page + llms-full both render it); casing per-section natural — Title Case for offer/title names (Build an AI Process Around Your ERP and CRM), sentence case for thesis lines (Every business runs on a layer of repetitive, lookup-heavy work that quietly consumes skilled time).
 
@@ -92,6 +92,7 @@ T10|x|extract shared landing-copy module; generate llms-full.txt from it + re-sy
 T11|x|add /mailpilot.md + /projects.md markdown-alternate endpoints + rel=alternate head links|V14,V24
 T12|x|rework home what-i-do to a single build offer framed on ERP + CRM, drop the optimize tile + set hero h1 to "Build business processes with AI"; reposition MailPilot proof as inbound reply + outbound CRM outreach; re-sync landing-copy module + llms-full + llms.txt|V1,V4,V6,V15,V24
 T13|x|add a one-line sub-header to each landing kicker section: new field per section in the landing-copy module, render as H3 in index.astro + mirror in llms-full, rewrite each section to lead with the sub-header|V1,V6,V15,V24,V27
+T14|.|replace /projects with /services: rename projects.astro→services.astro + projects.md.ts→services.md.ts, build 3 skeleton service sections (ERP/accounting data-input e.g. email-invoice→AP draft; CRM-system processes; email reply+outreach automation w/ MailPilot as example), update Nav+Footer+llms.txt links|V1,V4,V6,V14,V15,V24,V25
 
 ## §B BUGS
 
