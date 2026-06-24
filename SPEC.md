@@ -29,7 +29,7 @@ marketing.
 
 ## §I INTERFACES
 
-- route: `/` — landing (hero, the problem, what I do, proof, how the money stays under control, why me, closing)
+- route: `/` — landing (hero, the problem, what I do, proof, how the money stays under control, why me)
 - route: `/projects` — skill-to-GitHub-repo card grid (mailpilot, gcp-devops, spec-driven-dev, lab5.ca)
 - route: `/mailpilot` — MailPilot proof page (how it works, knowledge base, try these questions, under the hood); also served at mailpilot.ca
 - route: `/blog` — post index, newest first by pubDate, drafts filtered out
@@ -74,7 +74,7 @@ V23: dual-surface — mailpilot.ca is a Cloudflare alias for lab5.ca; both route
 V24: build-gate — before committing, run make check and make build (astro check includes blog frontmatter against the schema).
 V25: nav-footer — the nav links Home (/), Projects (/projects), and Blog (/blog) plus a persistent Book-a-Call CTA, with the active link shown in green by path match. The footer mirrors Home, Projects, Blog plus the copyright year.
 V26: blog-skim — every post: ## TLDR (≤3 sentences); each H2 prose section: bold 1-sentence subtitle; TLDR + subtitles read as full argument; lists exempt; lede: one bold thesis; bold reserved for skim-spine; term/number/entity emphasis = italic; detail: check-extras §V26
-V27: section-subhead — each landing kicker section (the problem, what I do, proof, how the money stays under control, why me, closing) opens with a one-line H3 sub-header stating its main idea, above the detail body and held in the shared landing-copy module (page + llms-full both render it); casing per-section natural — Title Case for offer/title names (Build an AI Process Around Your ERP and CRM), sentence case for thesis lines (Every business runs on a layer of repetitive, lookup-heavy work that quietly consumes skilled time).
+V27: section-subhead — each landing kicker section (the problem, what I do, proof, how the money stays under control, why me) opens with a one-line H3 sub-header stating its main idea, above the detail body and held in the shared landing-copy module (page + llms-full both render it); casing per-section natural — Title Case for offer/title names (Build an AI Process Around Your ERP and CRM), sentence case for thesis lines (Every business runs on a layer of repetitive, lookup-heavy work that quietly consumes skilled time).
 
 ## §T TASKS
 
