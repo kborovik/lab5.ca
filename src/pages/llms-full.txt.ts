@@ -94,7 +94,7 @@ ${blogSection}
 - GitHub: https://github.com/kborovik
 - Resume (GitHub): https://github.com/kborovik/resume
 - MailPilot source: https://github.com/kborovik/mailpilot
-- Book a call: https://calendar.app.google/cYM3H3TsHsequR587
+- Book a call: https://calendar.app.google/BpDHFsKt2NkbSW297
 
 ## Notes
 

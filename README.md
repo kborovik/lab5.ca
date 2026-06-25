@@ -65,7 +65,7 @@ custom domains in `wrangler.jsonc` and serve the same site.
 
 - Email: <kb@lab5.ca>
 - LinkedIn: <https://www.linkedin.com/in/kborovik>
-- Book a call: <https://calendar.app.google/cYM3H3TsHsequR587>
+- Book a call: <https://calendar.app.google/BpDHFsKt2NkbSW297>
 
 ## License
 

@@ -241,7 +241,7 @@ You should want to build like SaaStr: buy the 90%, and finally build your 10%.
 
 If you want to find the 10% in your own operation —
 and get the cost-per-outcome math on it before you commit to building —
-[book a 30-minute call](https://calendar.app.google/cYM3H3TsHsequR587).
+[book a 30-minute call](https://calendar.app.google/BpDHFsKt2NkbSW297).
 
 ---
 

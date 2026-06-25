@@ -183,7 +183,7 @@ The $5 human figure is my assumption, laid out above so you can substitute your 
 If you are evaluating whether AI can do real work in your business without becoming a money pit,
 that is precisely the question I build for, and measure.
 If you want to see the cost-per-outcome math on a workflow in your own operation,
-[book a call](https://calendar.app.google/cYM3H3TsHsequR587).
+[book a call](https://calendar.app.google/BpDHFsKt2NkbSW297).
 
 ---
 
