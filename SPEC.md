@@ -42,7 +42,7 @@ marketing.
 - endpoint: `/sitemap-index.xml` and `/sitemap-0.xml` — @astrojs/sitemap
 - static: public/ holds _headers, robots.txt, favicon.svg and favicon.ico, og.png (1200x630), kb-headshot.jpg, logo-linkedin.svg and .png, banner-linkedin.png
 - blog_schema: title (string), description (string), pubDate (coerced date), updatedDate (optional coerced date), draft (boolean, default false), tags (string array, default empty), in content.config.ts; the schema is strict, so an undeclared key fails astro check
-- cta: book-call is calendar.app.google/cYM3H3TsHsequR587 (the only canonical interface; all other links are dropped from the spec)
+- cta: book-call is calendar.app.google/BpDHFsKt2NkbSW297 (the only canonical interface; all other links are dropped from the spec)
 - cmd: make targets are install, dev, build, preview, check, clean, clean-all, deploy, status, wrangler, playwright, help (makefile; build runs clean, then check, then astro build into dist/)
 - asset_gen: assets-src/og.html (1200x630) and assets-src/linkedin-banner.html (1584x396) are rendered to public/*.png via headless-Chrome --screenshot
 
