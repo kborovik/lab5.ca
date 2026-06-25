@@ -24,7 +24,7 @@ export const landing = {
     kicker: 'the problem',
     subhead: 'Every business runs on a layer of repetitive, lookup-heavy work that quietly consumes skilled time.',
     paras: [
-      'Answering the same product questions over and over. Pulling a number out of a document and writing it into a reply. Triaging inbound email. Filling the same fields from the same forms. None of it is hard — that’s exactly why it’s expensive. It’s a knowledgeable person, on a loaded salary, spending hours a week on tasks that follow a pattern.',
+      'Answering the same product questions over and over. Pulling a number out of a document and writing it into a reply. Triaging inbound email. Filling the same fields from the same forms. None of it is hard — and that’s exactly why it’s expensive. Hard problems get noticed and engineered away; easy ones get left on the plate of whoever already handles them, because no one thinks to fix work that anyone can do. So it stays with a knowledgeable person, on a loaded salary, spending hours a week on tasks that follow a pattern — a senior rate paid, hour after hour, for work with nothing senior about it.',
       'The cost is hidden because it never shows up as a line item. It’s spread across people who could be doing higher-value work, and across customers who wait hours for an answer that could take seconds.',
       [
         { b: 'Repetitive, lookup-heavy work is what LLM systems are genuinely good at' },
