@@ -7,7 +7,8 @@ export const GET: APIRoute = async () => {
   const sections = services
     .map(s => {
       const proof = s.proof ? `\n\nProof: ${s.proof.label} — https://lab5.ca${s.proof.href}` : '';
-      return `## ${s.title}\n\n${s.body}\n\nExample: ${s.example}${proof}`;
+      const examples = s.examples.map(ex => `- ${ex}`).join('\n');
+      return `## ${s.title}\n\n${s.body}\n\nExamples:\n\n${examples}${proof}`;
     })
     .join('\n\n');
 
