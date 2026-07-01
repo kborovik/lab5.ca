@@ -56,7 +56,7 @@ V5: cost-thesis — measure cost per outcome (per email, doc, ticket) rather tha
 V6: casing — page H1 and blog title are sentence case; the section kicker (H2) is lowercase; tile and step H3 titles are Title Case (Build Business Processes with AI, Send a Product Question).
 V7: entities — static markup uses HTML entities; `{}` expressions use literal em-dash; blog markdown space-padded; detail: check-extras §V7
 V8: section-kicker — `.section-kicker` DOM text is clean name (no `// ` prefix); `::before { content: '// ' }` renders marker; detail: check-extras §V8
-V9: palette — only the gh-* tokens (canvas #fafbfc, canvas-subtle #f6f8fa, fg #1f2328, fg-muted #424a53, fg-subtle #818b98, border #d1d9e0, green #1f883d and hover #1a7f37, blue #0969da and hover #0550ae); raised surfaces are white. Defined in @theme.
+V9: palette — only the gh-* tokens (canvas #ffffff, canvas-subtle #f6f8fa, fg #1f2328, fg-muted #424a53, fg-subtle #818b98, border #d1d9e0, green #1f883d and hover #1a7f37, blue #0969da and hover #0550ae); raised surfaces are white. Defined in @theme.
 V10: typeface — `--font-mono` token is Space Grotesk (body default, Tailwind `font-mono` class); `.prose code` and `.prose pre` override to IBM Plex Mono; token name kept; rename forces class sweep
 V11: base-type — html font-size is 18px; body weight is 400. Content pages (`/`, `/services`, `/mailpilot`) share one type scale: H1 `text-3xl`/`sm:text-4xl`, section kicker `text-base` uppercase, lede + section sub-head `text-lg`, body + lists `text-base leading-relaxed`; only functional micro-chrome (copy buttons, ordinal step markers) drops below `text-base`; detail: check-extras §V11
 V12: motion — animate-hero (fadeUp stagger via an inline animation-delay), animate-on-scroll (IntersectionObserver adds .is-visible at threshold 0.1), and cta-pulse (pulseGlow). Under prefers-reduced-motion: reduce, opacity is forced to 1, transform/animation/transition are none, and the observer is skipped.
@@ -95,6 +95,7 @@ T13|x|add a one-line sub-header to each landing kicker section: new field per se
 T14|x|replace /projects with /services: rename projects.astro→services.astro + projects.md.ts→services.md.ts, build 3 skeleton service sections (ERP/accounting data-input e.g. email-invoice→AP draft; CRM-system processes; email reply+outreach automation w/ MailPilot as example), update Nav+Footer+llms.txt links|V1,V4,V6,V14,V15,V24,V25
 T15|x|normalize /mailpilot to the V11 content type scale — sub-base content text (intro, step + layer titles + bodies, KB + under-hood paragraphs, question lists) text-sm→text-base, lede/sub-heads →text-lg, hints/captions text-xs→text-sm; H1 + kicker unchanged; copy-button + ordinal-marker micro-labels stay small; scope: text-sm / text-xs / text-[10px] classes in src/pages/mailpilot.astro|V11,V23,V24
 T16|x|sweep /services + / to the V11 content type scale — services body/list/action-link + Examples label text-sm→text-base (drop sm: downscale), index proof table text-sm→text-base; H1 + kicker + ordinal-marker micro-chrome unchanged; scope: text-sm / text-xs / text-[10px] classes in src/pages/services.astro + src/pages/index.astro|V11,V24
+T17|.|set --color-gh-canvas #fafbfc→#ffffff in global.css @theme (page background to standard white per V9)|V9,V21,V24
 
 ## §B BUGS
 
