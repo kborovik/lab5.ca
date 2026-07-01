@@ -31,6 +31,23 @@ Blog markdown: em-dashes are space-padded; both literal "—" and &mdash; are in
 Exception: MailPilot "// knowledge base" and "// try these questions" are plain
 markup, not kickers — they contain the `// ` literal in the markup itself.
 
+## §V11: base-type
+
+Shared-scale content pages: src/pages/index.astro, src/pages/services.astro,
+src/pages/mailpilot.astro.
+Audit: grep -nE 'text-sm|text-xs|text-\[10px\]' over the three files; every hit
+must be functional micro-chrome or it breaks the content-at-or-above-text-base
+floor.
+Micro-chrome allowlist (permitted below text-base): copy-to-clipboard controls
+(a <button> carrying a copy label, data-copy-*, or aria-label="Copy...") and
+ordinal/step markers (the flex items-baseline gap-2 num row holding {step.num}
+or {layer.num}).
+Everything else is content and carries its V11 tier: body and list items
+text-base, lede and section sub-head text-lg, captions and hints no smaller than
+text-sm; H1 and section kicker keep their fixed sizes.
+Any text-sm / text-xs / text-[10px] outside the allowlist is a violation; bump to
+the element's V11 tier.
+
 ## §V13: seo-graph
 
 JSON-LD @graph required nodes on every page: Person (#person), WebSite (#website),
