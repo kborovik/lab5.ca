@@ -99,4 +99,4 @@ T16|x|sweep /services + / to the V11 content type scale — services body/list/a
 ## §B BUGS
 
 id|date|cause|fix
-B1|2026-07-01|T15 type-scale sweep scoped to mailpilot only; services.astro + index.astro left on pre-V11 text-sm sm:text-base downscale (mobile renders content below text-base) though V11's shared scale covers all three content pages|-
+B1|2026-07-01|T15 type-scale sweep scoped to mailpilot only; services.astro + index.astro left on pre-V11 text-sm sm:text-base downscale (mobile renders content below text-base) though V11's shared scale covers all three content pages|V11
