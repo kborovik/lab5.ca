@@ -13,7 +13,7 @@ body {
   --font-mono: 'Space Grotesk', system-ui, -apple-system, sans-serif;
 
   /* Canvas / Backgrounds */
-  --color-gh-canvas: #fafbfc;
+  --color-gh-canvas: #ffffff;
   --color-gh-canvas-subtle: #f6f8fa;
 
   /* Foreground / Text */
