@@ -27,13 +27,13 @@ import { services } from '../copy/services';
           <h3 class="mt-3 text-base font-semibold text-gh-fg">
             {s.title}
           </h3>
-          <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted sm:text-base">
+          <p class="mt-2 text-base leading-relaxed text-gh-fg-muted">
             {s.body}
           </p>
-          <p class="mt-4 text-sm font-semibold text-gh-fg sm:text-base">Examples</p>
+          <p class="mt-4 text-base font-semibold text-gh-fg">Examples</p>
           <ul class="mt-2 space-y-1.5">
             {s.examples.map(ex => (
-              <li class="flex gap-2 text-sm leading-relaxed text-gh-fg-muted sm:text-base">
+              <li class="flex gap-2 text-base leading-relaxed text-gh-fg-muted">
                 <span class="select-none text-gh-green" aria-hidden="true">&ndash;</span>
                 <span>{ex}</span>
               </li>
@@ -43,7 +43,7 @@ import { services } from '../copy/services';
             <div class="mt-4">
               <a
                 href={s.proof.href}
-                class="inline-flex items-center gap-2 text-sm font-bold text-gh-green underline underline-offset-[3px] transition-colors hover:text-gh-green-hover sm:text-base"
+                class="inline-flex items-center gap-2 text-base font-bold text-gh-green underline underline-offset-[3px] transition-colors hover:text-gh-green-hover"
               >
                 See {s.proof.label} &rarr;
               </a>

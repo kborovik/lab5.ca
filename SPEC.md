@@ -94,7 +94,7 @@ T12|x|rework home what-i-do to a single build offer framed on ERP + CRM, drop th
 T13|x|add a one-line sub-header to each landing kicker section: new field per section in the landing-copy module, render as H3 in index.astro + mirror in llms-full, rewrite each section to lead with the sub-header|V1,V6,V15,V24,V27
 T14|x|replace /projects with /services: rename projects.astro→services.astro + projects.md.ts→services.md.ts, build 3 skeleton service sections (ERP/accounting data-input e.g. email-invoice→AP draft; CRM-system processes; email reply+outreach automation w/ MailPilot as example), update Nav+Footer+llms.txt links|V1,V4,V6,V14,V15,V24,V25
 T15|x|normalize /mailpilot to the V11 content type scale — sub-base content text (intro, step + layer titles + bodies, KB + under-hood paragraphs, question lists) text-sm→text-base, lede/sub-heads →text-lg, hints/captions text-xs→text-sm; H1 + kicker unchanged; copy-button + ordinal-marker micro-labels stay small; scope: text-sm / text-xs / text-[10px] classes in src/pages/mailpilot.astro|V11,V23,V24
-T16|.|sweep /services + / to the V11 content type scale — services body/list/action-link + Examples label text-sm→text-base (drop sm: downscale), index proof table text-sm→text-base; H1 + kicker + ordinal-marker micro-chrome unchanged; scope: text-sm / text-xs / text-[10px] classes in src/pages/services.astro + src/pages/index.astro|V11,V24
+T16|x|sweep /services + / to the V11 content type scale — services body/list/action-link + Examples label text-sm→text-base (drop sm: downscale), index proof table text-sm→text-base; H1 + kicker + ordinal-marker micro-chrome unchanged; scope: text-sm / text-xs / text-[10px] classes in src/pages/services.astro + src/pages/index.astro|V11,V24
 
 ## §B BUGS
 
