@@ -24,6 +24,7 @@ marketing.
 - host: Cloudflare Workers via wrangler; static assets served from ./dist; observability enabled.
 - domains: lab5.ca and mailpilot.ca — both are Cloudflare custom-domain routes in wrangler.jsonc.
 - integrations: @astrojs/sitemap, @astrojs/rss, rehype-external-links (opens in a new tab), sharp (astro:assets), Shiki github-light highlighting.
+- analytics: Umami Cloud hobby tier (cloud.umami.is) — cookieless script; free: 100k events/mo, 3 sites, 6-month retention.
 - typeface: Space Grotesk (body, headings, nav) plus IBM Plex Mono (code, pre) via Google Fonts.
 - content: blog is a local markdown collection (astro:content glob); no CMS, no database, no runtime fetch.
 
@@ -45,6 +46,8 @@ marketing.
 - cta: book-call is calendar.app.google/BpDHFsKt2NkbSW297 (the only canonical interface; all other links are dropped from the spec)
 - cmd: make targets are install, dev, build, preview, check, clean, clean-all, deploy, status, wrangler, playwright, help (makefile; build runs clean, then check, then astro build into dist/)
 - asset_gen: assets-src/og.html (1200x630) and assets-src/linkedin-banner.html (1584x396) are rendered to public/*.png via headless-Chrome --screenshot
+- analytics: Umami Cloud dashboard (cloud.umami.is) — one website id covers lab5.ca + mailpilot.ca (filter by hostname); script src https://cloud.umami.is/script.js; website id lives in Layout.astro
+- utm: mailpilot (kborovik/mailpilot) campaign links carry ?utm_source=mailpilot&utm_medium=email&utm_campaign=<campaign-slug>; Umami reads UTMs for attribution — email clients strip referrers, so untagged clicks report as direct
 
 ## §V INVARIANTS
 
@@ -61,7 +64,7 @@ V10: typeface — `--font-mono` token is Space Grotesk (body default, Tailwind `
 V11: base-type — html font-size is 18px; body weight is 400. Content pages (`/`, `/services`, `/mailpilot`) share one type scale: H1 `text-3xl`/`sm:text-4xl`, section kicker `text-base` uppercase, lede + section sub-head `text-lg`, body + lists `text-base leading-relaxed`; only functional micro-chrome (copy buttons, ordinal step markers) drops below `text-base`; detail: check-extras §V11
 V12: motion — animate-hero (fadeUp stagger via an inline animation-delay), animate-on-scroll (IntersectionObserver adds .is-visible at threshold 0.1), and cta-pulse (pulseGlow). Under prefers-reduced-motion: reduce, opacity is forced to 1, transform/animation/transition are none, and the observer is skipped.
 V13: seo-graph — JSON-LD @graph: Person + WebSite + page node (WebPage/CollectionPage/BlogPosting) + BreadcrumbList (non-root); BlogPosting carries dates, author, image; detail: check-extras §V13
-V14: head-meta — canonical URL, hreflang en-ca+x-default, RSS alt, OG+Twitter summary_large_image; pages with a .md alternate (blog posts, /mailpilot, /services) add a text/markdown rel=alternate; title "<title> | Konstantin Borovik"; detail: check-extras §V14
+V14: head-meta — canonical URL, hreflang en-ca+x-default, RSS alt, OG+Twitter summary_large_image; pages with a .md alternate (blog posts, /mailpilot, /services) add a text/markdown rel=alternate; title "<title> | Konstantin Borovik"; Umami script (defer, src+id per §I.analytics) renders only when import.meta.env.PROD — dev/preview emit no analytics; cookieless, no consent banner, no _headers change; detail: check-extras §V14
 V15: llms-endpoints — /llms.txt (terse map; page and post links target the .md alternates) and /llms-full.txt (full landing mirror) are text/markdown; llms-full body is generated from one shared landing-copy module imported by both the landing page and the endpoint — never hand-mirrored, so the rendered page and llms-full cannot drift
 V16: blog-path — src/content/blog/<slug>.md flat; filename is URL slug and post id; every post pairs with linkedin/<slug>.txt (drop → delete paired txt same change); TLDR mirrors to linkedin txt lead; detail: check-extras §V16
 V17: blog-render — the route owns the chrome: H1, date and tags, and the "all posts" link; the markdown body has no `# Title`, no byline, and no footer.
@@ -96,6 +99,8 @@ T14|x|replace /projects with /services: rename projects.astro→services.astro +
 T15|x|normalize /mailpilot to the V11 content type scale — sub-base content text (intro, step + layer titles + bodies, KB + under-hood paragraphs, question lists) text-sm→text-base, lede/sub-heads →text-lg, hints/captions text-xs→text-sm; H1 + kicker unchanged; copy-button + ordinal-marker micro-labels stay small; scope: text-sm / text-xs / text-[10px] classes in src/pages/mailpilot.astro|V11,V23,V24
 T16|x|sweep /services + / to the V11 content type scale — services body/list/action-link + Examples label text-sm→text-base (drop sm: downscale), index proof table text-sm→text-base; H1 + kicker + ordinal-marker micro-chrome unchanged; scope: text-sm / text-xs / text-[10px] classes in src/pages/services.astro + src/pages/index.astro|V11,V24
 T17|x|set --color-gh-canvas #fafbfc→#ffffff in global.css @theme (page background to standard white per V9)|V9,V21,V24
+T18|.|add Umami tracking to Layout.astro head: defer script https://cloud.umami.is/script.js + data-website-id gated on import.meta.env.PROD; prereq: create Umami Cloud website (covers lab5.ca + mailpilot.ca), record id in Layout.astro|V14,V23,V24
+T19|.|tag mailpilot campaign links per §I.utm (change lands in kborovik/mailpilot repo) + e2e verify: test-email click → Umami session shows utm_campaign; hourly view shows post-9am-send traffic|V14
 
 ## §B BUGS
 
