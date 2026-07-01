@@ -99,7 +99,7 @@ T14|x|replace /projects with /services: rename projects.astro→services.astro +
 T15|x|normalize /mailpilot to the V11 content type scale — sub-base content text (intro, step + layer titles + bodies, KB + under-hood paragraphs, question lists) text-sm→text-base, lede/sub-heads →text-lg, hints/captions text-xs→text-sm; H1 + kicker unchanged; copy-button + ordinal-marker micro-labels stay small; scope: text-sm / text-xs / text-[10px] classes in src/pages/mailpilot.astro|V11,V23,V24
 T16|x|sweep /services + / to the V11 content type scale — services body/list/action-link + Examples label text-sm→text-base (drop sm: downscale), index proof table text-sm→text-base; H1 + kicker + ordinal-marker micro-chrome unchanged; scope: text-sm / text-xs / text-[10px] classes in src/pages/services.astro + src/pages/index.astro|V11,V24
 T17|x|set --color-gh-canvas #fafbfc→#ffffff in global.css @theme (page background to standard white per V9)|V9,V21,V24
-T18|.|add Umami tracking to Layout.astro head: defer script https://cloud.umami.is/script.js + data-website-id gated on import.meta.env.PROD; prereq: create Umami Cloud website (covers lab5.ca + mailpilot.ca), record id in Layout.astro|V14,V23,V24
+T18|x|add Umami tracking to Layout.astro head: defer script https://cloud.umami.is/script.js + data-website-id gated on import.meta.env.PROD; prereq: create Umami Cloud website (covers lab5.ca + mailpilot.ca), record id in Layout.astro|V14,V23,V24
 T19|.|tag mailpilot campaign links per §I.utm (change lands in kborovik/mailpilot repo) + e2e verify: test-email click → Umami session shows utm_campaign; hourly view shows post-9am-send traffic|V14
 
 ## §B BUGS

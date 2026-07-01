@@ -301,6 +301,16 @@ const jsonLd = {
 
     <!-- JSON-LD structured data -->
     <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Umami analytics (PROD only; cookieless, no consent banner) -->
+    {import.meta.env.PROD && (
+      <script
+        is:inline
+        defer
+        src="https://cloud.umami.is/script.js"
+        data-website-id="34e21910-61cc-474a-8996-877122a87924"
+      ></script>
+    )}
   </head>
   <body class="font-mono antialiased bg-gh-canvas text-gh-fg">
     <svg aria-hidden="true" style="display:none;position:absolute;width:0;height:0">
