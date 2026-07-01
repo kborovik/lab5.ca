@@ -93,7 +93,7 @@ T11|x|add /mailpilot.md + /projects.md markdown-alternate endpoints + rel=altern
 T12|x|rework home what-i-do to a single build offer framed on ERP + CRM, drop the optimize tile + set hero h1 to "Build business processes with AI"; reposition MailPilot proof as inbound reply + outbound CRM outreach; re-sync landing-copy module + llms-full + llms.txt|V1,V4,V6,V15,V24
 T13|x|add a one-line sub-header to each landing kicker section: new field per section in the landing-copy module, render as H3 in index.astro + mirror in llms-full, rewrite each section to lead with the sub-header|V1,V6,V15,V24,V27
 T14|x|replace /projects with /services: rename projects.astro→services.astro + projects.md.ts→services.md.ts, build 3 skeleton service sections (ERP/accounting data-input e.g. email-invoice→AP draft; CRM-system processes; email reply+outreach automation w/ MailPilot as example), update Nav+Footer+llms.txt links|V1,V4,V6,V14,V15,V24,V25
-T15|.|normalize /mailpilot to the V11 content type scale — sub-base content text (intro, step + layer titles + bodies, KB + under-hood paragraphs, question lists) text-sm→text-base, lede/sub-heads →text-lg, hints/captions text-xs→text-sm; H1 + kicker unchanged; copy-button + ordinal-marker micro-labels stay small; scope: text-sm / text-xs / text-[10px] classes in src/pages/mailpilot.astro|V11,V23,V24
+T15|x|normalize /mailpilot to the V11 content type scale — sub-base content text (intro, step + layer titles + bodies, KB + under-hood paragraphs, question lists) text-sm→text-base, lede/sub-heads →text-lg, hints/captions text-xs→text-sm; H1 + kicker unchanged; copy-button + ordinal-marker micro-labels stay small; scope: text-sm / text-xs / text-[10px] classes in src/pages/mailpilot.astro|V11,V23,V24
 
 ## §B BUGS
 

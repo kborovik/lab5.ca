@@ -26,11 +26,11 @@ import {
     <h1 class="mt-4 text-3xl font-bold tracking-tight text-gh-fg sm:text-4xl">
       MailPilot
     </h1>
-    <p class="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-gh-fg-muted sm:text-base">
+    <p class="mx-auto mt-4 max-w-xl text-base leading-relaxed text-gh-fg-muted">
       {intro}
     </p>
 
-    <div class="mt-10 inline-flex items-center gap-3 rounded-lg border border-gh-border bg-gh-canvas-subtle px-5 py-3 text-sm text-gh-fg">
+    <div class="mt-10 inline-flex items-center gap-3 rounded-lg border border-gh-border bg-gh-canvas-subtle px-5 py-3 text-base text-gh-fg">
       <span class="text-gh-fg-muted">$</span>
       <span>mail {email}</span>
       <button
@@ -45,7 +45,7 @@ import {
       </button>
     </div>
 
-    <p class="mt-4 text-xs text-gh-fg-muted">
+    <p class="mt-4 text-sm text-gh-fg-muted">
       {emailNote}
     </p>
   </section>
@@ -63,8 +63,8 @@ import {
               <span>{step.num}</span>
               <span class="h-px flex-1 bg-gh-border"></span>
             </div>
-            <h3 class="mt-3 text-sm font-bold text-gh-fg">{step.title}</h3>
-            <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted">{step.body}</p>
+            <h3 class="mt-3 text-base font-bold text-gh-fg">{step.title}</h3>
+            <p class="mt-2 text-base leading-relaxed text-gh-fg-muted">{step.body}</p>
           </div>
         ))}
       </div>
@@ -77,14 +77,14 @@ import {
       <p class="text-base font-bold uppercase tracking-[0.2em] text-gh-blue">
         // {sections.knowledgeBase}
       </p>
-      <p class="mt-6 max-w-2xl text-sm leading-relaxed text-gh-fg-muted">
+      <p class="mt-6 max-w-2xl text-base leading-relaxed text-gh-fg-muted">
         {knowledgeBase.body}
       </p>
       <a
         href={knowledgeBase.driveUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="mt-6 inline-flex items-center gap-2 rounded-lg border border-gh-border bg-white px-4 py-2 text-sm font-bold text-gh-fg transition-colors hover:bg-gh-canvas-subtle"
+        class="mt-6 inline-flex items-center gap-2 rounded-lg border border-gh-border bg-white px-4 py-2 text-base font-bold text-gh-fg transition-colors hover:bg-gh-canvas-subtle"
       >
         <svg class="h-4 w-4" viewBox="0 0 87.3 78" fill="currentColor">
           <path d="M6.6 66.85l3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8H1.2c0 1.55.4 3.1 1.2 4.5l4.2 9.35z" fill="#0066DA"/>
@@ -107,16 +107,16 @@ import {
       </p>
 
       <div class="mt-10">
-        <p class="text-sm font-bold text-gh-fg">
+        <p class="text-lg font-bold text-gh-fg">
           <span class="text-gh-green">[ok]</span> {tryThese.answer.heading}
         </p>
-        <p class="mt-1 text-xs text-gh-fg-muted">
+        <p class="mt-1 text-sm text-gh-fg-muted">
           {tryThese.answer.hint}
         </p>
         <ul class="mt-4 space-y-2">
           {tryThese.answer.questions.map(q => (
             <li class="flex items-start justify-between gap-3 border-b border-gh-border py-2 last:border-b-0">
-              <span class="text-sm leading-relaxed text-gh-fg-muted">{q}</span>
+              <span class="text-base leading-relaxed text-gh-fg-muted">{q}</span>
               <button
                 data-copy-question
                 data-copy-text={q}
@@ -131,16 +131,16 @@ import {
       </div>
 
       <div class="mt-12">
-        <p class="text-sm font-bold text-gh-fg">
+        <p class="text-lg font-bold text-gh-fg">
           <span class="text-gh-fg-muted">[skip]</span> {tryThese.decline.heading}
         </p>
-        <p class="mt-1 text-xs text-gh-fg-muted">
+        <p class="mt-1 text-sm text-gh-fg-muted">
           {tryThese.decline.hint}
         </p>
         <ul class="mt-4 space-y-2">
           {tryThese.decline.questions.map(q => (
             <li class="flex items-start justify-between gap-3 border-b border-gh-border py-2 last:border-b-0">
-              <span class="text-sm leading-relaxed text-gh-fg-muted">{q}</span>
+              <span class="text-base leading-relaxed text-gh-fg-muted">{q}</span>
               <button
                 data-copy-question
                 data-copy-text={q}
@@ -162,7 +162,7 @@ import {
       <h2 class="section-kicker text-base font-bold uppercase tracking-[0.2em] text-gh-blue">
         {sections.underTheHood}
       </h2>
-      <p class="mt-6 max-w-2xl text-sm leading-relaxed text-gh-fg-muted">
+      <p class="mt-6 max-w-2xl text-base leading-relaxed text-gh-fg-muted">
         {underTheHood.body}
       </p>
 
@@ -173,8 +173,8 @@ import {
               <span>{layer.num}</span>
               <span class="h-px flex-1 bg-gh-border"></span>
             </div>
-            <h3 class="mt-3 text-sm font-bold text-gh-fg">{layer.title}</h3>
-            <p class="mt-2 text-sm leading-relaxed text-gh-fg-muted">{layer.body}</p>
+            <h3 class="mt-3 text-base font-bold text-gh-fg">{layer.title}</h3>
+            <p class="mt-2 text-base leading-relaxed text-gh-fg-muted">{layer.body}</p>
           </div>
         ))}
       </div>
@@ -183,7 +183,7 @@ import {
         href={underTheHood.repoUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="mt-10 inline-flex items-center gap-2 rounded-lg border border-gh-border bg-white px-4 py-2 text-sm font-bold text-gh-fg transition-colors hover:bg-gh-canvas-subtle"
+        class="mt-10 inline-flex items-center gap-2 rounded-lg border border-gh-border bg-white px-4 py-2 text-base font-bold text-gh-fg transition-colors hover:bg-gh-canvas-subtle"
       >
         <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
         github.com/kborovik/mailpilot
