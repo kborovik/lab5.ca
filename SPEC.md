@@ -58,7 +58,7 @@ V7: entities — static markup uses HTML entities; `{}` expressions use literal 
 V8: section-kicker — `.section-kicker` DOM text is clean name (no `// ` prefix); `::before { content: '// ' }` renders marker; detail: check-extras §V8
 V9: palette — only the gh-* tokens (canvas #fafbfc, canvas-subtle #f6f8fa, fg #1f2328, fg-muted #424a53, fg-subtle #818b98, border #d1d9e0, green #1f883d and hover #1a7f37, blue #0969da and hover #0550ae); raised surfaces are white. Defined in @theme.
 V10: typeface — `--font-mono` token is Space Grotesk (body default, Tailwind `font-mono` class); `.prose code` and `.prose pre` override to IBM Plex Mono; token name kept; rename forces class sweep
-V11: base-type — html font-size is 18px; body weight is 400.
+V11: base-type — html font-size is 18px; body weight is 400. Content pages (`/`, `/services`, `/mailpilot`) share one type scale: H1 `text-3xl`/`sm:text-4xl`, section kicker `text-base` uppercase, lede + section sub-head `text-lg`, body + lists `text-base leading-relaxed`; only functional micro-chrome (copy buttons, ordinal step markers) drops below `text-base`.
 V12: motion — animate-hero (fadeUp stagger via an inline animation-delay), animate-on-scroll (IntersectionObserver adds .is-visible at threshold 0.1), and cta-pulse (pulseGlow). Under prefers-reduced-motion: reduce, opacity is forced to 1, transform/animation/transition are none, and the observer is skipped.
 V13: seo-graph — JSON-LD @graph: Person + WebSite + page node (WebPage/CollectionPage/BlogPosting) + BreadcrumbList (non-root); BlogPosting carries dates, author, image; detail: check-extras §V13
 V14: head-meta — canonical URL, hreflang en-ca+x-default, RSS alt, OG+Twitter summary_large_image; pages with a .md alternate (blog posts, /mailpilot, /services) add a text/markdown rel=alternate; title "<title> | Konstantin Borovik"; detail: check-extras §V14
@@ -93,6 +93,7 @@ T11|x|add /mailpilot.md + /projects.md markdown-alternate endpoints + rel=altern
 T12|x|rework home what-i-do to a single build offer framed on ERP + CRM, drop the optimize tile + set hero h1 to "Build business processes with AI"; reposition MailPilot proof as inbound reply + outbound CRM outreach; re-sync landing-copy module + llms-full + llms.txt|V1,V4,V6,V15,V24
 T13|x|add a one-line sub-header to each landing kicker section: new field per section in the landing-copy module, render as H3 in index.astro + mirror in llms-full, rewrite each section to lead with the sub-header|V1,V6,V15,V24,V27
 T14|x|replace /projects with /services: rename projects.astro→services.astro + projects.md.ts→services.md.ts, build 3 skeleton service sections (ERP/accounting data-input e.g. email-invoice→AP draft; CRM-system processes; email reply+outreach automation w/ MailPilot as example), update Nav+Footer+llms.txt links|V1,V4,V6,V14,V15,V24,V25
+T15|.|normalize /mailpilot to the V11 content type scale — sub-base content text (intro, step + layer titles + bodies, KB + under-hood paragraphs, question lists) text-sm→text-base, lede/sub-heads →text-lg, hints/captions text-xs→text-sm; H1 + kicker unchanged; copy-button + ordinal-marker micro-labels stay small; scope: text-sm / text-xs / text-[10px] classes in src/pages/mailpilot.astro|V11,V23,V24
 
 ## §B BUGS
 
