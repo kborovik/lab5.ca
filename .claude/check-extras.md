@@ -23,6 +23,12 @@ Exception — `{}` interpolation: values emitted through `{}` — data-array fie
 `{}` (e.g. `description`, `title`) — require a literal em-dash; Astro escapes `&`
 in `{}` output so `&mdash;` double-escapes to `&amp;mdash;`.
 Blog markdown: em-dashes are space-padded; both literal "—" and &mdash; are in use.
+Audit (staged diff): git diff --cached -U0 -- 'src/**/*.astro' | grep '^+' |
+grep -nP '—|·|−|→|←|’|×'
+Classify each hit by context: static markup or HTML-attribute context →
+violation (entity required); `{}` interpolation context → exempt per the
+exception above. grep cannot tell the two apart, so hits are review-flags,
+not auto-violations. Blog markdown is out of scope (pathspec excludes it).
 
 ## §V8: section-kicker
 
