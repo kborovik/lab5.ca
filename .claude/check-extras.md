@@ -35,18 +35,19 @@ markup, not kickers — they contain the `// ` literal in the markup itself.
 
 Shared-scale content pages: src/pages/index.astro, src/pages/services.astro,
 src/pages/mailpilot.astro.
-Audit: grep -nE 'text-sm|text-xs|text-\[10px\]' over the three files; every hit
-must be functional micro-chrome or it breaks the content-at-or-above-text-base
-floor.
-Micro-chrome allowlist (permitted below text-base): copy-to-clipboard controls
-(a <button> carrying a copy label, data-copy-*, or aria-label="Copy...") and
+Audit: grep -nE 'text-sm|text-xs|text-\[10px\]' over the three files, then
+classify each hit against the two below-text-base tiers.
+text-xs / text-[10px] is micro-chrome only: copy-to-clipboard controls (a
+<button> carrying a copy label, data-copy-*, or aria-label="Copy...") and
 ordinal/step markers (the flex items-baseline gap-2 num row holding {step.num}
-or {layer.num}).
-Everything else is content and carries its V11 tier: body and list items
-text-base, lede and section sub-head text-lg, captions and hints no smaller than
-text-sm; H1 and section kicker keep their fixed sizes.
-Any text-sm / text-xs / text-[10px] outside the allowlist is a violation; bump to
-the element's V11 tier.
+or {layer.num}). Any text-xs / text-[10px] outside that set is a hard violation.
+text-sm is the caption/hint floor: descriptive micro-copy under a heading or
+control (notes, hints) may be text-sm, as may micro-chrome. A text-sm hit on
+anything else (intro, lede, sub-head, section body, list item, table, action
+link) is content mis-sized down: bump to its tier (body and lists text-base,
+lede and section sub-head text-lg). grep cannot tell a caption from a mis-sized
+body, so text-sm hits are review-flags, not auto-violations.
+H1 and section kicker keep their fixed sizes and are out of scope.
 
 ## §V13: seo-graph
 
